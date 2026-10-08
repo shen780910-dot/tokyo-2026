@@ -6,7 +6,7 @@ window.TRIP = {
       "date": "11.12",
       "weekday": "THURSDAY",
       "title": "抵達・晴空塔親子購物",
-      "area": "成田 → 押上／晴空塔",
+      "area": "成田 → 押上／晴空塔 → 錦糸町",
       "status": "proposed",
       "stops": [],
       "schedule": [
@@ -48,6 +48,21 @@ window.TRIP = {
             {
               "name": "利久牛舌 東京 Solamachi 店",
               "url": "https://www.google.com/maps/search/?api=1&query=Gyutan+Rikyu+Tokyo+Solamachi"
+            }
+          ]
+        },
+        {
+          "time": "晚上",
+          "activity": "錦糸町採買",
+          "detail": "押上站搭半藏門線 → 錦糸町站；唐吉訶德北口店、Yodobashi",
+          "links": [
+            {
+              "name": "唐吉訶德 錦糸町北口店（ドン・キホーテ 錦糸町北口店）",
+              "url": "https://www.google.com/maps/search/?api=1&query=ドン・キホーテ+錦糸町北口店"
+            },
+            {
+              "name": "錦糸町 Yodobashi",
+              "url": "https://www.google.com/maps/search/?api=1&query=Yodobashi+Camera+Kinshicho"
             }
           ]
         },
