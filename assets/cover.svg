@@ -1,1 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800"><defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#c6d8dc"/><stop offset="1" stop-color="#eee9dc"/></linearGradient></defs><path fill="url(#sky)" d="M0 0h1400v800H0z"/><circle cx="1090" cy="160" r="65" fill="#f5f0e6"/><path fill="#7d9593" d="m130 435 300-235 160 150 120-90 300 230z"/><path fill="#b9c7bd" d="m345 265 85-65 65 61-37-9-25 23-30-23z"/><path fill="#55705a" d="M0 475q220-100 420-10t460 5v200H0z"/><path fill="#234b60" d="M0 490q350 45 700-10t700-5v325H0z"/><path fill="#5f8690" d="M0 560q300-35 620 0t780-10v35q-480 45-780 0T0 590z"/><path fill="#d6ba8e" d="M1400 470Q940 525 700 665T0 720v80h1400z"/><path fill="#ebdcc1" d="M1400 525Q1020 575 710 725T0 800h1400z"/><path fill="none" stroke="#b7653c" stroke-opacity=".35" stroke-width="2" d="M1400 670q-350-10-655 130M1400 710q-245-5-420 90"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" role="img" aria-labelledby="title desc">
+<title id="title">東京的秋日天際線</title><desc id="desc">米白天空、暖紅夕陽、晴空塔與東京鐵塔，前景為東京街角。</desc>
+<rect width="1400" height="800" fill="#e9e4dc"/>
+<circle cx="1010" cy="235" r="118" fill="#c97665"/>
+<path d="M0 355h1400v445H0z" fill="#c0c6cd"/>
+<g fill="#9caaba"><path d="M0 450V315h110v135h40V260h120v190h42V350h130v100h85V285h104v165h80V315h105v135h85V320h130v130h50V280h150v170h40V350h140v100z"/></g>
+<g fill="#253852"><path d="M445 520l51-268h-15l26-37 14-93 6-76 6 76 14 93 26 37h-15l51 268h-34l-30-249h-36l-30 249z"/><path d="M486 232h82v21h-82zM491 214h72v15h-72z"/></g>
+<g fill="#ae514a"><path d="M965 540l76-269 20-120 20 120 76 269h-27l-69-231-69 231z"/><path d="M1015 326h91v13h-91zM999 385h123v13H999zM1027 271h67v14h-67z"/></g>
+<g fill="#536377"><path d="M0 520V420h170v100h35V367h150v153h85V441h154v79h49V401h118v119h60V371h155v149h70V443h112v77h83V386h160v134h119v280H0z"/></g>
+<g fill="#e5dccb"><path d="M227 400h18v30h-18zM267 400h18v30h-18zM307 400h18v30h-18zM665 438h18v33h-18zM705 438h18v33h-18zM843 411h22v35h-22zM886 411h22v35h-22zM1210 427h21v33h-21zM1255 427h21v33h-21z"/></g>
+<path d="M0 634l1400-32v198H0z" fill="#293343"/>
+<path d="M0 740l1400-62" stroke="#e1d7c9" stroke-width="8" stroke-dasharray="85 58"/>
+<g><path d="M55 610V487h215v123z" fill="#f5f1eb"/><path d="M41 485h243l-16-36H64z" fill="#ae514a"/><path d="M80 516h49v94H80zM145 516h99v61h-99z" fill="#253852"/><path d="M145 548h99M194 516v61" stroke="#e7dccb" stroke-width="5"/>
+<path d="M1168 597V505h165v92z" fill="#d7c9b7"/><path d="M1155 506h190v-24h-190z" fill="#ae514a"/><path d="M1190 530h46v67h-46zM1253 530h56v39h-56z" fill="#253852"/></g>
+<g stroke="#6c6e60" stroke-width="12"><path d="M360 662V523M1110 636V508"/></g>
+<g fill="#b36652"><ellipse cx="360" cy="496" rx="72" ry="91"/><ellipse cx="1110" cy="488" rx="59" ry="76"/></g>
+<g fill="#d0946b"><ellipse cx="325" cy="483" rx="36" ry="57"/><ellipse cx="1087" cy="469" rx="30" ry="47"/></g>
+<path d="M770 639V476h62v163" fill="none" stroke="#e2d9cb" stroke-width="7"/><circle cx="801" cy="467" r="20" fill="#ae514a"/>
+</svg>
