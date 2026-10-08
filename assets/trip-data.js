@@ -145,46 +145,50 @@ window.TRIP = {
       "date": "11.14",
       "weekday": "SATURDAY",
       "title": "澀谷・原宿・表參道",
-      "area": "澀谷 → 原宿／表參道 → 錦糸町（彈性）",
+      "area": "澀谷 → 原宿・表參道",
       "status": "proposed",
       "stops": [],
       "schedule": [
         {
           "time": "09:00–10:00",
-          "activity": "押上→澀谷",
-          "detail": "東京 Metro 半藏門線可往澀谷方向"
+          "activity": "押上 → 澀谷",
+          "detail": "半藏門線直達"
         },
         {
           "time": "10:00–11:30",
-          "activity": "澀谷 PARCO",
-          "detail": "Pokémon Center SHIBUYA、Nintendo TOKYO",
+          "activity": "澀谷 PARCO 6F",
+          "detail": "Pokémon Center、Nintendo TOKYO",
           "links": [
             {
-              "name": "澀谷 PARCO",
-              "url": "https://www.google.com/maps/search/?api=1&query=Shibuya+PARCO"
+              "name": "Pokémon Center SHIBUYA",
+              "url": "https://www.google.com/maps/search/?api=1&query=Pokemon+Center+Shibuya"
+            },
+            {
+              "name": "Nintendo TOKYO",
+              "url": "https://www.google.com/maps/search/?api=1&query=Nintendo+TOKYO"
             }
           ]
         },
         {
-          "time": "11:30–12:15",
-          "activity": "emmi 澀谷 Hikarie ShinQs",
-          "detail": "日系運動休閒服飾、鞋款；店鋪資訊出發前複查",
+          "time": "11:30–12:00",
+          "activity": "澀谷 PARCO 4F",
+          "detail": "emmi",
           "links": [
             {
-              "name": "emmi 澀谷 Hikarie",
-              "url": "https://www.google.com/maps/search/?api=1&query=emmi+Shibuya+Hikarie"
+              "name": "emmi 澀谷 PARCO",
+              "url": "https://www.google.com/maps/search/?api=1&query=emmi+Shibuya+PARCO"
             }
           ]
         },
         {
-          "time": "12:15–13:15",
-          "activity": "午餐",
-          "detail": "澀谷附近"
+          "time": "12:00–13:00",
+          "activity": "澀谷周邊",
+          "detail": "午餐"
         },
         {
-          "time": "13:15–16:30",
-          "activity": "原宿／表參道",
-          "detail": "HOKA、New Balance 原宿、3COINS 原宿；依距離調整順序",
+          "time": "13:00後",
+          "activity": "原宿、表參道",
+          "detail": "HOKA、NB、3COINS",
           "links": [
             {
               "name": "HOKA 原宿",
@@ -199,29 +203,9 @@ window.TRIP = {
               "url": "https://www.google.com/maps/search/?api=1&query=3COINS+Harajuku"
             }
           ]
-        },
-        {
-          "time": "16:30後",
-          "activity": "回押上休息／晚餐",
-          "detail": "週六人潮多，勿硬排滿"
-        },
-        {
-          "time": "晚上（可選）",
-          "activity": "錦糸町唐吉訶德",
-          "detail": "若體力足夠，從押上搭半藏門線一站至錦糸町",
-          "links": [
-            {
-              "name": "唐吉訶德 錦糸町北口店",
-              "url": "https://www.google.com/maps/search/?api=1&query=Don+Quijote+Kinshicho+North+Exit"
-            },
-            {
-              "name": "Yodobashi 錦糸町（備案）",
-              "url": "https://www.google.com/maps/search/?api=1&query=Yodobashi+Camera+Kinshicho"
-            }
-          ]
         }
       ],
-      "note": "錦糸町為可選備案；emmi表參道、澀谷LOFT與Yodobashi不強制排入。"
+      "note": "上午集中逛澀谷 PARCO，午餐後前往原宿、表參道。"
     },
     {
       "date": "11.15",
