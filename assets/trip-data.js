@@ -48,8 +48,8 @@ window.TRIP = {
           "detail": "已訂3晚；入住15:00起，可先詢問寄放行李",
           "links": [
             {
-              "name": "MONday Apart 上野新御徒町",
-              "url": "https://www.google.com/maps/search/?api=1&query=MONday%20Apart%20Ueno%20Shin-Okachimachi%201-27-11"
+              "name": "住宿資訊・入住核對（Notion）",
+              "url": "https://app.notion.com/p/shen0910/MONday-Apart-UENO-SHIN-OKACHIMACHI-3f5400d1c43e800a8082fa990ce4f6ba?v=b79400d1c43e823da0a988b66c89a8b5&source=copy_link"
             }
           ]
         },
@@ -105,8 +105,8 @@ window.TRIP = {
           "detail": "帶孩子保留彈性休息時間",
           "links": [
             {
-              "name": "MONday Apart 上野新御徒町",
-              "url": "https://www.google.com/maps/search/?api=1&query=MONday%20Apart%20Ueno%20Shin-Okachimachi%201-27-11"
+              "name": "住宿資訊・入住核對（Notion）",
+              "url": "https://app.notion.com/p/shen0910/MONday-Apart-UENO-SHIN-OKACHIMACHI-3f5400d1c43e800a8082fa990ce4f6ba?v=b79400d1c43e823da0a988b66c89a8b5&source=copy_link"
             }
           ]
         }
@@ -153,8 +153,8 @@ window.TRIP = {
               "url": "https://www.google.com/maps/search/?api=1&query=%E3%83%89%E3%83%B3%E3%83%BB%E3%82%AD%E3%83%9B%E3%83%BC%E3%83%86%20%E5%BE%A1%E5%BE%92%E7%94%BA%E5%BA%97"
             },
             {
-              "name": "MONday Apart 上野新御徒町",
-              "url": "https://www.google.com/maps/search/?api=1&query=MONday%20Apart%20Ueno%20Shin-Okachimachi%201-27-11"
+              "name": "住宿資訊・入住核對（Notion）",
+              "url": "https://app.notion.com/p/shen0910/MONday-Apart-UENO-SHIN-OKACHIMACHI-3f5400d1c43e800a8082fa990ce4f6ba?v=b79400d1c43e823da0a988b66c89a8b5&source=copy_link"
             }
           ]
         }
@@ -175,8 +175,8 @@ window.TRIP = {
           "detail": "原規劃約06:30–06:45出發；接送時間與集合地點須向業者確認",
           "links": [
             {
-              "name": "MONday Apart 上野新御徒町",
-              "url": "https://www.google.com/maps/search/?api=1&query=MONday%20Apart%20Ueno%20Shin-Okachimachi%201-27-11"
+              "name": "住宿資訊・入住核對（Notion）",
+              "url": "https://app.notion.com/p/shen0910/MONday-Apart-UENO-SHIN-OKACHIMACHI-3f5400d1c43e800a8082fa990ce4f6ba?v=b79400d1c43e823da0a988b66c89a8b5&source=copy_link"
             }
           ]
         },
@@ -211,15 +211,15 @@ window.TRIP = {
     },
     {
       "id": "booked-20261011-2",
-      "text": "保存原始住宿確認信與訂房編號，入住時出示"
+      "text": "開啟住宿 Notion，保存確認信與入住核對資料"
     },
     {
       "id": "booked-20261011-3",
-      "text": "訂房已付款且不退款；勿直接取消或重訂"
+      "text": "依住宿 Notion 核對付款與取消條件"
     },
     {
       "id": "booked-20261011-4",
-      "text": "確認現場另付住宿稅與房間樓層／床鋪配置"
+      "text": "依住宿 Notion 核對現場費用與房間配置"
     },
     {
       "id": "booked-20261011-5",
