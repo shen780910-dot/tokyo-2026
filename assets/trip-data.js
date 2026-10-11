@@ -5,47 +5,20 @@ window.TRIP = {
     {
       "date": "11.12",
       "weekday": "THURSDAY",
-      "title": "抵達・東京站・日本橋",
-      "area": "成田 → 東京站 → 日本橋 → 新御徒町",
+      "title": "抵達東京・晴空塔",
+      "area": "成田 → 上野新御徒町 → 押上",
       "status": "proposed",
       "stops": [],
       "schedule": [
         {
           "time": "06:35–10:35",
           "activity": "IT200 桃園 → 成田",
-          "detail": "日本當地抵達時間10:35；預留入境與領行李時間"
+          "detail": "以下時間依出關及機場交通調整。"
         },
         {
           "time": "中午",
-          "activity": "成田機場 → 東京市區",
-          "detail": "交通方式待定，依通關與行李時間調整"
-        },
-        {
-          "time": "下午",
-          "activity": "東京站 Character Street",
-          "detail": "TOMICA 等角色商品",
-          "links": [
-            {
-              "name": "東京站 Character Street",
-              "url": "https://www.google.com/maps/search/?api=1&query=Tokyo%20Character%20Street"
-            }
-          ]
-        },
-        {
-          "time": "下午",
-          "activity": "Pokémon Center TOKYO DX",
-          "detail": "日本橋；依抵達時間與孩子體力調整先後",
-          "links": [
-            {
-              "name": "Pokémon Center TOKYO DX",
-              "url": "https://www.google.com/maps/search/?api=1&query=Pokemon%20Center%20Tokyo%20DX"
-            }
-          ]
-        },
-        {
-          "time": "傍晚／晚上",
-          "activity": "前往飯店、辦理入住",
-          "detail": "已訂3晚；入住15:00起，可先詢問寄放行李",
+          "activity": "成田 → 上野 → 飯店寄放行李",
+          "detail": "以 Skyliner 前往京成上野；再前往 MONday Apart 上野新御徒町。",
           "links": [
             {
               "name": "住宿資訊・入住核對（Notion）",
@@ -54,25 +27,196 @@ window.TRIP = {
           ]
         },
         {
-          "time": "晚上（選擇性）",
-          "activity": "附近晚餐、御徒町周邊逛街",
-          "detail": "保留休息時間，不強制排滿"
+          "time": "約13:00–14:00",
+          "activity": "やよい軒 東上野店｜暫定午餐",
+          "detail": "飯店往稻荷町方向步行估約6～8分鐘；依抵達時間彈性調整。",
+          "links": [
+            {
+              "name": "やよい軒 東上野店",
+              "url": "https://www.google.com/maps/search/?api=1&query=%E3%82%84%E3%82%88%E3%81%84%E8%BB%92%20%E6%9D%B1%E4%B8%8A%E9%87%8E%E5%BA%97"
+            }
+          ]
+        },
+        {
+          "time": "午餐後",
+          "activity": "回飯店入住／休息",
+          "detail": "依實際抵達時間及飯店安排入住；會員提早入住資格請看 Notion。",
+          "links": [
+            {
+              "name": "住宿資訊・入住核對（Notion）",
+              "url": "https://app.notion.com/p/shen0910/a1d400d1c43e8384944e0151ccee1361"
+            }
+          ]
+        },
+        {
+          "time": "下午",
+          "activity": "電車前往晴空塔",
+          "detail": "飯店 → 新御徒町站 → 大江戶線至藏前 → 淺草線至押上；預留30～40分鐘。藏前需地面轉乘，推車預留約10分鐘。",
+          "links": [
+            {
+              "name": "新御徒町站",
+              "url": "https://www.google.com/maps/search/?api=1&query=Shin-Okachimachi%20Station"
+            },
+            {
+              "name": "藏前站",
+              "url": "https://www.google.com/maps/search/?api=1&query=Kuramae%20Station"
+            },
+            {
+              "name": "押上站",
+              "url": "https://www.google.com/maps/search/?api=1&query=Oshiage%20Station"
+            }
+          ]
+        },
+        {
+          "time": "下午",
+          "activity": "晴空街 TOMICA・Pokémon Center",
+          "detail": "先逛角色商品，依孩子體力保留休息空檔。",
+          "links": [
+            {
+              "name": "TOMICA・PLARAIL SHOP",
+              "url": "https://www.google.com/maps/search/?api=1&query=Tomica%20Plarail%20Shop%20Tokyo%20Solamachi"
+            },
+            {
+              "name": "Pokémon Center SKYTREE TOWN",
+              "url": "https://www.google.com/maps/search/?api=1&query=Pokemon%20Center%20Skytree%20Town"
+            }
+          ]
+        },
+        {
+          "time": "晚餐",
+          "activity": "利久牛舌｜晴空街6F",
+          "detail": "館內用餐；候位依現場狀況調整。",
+          "links": [
+            {
+              "name": "利久 東京晴空街店",
+              "url": "https://www.google.com/maps/search/?api=1&query=%E7%89%9B%E3%81%9F%E3%82%93%E7%82%AD%E7%84%BC%20%E5%88%A9%E4%B9%85%20%E6%9D%B1%E4%BA%AC%E3%82%BD%E3%83%A9%E3%83%9E%E3%83%81%E5%BA%97"
+            }
+          ]
+        },
+        {
+          "time": "晚餐後",
+          "activity": "電車回飯店",
+          "detail": "押上 → 淺草線至藏前 → 大江戶線至新御徒町 → 飯店。",
+          "links": [
+            {
+              "name": "住宿資訊・入住核對（Notion）",
+              "url": "https://app.notion.com/p/shen0910/a1d400d1c43e8384944e0151ccee1361"
+            }
+          ]
         }
       ],
-      "note": "時段待細排；行李寄放與機場進市區交通待確認。"
+      "note": "午餐暫定やよい軒；晴空塔以電車往返。抵達日優先吃飯與休息，不另排錦糸町採買。"
     },
     {
       "date": "11.13",
       "weekday": "FRIDAY",
-      "title": "澀谷購物日",
-      "area": "新御徒町 → 澀谷 → 飯店",
+      "title": "東京站・銀座購物",
+      "area": "上野新御徒町 → 東京站 → 有樂町 → 銀座",
       "status": "proposed",
       "stops": [],
       "schedule": [
         {
-          "time": "上午～下午",
-          "activity": "澀谷 PARCO",
-          "detail": "Pokémon Center SHIBUYA、Nintendo TOKYO",
+          "time": "上午",
+          "activity": "飯店 → 東京站",
+          "detail": "步行至御徒町站，搭JR山手線或京濱東北線往東京。",
+          "links": [
+            {
+              "name": "東京站",
+              "url": "https://www.google.com/maps/search/?api=1&query=Tokyo%20Station"
+            }
+          ]
+        },
+        {
+          "time": "上午",
+          "activity": "Gift Palette・東京おかしランド・GRANSTA",
+          "detail": "伴手禮採買；GRANSTA部分店位於JR付費區，留意票券與進出站。",
+          "links": [
+            {
+              "name": "Gift Palette",
+              "url": "https://www.google.com/maps/search/?api=1&query=Tokyo%20Gift%20Palette"
+            },
+            {
+              "name": "東京おかしランド",
+              "url": "https://www.google.com/maps/search/?api=1&query=Tokyo%20Okashi%20Land"
+            },
+            {
+              "name": "GRANSTA TOKYO",
+              "url": "https://www.google.com/maps/search/?api=1&query=Gransta%20Tokyo"
+            }
+          ]
+        },
+        {
+          "time": "中午",
+          "activity": "東京站周邊午餐",
+          "detail": "依孩子食慾及候位狀況挑選餐廳。"
+        },
+        {
+          "time": "下午",
+          "activity": "BicCamera 有樂町 → 銀座 LOFT",
+          "detail": "東京站搭JR至有樂町，或依體力步行；電器、玩具與生活選品。",
+          "links": [
+            {
+              "name": "BicCamera 有樂町",
+              "url": "https://www.google.com/maps/search/?api=1&query=Bic%20Camera%20Yurakucho"
+            },
+            {
+              "name": "銀座 LOFT",
+              "url": "https://www.google.com/maps/search/?api=1&query=Ginza%20Loft"
+            }
+          ]
+        },
+        {
+          "time": "下午",
+          "activity": "MUJI 銀座・SABON",
+          "detail": "沿銀座街區購物，採買後安排休息。",
+          "links": [
+            {
+              "name": "MUJI 銀座",
+              "url": "https://www.google.com/maps/search/?api=1&query=MUJI%20Ginza"
+            },
+            {
+              "name": "SABON 銀座松屋通り店",
+              "url": "https://www.google.com/maps/search/?api=1&query=SABON%20%E9%8A%80%E5%BA%A7%E6%9D%BE%E5%B1%8B%E9%80%9A%E3%82%8A%E5%BA%97"
+            }
+          ]
+        },
+        {
+          "time": "晚上",
+          "activity": "回飯店整理戰利品",
+          "detail": "銀座搭銀座線至稻荷町，再步行回飯店。",
+          "links": [
+            {
+              "name": "住宿資訊・入住核對（Notion）",
+              "url": "https://app.notion.com/p/shen0910/a1d400d1c43e8384944e0151ccee1361"
+            }
+          ]
+        }
+      ],
+      "note": "東京站伴手禮與銀座排同一天；購物量大時提早回飯店。"
+    },
+    {
+      "date": "11.14",
+      "weekday": "SATURDAY",
+      "title": "澀谷 PARCO・原宿",
+      "area": "上野新御徒町 → 澀谷 → 原宿・表參道",
+      "status": "proposed",
+      "stops": [],
+      "schedule": [
+        {
+          "time": "09:00–10:00",
+          "activity": "飯店 → 澀谷",
+          "detail": "步行至稻荷町站，搭銀座線直達澀谷；預留出站與步行到PARCO時間。",
+          "links": [
+            {
+              "name": "澀谷站",
+              "url": "https://www.google.com/maps/search/?api=1&query=Shibuya%20Station"
+            }
+          ]
+        },
+        {
+          "time": "10:00–11:30",
+          "activity": "澀谷 PARCO 6F",
+          "detail": "Pokémon Center SHIBUYA、Nintendo TOKYO。",
           "links": [
             {
               "name": "Pokémon Center SHIBUYA",
@@ -85,81 +229,64 @@ window.TRIP = {
           ]
         },
         {
-          "time": "下午",
-          "activity": "HOKA、3COINS",
-          "detail": "分店與動線待確認；地圖保留原宿店位置供參考",
+          "time": "11:30–12:00",
+          "activity": "emmi｜澀谷 PARCO 4F",
+          "detail": "與6F同棟，逛完直接下樓。",
           "links": [
             {
-              "name": "HOKA 原宿（分店待確認）",
+              "name": "emmi 澀谷 PARCO",
+              "url": "https://www.google.com/maps/search/?api=1&query=emmi%20Shibuya%20PARCO"
+            }
+          ]
+        },
+        {
+          "time": "12:00–13:00",
+          "activity": "澀谷周邊午餐",
+          "detail": "用餐與休息。"
+        },
+        {
+          "time": "13:00後",
+          "activity": "原宿・表參道｜HOKA、New Balance、3COINS",
+          "detail": "澀谷搭JR山手線一站至原宿；依實際購物需求調整步行順序。",
+          "links": [
+            {
+              "name": "HOKA 原宿",
               "url": "https://www.google.com/maps/search/?api=1&query=HOKA%20Harajuku"
             },
             {
-              "name": "3COINS 原宿（分店待確認）",
+              "name": "New Balance 原宿",
+              "url": "https://www.google.com/maps/search/?api=1&query=New%20Balance%20Harajuku"
+            },
+            {
+              "name": "3COINS 原宿本店",
               "url": "https://www.google.com/maps/search/?api=1&query=3COINS%20Harajuku"
             }
           ]
         },
         {
-          "time": "晚上",
-          "activity": "返回飯店／附近用餐",
-          "detail": "帶孩子保留彈性休息時間",
+          "time": "傍晚",
+          "activity": "JR原宿 → 御徒町 → 飯店",
+          "detail": "回飯店休息、整理隔天行李。",
           "links": [
             {
               "name": "住宿資訊・入住核對（Notion）",
               "url": "https://app.notion.com/p/shen0910/a1d400d1c43e8384944e0151ccee1361"
             }
           ]
-        }
-      ],
-      "note": "分店、營業時間與交通待細排；不沿用押上出發的半藏門線直達安排。"
-    },
-    {
-      "date": "11.14",
-      "weekday": "SATURDAY",
-      "title": "銀座購物日",
-      "area": "新御徒町 → 銀座 → 御徒町",
-      "status": "proposed",
-      "stops": [],
-      "schedule": [
-        {
-          "time": "上午～下午",
-          "activity": "MUJI 銀座旗艦店",
-          "detail": "主要購物點",
-          "links": [
-            {
-              "name": "MUJI 銀座",
-              "url": "https://www.google.com/maps/search/?api=1&query=MUJI%20Ginza"
-            }
-          ]
         },
         {
-          "time": "下午",
-          "activity": "SABON 銀座、鞋店購物",
-          "detail": "分店、鞋店與順序待確認",
-          "links": [
-            {
-              "name": "SABON 銀座",
-              "url": "https://www.google.com/maps/search/?api=1&query=SABON%20Ginza"
-            }
-          ]
-        },
-        {
-          "time": "晚上",
-          "activity": "返回御徒町、唐吉訶德購物",
-          "detail": "飯店至店家約750公尺／11分鐘（使用者地圖截圖）；購物袋多時留意步行距離",
+          "time": "晚上｜視體力",
+          "activity": "唐吉訶德 御徒町店｜選擇性",
+          "detail": "留在住宿周邊補貨；不特地折返錦糸町。",
           "links": [
             {
               "name": "唐吉訶德 御徒町店",
               "url": "https://www.google.com/maps/search/?api=1&query=%E3%83%89%E3%83%B3%E3%83%BB%E3%82%AD%E3%83%9B%E3%83%BC%E3%83%86%20%E5%BE%A1%E5%BE%92%E7%94%BA%E5%BA%97"
-            },
-            {
-              "name": "住宿資訊・入住核對（Notion）",
-              "url": "https://app.notion.com/p/shen0910/a1d400d1c43e8384944e0151ccee1361"
             }
           ]
         }
       ],
-      "note": "銀座購物後返回御徒町；依孩子體力調整。"
+      "note": "emmi在澀谷PARCO 4F。晚上採買視體力，回程前優先整理行李。"
     },
     {
       "date": "11.15",
@@ -242,24 +369,36 @@ window.TRIP = {
       "text": "確認保險、緊急聯絡與天氣"
     },
     {
-      "id": "booked-20261011-10",
-      "text": "購物｜東京站 TOMICA、Pokémon Center TOKYO DX"
+      "id": "shopping-skytree",
+      "text": "晴空街：TOMICA・Pokémon Center；やよい軒午餐暫定"
     },
     {
-      "id": "booked-20261011-11",
-      "text": "購物｜澀谷 PARCO：Pokémon Center、Nintendo TOKYO"
+      "id": "shopping-tokyo-ginza",
+      "text": "東京站伴手禮；BicCamera、LOFT、MUJI、SABON"
     },
     {
-      "id": "booked-20261011-12",
-      "text": "購物｜HOKA、3COINS：分店待確認"
+      "id": "shopping-parco",
+      "text": "澀谷PARCO 6F角色商品、4F emmi"
     },
     {
-      "id": "booked-20261011-13",
-      "text": "購物｜MUJI 銀座、SABON 銀座、鞋店"
+      "id": "shopping-harajuku",
+      "text": "原宿：HOKA、New Balance、3COINS"
     },
     {
-      "id": "booked-20261011-14",
-      "text": "購物｜唐吉訶德 御徒町店"
+      "id": "shopping-skytree",
+      "text": "晴空街：TOMICA・Pokémon Center；やよい軒午餐暫定"
+    },
+    {
+      "id": "shopping-tokyo-ginza",
+      "text": "東京站伴手禮；BicCamera、LOFT、MUJI、SABON"
+    },
+    {
+      "id": "shopping-parco",
+      "text": "澀谷PARCO 6F角色商品、4F emmi"
+    },
+    {
+      "id": "shopping-harajuku",
+      "text": "原宿：HOKA、New Balance、3COINS"
     }
   ]
 };
