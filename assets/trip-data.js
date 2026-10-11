@@ -49,7 +49,7 @@ window.TRIP = {
           "links": [
             {
               "name": "住宿資訊・入住核對（Notion）",
-              "url": "https://app.notion.com/p/shen0910/MONday-Apart-UENO-SHIN-OKACHIMACHI-3f5400d1c43e800a8082fa990ce4f6ba?v=b79400d1c43e823da0a988b66c89a8b5&source=copy_link"
+              "url": "https://app.notion.com/p/shen0910/a1d400d1c43e8384944e0151ccee1361"
             }
           ]
         },
@@ -106,7 +106,7 @@ window.TRIP = {
           "links": [
             {
               "name": "住宿資訊・入住核對（Notion）",
-              "url": "https://app.notion.com/p/shen0910/MONday-Apart-UENO-SHIN-OKACHIMACHI-3f5400d1c43e800a8082fa990ce4f6ba?v=b79400d1c43e823da0a988b66c89a8b5&source=copy_link"
+              "url": "https://app.notion.com/p/shen0910/a1d400d1c43e8384944e0151ccee1361"
             }
           ]
         }
@@ -154,7 +154,7 @@ window.TRIP = {
             },
             {
               "name": "住宿資訊・入住核對（Notion）",
-              "url": "https://app.notion.com/p/shen0910/MONday-Apart-UENO-SHIN-OKACHIMACHI-3f5400d1c43e800a8082fa990ce4f6ba?v=b79400d1c43e823da0a988b66c89a8b5&source=copy_link"
+              "url": "https://app.notion.com/p/shen0910/a1d400d1c43e8384944e0151ccee1361"
             }
           ]
         }
@@ -176,7 +176,7 @@ window.TRIP = {
           "links": [
             {
               "name": "住宿資訊・入住核對（Notion）",
-              "url": "https://app.notion.com/p/shen0910/MONday-Apart-UENO-SHIN-OKACHIMACHI-3f5400d1c43e800a8082fa990ce4f6ba?v=b79400d1c43e823da0a988b66c89a8b5&source=copy_link"
+              "url": "https://app.notion.com/p/shen0910/a1d400d1c43e8384944e0151ccee1361"
             }
           ]
         },
