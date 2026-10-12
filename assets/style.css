@@ -8,3 +8,5 @@
 .flight-info{margin:0 0 48px}.flight-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.flight-grid article{padding:24px;background:var(--card);border:1px solid var(--line)}.flight-grid .eyebrow{margin-bottom:10px}.flight-grid h3{margin:0 0 12px}.flight-route{font-size:14px;margin:0;line-height:2}.flight-route strong{font-size:20px;font-variant-numeric:tabular-nums}.flight-route span{margin:0 8px;color:var(--ochre)}@media(max-width:700px){.flight-grid{grid-template-columns:1fr;gap:14px}.flight-grid article{padding:22px}}
 
 .day-tabs{display:flex;gap:12px;margin:0 0 24px;border-bottom:1px solid var(--line)}.day-tab{flex:1;background:transparent;border:0;border-bottom:3px solid transparent;padding:12px 8px;font-size:18px;color:var(--muted);font-family:Lihsianti,sans-serif}.day-tab[aria-selected=true]{border-bottom-color:var(--ochre);color:var(--ink);background:var(--card)}
+
+.weather-note{margin:0 0 28px;max-width:780px}.weather-note h2{font-size:24px;color:var(--ink);margin:0 0 12px}.weather-note p+p{margin-top:12px}.weather-sources a{text-decoration:underline;text-underline-offset:3px}

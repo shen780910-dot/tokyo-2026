@@ -348,6 +348,26 @@ window.TRIP = {
   ],
   "checklist": [
     {
+      "id": "weather-layers",
+      "text": "準備長袖、薄毛衣或刷毛中層、長褲，方便分層穿脫"
+    },
+    {
+      "id": "weather-outerwear",
+      "text": "準備防風外套或輕羽絨；孩子帶可穿脫外套，推車帶薄毯"
+    },
+    {
+      "id": "weather-rain",
+      "text": "帶折疊傘、孩子雨衣與推車雨罩，穿好走且防潑水的鞋"
+    },
+    {
+      "id": "weather-care",
+      "text": "帶護唇膏、保濕用品與水壺，逛街時適時補水"
+    },
+    {
+      "id": "weather-forecast",
+      "text": "11/5起確認11/12～15天氣預報；出發前1～2天依低溫與降雨調整行李"
+    },
+    {
       "id": "booked-20261011-0",
       "text": "確認護照與入境資料"
     },
@@ -381,11 +401,11 @@ window.TRIP = {
     },
     {
       "id": "booked-20261011-8",
-      "text": "準備孩子備用衣物、用品與點心"
+      "text": "孩子隨身備替換上衣、襪子、用品與點心"
     },
     {
       "id": "booked-20261011-9",
-      "text": "確認保險、緊急聯絡與天氣"
+      "text": "確認保險與緊急聯絡"
     },
     {
       "id": "shopping-skytree",
