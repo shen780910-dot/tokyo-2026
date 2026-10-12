@@ -189,9 +189,20 @@ window.TRIP = {
           ]
         },
         {
+          "time": "傍晚｜預留45～60分鐘",
+          "activity": "博品館玩具公園銀座本店",
+          "detail": "接在SABON之後；1F～4F逛玩具，4F賽車現行¥300／5分鐘。營業至20:00，依孩子體力調整。",
+          "links": [
+            {
+              "name": "博品館玩具公園（Notion）",
+              "url": "https://app.notion.com/p/shen0910/3f7400d1c43e81da8d12dbcdbda3156c"
+            }
+          ]
+        },
+        {
           "time": "晚上",
           "activity": "回飯店整理戰利品",
-          "detail": "銀座搭銀座線至稻荷町，再步行回飯店。",
+          "detail": "博品館附近步行至新橋站，搭銀座線至稻荷町，再步行回飯店。",
           "links": [
             {
               "name": "住宿資訊・入住核對（Notion）",
@@ -200,7 +211,7 @@ window.TRIP = {
           ]
         }
       ],
-      "note": "東京站伴手禮 → BicCamera有樂町 → 西銀座3COINS → LOFT → MUJI → SABON；依孩子體力安排休息。"
+      "note": "東京站 → BicCamera → 西銀座3COINS → LOFT → MUJI → SABON → 博品館；購物時間彈性調整，留45～60分鐘逛玩具。"
     },
     {
       "date": "11.14",
