@@ -152,16 +152,24 @@ window.TRIP = {
         },
         {
           "time": "下午",
-          "activity": "BicCamera 有樂町 → 銀座 LOFT",
-          "detail": "東京站搭JR至有樂町，或依體力步行；電器、玩具與生活選品。",
+          "activity": "BicCamera 有樂町 → 3COINS＋plus 西銀座店 → 銀座 LOFT",
+          "detail": "東京站搭JR至有樂町，依購物順序步行；3COINS位於西銀座百貨2F，營業11:00～20:00。",
           "links": [
             {
               "name": "BicCamera 有樂町",
-              "url": "https://www.google.com/maps/search/?api=1&query=Bic%20Camera%20Yurakucho"
+              "url": "https://www.google.com/maps/search/?api=1&query=Bic+Camera+Yurakucho"
             },
             {
-              "name": "銀座 LOFT",
-              "url": "https://www.google.com/maps/search/?api=1&query=Ginza%20Loft"
+              "name": "3COINS＋plus 西銀座店｜地圖",
+              "url": "https://www.google.com/maps/search/?api=1&query=3COINS%2Bplus+西銀座店"
+            },
+            {
+              "name": "3COINS 購物清單（Notion）",
+              "url": "https://app.notion.com/p/shen0910/3ca400d1c43e8147a079f3f4c71a8ff8?v=3cb400d1c43e815186c1000c6b8ca57c&source=copy_link"
+            },
+            {
+              "name": "銀座 LOFT（Notion）",
+              "url": "https://app.notion.com/p/shen0910/3f7400d1c43e81d193f4f5a37cf1a4f7"
             }
           ]
         },
@@ -192,7 +200,7 @@ window.TRIP = {
           ]
         }
       ],
-      "note": "東京站伴手禮與銀座排同一天；購物量大時提早回飯店。"
+      "note": "東京站伴手禮 → BicCamera有樂町 → 西銀座3COINS → LOFT → MUJI → SABON；依孩子體力安排休息。"
     },
     {
       "date": "11.14",
@@ -374,23 +382,7 @@ window.TRIP = {
     },
     {
       "id": "shopping-tokyo-ginza",
-      "text": "東京站伴手禮；BicCamera、LOFT、MUJI、SABON"
-    },
-    {
-      "id": "shopping-parco",
-      "text": "澀谷PARCO 6F角色商品、4F emmi"
-    },
-    {
-      "id": "shopping-harajuku",
-      "text": "原宿：HOKA、New Balance、3COINS"
-    },
-    {
-      "id": "shopping-skytree",
-      "text": "晴空街：TOMICA・Pokémon Center；やよい軒午餐暫定"
-    },
-    {
-      "id": "shopping-tokyo-ginza",
-      "text": "東京站伴手禮；BicCamera、LOFT、MUJI、SABON"
+      "text": "東京站伴手禮；BicCamera、西銀座3COINS、LOFT、MUJI、SABON"
     },
     {
       "id": "shopping-parco",
