@@ -171,8 +171,8 @@ window.TRIP = {
           "detail": "沿銀座街區購物，採買後安排休息。",
           "links": [
             {
-              "name": "MUJI 銀座",
-              "url": "https://www.google.com/maps/search/?api=1&query=MUJI%20Ginza"
+              "name": "無印良品銀座（Notion）",
+              "url": "https://app.notion.com/p/shen0910/3f7400d1c43e816aa056fd17fbecc49c?v=2a203442749e47828d508eed340686a7&source=copy_link"
             },
             {
               "name": "SABON 銀座松屋通り店",
