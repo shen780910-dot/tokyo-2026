@@ -214,6 +214,17 @@ window.TRIP = {
           ]
         },
         {
+          "time": "下午點心｜預留10～15分鐘",
+          "activity": "銀座木村家紅豆麵包",
+          "detail": "木村屋總本店 銀座本店1F，銀座4-5-7；營業10:00～20:00。逛完SABON後買酒種紅豆麵包，再往Dover Street Market；口味與售完狀況依現場。",
+          "links": [
+            {
+              "name": "銀座木村家（Notion）",
+              "url": "https://app.notion.com/p/shen0910/3c8400d1c43e811693bee0834815e11d"
+            }
+          ]
+        },
+        {
           "time": "傍晚｜預留20～30分鐘",
           "activity": "Dover Street Market 銀座",
           "detail": "銀座6-9-5 銀座小松西館，逛時裝與潮流選物；營業11:00～20:00，再往博品館。",
@@ -247,7 +258,7 @@ window.TRIP = {
           ]
         }
       ],
-      "note": "東京站 → KITTE GOOD DESIGN → BicCamera → GODIVA Bakery → 西銀座3COINS → LOFT → MUJI → SABON → Dover Street Market → 博品館；新增店家合計預留55～80分鐘，不含排隊。"
+      "note": "東京站 → KITTE GOOD DESIGN → BicCamera → GODIVA Bakery → 西銀座3COINS → LOFT → MUJI → SABON → 銀座木村家 → Dover Street Market → 博品館；麵包店各留短暫採買時間，依孩子體力安排休息。"
     },
     {
       "date": "11.14",
