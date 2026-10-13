@@ -11,30 +11,34 @@ def tag(name): return '{' + NS + '}' + name
 def polish(svg):
     root = ET.fromstring(svg)
     for anchor in root.iter(tag('a')):
-        circles = [n for n in anchor if n.tag == tag('circle') and n.get('r') == '13']
+        circles = [n for n in anchor if n.tag == tag('circle') and n.get('r') in ('13', '10.5')]
+        for badge in circles: badge.set('r', '10.5')
         for node in list(anchor):
             label = node.get('aria-label', '')
             if node.tag == tag('g') and label.isdigit() and circles:
                 badge = circles[-1]
                 number = ET.Element(tag('text'), {
-                    'x': badge.get('cx'), 'y': str(float(badge.get('cy')) + 5.5),
+                    'x': badge.get('cx'), 'y': str(float(badge.get('cy')) + 4.5),
                     'text-anchor': 'middle', 'font-family': 'Arial, Helvetica, sans-serif',
-                    'font-size': '16', 'font-weight': '700', 'fill': '#fff',
+                    'font-size': '13', 'font-weight': '700', 'fill': '#fff',
                     'class': 'map-number', 'aria-label': label,
                 })
                 number.text = label
                 position = list(anchor).index(node)
                 anchor.remove(node)
                 anchor.insert(position, number)
+            elif node.tag == tag('text') and node.get('class') == 'map-number' and circles:
+                node.set('font-size', '13')
+                node.set('y', str(float(circles[-1].get('cy')) + 4.5))
         for icon in anchor.findall(tag('g')):
             if icon.get('class') != 'icon': continue
             paths = [p.get('d', '') for p in icon.iter(tag('path'))]
-            if not any(p.startswith('M-12 12L-10-9') or p.startswith('M-11-15V-1') for p in paths): continue
+            shopping_or_food=any(p.startswith('M-12 12L-10-9') or p.startswith('M-11-15V-1') for p in paths)
             transform = icon.get('transform', '').split(' scale(')[0]
-            icon.set('transform', transform + ' scale(0.62)')
+            icon.set('transform', transform + (' scale(0.52)' if shopping_or_food else ' scale(0.85)'))
             for halo in anchor.findall(tag('ellipse')):
-                halo.set('rx', '18')
-                halo.set('ry', '17')
+                halo.set('rx', '15' if shopping_or_food else '23')
+                halo.set('ry', '14' if shopping_or_food else '20')
     # Geographic dots and tethers must be behind every label, including labels
     # belonging to a different shop. Keep the dot links clickable.
     for panel in root.iter(tag('svg')):
@@ -49,6 +53,14 @@ def polish(svg):
                     background.append(node)
             if len(background): layer.append(background)
         if len(layer): panel.insert(list(panel).index(anchors[0]), layer)
+    for anchor in root.iter(tag('a')):
+        if anchor.get('aria-label')!='押上站：開啟Google Maps': continue
+        halo=anchor.find(tag('ellipse'))
+        if halo is not None and halo.get('cy')=='430.0':
+            anchor.set('transform','translate(0 45)')
+        for line in anchor.findall(tag('path')):
+            if line.get('class')=='leader':
+                line.set('d',line.get('d','').replace('L480.0 430.0','L480.0 475.0').replace('L480.0 395.0','L480.0 475.0'))
     return ET.tostring(root, encoding='unicode')
 
 path = R / 'assets/trip-maps.js'
@@ -57,4 +69,4 @@ for i, item in enumerate(maps, 1):
     item['svg'] = polish(item['svg'])
     (R / f'assets/day-{i}-map.svg').write_text(item['svg'], encoding='utf-8')
 path.write_text('window.TRIP_MAPS = ' + json.dumps(maps, ensure_ascii=False) + ';\n', encoding='utf-8')
-print('All four maps: dots behind text; shop/food icons at 62% size')
+print('All four maps: smaller badges and icons; geographic coordinates preserved')
