@@ -151,18 +151,43 @@ window.TRIP = {
           "detail": "依孩子食慾及候位狀況挑選餐廳。"
         },
         {
+          "time": "午餐後｜預留20～30分鐘",
+          "activity": "GOOD DESIGN STORE TOKYO by NOHARA",
+          "detail": "東京站丸之內南口 → KITTE 3F，逛設計生活用品；營業11:00～20:00。逛完步行往有樂町，不需再搭JR。",
+          "links": [
+            {
+              "name": "GOOD DESIGN STORE（Notion）",
+              "url": "https://app.notion.com/p/shen0910/3f8400d1c43e81b2b8b9f00f64485e26"
+            }
+          ]
+        },
+        {
           "time": "下午",
-          "activity": "BicCamera 有樂町 → 3COINS＋plus 西銀座店 → 銀座 LOFT",
-          "detail": "東京站搭JR至有樂町，依購物順序步行；3COINS位於西銀座百貨2F，營業11:00～20:00。",
+          "activity": "BicCamera 有樂町",
+          "detail": "從KITTE步行往有樂町，先逛BicCamera；購物時間依孩子體力調整。",
           "links": [
             {
               "name": "BicCamera 有樂町",
               "url": "https://www.google.com/maps/search/?api=1&query=Bic+Camera+Yurakucho"
-            },
+            }
+          ]
+        },
+        {
+          "time": "下午｜預留15～20分鐘",
+          "activity": "GODIVA Bakery 有樂町本店",
+          "detail": "東京交通會館1F，買麵包當點心；營業11:00～20:00，排隊與售完狀況依當日現場。",
+          "links": [
             {
-              "name": "3COINS＋plus 西銀座店｜地圖",
-              "url": "https://www.google.com/maps/search/?api=1&query=3COINS%2Bplus+西銀座店"
-            },
+              "name": "GODIVA Bakery（Notion）",
+              "url": "https://app.notion.com/p/shen0910/3f8400d1c43e8138b0eedcb8a1c6286c"
+            }
+          ]
+        },
+        {
+          "time": "下午",
+          "activity": "3COINS＋plus 西銀座店 → 銀座 LOFT",
+          "detail": "西銀座百貨2F逛3COINS，再往銀座LOFT；3COINS營業11:00～20:00。",
+          "links": [
             {
               "name": "3COINS 購物清單（Notion）",
               "url": "https://app.notion.com/p/shen0910/3ca400d1c43e8147a079f3f4c71a8ff8?v=3cb400d1c43e815186c1000c6b8ca57c&source=copy_link"
@@ -189,9 +214,20 @@ window.TRIP = {
           ]
         },
         {
+          "time": "傍晚｜預留20～30分鐘",
+          "activity": "Dover Street Market 銀座",
+          "detail": "銀座6-9-5 銀座小松西館，逛時裝與潮流選物；營業11:00～20:00，再往博品館。",
+          "links": [
+            {
+              "name": "Dover Street Market（Notion）",
+              "url": "https://app.notion.com/p/shen0910/3f8400d1c43e81449e52d657c6bc5cf5"
+            }
+          ]
+        },
+        {
           "time": "傍晚｜預留45～60分鐘",
           "activity": "博品館玩具公園銀座本店",
-          "detail": "接在SABON之後；1F～4F逛玩具，4F賽車現行¥300／5分鐘。營業至20:00，依孩子體力調整。",
+          "detail": "接在Dover Street Market之後；1F～4F逛玩具，4F賽車現行¥300／5分鐘。營業至20:00，依孩子體力調整。",
           "links": [
             {
               "name": "博品館玩具公園（Notion）",
@@ -211,7 +247,7 @@ window.TRIP = {
           ]
         }
       ],
-      "note": "東京站 → BicCamera → 西銀座3COINS → LOFT → MUJI → SABON → 博品館；購物時間彈性調整，留45～60分鐘逛玩具。"
+      "note": "東京站 → KITTE GOOD DESIGN → BicCamera → GODIVA Bakery → 西銀座3COINS → LOFT → MUJI → SABON → Dover Street Market → 博品館；新增店家合計預留55～80分鐘，不含排隊。"
     },
     {
       "date": "11.14",
