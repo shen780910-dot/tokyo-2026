@@ -96,6 +96,66 @@ def polish(svg):
             if moved=='translate(0 45)': cy-=45
             badge.set('cx',str(cx));badge.set('cy',str(cy))
             number.set('x',str(cx));number.set('y',str(cy+4))
+    for panel in root.iter(tag('svg')):
+        geographic={}
+        for layer in panel.findall(tag('g')):
+            if layer.get('class')!='map-geographic-anchors': continue
+            for anchor in layer.findall(tag('a')):
+                dot=anchor.find(tag('circle')+'[@r="3.5"]')
+                if dot is not None: geographic[anchor.get('aria-label')]=(anchor,dot)
+        for anchor in panel.findall(tag('a')):
+            icon=anchor.find(tag('g')+'[@class="icon"]')
+            halo=anchor.find(tag('ellipse'))
+            if icon is None or halo is None: continue
+            station=icon.find(tag('rect')) is not None
+            stay=any(n.get('d','').startswith('M-17-1L0-17') for n in icon.findall(tag('path')))
+            pair=geographic.get(anchor.get('aria-label'))
+            if not (station or stay) or pair is None: continue
+            background,dot=pair
+            ax,ay=float(dot.get('cx')),float(dot.get('cy'))
+            shift_y=45 if anchor.get('transform')=='translate(0 45)' else 0
+            if shift_y:
+                anchor.attrib.pop('transform',None)
+                for text in anchor.findall(tag('g')):
+                    if 'text-shape' in text.get('class',''):
+                        text.set('transform','translate(0 45) '+text.get('transform',''))
+                for hit in anchor.findall(tag('rect')): hit.set('y',str(float(hit.get('y'))+45))
+                number=anchor.find(tag('text')+'[@class="map-number"]')
+                badge=anchor.find(tag('circle')+'[@r="9"]')
+                if number is not None:number.set('y',str(float(number.get('y'))+45))
+                if badge is not None:badge.set('cy',str(float(badge.get('cy'))+45))
+            icon.set('transform',f'translate({ax} {ay}) scale(0.92)')
+            icon.set('data-direct-location','true')
+            halo.set('cx',str(ax));halo.set('cy',str(ay));halo.set('data-direct-location','true')
+            dot.set('visibility','hidden')
+            hits=anchor.findall(tag('rect'))
+            icon_hit=next((n for n in hits if n.get('width')=='48'),None)
+            if icon_hit is not None:
+                icon_hit.set('x',str(ax-24));icon_hit.set('y',str(ay-24))
+            label_hit=next((n for n in hits if n.get('width')!='48'),None)
+            if label_hit is None:continue
+            lx,ly=float(label_hit.get('x'))+5,float(label_hit.get('y'))+26
+            if stay and anchor.get('data-label-at-location')!='true':
+                dx,dy=ax+36-lx,ay-8-ly
+                for text in anchor.findall(tag('g')):
+                    if 'text-shape' in text.get('class',''):
+                        text.set('transform',f'translate({dx} {dy}) '+text.get('transform',''))
+                label_hit.set('x',str(float(label_hit.get('x'))+dx))
+                label_hit.set('y',str(float(label_hit.get('y'))+dy))
+                lx+=dx;ly+=dy
+                anchor.set('data-label-at-location','true')
+            for line in background.findall(tag('path')):
+                if line.get('class')=='leader':line.set('d',f'M{ax} {ay}L{lx-10} {ly-5}')
+        # Other nearby geographic dots remain visible in front of directly
+        # placed station/stay artwork; their coordinates remain unchanged.
+        foreground=panel.find(tag('g')+'[@class="map-visible-dots"]')
+        if foreground is None:
+            foreground=ET.Element(tag('g'),{'class':'map-visible-dots'})
+            panel.append(foreground)
+        for background,dot in geographic.values():
+            if dot.get('visibility')=='hidden':continue
+            background.remove(dot)
+            link=ET.SubElement(foreground,tag('a'),dict(background.attrib));link.append(dot)
     return ET.tostring(root, encoding='unicode')
 
 path = R / 'assets/trip-maps.js'
