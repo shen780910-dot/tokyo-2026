@@ -247,9 +247,20 @@ window.TRIP = {
           ]
         },
         {
+          "time": "18:30～19:30｜暫定",
+          "activity": "札幌 DOMINICA 銀座店｜晚餐",
+          "detail": "湯咖哩晚餐，京橋3-4-1 TM銀座大樓2F。博品館後步行前往，預留約15～20分鐘；平日晚餐17:30～21:00，最後點餐20:30。孩子餐點先向店員確認不辣口味，2F需留意樓梯與推車。",
+          "links": [
+            {
+              "name": "札幌 DOMINICA｜官方資訊",
+              "url": "https://sai-dominica.com/"
+            }
+          ]
+        },
+        {
           "time": "晚上",
           "activity": "回飯店整理戰利品",
-          "detail": "博品館附近步行至新橋站，搭銀座線至稻荷町，再步行回飯店。",
+          "detail": "晚餐後步行至京橋站，搭銀座線直達稻荷町，再步行回飯店。",
           "links": [
             {
               "name": "住宿資訊・入住核對（Notion）",
@@ -258,7 +269,7 @@ window.TRIP = {
           ]
         }
       ],
-      "note": "東京站 → KITTE GOOD DESIGN → BicCamera → GODIVA Bakery → 西銀座3COINS → LOFT → MUJI → SABON → 銀座木村家 → Dover Street Market → 博品館；麵包店各留短暫採買時間，依孩子體力安排休息。"
+      "note": "東京站 → KITTE GOOD DESIGN → BicCamera → GODIVA Bakery → 西銀座3COINS → LOFT → MUJI → SABON → 銀座木村家 → Dover Street Market → 博品館 → DOMINICA晚餐；京橋站搭銀座線回稻荷町，依孩子體力安排休息。"
     },
     {
       "date": "11.14",
