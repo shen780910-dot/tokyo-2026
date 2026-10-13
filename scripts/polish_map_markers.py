@@ -63,7 +63,7 @@ def polish(svg):
                 line.set('d',line.get('d','').replace('L480.0 430.0','L480.0 475.0').replace('L480.0 395.0','L480.0 475.0'))
     for line in root.iter(tag('path')):
         if line.get('class')=='leader':
-            line.set('style','stroke:#63734f;stroke-width:1.8;stroke-dasharray:4 3;stroke-linecap:round;fill:none')
+            line.set('style','stroke:#536377;stroke-width:1.1;stroke-linecap:round;fill:none')
     for text in root.iter(tag('g')):
         if 'sub' not in text.get('class','').split() or text.get('data-compact-gray')=='true': continue
         path=text.find(tag('path'))
