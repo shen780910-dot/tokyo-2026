@@ -185,60 +185,19 @@ window.TRIP = {
         },
         {
           "time": "下午",
-          "activity": "3COINS＋plus 西銀座店 → 銀座 LOFT",
-          "detail": "西銀座百貨2F逛3COINS，再往銀座LOFT；3COINS營業11:00～20:00。",
+          "activity": "3COINS＋plus 西銀座店",
+          "detail": "西銀座百貨2F，營業11:00～20:00；逛完先往南到博品館，再一路往北逛回銀座。",
           "links": [
             {
               "name": "3COINS 購物清單（Notion）",
               "url": "https://app.notion.com/p/shen0910/3ca400d1c43e8147a079f3f4c71a8ff8?v=3cb400d1c43e815186c1000c6b8ca57c&source=copy_link"
-            },
-            {
-              "name": "銀座 LOFT（Notion）",
-              "url": "https://app.notion.com/p/shen0910/3f7400d1c43e81d193f4f5a37cf1a4f7"
             }
           ]
         },
         {
-          "time": "下午",
-          "activity": "MUJI 銀座・SABON",
-          "detail": "沿銀座街區購物，採買後安排休息。",
-          "links": [
-            {
-              "name": "無印良品銀座（Notion）",
-              "url": "https://app.notion.com/p/shen0910/3f7400d1c43e816aa056fd17fbecc49c?v=2a203442749e47828d508eed340686a7&source=copy_link"
-            },
-            {
-              "name": "SABON 銀座松屋通り店",
-              "url": "https://www.google.com/maps/search/?api=1&query=SABON%20%E9%8A%80%E5%BA%A7%E6%9D%BE%E5%B1%8B%E9%80%9A%E3%82%8A%E5%BA%97"
-            }
-          ]
-        },
-        {
-          "time": "下午點心｜預留10～15分鐘",
-          "activity": "銀座木村家紅豆麵包",
-          "detail": "木村屋總本店 銀座本店1F，銀座4-5-7；營業10:00～20:00。逛完SABON後買酒種紅豆麵包，再往Dover Street Market；口味與售完狀況依現場。",
-          "links": [
-            {
-              "name": "銀座木村家（Notion）",
-              "url": "https://app.notion.com/p/shen0910/3c8400d1c43e811693bee0834815e11d"
-            }
-          ]
-        },
-        {
-          "time": "傍晚｜預留20～30分鐘",
-          "activity": "Dover Street Market 銀座",
-          "detail": "銀座6-9-5 銀座小松西館，逛時裝與潮流選物；營業11:00～20:00，再往博品館。",
-          "links": [
-            {
-              "name": "Dover Street Market（Notion）",
-              "url": "https://app.notion.com/p/shen0910/3f8400d1c43e81449e52d657c6bc5cf5"
-            }
-          ]
-        },
-        {
-          "time": "傍晚｜預留45～60分鐘",
+          "time": "下午｜預留45～60分鐘",
           "activity": "博品館玩具公園銀座本店",
-          "detail": "接在Dover Street Market之後；1F～4F逛玩具，4F賽車現行¥300／5分鐘。營業至20:00，依孩子體力調整。",
+          "detail": "3COINS後先到銀座南端；1F～4F逛玩具，4F賽車現行¥300／5分鐘。營業11:00～20:00，依孩子體力調整。",
           "links": [
             {
               "name": "博品館玩具公園（Notion）",
@@ -247,9 +206,58 @@ window.TRIP = {
           ]
         },
         {
+          "time": "下午｜預留20～30分鐘",
+          "activity": "Dover Street Market 銀座",
+          "detail": "從博品館往北，逛銀座小松西館時裝與潮流選物；營業11:00～20:00。",
+          "links": [
+            {
+              "name": "Dover Street Market（Notion）",
+              "url": "https://app.notion.com/p/shen0910/3f8400d1c43e81449e52d657c6bc5cf5"
+            }
+          ]
+        },
+        {
+          "time": "下午點心｜預留10～15分鐘",
+          "activity": "銀座木村家紅豆麵包",
+          "detail": "接在Dover Street Market後，木村屋總本店 銀座本店1F買酒種紅豆麵包；營業10:00～20:00，口味與售完狀況依現場。",
+          "links": [
+            {
+              "name": "銀座木村家（Notion）",
+              "url": "https://app.notion.com/p/shen0910/3c8400d1c43e811693bee0834815e11d"
+            }
+          ]
+        },
+        {
+          "time": "下午",
+          "activity": "SABON 銀座松屋通り店",
+          "detail": "木村家後往松屋通り店；營業11:30～20:00，依購物進度安排短暫休息。"
+        },
+        {
+          "time": "下午",
+          "activity": "MUJI 銀座",
+          "detail": "SABON後往無印良品銀座，營業11:00～21:00；繼續往北逛。",
+          "links": [
+            {
+              "name": "無印良品銀座（Notion）",
+              "url": "https://app.notion.com/p/shen0910/3f7400d1c43e816aa056fd17fbecc49c?v=2a203442749e47828d508eed340686a7&source=copy_link"
+            }
+          ]
+        },
+        {
+          "time": "傍晚",
+          "activity": "銀座 LOFT",
+          "detail": "無印良品後逛LOFT，週五營業11:00～21:00；接著前往DOMINICA晚餐，Gurgaon為備案。",
+          "links": [
+            {
+              "name": "銀座 LOFT（Notion）",
+              "url": "https://app.notion.com/p/shen0910/3f7400d1c43e81d193f4f5a37cf1a4f7"
+            }
+          ]
+        },
+        {
           "time": "18:30～19:30｜暫定",
           "activity": "札幌 DOMINICA 銀座店｜晚餐",
-          "detail": "湯咖哩晚餐，京橋3-4-1 TM銀座大樓2F。博品館後步行前往，預留約15～20分鐘；平日晚餐17:30～21:00，最後點餐20:30。孩子餐點先向店員確認不辣口味，2F需留意樓梯與推車。 晚餐備案：Gurgaon 銀座，銀座1-6-13 B1，印度咖哩與起司烤餅；平日晚餐17:00～22:00，最後點餐21:00。兩家擇一，不安排連吃。",
+          "detail": "湯咖哩晚餐，京橋3-4-1 TM銀座大樓2F。銀座LOFT後前往，晚餐兩家都在銀座北側；平日晚餐17:30～21:00，最後點餐20:30。孩子餐點先向店員確認不辣口味，2F需留意樓梯與推車。 晚餐備案：Gurgaon 銀座，銀座1-6-13 B1，印度咖哩與起司烤餅；平日晚餐17:00～22:00，最後點餐21:00。兩家擇一，不安排連吃。",
           "links": [
             {
               "name": "札幌 DOMINICA｜官方資訊",
@@ -273,7 +281,7 @@ window.TRIP = {
           ]
         }
       ],
-      "note": "東京站 → KITTE GOOD DESIGN → BicCamera → GODIVA Bakery → 西銀座3COINS → LOFT → MUJI → SABON → 銀座木村家 → Dover Street Market → 博品館 → DOMINICA晚餐；京橋站搭銀座線回稻荷町，依孩子體力安排休息。"
+      "note": "東京站 → KITTE GOOD DESIGN → BicCamera → GODIVA Bakery → 西銀座3COINS → 博品館 → Dover Street Market → 銀座木村家 → SABON → MUJI → LOFT → DOMINICA晚餐（Gurgaon備案）；先南後北，京橋站搭銀座線回稻荷町。"
     },
     {
       "date": "11.14",
