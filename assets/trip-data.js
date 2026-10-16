@@ -6,7 +6,7 @@ window.TRIP = {
       "date": "11.12",
       "weekday": "THURSDAY",
       "title": "抵達東京・晴空塔",
-      "area": "成田 → 上野新御徒町 → 押上",
+      "area": "成田 → 押上・晴空塔 → 上野新御徒町",
       "status": "proposed",
       "stops": [],
       "schedule": [
@@ -16,82 +16,37 @@ window.TRIP = {
           "detail": "以下時間依出關及機場交通調整。"
         },
         {
-          "time": "中午",
-          "activity": "成田 → 上野 → 飯店寄放行李",
-          "detail": "以 Skyliner 前往京成上野；再前往 MONday Apart 上野新御徒町。",
+          "time": "出關後｜13:00前交件",
+          "activity": "Airporter：兩箱行李寄送飯店",
+          "detail": "規劃採用，尚待預約與飯店代收確認。依訂單指定的成田JAL ABC櫃檯交件；兩箱官方參考共¥5,500，通常20:00後送達飯店。推車、當日衣物及孩子用品隨身帶。",
           "links": [
             {
-              "name": "住宿資訊・入住核對（Notion）",
-              "url": "https://app.notion.com/p/shen0910/a1d400d1c43e8384944e0151ccee1361"
+              "name": "機場交通・行李配送（Notion）",
+              "url": "https://app.notion.com/p/3fa400d1c43e819c970fcbff60e280d0"
             }
           ]
         },
         {
-          "time": "約13:00–14:00",
-          "activity": "やよい軒 東上野店｜暫定午餐",
-          "detail": "飯店往稻荷町方向步行估約6～8分鐘；依抵達時間彈性調整。",
-          "links": [
-            {
-              "name": "やよい軒 東上野店",
-              "url": "https://www.google.com/maps/search/?api=1&query=%E3%82%84%E3%82%88%E3%81%84%E8%BB%92%20%E6%9D%B1%E4%B8%8A%E9%87%8E%E5%BA%97"
-            }
-          ]
+          "time": "交件後｜車程約50～65分鐘",
+          "activity": "Access特急直達押上",
+          "detail": "搭經押上・淺草方向的直通列車，出發前確認目的地；不要搭Skyliner或往京成上野的班次。另留候車時間，11/12實際班次待確認。兩位成人車資暫抓約¥2,400；4歲幼兒免票，無指定座位。"
         },
         {
-          "time": "午餐後",
-          "activity": "回飯店入住／休息",
-          "detail": "依實際抵達時間及飯店安排入住；會員提早入住資格請看 Notion。",
-          "links": [
-            {
-              "name": "住宿資訊・入住核對（Notion）",
-              "url": "https://app.notion.com/p/shen0910/a1d400d1c43e8384944e0151ccee1361"
-            }
-          ]
-        },
-        {
-          "time": "下午",
-          "activity": "電車前往晴空塔",
-          "detail": "飯店 → 新御徒町站 → 大江戶線至藏前 → 淺草線至押上；預留30～40分鐘。藏前需地面轉乘，推車預留約10分鐘。",
-          "links": [
-            {
-              "name": "新御徒町站",
-              "url": "https://www.google.com/maps/search/?api=1&query=Shin-Okachimachi%20Station"
-            },
-            {
-              "name": "藏前站",
-              "url": "https://www.google.com/maps/search/?api=1&query=Kuramae%20Station"
-            },
-            {
-              "name": "押上站",
-              "url": "https://www.google.com/maps/search/?api=1&query=Oshiage%20Station"
-            }
-          ]
+          "time": "抵達晴空塔後",
+          "activity": "晴空街午餐・休息",
+          "detail": "依出關及列車時間彈性用餐，再開始購物；這天不先去飯店，也不安排やよい軒午餐。"
         },
         {
           "time": "下午",
           "activity": "晴空街 TOMICA・Pokémon Center",
           "detail": "先逛角色商品，依孩子體力保留休息空檔。",
-          "links": [
-            {
-              "name": "TOMICA・PLARAIL SHOP",
-              "url": "https://www.google.com/maps/search/?api=1&query=Tomica%20Plarail%20Shop%20Tokyo%20Solamachi"
-            },
-            {
-              "name": "Pokémon Center SKYTREE TOWN",
-              "url": "https://www.google.com/maps/search/?api=1&query=Pokemon%20Center%20Skytree%20Town"
-            }
-          ]
+          "links": []
         },
         {
           "time": "晚餐",
           "activity": "利久牛舌｜晴空街6F",
           "detail": "館內用餐；候位依現場狀況調整。",
-          "links": [
-            {
-              "name": "利久 東京晴空街店",
-              "url": "https://www.google.com/maps/search/?api=1&query=%E7%89%9B%E3%81%9F%E3%82%93%E7%82%AD%E7%84%BC%20%E5%88%A9%E4%B9%85%20%E6%9D%B1%E4%BA%AC%E3%82%BD%E3%83%A9%E3%83%9E%E3%83%81%E5%BA%97"
-            }
-          ]
+          "links": []
         },
         {
           "time": "晚餐後｜預留20～30分鐘",
@@ -105,9 +60,9 @@ window.TRIP = {
           ]
         },
         {
-          "time": "晚餐後",
-          "activity": "電車回飯店",
-          "detail": "押上 → 淺草線至藏前 → 大江戶線至新御徒町 → 飯店。",
+          "time": "晚餐與採買後｜約30～40分鐘",
+          "activity": "電車至飯店・入住取行李",
+          "detail": "押上 → 都營淺草線至藏前 → 地面步行轉乘大江戶線 → 新御徒町 → 飯店。推車轉乘多留時間；Airporter通常20:00後送達，依實際通知取行李。",
           "links": [
             {
               "name": "住宿資訊・入住核對（Notion）",
@@ -116,7 +71,7 @@ window.TRIP = {
           ]
         }
       ],
-      "note": "午餐暫定やよい軒；晴空塔以電車往返，利久牛舌晚餐後逛LIFE超市再回飯店；抵達日依孩子體力調整，不另排錦糸町採買。"
+      "note": "規劃採用：成田寄兩箱行李，Access特急直達晴空塔，晚上入住。去程配送＋電車暫估NT$1,580，加回程青鳥NT$5,780共約NT$7,360；不含晴空塔至飯店車資。Airporter、飯店代收及青鳥預訂狀態待確認。"
     },
     {
       "date": "11.13",
@@ -397,26 +352,21 @@ window.TRIP = {
       "stops": [],
       "schedule": [
         {
-          "time": "清晨",
-          "activity": "退房、搭乘預約車輛",
-          "detail": "原規劃約06:30–06:45出發；接送時間與集合地點須向業者確認",
+          "time": "07:30｜青鳥建議",
+          "activity": "退房・青鳥接送赴成田",
+          "detail": "回程選用青鳥，單車NT$5,780；業者確認東京07:30出發不加夜間費。預訂、付款及集合位置仍待確認。",
           "links": [
             {
-              "name": "住宿資訊・入住核對（Notion）",
-              "url": "https://app.notion.com/p/shen0910/a1d400d1c43e8384944e0151ccee1361"
+              "name": "機場交通・行李配送（Notion）",
+              "url": "https://app.notion.com/p/3fa400d1c43e819c970fcbff60e280d0"
             }
           ]
         },
         {
-          "time": "上午",
+          "time": "約08:40～09:00",
           "activity": "前往成田機場",
-          "detail": "預留報到、托運、安檢與出境時間",
-          "links": [
-            {
-              "name": "成田機場",
-              "url": "https://www.google.com/maps/search/?api=1&query=Narita%20International%20Airport"
-            }
-          ]
+          "detail": "車程按70～90分鐘估算，依路況調整；抵達後辦理11:25起飛的IT201報到與安檢。",
+          "links": []
         },
         {
           "time": "11:25–14:45",
@@ -424,7 +374,7 @@ window.TRIP = {
           "detail": "航廈與行李額度依航空公司最新通知核對"
         }
       ],
-      "note": "前晚整理行李；包車接送時間與集合地點待確認。"
+      "note": "前晚整理行李；回程選用青鳥，建議07:30出發，估08:40～09:00抵達成田。訂車、付款、增高墊與集合位置待確認。"
     }
   ],
   "checklist": [
@@ -470,11 +420,11 @@ window.TRIP = {
     },
     {
       "id": "booked-20261011-5",
-      "text": "確認回程包車接送時間與集合地點"
+      "text": "確認11/15青鳥07:30送機：預訂、付款、增高墊及集合位置"
     },
     {
       "id": "booked-20261011-6",
-      "text": "確認成田往市區交通、行李寄放與每日動線"
+      "text": "確認11/12成田Access特急經押上直通班次及13:00前行李交件"
     },
     {
       "id": "booked-20261011-7",
@@ -490,7 +440,7 @@ window.TRIP = {
     },
     {
       "id": "shopping-skytree",
-      "text": "晴空街：TOMICA・Pokémon Center；やよい軒午餐暫定"
+      "text": "晴空街午餐、TOMICA・Pokémon Center、利久牛舌與LIFE超市"
     },
     {
       "id": "shopping-tokyo-ginza",
@@ -503,6 +453,18 @@ window.TRIP = {
     {
       "id": "shopping-harajuku",
       "text": "原宿：HOKA、New Balance、3COINS"
+    },
+    {
+      "id": "airporter-booking",
+      "text": "事前預約Airporter，確認航廈櫃檯、13:00交件與延誤處理"
+    },
+    {
+      "id": "airporter-receipt",
+      "text": "請飯店同意入住前代收兩箱，確認20:00後送達及取件方式"
+    },
+    {
+      "id": "airporter-luggage",
+      "text": "兩箱裝滿後各不超過160cm／30kg；推車與當日必需品隨身帶"
     }
   ]
 };
