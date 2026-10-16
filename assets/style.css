@@ -20,3 +20,5 @@
  .map-caption:before{content:none}
 }
 .header-controls{display:flex;align-items:center;gap:10px;flex-shrink:0}.site-version{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:var(--muted);white-space:nowrap;padding:8px 0}.site-version:hover{text-decoration:underline}@media(max-width:700px){.header-controls{gap:7px}.site-version{font-size:10px}#theme{white-space:nowrap;padding:7px 10px}}
+
+.floor-guide{margin:24px 0 32px;max-width:100%;min-width:0}.floor-guide img{display:block;width:100%;height:auto;max-width:100%}

@@ -43,6 +43,15 @@ try{
    if(!directLocations)throw Error('Station/stay icon does not match geographic coordinates');
    const textOverlaps=await evaluate(`(()=>{const svg=document.querySelector('#day-panel-${day} .map-scroll svg');const labels=[...svg.querySelectorAll('.text-shape.name,.text-shape.sub')].filter(n=>n.closest('a'));const hits=[];for(let i=0;i<labels.length;i++){const a=labels[i],b=a.getBoundingClientRect();for(const c of labels.slice(i+1)){if(a.closest('a')===c.closest('a'))continue;const d=c.getBoundingClientRect();if(Math.min(b.right,d.right)-Math.max(b.left,d.left)>0.5&&Math.min(b.bottom,d.bottom)-Math.max(b.top,d.top)>0.5)hits.push([a.getAttribute('aria-label'),c.getAttribute('aria-label')]);}}return hits;})()`);
    if(textOverlaps.length)throw Error(JSON.stringify({device:device.name,day,textOverlaps}));
+   if(day===1){
+    const floor=await evaluate(`(()=>{const i=document.querySelector('.floor-guide img');if(!i)return null;const b=i.getBoundingClientRect();return {loaded:i.complete&&i.naturalWidth>0,left:b.left,right:b.right,viewport:innerWidth};})()`);
+    if(!floor?.loaded||floor.left<0||floor.right>floor.viewport)throw Error('Floor guide missing or overflowing');
+    if(device.name==='iphone-15'){
+     const clip=await evaluate(`(()=>{const b=document.querySelector('.floor-guide').getBoundingClientRect();return {x:b.left+scrollX,y:b.top+scrollY,width:b.width,height:b.height,scale:1};})()`);
+     const shot=await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true,clip});
+     await fs.writeFile(path.join(root,'previews','iphone-15-skytree-floors.png'),Buffer.from(shot.data,'base64'));
+    }
+   }
    results.push({device:device.name,day,...metrics});
    if(device.name==='iphone-15'||device.name==='desktop'){
     const clip=await evaluate(`(()=>{const b=document.querySelector('#day-panel-${day} .map-scroll').getBoundingClientRect();return {x:b.left+scrollX,y:b.top+scrollY,width:b.width,height:b.height,scale:1};})()`);
