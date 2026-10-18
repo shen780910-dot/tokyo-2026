@@ -4,6 +4,7 @@ GRANSTA/Daimaru publish JPEG maps; those originals are embedded without tracing
 or inventing corridors. Gift Palette's official PDF is converted to vector SVG.
 """
 from pathlib import Path
+from html import escape
 import base64,json,math,xml.etree.ElementTree as ET
 import pymupdf
 R=Path(__file__).resolve().parent.parent
@@ -12,6 +13,13 @@ namespace={'__file__':str(R/'scripts/build_tokyo_station_guide.py')}
 exec((R/'scripts/build_tokyo_station_guide.py').read_text(encoding='utf-8').split('# Regional diagram:')[0],namespace)
 namespace['shops'][3]=(4,'TRIPLE DECKER LONDON',*namespace['shops'][3][2:])
 start,text,system,shop,finish=(namespace[n] for n in ['start','text','system','shop','finish'])
+notion_pages={
+ 1:'3fc400d1c43e8130bdf7f5c1b010fc37',2:'3c8400d1c43e81a985a9c845bfa52374',
+ 3:'3c7400d1c43e81488678d4e80adca25a',4:'3fc400d1c43e816c9f57fe3a3ac985fa',
+ 5:'3fc400d1c43e8102b256e78387891620',6:'3fc400d1c43e8124a778d8226edc756b',
+ 7:'3fc400d1c43e814d9f05c5fc431d8ec0',8:'3fc400d1c43e8190842fd262f79cd702',
+ 10:'3c8400d1c43e815d9915c9c8631d6d0d',
+}
 def data_url(path):
  if path.suffix=='.pdf':
   doc=pymupdf.open(path);page=doc[0];payload=page.get_svg_image().encode();mime='image/svg+xml';width,height=page.rect.width,page.rect.height
@@ -42,6 +50,14 @@ for spec in specs:
   info=namespace['shops'][n-1][2]
   if spec['id']=='gift':info={6:'官方 G32・開心果餅乾',7:'官方 G9・布蕾奶油塔',8:'官方 G8・巧克力夾心餅',9:'官方 G3・奶油費南雪'}[n]
   shop(n,65,legend_y+i*91,26,info=info)
+  link_y=legend_y+i*91
+  if n in notion_pages:
+   href='https://app.notion.com/p/'+notion_pages[n];label='Notion ↗';kind='notion'
+  else:
+   href='https://www.tokyoeki-1bangai.co.jp/shop/detail/?cd=000196';label='官方資訊 ↗';kind='official'
+  brand=escape(namespace['shops'][n-1][1],quote=True)
+  parts.append(f'<a class="shop-detail-link" data-kind="{kind}" data-shop="{n}" href="{escape(href,quote=True)}" target="_blank" rel="noopener noreferrer" aria-label="{brand} {label}"><title>{brand}｜{label}</title><rect x="526" y="{link_y-28}" width="147" height="62" rx="6" fill="#eeeade" stroke="#536377" stroke-width="1.1"/>')
+  system(label,599,link_y+10,21,'#536377','middle');parts.append('</a>')
  y=legend_y+len(spec['shops'])*91+8
  for note in spec['notes']:
   # Two lines avoid reducing the text to an unreadable size on phones.
