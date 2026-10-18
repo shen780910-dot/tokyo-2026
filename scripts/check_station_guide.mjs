@@ -1,0 +1,35 @@
+import {spawn} from 'node:child_process';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {fileURLToPath,pathToFileURL} from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const profile=path.join(root,'.chrome-preview','station-check-'+process.pid);await fs.mkdir(profile,{recursive:true});
+const chrome=spawn('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',['--headless=new','--disable-gpu','--no-sandbox','--remote-debugging-port=0','--user-data-dir='+profile,'about:blank'],{stdio:'ignore'});
+const delay=ms=>new Promise(r=>setTimeout(r,ms));let ws;
+try{
+ let port;for(let i=0;i<60;i++){try{port=(await fs.readFile(path.join(profile,'DevToolsActivePort'),'utf8')).split('\n')[0];break;}catch{}await delay(100);}if(!port)throw Error('Chrome unavailable');
+ const targets=await(await fetch(`http://127.0.0.1:${port}/json/list`)).json();ws=new WebSocket(targets.find(t=>t.type==='page').webSocketDebuggerUrl);await new Promise((resolve,reject)=>{ws.onopen=resolve;ws.onerror=reject;});
+ let id=0;const pending=new Map();ws.onmessage=e=>{const r=JSON.parse(e.data),p=pending.get(r.id);if(p){pending.delete(r.id);r.error?p.reject(Error(JSON.stringify(r.error))):p.resolve(r.result);}};
+ const send=(method,params={})=>new Promise((resolve,reject)=>{pending.set(++id,{resolve,reject});ws.send(JSON.stringify({id,method,params}));});
+ const evaluate=async expression=>(await send('Runtime.evaluate',{expression,returnByValue:true})).result.value;
+ await send('Page.enable');const results=[];
+ for(const device of [{name:'iphone-15',width:390,height:844},{name:'iphone-16-pro',width:402,height:874},{name:'desktop',width:1440,height:1000}]){
+  await send('Emulation.setDeviceMetricsOverride',{width:device.width,height:device.height,deviceScaleFactor:device.name==='desktop'?1:3,mobile:device.name!=='desktop'});
+  await send('Page.navigate',{url:pathToFileURL(path.join(root,'index.html')).href+'#day-2'});
+  for(let i=0;i<60;i++){if(await evaluate(`document.querySelectorAll('.station-floor-tabs button').length===3 && document.readyState==='complete'`))break;await delay(100);}
+  for(const [index,floor,links] of [[0,'b1',3],[1,'1f',7],[2,'gift',4]]){
+   await evaluate(`document.querySelectorAll('.station-floor-tabs button')[${index}].click()`);
+   const metrics=await evaluate(`(()=>{const panel=document.querySelector('.station-guide-canvas');const svg=panel.querySelector('svg');const b=svg.getBoundingClientRect();return {hash:location.hash,active:document.querySelector('.station-floor-tabs [aria-selected="true"]').id,pageWidth:document.documentElement.scrollWidth,left:b.left,right:b.right,links:svg.querySelectorAll('a').length,width:panel.clientWidth};})()`);
+   if(metrics.hash!=='#day-2'||metrics.pageWidth>device.width||metrics.left<0||metrics.right>device.width+1||metrics.links!==links||metrics.active!=='station-floor-'+floor)throw Error(JSON.stringify({device,floor,metrics}));
+   const geometry=await evaluate(`(()=>{const svg=document.querySelector('.station-guide-canvas svg');const shapes=[...svg.querySelectorAll('.text-shape')];const bounds=svg.getBoundingClientRect();const issues=[];for(let i=0;i<shapes.length;i++){const a=shapes[i],b=a.getBoundingClientRect();if(b.right>bounds.right-3||b.left<bounds.left+3)issues.push({overflow:a.getAttribute('aria-label')});for(const c of shapes.slice(i+1)){const d=c.getBoundingClientRect();if(Math.min(b.right,d.right)-Math.max(b.left,d.left)>1&&Math.min(b.bottom,d.bottom)-Math.max(b.top,d.top)>1)issues.push({overlap:[a.getAttribute('aria-label'),c.getAttribute('aria-label')]});}}return issues;})()`);
+   if(geometry.length)throw Error(JSON.stringify({device:device.name,floor,geometry}));
+   if(device.name==='iphone-15'||device.name==='desktop'){
+    const clip=await evaluate(`(()=>{const b=document.querySelector('.station-guide-canvas').getBoundingClientRect();return {x:b.left+scrollX,y:b.top+scrollY,width:b.width,height:b.height,scale:1};})()`);
+    const shot=await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true,clip});await fs.writeFile(path.join(root,'previews',device.name+'-station-'+floor+'.png'),Buffer.from(shot.data,'base64'));
+   }
+   results.push({device:device.name,floor,links,overflow:false});
+  }
+  const keyboard=await evaluate(`(()=>{const tab=document.querySelector('#station-floor-gift');tab.dispatchEvent(new KeyboardEvent('keydown',{key:'Home',bubbles:true}));return document.activeElement.id==='station-floor-b1'&&document.querySelector('#station-floor-b1').getAttribute('aria-selected')==='true'&&location.hash==='#day-2';})()`);if(!keyboard)throw Error('Keyboard navigation failed');
+ }
+ console.log(JSON.stringify(results,null,2));await send('Browser.close');
+}finally{ws?.close();chrome.kill();}

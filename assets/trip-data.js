@@ -99,21 +99,70 @@ window.TRIP = {
           ]
         },
         {
-          "time": "上午",
-          "activity": "Gift Palette・東京おかしランド・GRANSTA",
-          "detail": "伴手禮採買；GRANSTA部分店位於JR付費區，留意票券與進出站。",
+          "time": "上午｜站區合計預留約3小時",
+          "activity": "JR改札內｜Ivorish → Maple Mania",
+          "detail": "搭JR抵達後暫時不要出站。先到B1丸之內改札內逛Ivorish MAISON，再回1F吹拔區逛The Maple Mania；買完從1F八重洲北口出JR。候選全部保留，現場可跳過；先別進新幹線轉乘口。",
           "links": [
             {
-              "name": "Gift Palette",
-              "url": "https://www.google.com/maps/search/?api=1&query=Tokyo%20Gift%20Palette"
+              "name": "Ivorish MAISON（Notion）",
+              "url": "https://app.notion.com/p/3fc400d1c43e8130bdf7f5c1b010fc37"
             },
             {
-              "name": "東京おかしランド",
-              "url": "https://www.google.com/maps/search/?api=1&query=Tokyo%20Okashi%20Land"
+              "name": "The Maple Mania（Notion）",
+              "url": "https://app.notion.com/p/3c8400d1c43e81a985a9c845bfa52374"
+            }
+          ]
+        },
+        {
+          "time": "10:00開門後｜大丸",
+          "activity": "大丸東京｜1F兩間 → B1 PRESS",
+          "detail": "八重洲北口出站後，先逛1F TRIPLE DECKER LONDON、N.Y.C.SAND，再由大丸館內下B1找PRESS BUTTER SAND。三間全列候選，排隊太久可直接跳過；逛完回1F前往Gift Palette。",
+          "links": [
+            {
+              "name": "TRIPLE DECKER LONDON（Notion）",
+              "url": "https://app.notion.com/p/3fc400d1c43e816c9f57fe3a3ac985fa"
             },
             {
-              "name": "GRANSTA TOKYO",
-              "url": "https://www.google.com/maps/search/?api=1&query=Gransta%20Tokyo"
+              "name": "N.Y.C.SAND｜大丸官方資訊",
+              "url": "https://www.daimaru.co.jp/tokyo/nycsand/"
+            },
+            {
+              "name": "PRESS BUTTER SAND（Notion）",
+              "url": "https://app.notion.com/p/3c7400d1c43e81488678d4e80adca25a"
+            }
+          ]
+        },
+        {
+          "time": "上午｜Gift Palette 1F",
+          "activity": "PISTA・BRULEE MERIZE・VANILLABEANS・Butter Butler",
+          "detail": "都在JR改札外，四間現場選。官方櫃位G32＝PISTA、G9＝BRULEE MERIZE、G8＝VANILLABEANS、G3＝Butter Butler；可切換上方Gift放大圖。下午繼續銀座採買，冷藏甜點優先現吃或確認保冷條件。",
+          "links": [
+            {
+              "name": "PISTA & TOKYO（Notion）",
+              "url": "https://app.notion.com/p/3fc400d1c43e8124a778d8226edc756b"
+            },
+            {
+              "name": "BRULEE MERIZE（Notion）",
+              "url": "https://app.notion.com/p/3fc400d1c43e814d9f05c5fc431d8ec0"
+            },
+            {
+              "name": "VANILLABEANS（Notion）",
+              "url": "https://app.notion.com/p/3fc400d1c43e8190842fd262f79cd702"
+            },
+            {
+              "name": "Butter Butler｜官方店舖資訊",
+              "url": "https://www.tokyoeki-1bangai.co.jp/shop/detail/?cd=000196"
+            }
+          ]
+        },
+        {
+          "time": "午餐前｜B1",
+          "activity": "東京おかしランド｜Calbee＋等零食",
+          "detail": "從Gift Palette旁H樓梯／電扶梯到B1「いちばんプラザ」前，再往東京おかしランド；推車依現場電梯指標。Calbee＋等零食全部現場自由選，逛完用餐，再找自由通路往丸之內側接KITTE，不需重新刷進JR。",
+          "links": [
+            {
+              "name": "Calbee＋（Notion）",
+              "url": "https://app.notion.com/p/3c8400d1c43e815d9915c9c8631d6d0d"
             }
           ]
         },
@@ -253,7 +302,7 @@ window.TRIP = {
           ]
         }
       ],
-      "note": "東京站 → KITTE GOOD DESIGN → BicCamera → GODIVA Bakery → 西銀座3COINS → 博品館 → Dover Street Market → 銀座木村家 → SABON → MUJI → LOFT → DOMINICA晚餐（Gurgaon備案）；先南後北，京橋站搭銀座線回稻荷町。"
+      "note": "東京站上午採買全部列候選、現場自由跳過：JR內Ivorish與Maple Mania → 八重洲北口出站 → 大丸1F TRIPLE DECKER與N.Y.C.SAND、B1 PRESS → Gift Palette四間 → B1東京おかしランド。午餐後接KITTE、有樂町與銀座；其餘行程依採買進度調整。"
     },
     {
       "date": "11.14",
