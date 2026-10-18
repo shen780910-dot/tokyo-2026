@@ -99,7 +99,7 @@ window.TRIP = {
           ]
         },
         {
-          "time": "上午｜站區合計預留約3小時",
+          "time": "上午｜站區採買與動漫街預留約3.5～4小時",
           "activity": "JR改札內｜Ivorish → Maple Mania",
           "detail": "搭JR抵達後暫時不要出站。先到B1丸之內改札內逛Ivorish MAISON，再回1F吹拔區逛The Maple Mania；買完從1F八重洲北口出JR。候選全部保留，現場可跳過；先別進新幹線轉乘口。",
           "links": [
@@ -156,9 +156,20 @@ window.TRIP = {
           ]
         },
         {
+          "time": "午餐前｜B1・預留30～45分鐘",
+          "activity": "東京動漫街｜Tomica・JUMP・龍貓・吉伊卡哇",
+          "detail": "從Gift Palette旁H階梯／電扶梯下B1，到いちばんプラザ附近，先逛（10）東京動漫街；推車使用電梯。Tomica／Plarail C7、JUMP SHOP C6、どんぐり共和国C12、吉伊卡哇C21全部列候選，現場依喜好選。寶可夢C34在1F，可視時間跳過。逛完沿北通り往銀の鈴／八重洲地下中央口方向，接南通り到（11）東京おかしランド，全程在JR改札外。",
+          "links": [
+            {
+              "name": "東京站・動漫街資料（Notion）",
+              "url": "https://app.notion.com/p/3c8400d1c43e816584cad44baa840f92"
+            }
+          ]
+        },
+        {
           "time": "午餐前｜B1",
           "activity": "東京おかしランド｜Calbee＋等零食",
-          "detail": "從Gift Palette旁H樓梯／電扶梯到B1「いちばんプラザ」前，再往東京おかしランド；推車依現場電梯指標。Calbee＋等零食全部現場自由選，逛完用餐，再找自由通路往丸之內側接KITTE，不需重新刷進JR。",
+          "detail": "接在（10）動漫街之後：沿北通り往銀の鈴／八重洲地下中央口方向，經改札外通路接南通り，前往（11）東京おかしランド的Calbee＋G47；不用重新刷進JR。零食現場自由選，逛完用餐，再找自由通路往丸之內側接KITTE。",
           "links": [
             {
               "name": "Calbee＋（Notion）",
@@ -302,7 +313,7 @@ window.TRIP = {
           ]
         }
       ],
-      "note": "東京站上午採買全部列候選、現場自由跳過：JR內Ivorish與Maple Mania → 八重洲北口出站 → 大丸1F TRIPLE DECKER與N.Y.C.SAND、B1 PRESS → Gift Palette四間 → B1東京おかしランド。午餐後接KITTE、有樂町與銀座；其餘行程依採買進度調整。"
+      "note": "東京站上午採買全部列候選、現場自由跳過：JR內Ivorish與Maple Mania → 八重洲北口出站 → 大丸1F TRIPLE DECKER與N.Y.C.SAND、B1 PRESS → Gift Palette四間 → B1動漫街（預留30～45分鐘）→ 東京おかしランド。午餐後接KITTE、有樂町與銀座；其餘行程依採買進度調整。"
     },
     {
       "date": "11.14",

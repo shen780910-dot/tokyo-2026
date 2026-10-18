@@ -12,6 +12,7 @@ sources=R/'previews/official-floor-sources'
 namespace={'__file__':str(R/'scripts/build_tokyo_station_guide.py')}
 exec((R/'scripts/build_tokyo_station_guide.py').read_text(encoding='utf-8').split('# Regional diagram:')[0],namespace)
 namespace['shops'][3]=(4,'TRIPLE DECKER LONDON',*namespace['shops'][3][2:])
+namespace['shops'].append((11,'東京動漫街','B1 改札外・角色商品街','角色商店現場自由選','Tokyo Character Street'))
 start,text,system,shop,finish=(namespace[n] for n in ['start','text','system','shop','finish'])
 notion_pages={
  1:'3fc400d1c43e8130bdf7f5c1b010fc37',2:'3c8400d1c43e81a985a9c845bfa52374',
@@ -19,6 +20,7 @@ notion_pages={
  5:'3fc400d1c43e8102b256e78387891620',6:'3fc400d1c43e8124a778d8226edc756b',
  7:'3fc400d1c43e814d9f05c5fc431d8ec0',8:'3fc400d1c43e8190842fd262f79cd702',
  10:'3c8400d1c43e815d9915c9c8631d6d0d',
+ 11:'3c8400d1c43e816584cad44baa840f92',
 }
 def data_url(path):
  if path.suffix=='.pdf':
@@ -35,6 +37,7 @@ specs=[
  dict(id='okashi',label='零食B1',file='tokyo-station-okashi.svg',title='東京おかしランド・B1',subtitle='紅色10是Calbee＋；在八重洲地下中央口外',source='東京站一番街 官方零食區樓層圖（PDF轉SVG）',url='https://www.tokyoeki-1bangai.co.jp/assets/pdf/floorMap_okashi.pdf',base='okashi.pdf',crop=(160,80,520,250),pins=[(10,620,252,18,24)],shops=[10],notes=['Calbee＋對應官方G47，圖右側綠色區域。','從H下B1後，沿一番街通路找「東京おかしランド」。']),
  dict(id='overview',label='站區總覽',file='tokyo-station-overview.svg',title='東京站・1F 站區總覽',subtitle='保留官方JR閘門、大丸與Gift Palette的實際關係',source='東京站一番街 官方1F周邊圖',url='https://www.tokyoeki-1bangai.co.jp/tokyogiftpalette/',base='station-1f.png',crop=(0,0,1044,724),pins=[],shops=[],notes=['先在JR內買完兩間，再找「八重洲北口」。','大丸與Gift Palette都在改札外；往丸之內找北自由通路。']),
 ]
+specs.append(dict(id='character',label='動漫B1',file='tokyo-station-character.svg',title='東京動漫街・B1 改札外',subtitle='10動漫街｜H下樓先逛這區，再往11零食區',source='東京站一番街 官方動漫街樓層圖（PDF轉SVG）',url='https://www.tokyoeki-1bangai.co.jp/assets/pdf/floorMap_chara.pdf',base='character.pdf',crop=(105,105,620,205),pins=[(11,466,228,0,30)],shops=[11],notes=['C7 Tomica・C6 JUMP・C12龍貓・C21吉伊卡哇。','寶可夢C34在1F，不在這張B1圖；可現場跳過。']))
 out=[]
 route_styles={
  'b1':[('1→2','#b44732')],
@@ -79,25 +82,36 @@ wayfinding={
  'overview':dict(points=[],nodes=[],steps=['本次樓層順序：JR B1→JR 1F→大丸1F→大丸B1→Gift 1F→零食B1。','A＝JR吹拔區B1／1F電扶梯；E＝同區電梯；B＝八重洲北口。','C＝大丸食品區中央電扶梯；H＝Gift Palette旁下B1的官方階梯代號。','彩色虛線是依官方圖判讀的步行方向；遇單向電扶梯、管制或施工，依現場標示調整。']),
 }
 # Numbers follow the walk, rather than the historical order of shop records.
-renumber={3:5,4:3,5:4}
+renumber={3:5,4:3,5:4,10:11,11:10}
 namespace['shops']=sorted([(renumber.get(n,n),*row) for n,*row in namespace['shops']])
 notion_pages={renumber.get(n,n):page for n,page in notion_pages.items()}
 for floor,route in wayfinding.items():
- route['steps']=[re.sub(r'（([345])）',lambda m:f'（{renumber[int(m[1])]}）',step).replace('採買順序為4→5→3→6','採買順序為3→4→5→6') for step in route['steps']]
+ route['steps']=[re.sub(r'（(3|4|5|10)）',lambda m:f'（{renumber[int(m[1])]}）',step).replace('採買順序為4→5→3→6','採買順序為3→4→5→6') for step in route['steps']]
 for floor,styles in route_styles.items():
  route_styles[floor]=[(re.sub(r'(?<!\d)[345](?!\d)',lambda m:str(renumber[int(m[0])]),label),color) for label,color in styles]
 wayfinding['daimarub1']['extra']=[[(969,380),(1010,385),(1100,385),(1130,365),(1195,365)]]
 route_styles['daimarub1'].append(('5→C回1F→6','#7a634b'))
+wayfinding['gift']['steps'][-1]='H下到B1後先切「動漫B1」，逛（10）東京動漫街；逛完再沿通路往（11）零食區。'
+wayfinding['character']=dict(points=[(400,223),(425,223),(425,208),(466,208),(466,228)],extra=[[(466,228),(466,208),(400,208),(280,208),(140,208)]],nodes=[('H',400,223,-20,-25)],steps=[
+ '從Gift Palette的H階梯／電扶梯下到B1，到「いちばんプラザ」附近，即（10）動漫街；不用進JR改札。',
+ '預留30～45分鐘自由逛，Tomica／Plarail C7、JUMP SHOP C6、どんぐり共和国（龍貓）C12、吉伊卡哇C21都列候選，依喜好現場選。',
+ '寶可夢商店C34在1F，並非B1；已安排晴空塔及澀谷寶可夢，可視時間跳過這間。熱門店的整理券或入場規則以當日公告為準。',
+ '逛完沿「北通り」往銀の鈴／八重洲地下中央口方向，接「南通り」前往（11）Calbee＋。切到「零食B1」接續；全程在改札外。'])
+route_styles['character']=[('9→H下樓→10','#26716b'),('10→11','#7a634b')]
+route_styles['okashi']=[('10→11','#7a634b')]
+wayfinding['okashi']['steps'][0]='從（10）動漫街沿北通り往銀の鈴方向，經八重洲地下中央改札外通路接南通り，找「東京おかしランド」。'
+wayfinding['overview']['steps'][0]='樓層順序：JR B1→JR 1F→大丸1F→大丸B1→Gift 1F→動漫B1→零食B1。'
 walks={
  'b1':'1 Ivorish → A上1F → 下一張接2（推車走E）',
  '1f':'A／E上樓 → 2 Maple Mania → B出站 → 下一張接3',
  'daimaru1f':'JR側入口 → 3 TRIPLE DECKER → 4 N.Y.C.SAND → C下B1',
  'daimarub1':'C下樓 → 5 PRESS → 回C上1F → 下一張接6',
- 'gift':'6 PISTA → 7 BRULEE → 8 VANILLABEANS → 9 Butter Butler → H下B1',
- 'okashi':'沿南通り → 10 Calbee＋ → 東京站採買結束',
- 'overview':'1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10',
+ 'gift':'6 PISTA → 7 BRULEE → 8 VANILLABEANS → 9 Butter Butler → H下B1逛10動漫街',
+ 'character':'H下樓 → 10動漫街（自由逛）→ 沿北通り接11零食區',
+ 'okashi':'從10動漫街過來 → 南通り → 11 Calbee＋ → 午餐',
+ 'overview':'1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10動漫街 → 11零食區',
 }
-specs=sorted(specs,key=lambda s:['b1','1f','daimaru1f','daimarub1','gift','okashi','overview'].index(s['id']))
+specs=sorted(specs,key=lambda s:['b1','1f','daimaru1f','daimarub1','gift','character','okashi','overview'].index(s['id']))
 for spec in specs:
  spec['shops']=[renumber.get(n,n) for n in spec['shops']]
  spec['pins']=[(renumber.get(n,n),*coords) for n,*coords in spec['pins']]
@@ -107,8 +121,8 @@ for spec in specs:
  elif spec['id']=='1f':spec['notes']=['A／E上樓→（2）→B八重洲北口，才出JR。','出站後走大丸1F；不要進新幹線轉乘口。']
  elif spec['id']=='daimaru1f':spec['notes']=['（3）→（4）→C中央電扶梯，走下り到B1。','推車走官方圖下方八重洲側電梯，選B1。']
  elif spec['id']=='daimarub1':spec['notes']=['C下樓→（5）；買完回C，走上り到1F。','回1F往JR側離開大丸，再逛Gift Palette。']
- elif spec['id']=='gift':spec['notes']=['（6）G32→（7）G9→（8）G8→（9）G3。','H在星巴克G2旁，下B1再往東京おかしランド。']
- elif spec['id']=='okashi':spec['notes']=['循南通り到（10）G47，全程在JR改札外。','D是附近階梯地標；與Gift的H不同一組。']
+ elif spec['id']=='gift':spec['notes']=['（6）G32→（7）G9→（8）G8→（9）G3。','H在星巴克G2旁，下B1先逛（10）動漫街。']
+ elif spec['id']=='okashi':spec['subtitle']='11 Calbee＋｜從10動漫街過來，全程改札外';spec['notes']=['從（10）動漫街往南通り，到（11）G47。','D是附近階梯地標；與Gift的H不同一組。']
  uri,source_w,source_h=data_url(sources/spec['base']);cx,cy,cw,ch=spec['crop'];scale=650/cw;map_y=160;map_h=ch*scale;legend_y=map_y+map_h+56
  height=math.ceil(legend_y+len(spec['shops'])*91+168)
  start(spec['title'],spec['subtitle'],height)
@@ -155,4 +169,4 @@ for spec in specs:
  svg=finish();(R/'assets'/spec['file']).write_text(svg,encoding='utf-8')
  out.append({k:spec[k] for k in ['id','label','file','source','url']}|{'svg':svg,'shops':spec['shops'],'steps':route['steps'],'walk':walks[spec['id']],'routes':[{'label':label,'color':color} for label,color in route_styles[spec['id']]]})
 (R/'assets/tokyo-station-guide.js').write_text('window.TOKYO_STATION_GUIDE = '+json.dumps(out,ensure_ascii=False)+';\n',encoding='utf-8')
-print('Built seven official-base SVG guides; original raster bases preserved; official PDFs converted to vector')
+print('Built eight official-base SVG guides including Character Street')
