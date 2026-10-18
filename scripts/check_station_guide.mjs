@@ -11,16 +11,25 @@ try{
  const targets=await(await fetch(`http://127.0.0.1:${port}/json/list`)).json();ws=new WebSocket(targets.find(t=>t.type==='page').webSocketDebuggerUrl);await new Promise((resolve,reject)=>{ws.onopen=resolve;ws.onerror=reject;});
  let id=0;const pending=new Map();ws.onmessage=e=>{const r=JSON.parse(e.data),p=pending.get(r.id);if(p){pending.delete(r.id);r.error?p.reject(Error(JSON.stringify(r.error))):p.resolve(r.result);}};
  const send=(method,params={})=>new Promise((resolve,reject)=>{pending.set(++id,{resolve,reject});ws.send(JSON.stringify({id,method,params}));});
- const evaluate=async expression=>(await send('Runtime.evaluate',{expression,returnByValue:true})).result.value;
+ const evaluate=async expression=>(await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true})).result.value;
  await send('Page.enable');const results=[];
  for(const device of [{name:'iphone-15',width:390,height:844},{name:'iphone-16-pro',width:402,height:874},{name:'desktop',width:1440,height:1000}]){
   await send('Emulation.setDeviceMetricsOverride',{width:device.width,height:device.height,deviceScaleFactor:device.name==='desktop'?1:3,mobile:device.name!=='desktop'});
   await send('Page.navigate',{url:pathToFileURL(path.join(root,'index.html')).href+'#day-2'});
-  for(let i=0;i<60;i++){if(await evaluate(`document.querySelectorAll('.station-floor-tabs button').length===3 && document.readyState==='complete'`))break;await delay(100);}
-  for(const [index,floor,links] of [[0,'b1',3],[1,'1f',7],[2,'gift',4]]){
+  for(let i=0;i<60;i++){if(await evaluate(`document.querySelectorAll('.station-floor-tabs button').length===7 && document.readyState==='complete'`))break;await delay(100);}
+  await evaluate(`document.fonts.ready.then(()=>true)`);
+  const allStops=await evaluate(`JSON.stringify(window.TOKYO_STATION_GUIDE.flatMap(item=>item.shops).sort((a,b)=>a-b))`);
+  if(allStops!==JSON.stringify([1,2,3,4,5,6,7,8,9,10]))throw Error('Shopping stops incomplete or duplicated');
+  if(device.name==='iphone-15'){
+   const clip=await evaluate(`(()=>{const b=document.querySelector('#station-guide-title').getBoundingClientRect();return {x:b.left+scrollX,y:b.top+scrollY,width:b.width,height:b.height,scale:1};})()`);
+   const shot=await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true,clip});await fs.writeFile(path.join(root,'previews','iphone-15-station-heading.png'),Buffer.from(shot.data,'base64'));
+  }
+  for(const [index,floor,links] of [[0,'b1',1],[1,'1f',1],[2,'gift',4],[3,'daimaru1f',2],[4,'daimarub1',1],[5,'okashi',1],[6,'overview',0]]){
    await evaluate(`document.querySelectorAll('.station-floor-tabs button')[${index}].click()`);
-   const metrics=await evaluate(`(()=>{const panel=document.querySelector('.station-guide-canvas');const svg=panel.querySelector('svg');const b=svg.getBoundingClientRect();return {hash:location.hash,active:document.querySelector('.station-floor-tabs [aria-selected="true"]').id,pageWidth:document.documentElement.scrollWidth,left:b.left,right:b.right,links:svg.querySelectorAll('a').length,width:panel.clientWidth};})()`);
-   if(metrics.hash!=='#day-2'||metrics.pageWidth>device.width||metrics.left<0||metrics.right>device.width+1||metrics.links!==links||metrics.active!=='station-floor-'+floor)throw Error(JSON.stringify({device,floor,metrics}));
+   const basesLoaded=await evaluate(`Promise.all([...document.querySelectorAll('.station-guide-canvas image')].map(image=>new Promise(resolve=>{const img=new Image();img.onload=()=>resolve(img.naturalWidth>0);img.onerror=()=>resolve(false);img.src=image.getAttribute('href');}))).then(values=>values.every(Boolean))`);
+   if(!basesLoaded)throw Error('Official floor-plan base failed to load');
+   const metrics=await evaluate(`(()=>{const panel=document.querySelector('.station-guide-canvas');const svg=panel.querySelector('svg');const b=svg.getBoundingClientRect();return {hash:location.hash,active:document.querySelector('.station-floor-tabs [aria-selected="true"]').id,pageWidth:document.documentElement.scrollWidth,left:b.left,right:b.right,links:svg.querySelectorAll('a').length,width:panel.clientWidth,official:svg.querySelectorAll('.official-plan image').length};})()`);
+   if(metrics.hash!=='#day-2'||metrics.pageWidth>device.width||metrics.left<0||metrics.right>device.width+1||metrics.links!==links||metrics.active!=='station-floor-'+floor||metrics.official!==1)throw Error(JSON.stringify({device,floor,metrics}));
    const geometry=await evaluate(`(()=>{const svg=document.querySelector('.station-guide-canvas svg');const shapes=[...svg.querySelectorAll('.text-shape')];const bounds=svg.getBoundingClientRect();const issues=[];for(let i=0;i<shapes.length;i++){const a=shapes[i],b=a.getBoundingClientRect();if(b.right>bounds.right-3||b.left<bounds.left+3)issues.push({overflow:a.getAttribute('aria-label')});for(const c of shapes.slice(i+1)){const d=c.getBoundingClientRect();if(Math.min(b.right,d.right)-Math.max(b.left,d.left)>1&&Math.min(b.bottom,d.bottom)-Math.max(b.top,d.top)>1)issues.push({overlap:[a.getAttribute('aria-label'),c.getAttribute('aria-label')]});}}return issues;})()`);
    if(geometry.length)throw Error(JSON.stringify({device:device.name,floor,geometry}));
    if(device.name==='iphone-15'||device.name==='desktop'){
