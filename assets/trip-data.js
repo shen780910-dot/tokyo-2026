@@ -82,13 +82,13 @@ window.TRIP = {
     {
       "date": "11.13",
       "weekday": "FRIDAY",
-      "title": "東京站・銀座購物",
-      "area": "上野新御徒町 → 東京站 → 有樂町 → 銀座",
+      "title": "東京站・emmi・有樂町",
+      "area": "新御徒町 → 東京站・大丸 → KITTE → 有樂町",
       "status": "proposed",
       "stops": [],
       "schedule": [
         {
-          "time": "上午",
+          "time": "09:00–09:30｜移動估算",
           "activity": "飯店 → 東京站",
           "detail": "步行至御徒町站，搭JR山手線或京濱東北線往東京。",
           "links": [
@@ -99,7 +99,7 @@ window.TRIP = {
           ]
         },
         {
-          "time": "上午｜站區採買與動漫街預留約3.5～4小時",
+          "time": "上午｜東京站區含emmi預留約4～4.5小時",
           "activity": "JR改札內｜Ivorish → Maple Mania",
           "detail": "搭JR抵達後暫時不要出站。先到B1丸之內改札內逛Ivorish MAISON，再回1F吹拔區逛The Maple Mania；買完從1F八重洲北口出JR。候選全部保留，現場可跳過；先別進新幹線轉乘口。",
           "links": [
@@ -116,7 +116,7 @@ window.TRIP = {
         {
           "time": "10:00開門後｜大丸",
           "activity": "大丸東京｜1F兩間 → B1 PRESS",
-          "detail": "八重洲北口出站後，先逛1F TRIPLE DECKER LONDON、N.Y.C.SAND，再由大丸館內下B1找PRESS BUTTER SAND。三間全列候選，排隊太久可直接跳過；逛完回1F前往Gift Palette。",
+          "detail": "八重洲北口出站後，先逛1F TRIPLE DECKER LONDON、N.Y.C.SAND，再下B1找PRESS BUTTER SAND。候選全部保留，排隊太久可跳過；接著上4F逛emmi，再回1F往Gift Palette。",
           "links": [
             {
               "name": "TRIPLE DECKER LONDON（Notion）",
@@ -133,9 +133,20 @@ window.TRIP = {
           ]
         },
         {
-          "time": "上午｜Gift Palette 1F",
+          "time": "大丸採買後｜必逛・預留45～60分鐘",
+          "activity": "emmi｜大丸東京店4F",
+          "detail": "從大丸B1搭館內電梯上4F，逛完再搭電梯回1F接Gift Palette。營業10:00～20:00；指定款式與尺寸依當日庫存。",
+          "links": [
+            {
+              "name": "emmi 大丸東京｜官方店舖資訊",
+              "url": "https://emmi.jp/Page/shoplist/detail/daimarutokyo.aspx"
+            }
+          ]
+        },
+        {
+          "time": "上午～午餐前｜Gift Palette 1F",
           "activity": "PISTA・BRULEE MERIZE・VANILLABEANS・Butter Butler",
-          "detail": "都在JR改札外，四間現場選。官方櫃位G32＝PISTA、G9＝BRULEE MERIZE、G8＝VANILLABEANS、G3＝Butter Butler；可切換上方Gift放大圖。下午繼續銀座採買，冷藏甜點優先現吃或確認保冷條件。",
+          "detail": "都在JR改札外，四間現場選。G32＝PISTA、G9＝BRULEE MERIZE、G8＝VANILLABEANS、G3＝Butter Butler。冷藏甜點優先現吃或確認保冷；若孩子餓了，先吃午餐再繼續採買。",
           "links": [
             {
               "name": "PISTA & TOKYO（Notion）",
@@ -156,9 +167,9 @@ window.TRIP = {
           ]
         },
         {
-          "time": "午餐前｜B1・預留30～45分鐘",
+          "time": "午餐前後｜Tomica／Plarail預留45～60分鐘",
           "activity": "東京動漫街｜Tomica・JUMP・龍貓・吉伊卡哇",
-          "detail": "從Gift Palette旁H階梯／電扶梯下B1，到いちばんプラザ附近，先逛（10）東京動漫街；推車使用電梯。Tomica／Plarail C7、JUMP SHOP C6、どんぐり共和国C12、吉伊卡哇C21全部列候選，現場依喜好選。寶可夢C34在1F，可視時間跳過。逛完沿北通り往銀の鈴／八重洲地下中央口方向，接南通り到（11）東京おかしランド，全程在JR改札外。",
+          "detail": "Gift Palette旁H下B1，到いちばんプラザ附近。主逛Tomica／Plarail東京站專賣店C7，先看專賣店原創款與現場活動；一般款記下型號與價格，到有樂町BC再比價。JUMP C6、龍貓C12、吉伊卡哇C21列自由候選。寶可夢C34在1F，可跳過；活動及整理券依當日公告。逛完沿北通り接南通り，往（11）Calbee＋。",
           "links": [
             {
               "name": "東京站・動漫街資料（Notion）",
@@ -178,9 +189,9 @@ window.TRIP = {
           ]
         },
         {
-          "time": "中午",
+          "time": "中午｜可提前插入",
           "activity": "東京站周邊午餐",
-          "detail": "依孩子食慾及候位狀況挑選餐廳。"
+          "detail": "以孩子食慾為優先，尚未採買完也可先用餐，午餐後再補逛東京站；不必等全部店家逛完。"
         },
         {
           "time": "午餐後｜預留20～30分鐘",
@@ -194,13 +205,13 @@ window.TRIP = {
           ]
         },
         {
-          "time": "下午",
+          "time": "下午｜預留60～90分鐘",
           "activity": "BicCamera 有樂町",
-          "detail": "從KITTE步行往有樂町，先逛BicCamera；購物時間依孩子體力調整。",
+          "detail": "從KITTE步行往有樂町，直上4F玩具區，主買Tomica一般車款、Plarail列車、軌道與套組；比較東京站專賣店記下的型號與價格。特定款先查分店庫存或預留；營業10:00～22:00。",
           "links": [
             {
-              "name": "BicCamera 有樂町",
-              "url": "https://www.google.com/maps/search/?api=1&query=Bic+Camera+Yurakucho"
+              "name": "BicCamera 有樂町｜樓層與預留服務",
+              "url": "https://www.biccamera.com/bc/i/shop/shoplist/shop014.jsp"
             }
           ]
         },
@@ -216,9 +227,9 @@ window.TRIP = {
           ]
         },
         {
-          "time": "下午",
+          "time": "傍晚｜視採買進度",
           "activity": "3COINS＋plus 西銀座店",
-          "detail": "西銀座百貨2F，營業11:00～20:00；逛完先往南到博品館，再一路往北逛回銀座。",
+          "detail": "西銀座百貨2F，營業11:00～20:00；接在有樂町一起逛。博品館、MUJI與LOFT移到隔天，不再當天往銀座南端折返。",
           "links": [
             {
               "name": "3COINS 購物清單（Notion）",
@@ -227,69 +238,9 @@ window.TRIP = {
           ]
         },
         {
-          "time": "下午｜預留45～60分鐘",
-          "activity": "博品館玩具公園銀座本店",
-          "detail": "3COINS後先到銀座南端；1F～4F逛玩具，4F賽車現行¥300／5分鐘。營業11:00～20:00，依孩子體力調整。",
-          "links": [
-            {
-              "name": "博品館玩具公園（Notion）",
-              "url": "https://app.notion.com/p/shen0910/3f7400d1c43e81da8d12dbcdbda3156c"
-            }
-          ]
-        },
-        {
-          "time": "下午｜預留20～30分鐘",
-          "activity": "Dover Street Market 銀座",
-          "detail": "從博品館往北，逛銀座小松西館時裝與潮流選物；營業11:00～20:00。",
-          "links": [
-            {
-              "name": "Dover Street Market（Notion）",
-              "url": "https://app.notion.com/p/shen0910/3f8400d1c43e81449e52d657c6bc5cf5"
-            }
-          ]
-        },
-        {
-          "time": "下午點心｜預留10～15分鐘",
-          "activity": "銀座木村家紅豆麵包",
-          "detail": "接在Dover Street Market後，木村屋總本店 銀座本店1F買酒種紅豆麵包；營業10:00～20:00，口味與售完狀況依現場。",
-          "links": [
-            {
-              "name": "銀座木村家（Notion）",
-              "url": "https://app.notion.com/p/shen0910/3c8400d1c43e811693bee0834815e11d"
-            }
-          ]
-        },
-        {
-          "time": "下午",
-          "activity": "SABON 銀座松屋通り店",
-          "detail": "木村家後往松屋通り店；營業11:30～20:00，依購物進度安排短暫休息。"
-        },
-        {
-          "time": "下午",
-          "activity": "MUJI 銀座",
-          "detail": "SABON後往無印良品銀座，營業11:00～21:00；繼續往北逛。",
-          "links": [
-            {
-              "name": "無印良品銀座（Notion）",
-              "url": "https://app.notion.com/p/shen0910/3f7400d1c43e816aa056fd17fbecc49c?v=2a203442749e47828d508eed340686a7&source=copy_link"
-            }
-          ]
-        },
-        {
-          "time": "傍晚",
-          "activity": "銀座 LOFT",
-          "detail": "無印良品後逛LOFT，週五營業11:00～21:00；接著前往DOMINICA晚餐，Gurgaon為備案。",
-          "links": [
-            {
-              "name": "銀座 LOFT（Notion）",
-              "url": "https://app.notion.com/p/shen0910/3f7400d1c43e81d193f4f5a37cf1a4f7"
-            }
-          ]
-        },
-        {
           "time": "18:30～19:30｜暫定",
           "activity": "札幌 DOMINICA 銀座店｜晚餐",
-          "detail": "湯咖哩晚餐，京橋3-4-1 TM銀座大樓2F。銀座LOFT後前往，晚餐兩家都在銀座北側；平日晚餐17:30～21:00，最後點餐20:30。孩子餐點先向店員確認不辣口味，2F需留意樓梯與推車。 晚餐備案：Gurgaon 銀座，銀座1-6-13 B1，印度咖哩與起司烤餅；平日晚餐17:00～22:00，最後點餐21:00。兩家擇一，不安排連吃。",
+          "detail": "保留原定湯咖哩晚餐：京橋3-4-1 TM銀座大樓2F；從有樂町／西銀座步行前往。週五晚餐17:30～21:00、最後點餐20:30；孩子餐點先確認不辣口味，2F留意樓梯與推車。Gurgaon銀座仍為備案，兩間擇一。",
           "links": [
             {
               "name": "札幌 DOMINICA｜官方資訊",
@@ -313,101 +264,120 @@ window.TRIP = {
           ]
         }
       ],
-      "note": "東京站上午採買全部列候選、現場自由跳過：JR內Ivorish與Maple Mania → 八重洲北口出站 → 大丸1F TRIPLE DECKER與N.Y.C.SAND、B1 PRESS → Gift Palette四間 → B1動漫街（預留30～45分鐘）→ 東京おかしランド。午餐後接KITTE、有樂町與銀座；其餘行程依採買進度調整。"
+      "note": "東京站採買與大丸4F emmi → 午餐 → KITTE → 有樂町BC（Tomica／Plarail）→ GODIVA → 西銀座3COINS → DOMINICA晚餐（Gurgaon備案）。東京站限定款先看、一般款到BC比價；依孩子食慾提前休息。"
     },
     {
       "date": "11.14",
       "weekday": "SATURDAY",
-      "title": "澀谷 PARCO・原宿",
-      "area": "上野新御徒町 → 澀谷 → 原宿・表參道",
+      "title": "銀座購物・原宿試鞋",
+      "area": "新御徒町 → 新橋・銀座 → 明治神宮前・原宿",
       "status": "proposed",
       "stops": [],
       "schedule": [
         {
-          "time": "09:00–10:00",
-          "activity": "飯店 → 澀谷",
-          "detail": "步行至稻荷町站，搭銀座線直達澀谷；預留出站與步行到PARCO時間。",
+          "time": "10:00–11:00｜含移動緩衝",
+          "activity": "飯店 → 新橋 → 博品館",
+          "detail": "步行至御徒町站，搭JR山手線或京濱東北線往新橋；出站後步行到博品館。以11:00開門開始逛銀座。"
+        },
+        {
+          "time": "11:00–11:45｜主要購物點",
+          "activity": "博品館玩具公園銀座本店",
+          "detail": "先從銀座南端逛博品館，再一路往北。營業11:00～20:00；以孩子喜歡的玩具及試玩為主，賽車體驗依當日現場資訊。Tomica／Plarail已在前一天安排兩間，可避免重複採買。",
           "links": [
             {
-              "name": "澀谷站",
-              "url": "https://www.google.com/maps/search/?api=1&query=Shibuya%20Station"
+              "name": "博品館玩具公園（Notion）",
+              "url": "https://app.notion.com/p/shen0910/3f7400d1c43e81da8d12dbcdbda3156c"
             }
           ]
         },
         {
-          "time": "10:00–11:30",
-          "activity": "澀谷 PARCO 6F",
-          "detail": "Pokémon Center SHIBUYA、Nintendo TOKYO。",
+          "time": "11:45–12:15｜彈性候選",
+          "activity": "Dover Street Market 銀座",
+          "detail": "從博品館往北到銀座小松西館，營業11:00～20:00。時間不足時縮短或跳過，優先保留MUJI、LOFT與下午試鞋。",
           "links": [
             {
-              "name": "Pokémon Center SHIBUYA",
-              "url": "https://www.google.com/maps/search/?api=1&query=Pokemon%20Center%20Shibuya"
-            },
-            {
-              "name": "Nintendo TOKYO",
-              "url": "https://www.google.com/maps/search/?api=1&query=Nintendo%20TOKYO"
+              "name": "Dover Street Market（Notion）",
+              "url": "https://app.notion.com/p/shen0910/3f8400d1c43e81449e52d657c6bc5cf5"
             }
           ]
         },
         {
-          "time": "11:30–12:00",
-          "activity": "emmi｜澀谷 PARCO 4F",
-          "detail": "與6F同棟，逛完直接下樓。",
+          "time": "中午順路｜預留10～15分鐘",
+          "activity": "銀座木村家紅豆麵包",
+          "detail": "經過木村屋總本店銀座本店1F時買酒種紅豆麵包；營業10:00～20:00，口味與售完狀況依現場，可視午餐時間跳過。",
           "links": [
             {
-              "name": "emmi 澀谷 PARCO",
-              "url": "https://www.google.com/maps/search/?api=1&query=emmi%20Shibuya%20PARCO"
+              "name": "銀座木村家（Notion）",
+              "url": "https://app.notion.com/p/shen0910/3c8400d1c43e811693bee0834815e11d"
             }
           ]
         },
         {
-          "time": "12:00–13:00",
-          "activity": "澀谷周邊午餐",
-          "detail": "用餐與休息。"
+          "time": "12:30–13:15｜估算",
+          "activity": "銀座周邊午餐",
+          "detail": "安排坐下用餐與休息；候位太久改找附近可立即入座的餐廳，避免壓縮下午試鞋時間。"
         },
         {
-          "time": "13:00後",
-          "activity": "原宿・表參道｜HOKA、New Balance、3COINS",
-          "detail": "澀谷搭JR山手線一站至原宿；依實際購物需求調整步行順序。",
+          "time": "午餐後｜彈性候選",
+          "activity": "SABON 銀座松屋通り店",
+          "detail": "松屋通り店營業11:30～20:00；有明確品項再短暫停留，時間不足可跳過。"
+        },
+        {
+          "time": "13:15–14:15｜主要購物點",
+          "activity": "MUJI 銀座",
+          "detail": "無印良品銀座，營業11:00～21:00。與LOFT接續安排；包含步行緩衝，依前面購物進度調整。",
           "links": [
             {
-              "name": "HOKA 原宿",
-              "url": "https://www.google.com/maps/search/?api=1&query=HOKA%20Harajuku"
-            },
-            {
-              "name": "New Balance 原宿",
-              "url": "https://www.google.com/maps/search/?api=1&query=New%20Balance%20Harajuku"
-            },
-            {
-              "name": "3COINS 原宿本店",
-              "url": "https://www.google.com/maps/search/?api=1&query=3COINS%20Harajuku"
+              "name": "無印良品銀座（Notion）",
+              "url": "https://app.notion.com/p/shen0910/3f7400d1c43e816aa056fd17fbecc49c?v=2a203442749e47828d508eed340686a7&source=copy_link"
             }
           ]
         },
         {
-          "time": "傍晚",
-          "activity": "JR原宿 → 御徒町 → 飯店",
-          "detail": "回飯店休息、整理隔天行李。",
+          "time": "14:15–15:15｜主要購物點",
+          "activity": "銀座 LOFT",
+          "detail": "MUJI後逛銀座LOFT，週六營業11:00～21:00。15:15開始結帳，最晚15:30離開銀座往原宿，保留完整試鞋時間。",
+          "links": [
+            {
+              "name": "銀座 LOFT（Notion）",
+              "url": "https://app.notion.com/p/shen0910/3f7400d1c43e81d193f4f5a37cf1a4f7"
+            }
+          ]
+        },
+        {
+          "time": "15:30–16:15｜含步行、轉乘估算",
+          "activity": "銀座 → 明治神宮前（原宿）",
+          "detail": "從銀座站搭銀座線往澀谷方向，在表參道轉千代田線往代代木上原方向，一站到明治神宮前。帶推車依現場電梯指標，移動預留45分鐘。"
+        },
+        {
+          "time": "16:15–17:15｜主要購物點",
+          "activity": "HOKA 原宿｜試鞋",
+          "detail": "明治神宮前站出站後步行到HOKA，營業11:00～20:00。預留試穿、找尺寸與結帳；若候位較久，避免延誤後面的NB。"
+        },
+        {
+          "time": "17:15–18:30｜主要購物點",
+          "activity": "New Balance 原宿｜試鞋",
+          "detail": "從HOKA步行前往，官方營業11:00～19:00。預留量腳、試穿與結帳；若HOKA超時，優先確保18:00前到NB。",
+          "links": [
+            {
+              "name": "New Balance 原宿｜官方店舖資訊",
+              "url": "https://stores.newbalance.jp/tokyo/shibuya/4-32-16-jingumae"
+            }
+          ]
+        },
+        {
+          "time": "18:30後",
+          "activity": "原宿晚餐 → 回飯店整理行李",
+          "detail": "用餐後從JR原宿站搭山手線往新宿、池袋方向回御徒町，再步行回飯店。3COINS原宿僅在需要補買且時間足夠時順逛，前一天已安排西銀座店。隔天07:30接送，晚上以休息與整理行李為主。",
           "links": [
             {
               "name": "住宿資訊・入住核對（Notion）",
               "url": "https://app.notion.com/p/shen0910/a1d400d1c43e8384944e0151ccee1361"
             }
           ]
-        },
-        {
-          "time": "晚上｜視體力",
-          "activity": "唐吉訶德 御徒町店｜選擇性",
-          "detail": "留在住宿周邊補貨；不特地折返錦糸町。",
-          "links": [
-            {
-              "name": "唐吉訶德 御徒町店",
-              "url": "https://www.google.com/maps/search/?api=1&query=%E3%83%89%E3%83%B3%E3%83%BB%E3%82%AD%E3%83%9B%E3%83%BC%E3%83%86%20%E5%BE%A1%E5%BE%92%E7%94%BA%E5%BA%97"
-            }
-          ]
         }
       ],
-      "note": "emmi在澀谷PARCO 4F。晚上採買視體力，回程前優先整理行李。"
+      "note": "銀座先南後北：博品館 → Dover Street Market（彈性）→ 木村家（順路）→ 午餐 → SABON（彈性）→ MUJI → LOFT。15:30離開銀座 → 原宿HOKA → NB。澀谷PARCO、Nintendo與澀谷寶可夢取消；emmi已改到前一天大丸4F。"
     },
     {
       "date": "11.15",
@@ -510,15 +480,15 @@ window.TRIP = {
     },
     {
       "id": "shopping-tokyo-ginza",
-      "text": "東京站伴手禮；BicCamera、西銀座3COINS、LOFT、MUJI、SABON"
+      "text": "11/13：東京站Tomica／Plarail限定商品、有樂町BC一般款；西銀座3COINS"
     },
     {
       "id": "shopping-parco",
-      "text": "澀谷PARCO 6F角色商品、4F emmi"
+      "text": "11/13：大丸東京4F emmi，預留45～60分鐘"
     },
     {
       "id": "shopping-harajuku",
-      "text": "原宿：HOKA、New Balance、3COINS"
+      "text": "11/14：銀座LOFT、MUJI、博品館；15:30出發原宿HOKA與NB（19:00關門）"
     },
     {
       "id": "airporter-booking",

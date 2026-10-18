@@ -89,12 +89,15 @@ for floor,route in wayfinding.items():
  route['steps']=[re.sub(r'（(3|4|5|10)）',lambda m:f'（{renumber[int(m[1])]}）',step).replace('採買順序為4→5→3→6','採買順序為3→4→5→6') for step in route['steps']]
 for floor,styles in route_styles.items():
  route_styles[floor]=[(re.sub(r'(?<!\d)[345](?!\d)',lambda m:str(renumber[int(m[0])]),label),color) for label,color in styles]
-wayfinding['daimarub1']['extra']=[[(969,380),(1010,385),(1100,385),(1130,365),(1195,365)]]
-route_styles['daimarub1'].append(('5→C回1F→6','#7a634b'))
+wayfinding['daimarub1']['extra']=[[(969,380),(969,410),(1010,410),(1010,730),(1078,778)]]
+wayfinding['daimarub1']['nodes'].append(('F',1078,778,28,-22))
+wayfinding['daimarub1']['steps'][1]='（5）買完往圖下方F「八重洲側エレベーター」，搭館內電梯上4F，逛emmi（預留45～60分鐘）。'
+wayfinding['daimarub1']['steps'][2]='emmi逛完搭館內電梯回1F，往JR側離開大丸，再找Gift Palette；全程在改札外。'
+route_styles['daimarub1'].append(('5→F電梯4F emmi→1F→6','#7a634b'))
 wayfinding['gift']['steps'][-1]='H下到B1後先切「動漫B1」，逛（10）東京動漫街；逛完再沿通路往（11）零食區。'
 wayfinding['character']=dict(points=[(400,223),(425,223),(425,208),(466,208),(466,228)],extra=[[(466,228),(466,208),(400,208),(280,208),(140,208)]],nodes=[('H',400,223,-20,-25)],steps=[
  '從Gift Palette的H階梯／電扶梯下到B1，到「いちばんプラザ」附近，即（10）動漫街；不用進JR改札。',
- '預留30～45分鐘自由逛，Tomica／Plarail C7、JUMP SHOP C6、どんぐり共和国（龍貓）C12、吉伊卡哇C21都列候選，依喜好現場選。',
+ 'Tomica／Plarail C7為主，預留45～60分鐘看原創款、展示及現場活動；JUMP SHOP C6、龍貓C12、吉伊卡哇C21有時間再自由逛。一般款記下型號，到有樂町BC比價。',
  '寶可夢商店C34在1F，並非B1；已安排晴空塔及澀谷寶可夢，可視時間跳過這間。熱門店的整理券或入場規則以當日公告為準。',
  '逛完沿「北通り」往銀の鈴／八重洲地下中央口方向，接「南通り」前往（11）Calbee＋。切到「零食B1」接續；全程在改札外。'])
 route_styles['character']=[('9→H下樓→10','#26716b'),('10→11','#7a634b')]
@@ -105,7 +108,7 @@ walks={
  'b1':'1 Ivorish → A上1F → 下一張接2（推車走E）',
  '1f':'A／E上樓 → 2 Maple Mania → B出站 → 下一張接3',
  'daimaru1f':'JR側入口 → 3 TRIPLE DECKER → 4 N.Y.C.SAND → C下B1',
- 'daimarub1':'C下樓 → 5 PRESS → 回C上1F → 下一張接6',
+ 'daimarub1':'C下樓 → 5 PRESS → F電梯上4F emmi → 回1F接6',
  'gift':'6 PISTA → 7 BRULEE → 8 VANILLABEANS → 9 Butter Butler → H下B1逛10動漫街',
  'character':'H下樓 → 10動漫街（自由逛）→ 沿北通り接11零食區',
  'okashi':'從10動漫街過來 → 南通り → 11 Calbee＋ → 午餐',
@@ -116,11 +119,11 @@ for spec in specs:
  spec['shops']=[renumber.get(n,n) for n in spec['shops']]
  spec['pins']=[(renumber.get(n,n),*coords) for n,*coords in spec['pins']]
  if spec['id']=='daimaru1f':spec['subtitle']='依序3→4→C下B1；圖下接下一段'
- elif spec['id']=='daimarub1':spec['subtitle']='C下樓→5→原路回1F，再往Gift Palette'
+ elif spec['id']=='daimarub1':spec['subtitle']='C下樓→5→F電梯上4F emmi，再回1F接6'
  if spec['id']=='b1':spec['notes']=['（1）→丸の内坂→銀の鈴側A電扶梯，上1F。','推車走E電梯；切JR 1F，從同樣的A／E接續。']
  elif spec['id']=='1f':spec['notes']=['A／E上樓→（2）→B八重洲北口，才出JR。','出站後走大丸1F；不要進新幹線轉乘口。']
  elif spec['id']=='daimaru1f':spec['notes']=['（3）→（4）→C中央電扶梯，走下り到B1。','推車走官方圖下方八重洲側電梯，選B1。']
- elif spec['id']=='daimarub1':spec['notes']=['C下樓→（5）；買完回C，走上り到1F。','回1F往JR側離開大丸，再逛Gift Palette。']
+ elif spec['id']=='daimarub1':spec['notes']=['C下樓→（5）→F電梯上4F逛emmi。','逛完搭電梯回1F，再離開大丸接（6）。']
  elif spec['id']=='gift':spec['notes']=['（6）G32→（7）G9→（8）G8→（9）G3。','H在星巴克G2旁，下B1先逛（10）動漫街。']
  elif spec['id']=='okashi':spec['subtitle']='11 Calbee＋｜從10動漫街過來，全程改札外';spec['notes']=['從（10）動漫街往南通り，到（11）G47。','D是附近階梯地標；與Gift的H不同一組。']
  uri,source_w,source_h=data_url(sources/spec['base']);cx,cy,cw,ch=spec['crop'];scale=650/cw;map_y=160;map_h=ch*scale;legend_y=map_y+map_h+56
