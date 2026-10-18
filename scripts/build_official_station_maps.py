@@ -36,6 +36,15 @@ specs=[
  dict(id='overview',label='站區總覽',file='tokyo-station-overview.svg',title='東京站・1F 站區總覽',subtitle='保留官方JR閘門、大丸與Gift Palette的實際關係',source='東京站一番街 官方1F周邊圖',url='https://www.tokyoeki-1bangai.co.jp/tokyogiftpalette/',base='station-1f.png',crop=(0,0,1044,724),pins=[],shops=[],notes=['先在JR內買完兩間，再找「八重洲北口」。','大丸與Gift Palette都在改札外；往丸之內找北自由通路。']),
 ]
 out=[]
+route_styles={
+ 'b1':[('1→2','#b44732')],
+ '1f':[('1→2','#b44732'),('2→八重洲北口→4','#62713c')],
+ 'daimaru1f':[('4→5','#536377'),('5→大丸B1→3','#94621c')],
+ 'daimarub1':[('5→大丸B1→3','#94621c')],
+ 'gift':[('6→7→8→9','#805276'),('9→H下樓→10','#26716b')],
+ 'okashi':[('9→H下樓→10','#26716b')],
+ 'overview':[],
+}
 wayfinding={
  'b1':dict(points=[(350,950),(320,930),(340,842),(550,842),(850,842),(860,862)],nodes=[('A',860,862,30,26),('E',1038,862,24,28)],steps=[
   '（1）Ivorish買完，沿「丸の内坂」往八重洲／銀の鈴方向走；不要穿出丸之內地下改札。',
@@ -67,7 +76,7 @@ wayfinding={
   '到D階梯附近、八重洲地下中央改札外側，沿南通り走到綠色零食區；不用進JR改札。',
   '（10）Calbee＋是G47，位在零食區右側；G44～G46可依現場狀況一起逛。',
   'D是附近的官方階梯地標，不是H的同一組樓梯；後續依行程往KITTE／丸之內方向走。']),
- 'overview':dict(points=[],nodes=[],steps=['本次樓層順序：JR B1→JR 1F→大丸1F→大丸B1→Gift 1F→零食B1。','A＝JR吹拔區B1／1F電扶梯；E＝同區電梯；B＝八重洲北口。','C＝大丸食品區中央電扶梯；H＝Gift Palette旁下B1的官方階梯代號。','藍灰線是依官方圖判讀的步行方向；遇單向電扶梯、管制或施工，依現場標示調整。']),
+ 'overview':dict(points=[],nodes=[],steps=['本次樓層順序：JR B1→JR 1F→大丸1F→大丸B1→Gift 1F→零食B1。','A＝JR吹拔區B1／1F電扶梯；E＝同區電梯；B＝八重洲北口。','C＝大丸食品區中央電扶梯；H＝Gift Palette旁下B1的官方階梯代號。','彩色虛線是依官方圖判讀的步行方向；遇單向電扶梯、管制或施工，依現場標示調整。']),
 }
 for spec in specs:
  if spec['id']=='b1':spec['notes']=['（1）→丸の内坂→銀の鈴側A電扶梯，上1F。','推車走E電梯；切JR 1F，從同樣的A／E接續。']
@@ -83,10 +92,13 @@ for spec in specs:
  parts.append(f'<svg class="official-plan" x="35" y="{map_y}" width="650" height="{map_h}" viewBox="{cx} {cy} {cw} {ch}" overflow="hidden"><image href="{uri}" width="{source_w}" height="{source_h}"/></svg>')
  route=wayfinding[spec['id']]
  def xy(x,y):return 35+(x-cx)*scale,map_y+(y-cy)*scale
- for points in [route['points'],*route.get('extra',[])]:
+ for segment,points in enumerate([route['points'],*route.get('extra',[])]):
   if not points:continue
+  label,color=route_styles[spec['id']][segment]
+  marker_id=f'walking-arrow-{segment}'
+  parts.append(f'<defs><marker id="{marker_id}" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="{color}"/></marker></defs>')
   d='M'+' L'.join(f'{px:.2f} {py:.2f}' for px,py in [xy(x,y) for x,y in points])
-  parts.append(f'<path class="walking-route" d="{d}" fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round"/><path d="{d}" fill="none" stroke="#536377" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#guide-arrow)"/>')
+  parts.append(f'<path d="{d}" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path class="walking-route" aria-label="{escape(label)}" d="{d}" fill="none" stroke="{color}" stroke-width="4" stroke-dasharray="10 7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#{marker_id})"/>')
  for letter,x,y,dx,dy in route['nodes']:
   px,py=xy(x,y);bx,by=px+dx,py+dy
   parts.append(f'<g class="floor-connection" data-connection="{letter}"><title>{letter}：對照下方逐段路線</title><path d="M{px} {py}L{bx} {by}" stroke="#536377" stroke-width="1.5"/><circle cx="{px}" cy="{py}" r="11" fill="none" stroke="#536377" stroke-width="2"/><rect x="{bx-13}" y="{by-13}" width="26" height="26" rx="4" fill="#536377" stroke="#fff" stroke-width="1.5"/>')
@@ -114,6 +126,6 @@ for spec in specs:
   for chunk in chunks:text(chunk,43,y,18,True,'#536377');y+=28
  text(spec['source'],43,height-40,16,True,'#536377')
  svg=finish();(R/'assets'/spec['file']).write_text(svg,encoding='utf-8')
- out.append({k:spec[k] for k in ['id','label','file','source','url']}|{'svg':svg,'shops':spec['shops'],'steps':route['steps']})
+ out.append({k:spec[k] for k in ['id','label','file','source','url']}|{'svg':svg,'shops':spec['shops'],'steps':route['steps'],'routes':[{'label':label,'color':color} for label,color in route_styles[spec['id']]]})
 (R/'assets/tokyo-station-guide.js').write_text('window.TOKYO_STATION_GUIDE = '+json.dumps(out,ensure_ascii=False)+';\n',encoding='utf-8')
 print('Built seven official-base SVG guides; original raster bases preserved; official PDFs converted to vector')
