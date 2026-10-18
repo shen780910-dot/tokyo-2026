@@ -132,10 +132,50 @@ wayfinding['daimaru4f']=dict(points=[(1095,730),(1070,680),(1070,530),(987,530),
  '點「下一段：Gift 1F」，從（7）PISTA接續逛到（10）Butter Butler。'])
 route_styles['daimaru4f']=[('5→F上4F→6','#7a634b'),('6→回1F→7','#62713c')]
 wayfinding['character']['points']=[];wayfinding['character']['extra']=[];wayfinding['character']['nodes']=[];route_styles['character']=[]
-wayfinding['character']['steps'][2]='官方原圖完整保留店名對照與櫃位編號；放大可找C7 Tomica／Plarail、C6 JUMP、C12龍貓、C21吉伊卡哇。寶可夢C34在1F；熱門店入場規則依當日公告。'
+wayfinding['character']['steps'][2]='繁中店名透過細引線直接連到店家圓點，位置依最新官方櫃位；完整原始PDF仍可從下方底圖來源開啟。寶可夢C34在1F，並未誤標在B1。'
 walks.update(daimarub1='C下樓 → 5 PRESS → F電梯上4F，下一張接6 emmi',daimaru4f='F上4F → 6 emmi → F回1F → 下一張接7',gift='7 PISTA → 8 BRULEE → 9 VANILLABEANS → 10 Butter Butler → H下B1',character='H下樓 → 11動漫街（原圖）→ 沿北通り接12零食區',okashi='從11動漫街過來 → 南通り → 12 Calbee＋ → 午餐',overview='1→2→3→4→5→6 emmi→7→8→9→10→11動漫街→12零食區')
 wayfinding['overview']['steps'][0]='依序：JR B1→JR 1F→大丸1F→大丸B1→大丸4F emmi→Gift 1F→動漫B1→零食B1。'
 specs=sorted(specs,key=lambda s:['b1','1f','daimaru1f','daimarub1','daimaru4f','gift','character','okashi','overview'].index(s['id']))
+def character_callouts(spec):
+ """Keep official floor geometry, label shops in the surrounding whitespace."""
+ uri,source_w,source_h=data_url(sources/'character.pdf')
+ start(spec['title'],'圓點對應店家・圖外店名可開啟Google Maps',940)
+ parts=namespace['parts'];cx,cy,cw,ch=0,80,841.89,245;scale=650/cw;map_y=280
+ parts.append(f'<svg class="official-plan" x="35" y="{map_y}" width="650" height="{ch*scale}" viewBox="{cx} {cy} {cw} {ch}"><image href="{uri}" width="{source_w}" height="{source_h}"/></svg>')
+ # Official C-codes identify shops; itinerary stop 11 denotes the whole area.
+ labels=[
+  ('C6',['JUMP SHOP'],335,228,250,225,'JUMP SHOP 東京駅店'),
+  ('C31',['拉拉熊／角落生物'],552,174,450,164,'リラックマストア すみっコぐらしshop 東京駅店'),
+  ('C21',['吉伊卡哇'],554,228,620,225,'ちいかわらんど TOKYO Station'),
+  ('C3',['蠟筆小新'],210,244,100,620,'クレヨンしんちゃん アクションデパート東京駅店'),
+  ('C7',['Tomica／Plarail'],335,263,235,535,'トミカ プラレールショップ 東京店'),
+  ('C10',['史努比'],387,274,355,620,'スヌーピータウンミニ 東京駅店'),
+  ('C12',['橡子共和國'],427,274,435,535,'どんぐり共和国 東京駅店'),
+  ('C17',['朝日電視台'],550,274,620,620,'テレアサショップ 東京駅店'),
+ ]
+ from urllib.parse import quote
+ # Leaders are drawn first so they cannot cover another shop's name.
+ for code,names,x,y,lx,ly,query in labels:
+  px,py=35+x*scale,map_y+(y-cy)*scale
+  elbow=ly+27 if ly<map_y else ly-32
+  d=f'M{px:.2f} {py:.2f}V{elbow}H{lx}'
+  if code in ['C3','C17']:d=f'M{px:.2f} {py:.2f}V480H{lx}V{elbow}'
+  elif code=='C31':d=f'M{px:.2f} {py:.2f}H440V{elbow}H{lx}'
+  parts.append(f'<path class="character-leader" d="{d}" fill="none" stroke="#fff" stroke-width="3.6"/><path d="{d}" fill="none" stroke="#ae4666" stroke-width="1.5"/>')
+ for code,names,x,y,lx,ly,query in labels:
+  px,py=35+x*scale,map_y+(y-cy)*scale
+  href='https://www.google.com/maps/search/?api=1&query='+quote(query)
+  parts.append(f'<a class="character-callout" data-code="{code}" href="{escape(href,quote=True)}" target="_blank" rel="noopener noreferrer" aria-label="{escape(names[0])}：Google Maps"><title>{escape(names[0])}｜官方{code}</title><circle cx="{px:.2f}" cy="{py:.2f}" r="5" fill="#bd426a" stroke="#fff" stroke-width="1.6"/><rect x="{lx-98}" y="{ly-26}" width="196" height="54" fill="transparent"/><g stroke="#eeeade" stroke-width="3" stroke-linejoin="round" paint-order="stroke fill">')
+  for i,name in enumerate(names):text(name,lx,ly+i*27,24,False,'#9d3656','middle')
+  parts.append('</g>');system(code,lx,ly+23,16,'#536377','middle');parts.append('</a>')
+ text('Tomica／Plarail先逛；其他店現場自由選。',43,690,19,True,'#536377')
+ text('寶可夢C34在1F；櫃位以最新版官方圖為準。',43,720,18,True,'#536377')
+ shop(11,65,790,26,info='B1改札外・圓點與繁中店名直接對照')
+ parts.append('<a class="shop-detail-link" data-kind="notion" data-shop="11" href="https://app.notion.com/p/3c8400d1c43e816584cad44baa840f92" target="_blank" rel="noopener noreferrer" aria-label="東京站・動漫街資料 Notion"><rect x="526" y="762" width="147" height="62" rx="6" fill="#eeeade" stroke="#536377" stroke-width="1.1"/>')
+ system('Notion ↗',599,800,21,'#536377','middle');parts.append('</a>')
+ text('原始完整版與全部店名：點下方官方地圖連結。',43,860,18,True,'#536377')
+ text('底圖：東京站一番街・官方動漫街樓層圖',43,900,16,True,'#536377')
+ return finish()
 for spec in specs:
  spec['shops']=[with_emmi(renumber.get(n,n)) for n in spec['shops']]
  spec['pins']=[(with_emmi(renumber.get(n,n)),*coords) for n,*coords in spec['pins']]
@@ -153,6 +193,10 @@ for spec in specs:
   spec['notes']=[shifted_refs(note) for note in spec['notes']]
  if spec['id']=='daimarub1':spec['subtitle']='C下樓→5→F上4F，下一張接6 emmi';spec['notes']=['C下樓→（5）→F電梯上4F，接（6）emmi。','點下一段「大丸4F」，再回1F接（7）。']
  if spec['id']=='okashi':spec['subtitle']='12 Calbee＋｜從11動漫街過來，全程改札外'
+ if spec['id']=='character':
+  svg=character_callouts(spec);(R/'assets'/spec['file']).write_text(svg,encoding='utf-8')
+  out.append({k:spec[k] for k in ['id','label','file','source','url']}|{'svg':svg,'shops':spec['shops'],'steps':wayfinding['character']['steps'],'walk':walks['character'],'routes':[]})
+  continue
  uri,source_w,source_h=data_url(sources/spec['base']);cx,cy,cw,ch=spec['crop'];scale=650/cw;map_y=160;map_h=ch*scale;legend_y=map_y+map_h+56
  height=math.ceil(legend_y+len(spec['shops'])*91+168)
  start(spec['title'],spec['subtitle'],height)
