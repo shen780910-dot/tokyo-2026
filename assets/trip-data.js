@@ -116,7 +116,7 @@ window.TRIP = {
         {
           "time": "10:00開門後｜大丸",
           "activity": "大丸東京｜1F兩間 → B1 PRESS",
-          "detail": "八重洲北口出站後，先逛1F TRIPLE DECKER LONDON、N.Y.C.SAND，再下B1找PRESS BUTTER SAND。候選全部保留，排隊太久可跳過；接著上4F逛emmi，再回1F往Gift Palette。",
+          "detail": "八重洲北口出改札後就是大丸旁；循食品區「正面入口」進1F，先逛1F TRIPLE DECKER LONDON、N.Y.C.SAND，再下B1找PRESS BUTTER SAND。候選全部保留，排隊太久可跳過；接著上4F逛emmi，再回1F往Gift Palette。",
           "links": [
             {
               "name": "TRIPLE DECKER LONDON（Notion）",

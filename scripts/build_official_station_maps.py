@@ -246,3 +246,5 @@ for spec in specs:
  out.append({k:spec[k] for k in ['id','label','file','source','url']}|{'svg':svg,'shops':spec['shops'],'steps':route['steps'],'walk':walks[spec['id']],'routes':[{'label':label,'color':color} for label,color in route_styles[spec['id']]]})
 (R/'assets/tokyo-station-guide.js').write_text('window.TOKYO_STATION_GUIDE = '+json.dumps(out,ensure_ascii=False)+';\n',encoding='utf-8')
 print('Built nine official-base SVG guides including full Character Street and Daimaru 4F')
+from build_chinese_floor_maps import render_all
+render_all(globals())
