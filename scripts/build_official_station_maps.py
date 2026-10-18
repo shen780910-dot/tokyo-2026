@@ -36,12 +36,61 @@ specs=[
  dict(id='overview',label='站區總覽',file='tokyo-station-overview.svg',title='東京站・1F 站區總覽',subtitle='保留官方JR閘門、大丸與Gift Palette的實際關係',source='東京站一番街 官方1F周邊圖',url='https://www.tokyoeki-1bangai.co.jp/tokyogiftpalette/',base='station-1f.png',crop=(0,0,1044,724),pins=[],shops=[],notes=['先在JR內買完兩間，再找「八重洲北口」。','大丸與Gift Palette都在改札外；往丸之內找北自由通路。']),
 ]
 out=[]
+wayfinding={
+ 'b1':dict(points=[(350,950),(320,930),(340,842),(550,842),(850,842),(860,862)],nodes=[('A',860,862,30,26),('E',1038,862,24,28)],steps=[
+  '（1）Ivorish買完，沿「丸の内坂」往八重洲／銀の鈴方向走；不要穿出丸之內地下改札。',
+  '走到銀の鈴區西側、靠SQUARE ZERO的A點，搭連通B1與1F的電扶梯上1F。不要搭往列車月台的樓梯。',
+  '帶推車改用同一吹拔區的E電梯上1F；不要使用標示「3・4番線」等月台專用電梯。',
+  '切到「JR 1F」：從同樣的A點（或E點）接續，前往（2）The Maple Mania。']),
+ '1f':dict(points=[(483,387),(483,365),(540,365),(540,335)],extra=[[(540,335),(615,335),(615,210),(879,205)]],nodes=[('A',483,387,-30,15),('E',643,404,30,18),('B',879,205,28,-25)],steps=[
+  'A是從B1上來的電扶梯出口；上到1F後，往吹き抜けエリア的（2）The Maple Mania。',
+  '推車從E電梯出來，沿吹拔區外側通道往（2）走；與A同在1F改札內。',
+  '（2）買完往「八重洲北口」B點走，從一般JR改札出站；不要進旁邊「北のりかえ口」新幹線轉乘口。',
+  '出站後往大丸東京食品區，切到「大丸1F」；下一段採買順序是（4）→（5）→（3）。']),
+ 'daimaru1f':dict(points=[(845,620),(865,620),(865,535),(985,535),(985,455),(1050,455)],extra=[[(1050,455),(990,420),(990,375),(1120,375)]],nodes=[('C',1155,375,20,35)],steps=[
+  '從JR八重洲北口出站後進大丸1F食品區，先（4）TRIPLE DECKER LONDON，再（5）N.Y.C.SAND。',
+  '買完往和洋菓子區中央C電扶梯，確認「下り」及B1方向，下一層就是大丸B1。',
+  '推車改用食品區八重洲側電梯（官方圖下方）；選B1。',
+  '切到「大丸B1」：C是同一組館內電扶梯，接續前往（3）PRESS BUTTER SAND。']),
+ 'daimarub1':dict(points=[(1195,345),(1100,345),(1100,350),(1010,350),(969,380)],nodes=[('C',1195,345,28,-24)],steps=[
+  '從1F的C電扶梯下B1後，往「プレスバターサンド」櫃位走，即（3）PRESS BUTTER SAND。',
+  '買完回C電扶梯，找「上り」回1F；推車則原路回八重洲側電梯上1F。',
+  '回到1F後往JR側離開大丸，找「東京ギフトパレット」；全程留在改札外，不用再進JR。',
+  '切到「Gift 1F」，接續（6）到（9）。店家編號是地圖識別碼，採買順序為4→5→3→6。']),
+ 'gift':dict(points=[(399,248),(400,225),(350,225),(350,242),(326,242),(314,242),(314,235),(290,235),(290,258),(273,258)],extra=[[(273,258),(265,258),(265,243),(290,243)]],nodes=[('H',290,245,-24,-22)],steps=[
+  '在1F改札外依序逛（6）PISTA G32→（7）BRULEE MERIZE G9→（8）VANILLABEANS G8→（9）Butter Butler G3。',
+  '（9）買完，找星巴克G2旁的H階梯／電扶梯，下到B1「いちばんプラザ」附近。H是官方階梯代號。',
+  '帶推車先找Gift Palette的電梯下B1，避免搬推車走H階梯；依現場無障礙指標繞行。',
+  'B1沿「東京おかしランド／八重洲地下中央口」指標走到南通り，切到「零食B1」接續（10）。']),
+ 'okashi':dict(points=[(470,207),(520,207),(587,207),(648,207),(648,250),(620,252)],nodes=[('D',580,174,27,25)],steps=[
+  '從Gift Palette下B1後，沿一番街通路往「東京おかしランド」，找到「南通り」。兩張局部圖之間依現場指標銜接。',
+  '到D階梯附近、八重洲地下中央改札外側，沿南通り走到綠色零食區；不用進JR改札。',
+  '（10）Calbee＋是G47，位在零食區右側；G44～G46可依現場狀況一起逛。',
+  'D是附近的官方階梯地標，不是H的同一組樓梯；後續依行程往KITTE／丸之內方向走。']),
+ 'overview':dict(points=[],nodes=[],steps=['本次樓層順序：JR B1→JR 1F→大丸1F→大丸B1→Gift 1F→零食B1。','A＝JR吹拔區B1／1F電扶梯；E＝同區電梯；B＝八重洲北口。','C＝大丸食品區中央電扶梯；H＝Gift Palette旁下B1的官方階梯代號。','藍灰線是依官方圖判讀的步行方向；遇單向電扶梯、管制或施工，依現場標示調整。']),
+}
 for spec in specs:
+ if spec['id']=='b1':spec['notes']=['（1）→丸の内坂→銀の鈴側A電扶梯，上1F。','推車走E電梯；切JR 1F，從同樣的A／E接續。']
+ elif spec['id']=='1f':spec['notes']=['A／E上樓→（2）→B八重洲北口，才出JR。','出站後走大丸1F；不要進新幹線轉乘口。']
+ elif spec['id']=='daimaru1f':spec['notes']=['（4）→（5）→C中央電扶梯，走下り到B1。','推車走官方圖下方八重洲側電梯，選B1。']
+ elif spec['id']=='daimarub1':spec['notes']=['C下樓→（3）；買完回C，走上り到1F。','回1F往JR側離開大丸，再逛Gift Palette。']
+ elif spec['id']=='gift':spec['notes']=['（6）G32→（7）G9→（8）G8→（9）G3。','H在星巴克G2旁，下B1再往東京おかしランド。']
+ elif spec['id']=='okashi':spec['notes']=['循南通り到（10）G47，全程在JR改札外。','D是附近階梯地標；與Gift的H不同一組。']
  uri,source_w,source_h=data_url(sources/spec['base']);cx,cy,cw,ch=spec['crop'];scale=650/cw;map_y=160;map_h=ch*scale;legend_y=map_y+map_h+56
  height=math.ceil(legend_y+len(spec['shops'])*91+168)
  start(spec['title'],spec['subtitle'],height)
  parts=namespace['parts']
  parts.append(f'<svg class="official-plan" x="35" y="{map_y}" width="650" height="{map_h}" viewBox="{cx} {cy} {cw} {ch}" overflow="hidden"><image href="{uri}" width="{source_w}" height="{source_h}"/></svg>')
+ route=wayfinding[spec['id']]
+ def xy(x,y):return 35+(x-cx)*scale,map_y+(y-cy)*scale
+ for points in [route['points'],*route.get('extra',[])]:
+  if not points:continue
+  d='M'+' L'.join(f'{px:.2f} {py:.2f}' for px,py in [xy(x,y) for x,y in points])
+  parts.append(f'<path class="walking-route" d="{d}" fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round"/><path d="{d}" fill="none" stroke="#536377" stroke-width="2.4" stroke-linejoin="round" marker-end="url(#guide-arrow)"/>')
+ for letter,x,y,dx,dy in route['nodes']:
+  px,py=xy(x,y);bx,by=px+dx,py+dy
+  parts.append(f'<g class="floor-connection" data-connection="{letter}"><title>{letter}：對照下方逐段路線</title><path d="M{px} {py}L{bx} {by}" stroke="#536377" stroke-width="1.5"/><circle cx="{px}" cy="{py}" r="11" fill="none" stroke="#536377" stroke-width="2"/><rect x="{bx-13}" y="{by-13}" width="26" height="26" rx="4" fill="#536377" stroke="#fff" stroke-width="1.5"/>')
+  system(letter,bx,by+7,20,'#fff','middle');parts.append('</g>')
  for number,x,y,dx,dy in spec['pins']:
   px,py=35+(x-cx)*scale,map_y+(y-cy)*scale;bx,by=px+dx,py+dy
   parts.append(f'<g class="official-shop-pin" data-shop="{number}"><path d="M{bx} {by}L{px} {py}" stroke="#a94732" stroke-width="1.7" fill="none"/><circle cx="{px}" cy="{py}" r="4" fill="#a94732" stroke="#fff" stroke-width="1.2"/><circle cx="{bx}" cy="{by}" r="14" fill="#a94732" stroke="#fff" stroke-width="2"/>')
@@ -65,6 +114,6 @@ for spec in specs:
   for chunk in chunks:text(chunk,43,y,18,True,'#536377');y+=28
  text(spec['source'],43,height-40,16,True,'#536377')
  svg=finish();(R/'assets'/spec['file']).write_text(svg,encoding='utf-8')
- out.append({k:spec[k] for k in ['id','label','file','source','url']}|{'svg':svg,'shops':spec['shops']})
+ out.append({k:spec[k] for k in ['id','label','file','source','url']}|{'svg':svg,'shops':spec['shops'],'steps':route['steps']})
 (R/'assets/tokyo-station-guide.js').write_text('window.TOKYO_STATION_GUIDE = '+json.dumps(out,ensure_ascii=False)+';\n',encoding='utf-8')
 print('Built seven official-base SVG guides; original raster bases preserved; official PDFs converted to vector')

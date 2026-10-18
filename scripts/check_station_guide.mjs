@@ -32,6 +32,8 @@ try{
    if(metrics.hash!=='#day-2'||metrics.pageWidth>device.width||metrics.left<0||metrics.right>device.width+1||metrics.links!==links||metrics.active!=='station-floor-'+floor||metrics.official!==1)throw Error(JSON.stringify({device,floor,metrics}));
    const details=await evaluate(`(()=>{const svg=document.querySelector('.station-guide-canvas svg');const links=[...svg.querySelectorAll('a.shop-detail-link')];return {notion:links.filter(a=>a.getAttribute('href').startsWith('https://app.notion.com/p/')).length,valid:links.every(a=>a.getAttribute('target')==='_blank'&&a.getAttribute('rel').includes('noopener')),butter:links.find(a=>a.getAttribute('data-shop')==='9')?.getAttribute('data-kind')};})()`);
    if(details.notion!==notionCount||!details.valid||(floor==='gift'&&details.butter!=='official'))throw Error(JSON.stringify({floor,details}));
+   const route=await evaluate(`(()=>{const svg=document.querySelector('.station-guide-canvas svg');return {steps:document.querySelectorAll('.station-directions li').length,paths:svg.querySelectorAll('.walking-route').length,nodes:[...svg.querySelectorAll('.floor-connection')].map(n=>n.dataset.connection)};})()`);
+   if(route.steps!==4||(floor!=='overview'&&route.paths<1)||(['b1','1f'].includes(floor)&&(!route.nodes.includes('A')||!route.nodes.includes('E'))))throw Error(JSON.stringify({floor,route}));
    const geometry=await evaluate(`(()=>{const svg=document.querySelector('.station-guide-canvas svg');const shapes=[...svg.querySelectorAll('.text-shape')];const bounds=svg.getBoundingClientRect();const issues=[];for(let i=0;i<shapes.length;i++){const a=shapes[i],b=a.getBoundingClientRect();if(b.right>bounds.right-3||b.left<bounds.left+3)issues.push({overflow:a.getAttribute('aria-label')});for(const c of shapes.slice(i+1)){const d=c.getBoundingClientRect();if(Math.min(b.right,d.right)-Math.max(b.left,d.left)>1&&Math.min(b.bottom,d.bottom)-Math.max(b.top,d.top)>1)issues.push({overlap:[a.getAttribute('aria-label'),c.getAttribute('aria-label')]});}}return issues;})()`);
    if(geometry.length)throw Error(JSON.stringify({device:device.name,floor,geometry}));
    if(device.name==='iphone-15'||device.name==='desktop'){
@@ -41,6 +43,7 @@ try{
    results.push({device:device.name,floor,links,overflow:false});
   }
   const keyboard=await evaluate(`(()=>{const tab=document.querySelector('#station-floor-gift');tab.dispatchEvent(new KeyboardEvent('keydown',{key:'Home',bubbles:true}));return document.activeElement.id==='station-floor-b1'&&document.querySelector('#station-floor-b1').getAttribute('aria-selected')==='true'&&location.hash==='#day-2';})()`);if(!keyboard)throw Error('Keyboard navigation failed');
+  const ordered=await evaluate(`(()=>{const order=['1f','daimaru1f','daimarub1','gift','okashi'];for(const floor of order){document.querySelector('.station-next-floor').click();if(document.querySelector('.station-floor-tabs [aria-selected="true"]').id!=='station-floor-'+floor)return false;}return !document.querySelector('.station-next-floor')&&location.hash==='#day-2';})()`);if(!ordered)throw Error('Next-floor walking sequence failed');
  }
  console.log(JSON.stringify(results,null,2));await send('Browser.close');
 }finally{ws?.close();chrome.kill();}
