@@ -19,7 +19,7 @@ day2.update(title='東京站・emmi・有樂町',area='新御徒町 → 東京�
  row('大丸東京',detail='八重洲北口出站後，先逛1F TRIPLE DECKER LONDON、N.Y.C.SAND，再下B1找PRESS BUTTER SAND。候選全部保留，排隊太久可跳過；接著上4F逛emmi，再回1F往Gift Palette。'),
  {'time':'大丸採買後｜必逛・預留45～60分鐘','activity':'emmi｜大丸東京店4F','detail':'從大丸B1搭館內電梯上4F，逛完再搭電梯回1F接Gift Palette。營業10:00～20:00；指定款式與尺寸依當日庫存。','links':[{'name':'emmi 大丸東京｜官方店舖資訊','url':'https://emmi.jp/Page/shoplist/detail/daimarutokyo.aspx'}]},
  row('PISTA・',time='上午～午餐前｜Gift Palette 1F',detail='都在JR改札外，四間現場選。G32＝PISTA、G9＝BRULEE MERIZE、G8＝VANILLABEANS、G3＝Butter Butler。冷藏甜點優先現吃或確認保冷；若孩子餓了，先吃午餐再繼續採買。'),
- row('東京動漫街',time='午餐前後｜Tomica／Plarail預留45～60分鐘',detail='Gift Palette旁H下B1，到いちばんプラザ附近。主逛Tomica／Plarail東京站專賣店C7，先看專賣店原創款與現場活動；一般款記下型號與價格，到有樂町BC再比價。JUMP C6、龍貓C12、吉伊卡哇C21列自由候選。寶可夢C34在1F，可跳過；活動及整理券依當日公告。逛完沿北通り接南通り，往（11）Calbee＋。'),
+ row('東京動漫街',time='午餐前後｜Tomica／Plarail預留45～60分鐘',detail='Gift Palette旁H下B1，到いちばんプラザ附近。主逛Tomica／Plarail東京站專賣店C7，先看專賣店原創款與現場活動；一般款記下型號與價格，到有樂町BC再比價。JUMP C6、龍貓C12、吉伊卡哇C21列自由候選。寶可夢C34在1F，可跳過；活動及整理券依當日公告。逛完沿北通り接南通り，往（12）Calbee＋。'),
  row('東京おかしランド'),
  row('東京站周邊午餐',time='中午｜可提前插入',detail='以孩子食慾為優先，尚未採買完也可先用餐，午餐後再補逛東京站；不必等全部店家逛完。'),
  row('GOOD DESIGN',time='午餐後｜預留20～30分鐘'),

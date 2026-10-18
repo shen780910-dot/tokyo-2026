@@ -13,6 +13,7 @@ namespace={'__file__':str(R/'scripts/build_tokyo_station_guide.py')}
 exec((R/'scripts/build_tokyo_station_guide.py').read_text(encoding='utf-8').split('# Regional diagram:')[0],namespace)
 namespace['shops'][3]=(4,'TRIPLE DECKER LONDON',*namespace['shops'][3][2:])
 namespace['shops'].append((11,'東京動漫街','B1 改札外・角色商品街','角色商店現場自由選','Tokyo Character Street'))
+namespace['shops'].append((12,'emmi 大丸東京','大丸4F・10:00–20:00','預留45～60分鐘','emmi 大丸東京店'))
 start,text,system,shop,finish=(namespace[n] for n in ['start','text','system','shop','finish'])
 notion_pages={
  1:'3fc400d1c43e8130bdf7f5c1b010fc37',2:'3c8400d1c43e81a985a9c845bfa52374',
@@ -38,6 +39,7 @@ specs=[
  dict(id='overview',label='站區總覽',file='tokyo-station-overview.svg',title='東京站・1F 站區總覽',subtitle='保留官方JR閘門、大丸與Gift Palette的實際關係',source='東京站一番街 官方1F周邊圖',url='https://www.tokyoeki-1bangai.co.jp/tokyogiftpalette/',base='station-1f.png',crop=(0,0,1044,724),pins=[],shops=[],notes=['先在JR內買完兩間，再找「八重洲北口」。','大丸與Gift Palette都在改札外；往丸之內找北自由通路。']),
 ]
 specs.append(dict(id='character',label='動漫B1',file='tokyo-station-character.svg',title='東京動漫街・B1 改札外',subtitle='10動漫街｜H下樓先逛這區，再往11零食區',source='東京站一番街 官方動漫街樓層圖（PDF轉SVG）',url='https://www.tokyoeki-1bangai.co.jp/assets/pdf/floorMap_chara.pdf',base='character.pdf',crop=(105,105,620,205),pins=[(11,466,228,0,30)],shops=[11],notes=['C7 Tomica・C6 JUMP・C12龍貓・C21吉伊卡哇。','寶可夢C34在1F，不在這張B1圖；可現場跳過。']))
+specs.append(dict(id='daimaru4f',label='大丸4F',file='tokyo-station-daimaru-4f.svg',title='大丸東京・4F emmi',subtitle='6 emmi｜F電梯上樓，逛完回1F接7',source='大丸東京 官方4F樓層圖',url='https://www.daimaru.co.jp/tokyo/floor/4f.html',base='daimaru-4f.jpg',crop=(0,0,1514,1100),pins=[(12,987,430,28,-25)],shops=[12],notes=['F是八重洲側電梯；6是原圖「エミ」。','逛完搭F電梯回1F，往JR側離開大丸接7。']))
 out=[]
 route_styles={
  'b1':[('1→2','#b44732')],
@@ -114,10 +116,30 @@ walks={
  'okashi':'從10動漫街過來 → 南通り → 11 Calbee＋ → 午餐',
  'overview':'1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10動漫街 → 11零食區',
 }
-specs=sorted(specs,key=lambda s:['b1','1f','daimaru1f','daimarub1','gift','character','okashi','overview'].index(s['id']))
+def with_emmi(n):return 6 if n==12 else n+1 if n>=6 else n
+def shifted_refs(value):return re.sub(r'（(6|7|8|9|10|11)）',lambda m:f'（{int(m[1])+1}）',value)
+namespace['shops']=sorted([(with_emmi(n),*row) for n,*row in namespace['shops']])
+notion_pages={with_emmi(n):page for n,page in notion_pages.items()}
+for route in wayfinding.values():route['steps']=[shifted_refs(step) for step in route['steps']]
+for floor,styles in route_styles.items():route_styles[floor]=[(re.sub(r'(?<!\d)(6|7|8|9|10|11)(?!\d)',lambda m:str(int(m[1])+1),label),color) for label,color in styles]
+route_styles['daimarub1'][-1]=('5→F上4F→6','#7a634b')
+wayfinding['daimarub1']['steps'][1]='（5）買完往F八重洲側電梯上4F，切到「大丸4F」接續（6）emmi。'
+wayfinding['daimarub1']['steps'][2]='emmi正式列為第6站；逛完回1F，再接第7站Gift Palette，不跳過emmi。'
+wayfinding['daimaru4f']=dict(points=[(1095,730),(1070,680),(1070,530),(987,530),(987,430)],extra=[[(987,430),(1000,530),(1055,530),(1055,680),(1095,730)]],nodes=[('F',1095,730,28,25)],steps=[
+ '從大丸B1的F八重洲側電梯上4F；本圖F就是同一組電梯的4F出口。',
+ '沿通道往原圖標示「エミ」的櫃位，即（6）emmi；營業10:00～20:00，預留45～60分鐘。',
+ '逛完原路回F電梯，搭回1F。往JR側離開大丸，找東京ギフトパレット；不用進JR改札。',
+ '點「下一段：Gift 1F」，從（7）PISTA接續逛到（10）Butter Butler。'])
+route_styles['daimaru4f']=[('5→F上4F→6','#7a634b'),('6→回1F→7','#62713c')]
+wayfinding['character']['points']=[];wayfinding['character']['extra']=[];wayfinding['character']['nodes']=[];route_styles['character']=[]
+wayfinding['character']['steps'][2]='官方原圖完整保留店名對照與櫃位編號；放大可找C7 Tomica／Plarail、C6 JUMP、C12龍貓、C21吉伊卡哇。寶可夢C34在1F；熱門店入場規則依當日公告。'
+walks.update(daimarub1='C下樓 → 5 PRESS → F電梯上4F，下一張接6 emmi',daimaru4f='F上4F → 6 emmi → F回1F → 下一張接7',gift='7 PISTA → 8 BRULEE → 9 VANILLABEANS → 10 Butter Butler → H下B1',character='H下樓 → 11動漫街（原圖）→ 沿北通り接12零食區',okashi='從11動漫街過來 → 南通り → 12 Calbee＋ → 午餐',overview='1→2→3→4→5→6 emmi→7→8→9→10→11動漫街→12零食區')
+wayfinding['overview']['steps'][0]='依序：JR B1→JR 1F→大丸1F→大丸B1→大丸4F emmi→Gift 1F→動漫B1→零食B1。'
+specs=sorted(specs,key=lambda s:['b1','1f','daimaru1f','daimarub1','daimaru4f','gift','character','okashi','overview'].index(s['id']))
 for spec in specs:
- spec['shops']=[renumber.get(n,n) for n in spec['shops']]
- spec['pins']=[(renumber.get(n,n),*coords) for n,*coords in spec['pins']]
+ spec['shops']=[with_emmi(renumber.get(n,n)) for n in spec['shops']]
+ spec['pins']=[(with_emmi(renumber.get(n,n)),*coords) for n,*coords in spec['pins']]
+ if spec['id']=='character':spec.update(crop=(0,0,841.89,595.28),pins=[],subtitle='11動漫街｜完整官方原圖，保留全部店名對照')
  if spec['id']=='daimaru1f':spec['subtitle']='依序3→4→C下B1；圖下接下一段'
  elif spec['id']=='daimarub1':spec['subtitle']='C下樓→5→F電梯上4F emmi，再回1F接6'
  if spec['id']=='b1':spec['notes']=['（1）→丸の内坂→銀の鈴側A電扶梯，上1F。','推車走E電梯；切JR 1F，從同樣的A／E接續。']
@@ -126,6 +148,11 @@ for spec in specs:
  elif spec['id']=='daimarub1':spec['notes']=['C下樓→（5）→F電梯上4F逛emmi。','逛完搭電梯回1F，再離開大丸接（6）。']
  elif spec['id']=='gift':spec['notes']=['（6）G32→（7）G9→（8）G8→（9）G3。','H在星巴克G2旁，下B1先逛（10）動漫街。']
  elif spec['id']=='okashi':spec['subtitle']='11 Calbee＋｜從10動漫街過來，全程改札外';spec['notes']=['從（10）動漫街往南通り，到（11）G47。','D是附近階梯地標；與Gift的H不同一組。']
+ if spec['id']=='gift':spec['subtitle']='1F改札外｜7至10對照下方店名'
+ if spec['id'] not in ['daimaru4f','character']:
+  spec['notes']=[shifted_refs(note) for note in spec['notes']]
+ if spec['id']=='daimarub1':spec['subtitle']='C下樓→5→F上4F，下一張接6 emmi';spec['notes']=['C下樓→（5）→F電梯上4F，接（6）emmi。','點下一段「大丸4F」，再回1F接（7）。']
+ if spec['id']=='okashi':spec['subtitle']='12 Calbee＋｜從11動漫街過來，全程改札外'
  uri,source_w,source_h=data_url(sources/spec['base']);cx,cy,cw,ch=spec['crop'];scale=650/cw;map_y=160;map_h=ch*scale;legend_y=map_y+map_h+56
  height=math.ceil(legend_y+len(spec['shops'])*91+168)
  start(spec['title'],spec['subtitle'],height)
@@ -153,11 +180,13 @@ for spec in specs:
   system(str(number),bx,by+6,20,'#fff','middle');parts.append('</g>')
  for i,n in enumerate(spec['shops']):
   info=namespace['shops'][n-1][2]
-  if spec['id']=='gift':info={6:'官方 G32・開心果餅乾',7:'官方 G9・布蕾奶油塔',8:'官方 G8・巧克力夾心餅',9:'官方 G3・奶油費南雪'}[n]
+  if spec['id']=='gift':info={7:'官方 G32・開心果餅乾',8:'官方 G9・布蕾奶油塔',9:'官方 G8・巧克力夾心餅',10:'官方 G3・奶油費南雪'}[n]
   shop(n,65,legend_y+i*91,26,info=info)
   link_y=legend_y+i*91
   if n in notion_pages:
    href='https://app.notion.com/p/'+notion_pages[n];label='Notion ↗';kind='notion'
+  elif n==6:
+   href='https://emmi.jp/Page/shoplist/detail/daimarutokyo.aspx';label='官方資訊 ↗';kind='official'
   else:
    href='https://www.tokyoeki-1bangai.co.jp/shop/detail/?cd=000196';label='官方資訊 ↗';kind='official'
   brand=escape(namespace['shops'][n-1][1],quote=True)
@@ -172,4 +201,4 @@ for spec in specs:
  svg=finish();(R/'assets'/spec['file']).write_text(svg,encoding='utf-8')
  out.append({k:spec[k] for k in ['id','label','file','source','url']}|{'svg':svg,'shops':spec['shops'],'steps':route['steps'],'walk':walks[spec['id']],'routes':[{'label':label,'color':color} for label,color in route_styles[spec['id']]]})
 (R/'assets/tokyo-station-guide.js').write_text('window.TOKYO_STATION_GUIDE = '+json.dumps(out,ensure_ascii=False)+';\n',encoding='utf-8')
-print('Built eight official-base SVG guides including Character Street')
+print('Built nine official-base SVG guides including full Character Street and Daimaru 4F')
