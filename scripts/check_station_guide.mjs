@@ -20,11 +20,12 @@ try{
   await evaluate(`document.fonts.ready.then(()=>true)`);
   const allStops=await evaluate(`JSON.stringify(window.TOKYO_STATION_GUIDE.flatMap(item=>item.shops).sort((a,b)=>a-b))`);
   if(allStops!==JSON.stringify([1,2,3,4,5,6,7,8,9,10]))throw Error('Shopping stops incomplete or duplicated');
+  const sequence=await evaluate(`JSON.stringify(window.TOKYO_STATION_GUIDE.flatMap(item=>item.shops))`);if(sequence!==JSON.stringify([1,2,3,4,5,6,7,8,9,10]))throw Error('Tab order is not walking order');
   if(device.name==='iphone-15'){
    const clip=await evaluate(`(()=>{const b=document.querySelector('#station-guide-title').getBoundingClientRect();return {x:b.left+scrollX,y:b.top+scrollY,width:b.width,height:b.height,scale:1};})()`);
    const shot=await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true,clip});await fs.writeFile(path.join(root,'previews','iphone-15-station-heading.png'),Buffer.from(shot.data,'base64'));
   }
-  for(const [index,floor,links,notionCount] of [[0,'b1',2,1],[1,'1f',2,1],[2,'gift',8,3],[3,'daimaru1f',4,2],[4,'daimarub1',2,1],[5,'okashi',2,1],[6,'overview',0,0]]){
+  for(const [index,floor,links,notionCount] of [[0,'b1',2,1],[1,'1f',2,1],[2,'daimaru1f',4,2],[3,'daimarub1',2,1],[4,'gift',8,3],[5,'okashi',2,1],[6,'overview',0,0]]){
    await evaluate(`document.querySelectorAll('.station-floor-tabs button')[${index}].click()`);
    const basesLoaded=await evaluate(`Promise.all([...document.querySelectorAll('.station-guide-canvas image')].map(image=>new Promise(resolve=>{const img=new Image();img.onload=()=>resolve(img.naturalWidth>0);img.onerror=()=>resolve(false);img.src=image.getAttribute('href');}))).then(values=>values.every(Boolean))`);
    if(!basesLoaded)throw Error('Official floor-plan base failed to load');

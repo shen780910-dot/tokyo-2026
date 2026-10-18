@@ -5,7 +5,7 @@ or inventing corridors. Gift Palette's official PDF is converted to vector SVG.
 """
 from pathlib import Path
 from html import escape
-import base64,json,math,xml.etree.ElementTree as ET
+import base64,json,math,re,xml.etree.ElementTree as ET
 import pymupdf
 R=Path(__file__).resolve().parent.parent
 sources=R/'previews/official-floor-sources'
@@ -56,7 +56,7 @@ wayfinding={
   '推車從E電梯出來，沿吹拔區外側通道往（2）走；與A同在1F改札內。',
   '（2）買完往「八重洲北口」B點走，從一般JR改札出站；不要進旁邊「北のりかえ口」新幹線轉乘口。',
   '出站後往大丸東京食品區，切到「大丸1F」；下一段採買順序是（4）→（5）→（3）。']),
- 'daimaru1f':dict(points=[(845,620),(865,620),(865,535),(985,535),(985,455),(1050,455)],extra=[[(1050,455),(990,420),(990,375),(1120,375)]],nodes=[('C',1155,375,20,35)],steps=[
+ 'daimaru1f':dict(points=[(845,280),(865,280),(865,620),(925,620),(985,620),(985,455),(1050,455)],extra=[[(1050,455),(990,420),(990,375),(1155,375)]],nodes=[('C',1155,375,20,35)],steps=[
   '從JR八重洲北口出站後進大丸1F食品區，先（4）TRIPLE DECKER LONDON，再（5）N.Y.C.SAND。',
   '買完往和洋菓子區中央C電扶梯，確認「下り」及B1方向，下一層就是大丸B1。',
   '推車改用食品區八重洲側電梯（官方圖下方）；選B1。',
@@ -65,8 +65,8 @@ wayfinding={
   '從1F的C電扶梯下B1後，往「プレスバターサンド」櫃位走，即（3）PRESS BUTTER SAND。',
   '買完回C電扶梯，找「上り」回1F；推車則原路回八重洲側電梯上1F。',
   '回到1F後往JR側離開大丸，找「東京ギフトパレット」；全程留在改札外，不用再進JR。',
-  '切到「Gift 1F」，接續（6）到（9）。店家編號是地圖識別碼，採買順序為4→5→3→6。']),
- 'gift':dict(points=[(399,248),(400,225),(350,225),(350,242),(326,242),(314,242),(314,235),(290,235),(290,258),(273,258)],extra=[[(273,258),(265,258),(265,243),(290,243)]],nodes=[('H',290,245,-24,-22)],steps=[
+  '切到「Gift 1F」，接續（6）到（9）；店家編號就是採買順序。']),
+ 'gift':dict(points=[(399,248),(400,225),(350,225),(350,238),(335,238),(326,238),(314,238),(314,235),(290,235),(290,258),(273,258)],extra=[[(273,258),(265,258),(265,243),(290,245)]],nodes=[('H',290,245,-24,-22)],steps=[
   '在1F改札外依序逛（6）PISTA G32→（7）BRULEE MERIZE G9→（8）VANILLABEANS G8→（9）Butter Butler G3。',
   '（9）買完，找星巴克G2旁的H階梯／電扶梯，下到B1「いちばんプラザ」附近。H是官方階梯代號。',
   '帶推車先找Gift Palette的電梯下B1，避免搬推車走H階梯；依現場無障礙指標繞行。',
@@ -78,11 +78,35 @@ wayfinding={
   'D是附近的官方階梯地標，不是H的同一組樓梯；後續依行程往KITTE／丸之內方向走。']),
  'overview':dict(points=[],nodes=[],steps=['本次樓層順序：JR B1→JR 1F→大丸1F→大丸B1→Gift 1F→零食B1。','A＝JR吹拔區B1／1F電扶梯；E＝同區電梯；B＝八重洲北口。','C＝大丸食品區中央電扶梯；H＝Gift Palette旁下B1的官方階梯代號。','彩色虛線是依官方圖判讀的步行方向；遇單向電扶梯、管制或施工，依現場標示調整。']),
 }
+# Numbers follow the walk, rather than the historical order of shop records.
+renumber={3:5,4:3,5:4}
+namespace['shops']=sorted([(renumber.get(n,n),*row) for n,*row in namespace['shops']])
+notion_pages={renumber.get(n,n):page for n,page in notion_pages.items()}
+for floor,route in wayfinding.items():
+ route['steps']=[re.sub(r'（([345])）',lambda m:f'（{renumber[int(m[1])]}）',step).replace('採買順序為4→5→3→6','採買順序為3→4→5→6') for step in route['steps']]
+for floor,styles in route_styles.items():
+ route_styles[floor]=[(re.sub(r'(?<!\d)[345](?!\d)',lambda m:str(renumber[int(m[0])]),label),color) for label,color in styles]
+wayfinding['daimarub1']['extra']=[[(969,380),(1010,385),(1100,385),(1130,365),(1195,365)]]
+route_styles['daimarub1'].append(('5→C回1F→6','#7a634b'))
+walks={
+ 'b1':'1 Ivorish → A上1F → 下一張接2（推車走E）',
+ '1f':'A／E上樓 → 2 Maple Mania → B出站 → 下一張接3',
+ 'daimaru1f':'JR側入口 → 3 TRIPLE DECKER → 4 N.Y.C.SAND → C下B1',
+ 'daimarub1':'C下樓 → 5 PRESS → 回C上1F → 下一張接6',
+ 'gift':'6 PISTA → 7 BRULEE → 8 VANILLABEANS → 9 Butter Butler → H下B1',
+ 'okashi':'沿南通り → 10 Calbee＋ → 東京站採買結束',
+ 'overview':'1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10',
+}
+specs=sorted(specs,key=lambda s:['b1','1f','daimaru1f','daimarub1','gift','okashi','overview'].index(s['id']))
 for spec in specs:
+ spec['shops']=[renumber.get(n,n) for n in spec['shops']]
+ spec['pins']=[(renumber.get(n,n),*coords) for n,*coords in spec['pins']]
+ if spec['id']=='daimaru1f':spec['subtitle']='依序3→4→C下B1；圖下接下一段'
+ elif spec['id']=='daimarub1':spec['subtitle']='C下樓→5→原路回1F，再往Gift Palette'
  if spec['id']=='b1':spec['notes']=['（1）→丸の内坂→銀の鈴側A電扶梯，上1F。','推車走E電梯；切JR 1F，從同樣的A／E接續。']
  elif spec['id']=='1f':spec['notes']=['A／E上樓→（2）→B八重洲北口，才出JR。','出站後走大丸1F；不要進新幹線轉乘口。']
- elif spec['id']=='daimaru1f':spec['notes']=['（4）→（5）→C中央電扶梯，走下り到B1。','推車走官方圖下方八重洲側電梯，選B1。']
- elif spec['id']=='daimarub1':spec['notes']=['C下樓→（3）；買完回C，走上り到1F。','回1F往JR側離開大丸，再逛Gift Palette。']
+ elif spec['id']=='daimaru1f':spec['notes']=['（3）→（4）→C中央電扶梯，走下り到B1。','推車走官方圖下方八重洲側電梯，選B1。']
+ elif spec['id']=='daimarub1':spec['notes']=['C下樓→（5）；買完回C，走上り到1F。','回1F往JR側離開大丸，再逛Gift Palette。']
  elif spec['id']=='gift':spec['notes']=['（6）G32→（7）G9→（8）G8→（9）G3。','H在星巴克G2旁，下B1再往東京おかしランド。']
  elif spec['id']=='okashi':spec['notes']=['循南通り到（10）G47，全程在JR改札外。','D是附近階梯地標；與Gift的H不同一組。']
  uri,source_w,source_h=data_url(sources/spec['base']);cx,cy,cw,ch=spec['crop'];scale=650/cw;map_y=160;map_h=ch*scale;legend_y=map_y+map_h+56
@@ -91,12 +115,15 @@ for spec in specs:
  parts=namespace['parts']
  parts.append(f'<svg class="official-plan" x="35" y="{map_y}" width="650" height="{map_h}" viewBox="{cx} {cy} {cw} {ch}" overflow="hidden"><image href="{uri}" width="{source_w}" height="{source_h}"/></svg>')
  route=wayfinding[spec['id']]
+ route_points=[point for segment in [route['points'],*route.get('extra',[])] for point in segment]
+ for number,x,y,*_ in spec['pins']:
+  assert any(math.hypot(x-px,y-py)<=2 for px,py in route_points),f'Shop {number} is disconnected from walking route'
  def xy(x,y):return 35+(x-cx)*scale,map_y+(y-cy)*scale
  for segment,points in enumerate([route['points'],*route.get('extra',[])]):
   if not points:continue
   label,color=route_styles[spec['id']][segment]
   marker_id=f'walking-arrow-{segment}'
-  parts.append(f'<defs><marker id="{marker_id}" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="{color}"/></marker></defs>')
+  parts.append(f'<defs><marker id="{marker_id}" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="{color}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>')
   d='M'+' L'.join(f'{px:.2f} {py:.2f}' for px,py in [xy(x,y) for x,y in points])
   parts.append(f'<path d="{d}" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path class="walking-route" aria-label="{escape(label)}" d="{d}" fill="none" stroke="{color}" stroke-width="4" stroke-dasharray="10 7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#{marker_id})"/>')
  for letter,x,y,dx,dy in route['nodes']:
@@ -126,6 +153,6 @@ for spec in specs:
   for chunk in chunks:text(chunk,43,y,18,True,'#536377');y+=28
  text(spec['source'],43,height-40,16,True,'#536377')
  svg=finish();(R/'assets'/spec['file']).write_text(svg,encoding='utf-8')
- out.append({k:spec[k] for k in ['id','label','file','source','url']}|{'svg':svg,'shops':spec['shops'],'steps':route['steps'],'routes':[{'label':label,'color':color} for label,color in route_styles[spec['id']]]})
+ out.append({k:spec[k] for k in ['id','label','file','source','url']}|{'svg':svg,'shops':spec['shops'],'steps':route['steps'],'walk':walks[spec['id']],'routes':[{'label':label,'color':color} for label,color in route_styles[spec['id']]]})
 (R/'assets/tokyo-station-guide.js').write_text('window.TOKYO_STATION_GUIDE = '+json.dumps(out,ensure_ascii=False)+';\n',encoding='utf-8')
 print('Built seven official-base SVG guides; original raster bases preserved; official PDFs converted to vector')
