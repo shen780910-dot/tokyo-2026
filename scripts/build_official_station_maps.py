@@ -173,8 +173,9 @@ def character_callouts(spec):
  shop(11,65,790,26,info='B1改札外・圓點與繁中店名直接對照')
  parts.append('<a class="shop-detail-link" data-kind="notion" data-shop="11" href="https://app.notion.com/p/3c8400d1c43e816584cad44baa840f92" target="_blank" rel="noopener noreferrer" aria-label="東京站・動漫街資料 Notion"><rect x="526" y="762" width="147" height="62" rx="6" fill="#eeeade" stroke="#536377" stroke-width="1.1"/>')
  system('Notion ↗',599,800,21,'#536377','middle');parts.append('</a>')
- text('原始完整版與全部店名：點下方官方地圖連結。',43,860,18,True,'#536377')
- text('底圖：東京站一番街・官方動漫街樓層圖',43,900,16,True,'#536377')
+ namespace['parts'].append(f'<a class="map-source-link" href="{spec["url"]}" target="_blank" rel="noopener noreferrer"><rect x="40" y="840" width="180" height="44" fill="transparent"/>')
+ text('底圖來源 ↗',43,870,19,True,'#536377')
+ namespace['parts'].append('</a>')
  return finish()
 for spec in specs:
  spec['shops']=[with_emmi(renumber.get(n,n)) for n in spec['shops']]
@@ -197,7 +198,7 @@ for spec in specs:
   svg=character_callouts(spec);(R/'assets'/spec['file']).write_text(svg,encoding='utf-8')
   out.append({k:spec[k] for k in ['id','label','file','source','url']}|{'svg':svg,'shops':spec['shops'],'steps':wayfinding['character']['steps'],'walk':walks['character'],'routes':[]})
   continue
- uri,source_w,source_h=data_url(sources/spec['base']);cx,cy,cw,ch=spec['crop'];scale=650/cw;map_y=160;map_h=ch*scale;legend_y=map_y+map_h+56
+ uri,source_w,source_h=data_url(sources/spec['base']);cx,cy,cw,ch=spec['crop'];scale=650/cw;map_y=160;map_h=ch*scale;legend_y=map_y+map_h+150
  height=math.ceil(legend_y+len(spec['shops'])*91+168)
  start(spec['title'],spec['subtitle'],height)
  parts=namespace['parts']
@@ -216,12 +217,19 @@ for spec in specs:
   parts.append(f'<path d="{d}" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path class="walking-route" aria-label="{escape(label)}" d="{d}" fill="none" stroke="{color}" stroke-width="4" stroke-dasharray="10 7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#{marker_id})"/>')
  for letter,x,y,dx,dy in route['nodes']:
   px,py=xy(x,y);bx,by=px+dx,py+dy
+  if spec['id']=='b1' and letter=='E':bx,by=px+24,py-30
   parts.append(f'<g class="floor-connection" data-connection="{letter}"><title>{letter}：對照下方逐段路線</title><path d="M{px} {py}L{bx} {by}" stroke="#536377" stroke-width="1.5"/><circle cx="{px}" cy="{py}" r="11" fill="none" stroke="#536377" stroke-width="2"/><rect x="{bx-13}" y="{by-13}" width="26" height="26" rx="4" fill="#536377" stroke="#fff" stroke-width="1.5"/>')
   system(letter,bx,by+7,20,'#fff','middle');parts.append('</g>')
  for number,x,y,dx,dy in spec['pins']:
   px,py=35+(x-cx)*scale,map_y+(y-cy)*scale;bx,by=px+dx,py+dy
   parts.append(f'<g class="official-shop-pin" data-shop="{number}"><path d="M{bx} {by}L{px} {py}" stroke="#a94732" stroke-width="1.7" fill="none"/><circle cx="{px}" cy="{py}" r="4" fill="#a94732" stroke="#fff" stroke-width="1.2"/><circle cx="{bx}" cy="{by}" r="14" fill="#a94732" stroke="#fff" stroke-width="2"/>')
   system(str(number),bx,by+6,20,'#fff','middle');parts.append('</g>')
+ # Put Chinese shop names outside the original plan, with leaders to exact pins.
+ labels={1:'Ivorish 法式吐司',2:'楓糖男孩',3:'三層夾心餅',4:'紐約焦糖餅',5:'奶油夾心餅',6:'emmi 女裝',7:'開心果餅乾',8:'布蕾奶油塔',9:'巧克力夾心餅',10:'奶油費南雪',12:'Calbee＋ 現炸薯條'}
+ for i,(number,x,y,*_) in enumerate(spec['pins']):
+  px,py=xy(x,y);lx=35+650*(i+.5)/max(1,len(spec['pins']));ly=map_y+map_h+65
+  parts.append(f'<path class="shop-name-leader" d="M{px} {py}V{map_y+map_h+25+i*5}H{lx}V{ly-20}" fill="none" stroke="#536377" stroke-width="1"/>')
+  text(str(number)+' '+labels[number],lx,ly,16,True,'#26312e','middle')
  for i,n in enumerate(spec['shops']):
   info=namespace['shops'][n-1][2]
   if spec['id']=='gift':info={7:'官方 G32・開心果餅乾',8:'官方 G9・布蕾奶油塔',9:'官方 G8・巧克力夾心餅',10:'官方 G3・奶油費南雪'}[n]
@@ -241,10 +249,9 @@ for spec in specs:
   # Two lines avoid reducing the text to an unreadable size on phones.
   chunks=[note] if len(note)<=35 else [note[:32],note[32:]]
   for chunk in chunks:text(chunk,43,y,18,True,'#536377');y+=28
- text(spec['source'],43,height-40,16,True,'#536377')
+ parts.append(f'<a class="map-source-link" href="{spec["url"]}" target="_blank" rel="noopener noreferrer"><rect x="40" y="{height-70}" width="180" height="44" fill="transparent"/>')
+ text('底圖來源 ↗',43,height-40,19,True,'#536377');parts.append('</a>')
  svg=finish();(R/'assets'/spec['file']).write_text(svg,encoding='utf-8')
  out.append({k:spec[k] for k in ['id','label','file','source','url']}|{'svg':svg,'shops':spec['shops'],'steps':route['steps'],'walk':walks[spec['id']],'routes':[{'label':label,'color':color} for label,color in route_styles[spec['id']]]})
 (R/'assets/tokyo-station-guide.js').write_text('window.TOKYO_STATION_GUIDE = '+json.dumps(out,ensure_ascii=False)+';\n',encoding='utf-8')
 print('Built nine official-base SVG guides including full Character Street and Daimaru 4F')
-from build_chinese_floor_maps import render_all
-render_all(globals())
