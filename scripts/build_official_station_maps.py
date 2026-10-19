@@ -7,6 +7,7 @@ from pathlib import Path
 from html import escape
 import base64,json,math,re,xml.etree.ElementTree as ET
 import pymupdf
+from station_map_translations import overlay as translate_map
 R=Path(__file__).resolve().parent.parent
 sources=R/'previews/official-floor-sources'
 namespace={'__file__':str(R/'scripts/build_tokyo_station_guide.py')}
@@ -141,7 +142,8 @@ def character_callouts(spec):
  uri,source_w,source_h=data_url(sources/'character.pdf')
  start(spec['title'],'圓點對應店家・圖外店名可開啟Google Maps',940)
  parts=namespace['parts'];cx,cy,cw,ch=0,80,841.89,245;scale=650/cw;map_y=280
- parts.append(f'<svg class="official-plan" x="35" y="{map_y}" width="650" height="{ch*scale}" viewBox="{cx} {cy} {cw} {ch}"><image href="{uri}" width="{source_w}" height="{source_h}"/></svg>')
+ parts.append(f'<svg class="official-plan" x="35" y="{map_y}" width="650" height="{ch*scale}" viewBox="{cx} {cy} {cw} {ch}"><image href="{uri}" width="{source_w}" height="{source_h}"/>')
+ translate_map(parts,system,spec['id'],source_w);parts.append('</svg>')
  # Official C-codes identify shops; itinerary stop 11 denotes the whole area.
  labels=[
   ('C6',['JUMP SHOP'],335,228,250,225,'JUMP SHOP 東京駅店'),
@@ -185,7 +187,7 @@ for spec in specs:
  elif spec['id']=='daimarub1':spec['subtitle']='C下樓→5→F電梯上4F emmi，再回1F接6'
  if spec['id']=='b1':spec['notes']=['（1）→丸の内坂→銀の鈴側A電扶梯，上1F。','推車走E電梯；切JR 1F，從同樣的A／E接續。']
  elif spec['id']=='1f':spec['notes']=['A／E上樓→（2）→B八重洲北口，才出JR。','出站後走大丸1F；不要進新幹線轉乘口。']
- elif spec['id']=='daimaru1f':spec['notes']=['（3）→（4）→C中央電扶梯，走下り到B1。','推車走官方圖下方八重洲側電梯，選B1。']
+ elif spec['id']=='daimaru1f':spec['notes']=['（3）→（4）→C中央電扶梯，往下到B1。','推車走官方圖下方八重洲側電梯，選B1。']
  elif spec['id']=='daimarub1':spec['notes']=['C下樓→（5）→F電梯上4F逛emmi。','逛完搭電梯回1F，再離開大丸接（6）。']
  elif spec['id']=='gift':spec['notes']=['（6）G32→（7）G9→（8）G8→（9）G3。','H在星巴克G2旁，下B1先逛（10）動漫街。']
  elif spec['id']=='okashi':spec['subtitle']='11 Calbee＋｜從10動漫街過來，全程改札外';spec['notes']=['從（10）動漫街往南通り，到（11）G47。','D是附近階梯地標；與Gift的H不同一組。']
@@ -202,7 +204,8 @@ for spec in specs:
  height=math.ceil(legend_y+len(spec['shops'])*91+140)
  start(spec['title'],spec['subtitle'],height)
  parts=namespace['parts']
- parts.append(f'<svg class="official-plan" x="35" y="{map_y}" width="650" height="{map_h}" viewBox="{cx} {cy} {cw} {ch}" overflow="hidden"><image href="{uri}" width="{source_w}" height="{source_h}"/></svg>')
+ parts.append(f'<svg class="official-plan" x="35" y="{map_y}" width="650" height="{map_h}" viewBox="{cx} {cy} {cw} {ch}" overflow="hidden"><image href="{uri}" width="{source_w}" height="{source_h}"/>')
+ translate_map(parts,system,spec['id'],source_w);parts.append('</svg>')
  route=wayfinding[spec['id']]
  route_points=[point for segment in [route['points'],*route.get('extra',[])] for point in segment]
  for number,x,y,*_ in spec['pins']:
@@ -224,16 +227,9 @@ for spec in specs:
   px,py=35+(x-cx)*scale,map_y+(y-cy)*scale;bx,by=px+dx,py+dy
   parts.append(f'<g class="official-shop-pin" data-shop="{number}"><path d="M{bx} {by}L{px} {py}" stroke="#a94732" stroke-width="1.7" fill="none"/><circle cx="{px}" cy="{py}" r="4" fill="#a94732" stroke="#fff" stroke-width="1.2"/><circle cx="{bx}" cy="{by}" r="14" fill="#a94732" stroke="#fff" stroke-width="2"/>')
   system(str(number),bx,by+6,20,'#fff','middle');parts.append('</g>')
- # Chinese retail-zone labels cover only the original printed label areas.
- if spec['id']=='b1':
-  for sx,sy,caption in [(1028,684,'甜點（和菓子）'),(1028,998,'甜點（西式糕點）')]:
-   px,py=xy(sx,sy);w=194*scale;h=60*scale
-   parts.append(f'<g class="translated-zone"><rect x="{px-2}" y="{py-2}" width="{w+4}" height="{h+4}" fill="#fff"/><rect x="{px}" y="{py}" width="{w}" height="{33*scale}" rx="{16*scale}" fill="#0863b5"/>')
-   system(caption,px+w/2,py+23*scale,23*scale,'#fff','middle')
-   system('銀之鈴區',px+w/2,py+53*scale,21*scale,'#26312e','middle');parts.append('</g>')
  labels={1:'法式吐司',2:'楓糖伴手禮',3:'三層夾心餅',4:'紐約焦糖餅',5:'奶油夾心餅',6:'女裝',7:'開心果餅乾',8:'布蕾奶油塔',9:'巧克力夾心餅',10:'奶油費南雪',12:'現炸薯條'}
  for i,n in enumerate(spec['shops']):
-  info=labels.get(n,'')+'・'+namespace['shops'][n-1][2]
+  info=labels.get(n,'')+'・'+namespace['shops'][n-1][2].replace('吹拔區','挑高空間旁')
   if spec['id']=='gift':info={7:'官方 G32・開心果餅乾',8:'官方 G9・布蕾奶油塔',9:'官方 G8・巧克力夾心餅',10:'官方 G3・奶油費南雪'}[n]
   shop(n,65,legend_y+i*91,26,info=info)
   link_y=legend_y+i*91

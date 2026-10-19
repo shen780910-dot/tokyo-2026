@@ -302,9 +302,9 @@ window.TRIP = {
           ]
         },
         {
-          "time": "中午順路｜預留10～15分鐘",
+          "time": "午餐前｜預留15分鐘",
           "activity": "銀座木村家紅豆麵包",
-          "detail": "經過木村屋總本店銀座本店1F時買酒種紅豆麵包；營業10:00～20:00，口味與售完狀況依現場，可視午餐時間跳過。",
+          "detail": "Dover Street Market 後，沿中央通前往木村屋總本店銀座本店1F買酒種紅豆麵包，再吃午餐；可選櫻花或小倉口味，實際品項依現場。",
           "links": [
             {
               "name": "銀座木村家（Notion）",
@@ -377,7 +377,7 @@ window.TRIP = {
           ]
         }
       ],
-      "note": "銀座先南後北：博品館 → Dover Street Market（彈性）→ 木村家（順路）→ 午餐 → SABON（彈性）→ MUJI → LOFT。15:30離開銀座 → 原宿HOKA → NB。澀谷PARCO、Nintendo與澀谷寶可夢取消；emmi已改到前一天大丸4F。"
+      "note": "銀座先南後北：博品館 → Dover Street Market（彈性）→ 木村家紅豆麵包（預留15分鐘）→ 午餐 → SABON（彈性）→ MUJI → LOFT。15:30離開銀座 → 原宿HOKA → NB。澀谷PARCO、Nintendo與澀谷寶可夢取消；emmi已改到前一天大丸4F。"
     },
     {
       "date": "11.15",
