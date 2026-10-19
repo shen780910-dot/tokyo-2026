@@ -137,6 +137,19 @@ wayfinding['character']['steps'][2]='繁中店名透過細引線直接連到店�
 walks.update(daimarub1='C下樓 → 5 PRESS → F電梯上4F，下一張接6 emmi',daimaru4f='F上4F → 6 emmi → F回1F → 下一張接7',gift='7 PISTA → 8 BRULEE → 9 VANILLABEANS → 10 Butter Butler → H下B1',character='H下樓 → 11動漫街（原圖）→ 沿北通り接12零食區',okashi='從11動漫街過來 → 南通り → 12 Calbee＋ → 午餐',overview='1→2→3→4→5→6 emmi→7→8→9→10→11動漫街→12零食區')
 wayfinding['overview']['steps'][0]='依序：JR B1→JR 1F→大丸1F→大丸B1→大丸4F emmi→Gift 1F→動漫B1→零食B1。'
 specs=sorted(specs,key=lambda s:['b1','1f','daimaru1f','daimarub1','daimaru4f','gift','character','okashi','overview'].index(s['id']))
+def map_navigation(spec,height):
+ parts=namespace['parts'];index=specs.index(spec);site='https://shen780910-dot.github.io/tokyo-2026/'
+ parts.append('<g class="map-floor-navigation" role="navigation" aria-label="樓層地圖切換">')
+ for delta,x,label in [(-1,100,'← 前一張'),(1,620,'後一張 →')]:
+  target=index+delta
+  if 0<=target<len(specs):
+   floor=specs[target]
+   parts.append(f'<a class="map-floor-switch" data-floor="{floor["id"]}" href="{site}?floor={floor["id"]}#day-2" aria-label="{label}：{floor["label"]}"><rect x="{x-62}" y="{height-80}" width="124" height="56" fill="transparent"/>')
+   system(label,x,height-44,18,'#536377','middle');parts.append('</a>')
+  else:system(label,x,height-44,18,'#a5aaa5','middle')
+ parts.append(f'<a class="map-full-floor" href="{site}assets/{spec["file"]}" target="_blank" rel="noopener noreferrer"><rect x="230" y="{height-80}" width="260" height="56" fill="transparent"/>')
+ system('開啟完整樓層圖 ↗',360,height-44,18,'#536377','middle');parts.append('</a></g>')
+
 def character_callouts(spec):
  """Keep official floor geometry, label shops in the surrounding whitespace."""
  uri,source_w,source_h=data_url(sources/'character.pdf')
@@ -178,6 +191,7 @@ def character_callouts(spec):
  namespace['parts'].append(f'<a class="map-source-link" href="{spec["url"]}" target="_blank" rel="noopener noreferrer"><rect x="526" y="830" width="147" height="44" fill="transparent"/>')
  text('底圖來源 ↗',599,854,17,True,'#536377','middle')
  namespace['parts'].append('</a>')
+ map_navigation(spec,940)
  return finish()
 for spec in specs:
  spec['shops']=[with_emmi(renumber.get(n,n)) for n in spec['shops']]
@@ -250,6 +264,7 @@ for spec in specs:
  source_y=legend_y+max(0,len(spec['shops'])-1)*91+64
  parts.append(f'<a class="map-source-link" href="{spec["url"]}" target="_blank" rel="noopener noreferrer"><rect x="526" y="{source_y-24}" width="147" height="44" fill="transparent"/>')
  text('底圖來源 ↗',599,source_y,17,True,'#536377','middle');parts.append('</a>')
+ map_navigation(spec,height)
  svg=finish();(R/'assets'/spec['file']).write_text(svg,encoding='utf-8')
  out.append({k:spec[k] for k in ['id','label','file','source','url']}|{'svg':svg,'shops':spec['shops'],'steps':route['steps'],'walk':walks[spec['id']],'routes':[{'label':label,'color':color} for label,color in route_styles[spec['id']]]})
 (R/'assets/tokyo-station-guide.js').write_text('window.TOKYO_STATION_GUIDE = '+json.dumps(out,ensure_ascii=False)+';\n',encoding='utf-8')
