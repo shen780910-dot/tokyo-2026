@@ -133,8 +133,10 @@ wayfinding['daimaru4f']=dict(points=[(1095,730),(1070,680),(1070,530),(987,530),
  '點「下一段：Gift 1F」，從（7）PISTA接續逛到（10）Butter Butler。'])
 route_styles['daimaru4f']=[('5→F上4F→6','#7a634b'),('6→回1F→7','#62713c')]
 wayfinding['character']['points']=[];wayfinding['character']['extra']=[];wayfinding['character']['nodes']=[];route_styles['character']=[]
-wayfinding['character']['steps'][2]='繁中店名透過細引線直接連到店家圓點，位置依最新官方櫃位；完整原始PDF仍可從下方底圖來源開啟。寶可夢C34在1F，並未誤標在B1。'
-walks.update(daimarub1='C下樓 → 5 PRESS → F電梯上4F，下一張接6 emmi',daimaru4f='F上4F → 6 emmi → F回1F → 下一張接7',gift='7 PISTA → 8 BRULEE → 9 VANILLABEANS → 10 Butter Butler → H下B1',character='H下樓 → 11動漫街（原圖）→ 沿北通り接12零食區',okashi='從11動漫街過來 → 南通り → 12 Calbee＋ → 午餐',overview='1→2→3→4→5→6 emmi→7→8→9→10→11動漫街→12零食區')
+wayfinding['character']['steps'][0]='從Gift Palette的H階梯／電扶梯下到B1，從圖上H起點開始逛動漫街；不用進JR改札。'
+wayfinding['character']['steps'][2]='逛完回到店家上方的北通道，往本圖左側走，朝銀之鈴／八重洲地下中央口方向；保持在JR改札外。'
+wayfinding['character']['steps'][3]='本圖左側接「零食B1」圖右上方D階梯附近；在驗票口外轉往左邊的南通道，找綠色零食區右端（12）G47 Calbee＋。'
+walks.update(daimarub1='C下樓 → 5 PRESS → F電梯上4F，下一張接6 emmi',daimaru4f='F上4F → 6 emmi → F回1F → 下一張接7',gift='7 PISTA → 8 BRULEE → 9 VANILLABEANS → 10 Butter Butler → H下B1',character='H階梯下B1 → 11動漫街 → 逛完沿北通道往圖左側 → 12零食區 G47',okashi='從11動漫街過來 → 南通道 → 12 Calbee＋ → 午餐',overview='1→2→3→4→5→6 emmi→7→8→9→10→11動漫街→12零食區')
 wayfinding['overview']['steps'][0]='依序：JR B1→JR 1F→大丸1F→大丸B1→大丸4F emmi→Gift 1F→動漫B1→零食B1。'
 specs=sorted(specs,key=lambda s:['b1','1f','daimaru1f','daimarub1','daimaru4f','gift','character','okashi','overview'].index(s['id']))
 def map_navigation(spec,height):
@@ -157,6 +159,14 @@ def character_callouts(spec):
  parts=namespace['parts'];cx,cy,cw,ch=0,80,841.89,245;scale=650/cw;map_y=280
  parts.append(f'<svg class="official-plan" x="35" y="{map_y}" width="650" height="{ch*scale}" viewBox="{cx} {cy} {cw} {ch}"><image href="{uri}" width="{source_w}" height="{source_h}"/>')
  translate_map(parts,system,spec['id'],source_w);parts.append('</svg>')
+ # H is the arrival from Gift Palette. The left arrow is for after shopping.
+ hx,hy=35+400*scale,map_y+(223-cy)*scale
+ ry=map_y+(212-cy)*scale;left=35+140*scale
+ parts.append('<defs><marker id="character-exit-arrow" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1L6 4L1 7" fill="none" stroke="#7a634b" stroke-width="1.5"/></marker></defs>')
+ d=f'M{hx} {hy}V{ry}H{left}'
+ parts.append(f'<path d="{d}" fill="none" stroke="#fff" stroke-width="5"/><path class="walking-route" aria-label="逛完沿北通道往左接零食B1" d="{d}" fill="none" stroke="#7a634b" stroke-width="2.2" stroke-dasharray="7 5" marker-end="url(#character-exit-arrow)"/><g class="floor-connection" data-connection="H"><circle cx="{hx}" cy="{hy}" r="9" fill="#536377" stroke="#fff" stroke-width="1.3"/>')
+ system('H',hx,hy+4,12,'#fff','middle');parts.append('</g>')
+ text('← 逛完往左接零食B1',43,265,16,True,'#7a634b')
  # Official C-codes identify shops; itinerary stop 11 denotes the whole area.
  labels=[
   ('C6',['JUMP SHOP'],335,228,250,225,'JUMP SHOP 東京駅店'),
@@ -183,8 +193,8 @@ def character_callouts(spec):
   parts.append(f'<a class="character-callout" data-code="{code}" href="{escape(href,quote=True)}" target="_blank" rel="noopener noreferrer" aria-label="{escape(names[0])}：Google Maps"><title>{escape(names[0])}｜官方{code}</title><circle cx="{px:.2f}" cy="{py:.2f}" r="5" fill="#bd426a" stroke="#fff" stroke-width="1.6"/><rect x="{lx-98}" y="{ly-26}" width="196" height="54" fill="transparent"/><g stroke="#eeeade" stroke-width="3" stroke-linejoin="round" paint-order="stroke fill">')
   for i,name in enumerate(names):text(name,lx,ly+i*27,24,False,'#9d3656','middle')
   parts.append('</g>');system(code,lx,ly+23,16,'#536377','middle');parts.append('</a>')
- text('Tomica／Plarail先逛；其他店現場自由選。',43,690,19,True,'#536377')
- text('寶可夢C34在1F；櫃位以最新版官方圖為準。',43,720,18,True,'#536377')
+ text('H階梯下B1 → 逛動漫街 → 沿北通道往左走。',43,690,18,True,'#536377')
+ text('本圖左側接零食B1圖右上D階梯，再往G47。',43,720,18,True,'#536377')
  shop(11,65,790,26,info='B1改札外・圓點與繁中店名直接對照')
  parts.append('<a class="shop-detail-link" data-kind="notion" data-shop="11" href="https://app.notion.com/p/3c8400d1c43e816584cad44baa840f92" target="_blank" rel="noopener noreferrer" aria-label="東京站・動漫街資料 Notion"><rect x="526" y="762" width="147" height="62" rx="6" fill="#eeeade" stroke="#536377" stroke-width="1.1"/>')
  system('Notion ↗',599,800,21,'#536377','middle');parts.append('</a>')
