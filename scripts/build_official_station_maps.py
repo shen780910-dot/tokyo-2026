@@ -54,11 +54,11 @@ wayfinding={
  'b1':dict(points=[(350,950),(320,930),(340,842),(550,842),(850,842),(860,862)],nodes=[('A',860,862,30,26),('E',1038,862,24,28)],steps=[
   '（1）Ivorish買完，沿「丸の内坂」往八重洲／銀の鈴方向走；不要穿出丸之內地下改札。',
   '走到銀の鈴區西側、靠SQUARE ZERO的A點，搭連通B1與1F的電扶梯上1F。不要搭往列車月台的樓梯。',
-  '帶推車改用同一吹拔區的E電梯上1F；不要使用標示「3・4番線」等月台專用電梯。',
+  '帶推車請走地圖E電梯上1F；不要搭標示「3・4番線」的月台專用電梯。',
   '切到「JR 1F」：從同樣的A點（或E點）接續，前往（2）The Maple Mania。']),
  '1f':dict(points=[(483,387),(483,365),(540,365),(540,335)],extra=[[(540,335),(615,335),(615,210),(879,205)]],nodes=[('A',483,387,-30,15),('E',643,404,30,18),('B',879,205,28,-25)],steps=[
   'A是從B1上來的電扶梯出口；上到1F後，往吹き抜けエリア的（2）The Maple Mania。',
-  '推車從E電梯出來，沿吹拔區外側通道往（2）走；與A同在1F改札內。',
+  '推車從E電梯出來，沿站內通道往（2）走；A與E都在1F改札內。',
   '（2）買完往「八重洲北口」B點走，從一般JR改札出站；不要進旁邊「北のりかえ口」新幹線轉乘口。',
   '出站後往大丸東京食品區，切到「大丸1F」；下一段採買順序是（4）→（5）→（3）。']),
  'daimaru1f':dict(points=[(845,280),(865,280),(865,620),(925,620),(985,620),(985,455),(1050,455)],extra=[[(1050,455),(990,420),(990,375),(1155,375)]],nodes=[('C',1155,375,20,35)],steps=[
@@ -81,7 +81,7 @@ wayfinding={
   '到D階梯附近、八重洲地下中央改札外側，沿南通り走到綠色零食區；不用進JR改札。',
   '（10）Calbee＋是G47，位在零食區右側；G44～G46可依現場狀況一起逛。',
   'D是附近的官方階梯地標，不是H的同一組樓梯；後續依行程往KITTE／丸之內方向走。']),
- 'overview':dict(points=[],nodes=[],steps=['本次樓層順序：JR B1→JR 1F→大丸1F→大丸B1→Gift 1F→零食B1。','A＝JR吹拔區B1／1F電扶梯；E＝同區電梯；B＝八重洲北口。','C＝大丸食品區中央電扶梯；H＝Gift Palette旁下B1的官方階梯代號。','彩色虛線是依官方圖判讀的步行方向；遇單向電扶梯、管制或施工，依現場標示調整。']),
+ 'overview':dict(points=[],nodes=[],steps=['本次樓層順序：JR B1→JR 1F→大丸1F→大丸B1→Gift 1F→零食B1。','A＝JR B1／1F電扶梯；E＝同區電梯；B＝八重洲北口。','C＝大丸食品區中央電扶梯；H＝Gift Palette旁下B1的官方階梯代號。','彩色虛線是依官方圖判讀的步行方向；遇單向電扶梯、管制或施工，依現場標示調整。']),
 }
 # Numbers follow the walk, rather than the historical order of shop records.
 renumber={3:5,4:3,5:4,10:11,11:10}
@@ -173,8 +173,8 @@ def character_callouts(spec):
  shop(11,65,790,26,info='B1改札外・圓點與繁中店名直接對照')
  parts.append('<a class="shop-detail-link" data-kind="notion" data-shop="11" href="https://app.notion.com/p/3c8400d1c43e816584cad44baa840f92" target="_blank" rel="noopener noreferrer" aria-label="東京站・動漫街資料 Notion"><rect x="526" y="762" width="147" height="62" rx="6" fill="#eeeade" stroke="#536377" stroke-width="1.1"/>')
  system('Notion ↗',599,800,21,'#536377','middle');parts.append('</a>')
- namespace['parts'].append(f'<a class="map-source-link" href="{spec["url"]}" target="_blank" rel="noopener noreferrer"><rect x="40" y="840" width="180" height="44" fill="transparent"/>')
- text('底圖來源 ↗',43,870,19,True,'#536377')
+ namespace['parts'].append(f'<a class="map-source-link" href="{spec["url"]}" target="_blank" rel="noopener noreferrer"><rect x="526" y="830" width="147" height="44" fill="transparent"/>')
+ text('底圖來源 ↗',599,854,17,True,'#536377','middle')
  namespace['parts'].append('</a>')
  return finish()
 for spec in specs:
@@ -198,8 +198,8 @@ for spec in specs:
   svg=character_callouts(spec);(R/'assets'/spec['file']).write_text(svg,encoding='utf-8')
   out.append({k:spec[k] for k in ['id','label','file','source','url']}|{'svg':svg,'shops':spec['shops'],'steps':wayfinding['character']['steps'],'walk':walks['character'],'routes':[]})
   continue
- uri,source_w,source_h=data_url(sources/spec['base']);cx,cy,cw,ch=spec['crop'];scale=650/cw;map_y=160;map_h=ch*scale;legend_y=map_y+map_h+150
- height=math.ceil(legend_y+len(spec['shops'])*91+168)
+ uri,source_w,source_h=data_url(sources/spec['base']);cx,cy,cw,ch=spec['crop'];scale=650/cw;map_y=160;map_h=ch*scale;legend_y=map_y+map_h+56
+ height=math.ceil(legend_y+len(spec['shops'])*91+140)
  start(spec['title'],spec['subtitle'],height)
  parts=namespace['parts']
  parts.append(f'<svg class="official-plan" x="35" y="{map_y}" width="650" height="{map_h}" viewBox="{cx} {cy} {cw} {ch}" overflow="hidden"><image href="{uri}" width="{source_w}" height="{source_h}"/></svg>')
@@ -224,14 +224,16 @@ for spec in specs:
   px,py=35+(x-cx)*scale,map_y+(y-cy)*scale;bx,by=px+dx,py+dy
   parts.append(f'<g class="official-shop-pin" data-shop="{number}"><path d="M{bx} {by}L{px} {py}" stroke="#a94732" stroke-width="1.7" fill="none"/><circle cx="{px}" cy="{py}" r="4" fill="#a94732" stroke="#fff" stroke-width="1.2"/><circle cx="{bx}" cy="{by}" r="14" fill="#a94732" stroke="#fff" stroke-width="2"/>')
   system(str(number),bx,by+6,20,'#fff','middle');parts.append('</g>')
- # Put Chinese shop names outside the original plan, with leaders to exact pins.
- labels={1:'Ivorish 法式吐司',2:'楓糖男孩',3:'三層夾心餅',4:'紐約焦糖餅',5:'奶油夾心餅',6:'emmi 女裝',7:'開心果餅乾',8:'布蕾奶油塔',9:'巧克力夾心餅',10:'奶油費南雪',12:'Calbee＋ 現炸薯條'}
- for i,(number,x,y,*_) in enumerate(spec['pins']):
-  px,py=xy(x,y);lx=35+650*(i+.5)/max(1,len(spec['pins']));ly=map_y+map_h+65
-  parts.append(f'<path class="shop-name-leader" d="M{px} {py}V{map_y+map_h+25+i*5}H{lx}V{ly-20}" fill="none" stroke="#536377" stroke-width="1"/>')
-  text(str(number)+' '+labels[number],lx,ly,16,True,'#26312e','middle')
+ # Chinese retail-zone labels cover only the original printed label areas.
+ if spec['id']=='b1':
+  for sx,sy,caption in [(1028,684,'甜點（和菓子）'),(1028,998,'甜點（西式糕點）')]:
+   px,py=xy(sx,sy);w=194*scale;h=60*scale
+   parts.append(f'<g class="translated-zone"><rect x="{px-2}" y="{py-2}" width="{w+4}" height="{h+4}" fill="#fff"/><rect x="{px}" y="{py}" width="{w}" height="{33*scale}" rx="{16*scale}" fill="#0863b5"/>')
+   system(caption,px+w/2,py+23*scale,23*scale,'#fff','middle')
+   system('銀之鈴區',px+w/2,py+53*scale,21*scale,'#26312e','middle');parts.append('</g>')
+ labels={1:'法式吐司',2:'楓糖伴手禮',3:'三層夾心餅',4:'紐約焦糖餅',5:'奶油夾心餅',6:'女裝',7:'開心果餅乾',8:'布蕾奶油塔',9:'巧克力夾心餅',10:'奶油費南雪',12:'現炸薯條'}
  for i,n in enumerate(spec['shops']):
-  info=namespace['shops'][n-1][2]
+  info=labels.get(n,'')+'・'+namespace['shops'][n-1][2]
   if spec['id']=='gift':info={7:'官方 G32・開心果餅乾',8:'官方 G9・布蕾奶油塔',9:'官方 G8・巧克力夾心餅',10:'官方 G3・奶油費南雪'}[n]
   shop(n,65,legend_y+i*91,26,info=info)
   link_y=legend_y+i*91
@@ -249,8 +251,9 @@ for spec in specs:
   # Two lines avoid reducing the text to an unreadable size on phones.
   chunks=[note] if len(note)<=35 else [note[:32],note[32:]]
   for chunk in chunks:text(chunk,43,y,18,True,'#536377');y+=28
- parts.append(f'<a class="map-source-link" href="{spec["url"]}" target="_blank" rel="noopener noreferrer"><rect x="40" y="{height-70}" width="180" height="44" fill="transparent"/>')
- text('底圖來源 ↗',43,height-40,19,True,'#536377');parts.append('</a>')
+ source_y=legend_y+max(0,len(spec['shops'])-1)*91+64
+ parts.append(f'<a class="map-source-link" href="{spec["url"]}" target="_blank" rel="noopener noreferrer"><rect x="526" y="{source_y-24}" width="147" height="44" fill="transparent"/>')
+ text('底圖來源 ↗',599,source_y,17,True,'#536377','middle');parts.append('</a>')
  svg=finish();(R/'assets'/spec['file']).write_text(svg,encoding='utf-8')
  out.append({k:spec[k] for k in ['id','label','file','source','url']}|{'svg':svg,'shops':spec['shops'],'steps':route['steps'],'walk':walks[spec['id']],'routes':[{'label':label,'color':color} for label,color in route_styles[spec['id']]]})
 (R/'assets/tokyo-station-guide.js').write_text('window.TOKYO_STATION_GUIDE = '+json.dumps(out,ensure_ascii=False)+';\n',encoding='utf-8')

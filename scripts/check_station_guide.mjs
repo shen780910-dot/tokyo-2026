@@ -18,6 +18,8 @@ try{
   await send('Page.navigate',{url:pathToFileURL(path.join(root,'index.html')).href+'#day-2'});
   for(let i=0;i<60;i++){if(await evaluate(`document.querySelectorAll('.station-floor-tabs button').length===9 && document.readyState==='complete'`))break;await delay(100);}
   await evaluate(`document.fonts.ready.then(()=>true)`);
+  const layout=await evaluate(`(()=>{const d=document.querySelector('.station-directions'),s=document.querySelector('.station-guide');return {wide:d.clientWidth>=s.clientWidth-2,note:!!s.querySelector('.station-guide-note'),jargon:s.textContent.includes('吹拔區')};})()`);
+  if(!layout.wide||layout.note||layout.jargon)throw Error(JSON.stringify({device,layout}));
   const allStops=await evaluate(`JSON.stringify(window.TOKYO_STATION_GUIDE.flatMap(item=>item.shops).sort((a,b)=>a-b))`);
   if(allStops!==JSON.stringify([1,2,3,4,5,6,7,8,9,10,11,12]))throw Error('Shopping stops incomplete or duplicated');
   const sequence=await evaluate(`JSON.stringify(window.TOKYO_STATION_GUIDE.flatMap(item=>item.shops))`);if(sequence!==JSON.stringify([1,2,3,4,5,6,7,8,9,10,11,12]))throw Error('Tab order is not walking order');
@@ -29,6 +31,7 @@ try{
    await evaluate(`document.querySelectorAll('.station-floor-tabs button')[${index}].click()`);
    const basesLoaded=await evaluate(`Promise.all([...document.querySelectorAll('.station-guide-canvas image')].map(image=>new Promise(resolve=>{const img=new Image();img.onload=()=>resolve(img.naturalWidth>0);img.onerror=()=>resolve(false);img.src=image.getAttribute('href');}))).then(values=>values.every(Boolean))`);
    if(!basesLoaded)throw Error('Official floor-plan base failed to load');
+   const compact=await evaluate(`(()=>{const svg=document.querySelector('.station-guide-canvas svg');const a=svg.querySelector('.map-source-link').getBoundingClientRect();const buttons=[...svg.querySelectorAll('.shop-detail-link')];const b=buttons.at(-1)?.getBoundingClientRect();return !svg.querySelector('.shop-name-leader')&&(!b||a.top>=b.bottom-1&&a.left>=b.left-1&&a.right<=b.right+1);})()`);if(!compact)throw Error('Source must sit below shop button without duplicate name leaders');
    const metrics=await evaluate(`(()=>{const panel=document.querySelector('.station-guide-canvas');const svg=panel.querySelector('svg');const b=svg.getBoundingClientRect();return {hash:location.hash,active:document.querySelector('.station-floor-tabs [aria-selected="true"]').id,pageWidth:document.documentElement.scrollWidth,left:b.left,right:b.right,links:svg.querySelectorAll('a').length,width:panel.clientWidth,official:svg.querySelectorAll('.official-plan').length,images:svg.querySelectorAll('image').length};})()`);
    if(metrics.hash!=='#day-2'||metrics.pageWidth>device.width||metrics.left<0||metrics.right>device.width+1||metrics.links!==links+1||metrics.active!=='station-floor-'+floor||metrics.official!==1||metrics.images!==1)throw Error(JSON.stringify({device,floor,metrics}));
    const sourceValid=await evaluate(`(()=>{const a=document.querySelector('.station-guide-canvas .map-source-link');return a?.getAttribute('href')===window.TOKYO_STATION_GUIDE[${index}].url&&a.getAttribute('target')==='_blank';})()`);if(!sourceValid)throw Error('Missing direct source link');
