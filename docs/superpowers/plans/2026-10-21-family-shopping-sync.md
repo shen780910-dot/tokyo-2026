@@ -83,3 +83,14 @@
 - [ ] 更新下一個 vx.y 版號及變更紀錄，GitHub Pages 部署成功後才回報上線。
 - [ ] 將正式網站連結交付家人使用，說明輸入一次後該瀏覽器可持續解鎖30天。
 - [ ] 若尚未完成後端部署或跨裝置驗證，清楚報告剩餘阻礙，保留正式網站原狀，不稱已同步。
+
+## Execution ledger
+
+Ruling: 沿用現有前端工作目錄，後端使用獨立 sibling checkout；避免帶入使用者既有未追蹤工具。
+Ruling: API 以單一 catch-all route 導向可獨立測試的 service 模組，減少重複驗證與 CORS 邏輯。
+Task 1–2: Sites 專案與 D1 migration 已部署成功；公開 GET 回200，授權與單品更新測試通過。
+Task 3: 前端 controller 的公開唯讀、5秒輪詢、離線回復及舊回應保護測試通過。
+
+Task 4: 正式 API 三個隔離 Chrome 工作階段通過 A→B、B→A、匿名同步、重新整理、離線恢復及各裝置退出測試。
+Review: 獨立審查發現 P2 請求未設逾時；先加入卡住請求測試並見其失敗，再以12秒 AbortController／Promise.race 修正，4項 controller 測試全數通過。
+Ruling: 僅在 #shopping 啟動同步，離開待購清單停止輪詢，其他行程瀏覽不產生同步流量。

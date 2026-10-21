@@ -23,19 +23,14 @@ try{
   const metrics=await evaluate(`(()=>{const p=document.querySelector('#shopping'),img=p.querySelector('img');return {visible:!p.hidden,width:document.documentElement.scrollWidth,category:p.querySelector('h2').textContent,image:img.complete&&img.naturalWidth>0,nav:document.querySelector('nav [aria-current="page"]').hash};})()`);
   const clothing=await evaluate(`(()=>{const row=document.querySelector('[data-item="instagram-DeUHZBjjUhR"]');return row?.closest('.shopping-category').querySelector('h2').textContent==='衣著'&&row.querySelector('a').href==='https://www.instagram.com/p/DeUHZBjjUhR/'&&row.querySelector('img')?.getAttribute('src')==='assets/shopping/hoka-clifton-11-gtx-glm.jpg'&&row.textContent.includes('HK1183115-AKP');})()`);if(!clothing)throw Error('Clothing link or category missing');
   if(!metrics.visible||metrics.width>device.width||metrics.category!=='3C 用品'||!metrics.image||metrics.nav!=='#shopping')throw Error(JSON.stringify({device,metrics}));
-  await evaluate(`(()=>{const input=document.querySelector('.shopping-purchased input');if(input.checked)input.click();input.click();})()`);
-  if(!await evaluate(`document.querySelector('#shopping-progress').textContent==='1 / 2 已購買'`))throw Error('Shopping progress did not update');
-  await send('Page.navigate',{url});
-  for(let i=0;i<100;i++){if(await evaluate(`document.readyState==='complete'&&document.querySelector('.shopping-purchased input')?.checked===true`))break;await delay(100);}
-  if(!await evaluate(`document.querySelector('.shopping-purchased input')?.checked===true`))throw Error('Shopping state lost on reload');
-  await evaluate(`document.querySelector('.shopping-purchased input').click()`);
+  if(!await evaluate(`document.querySelector('.shopping-purchased input').disabled&&!document.querySelector('.family-unlock').hidden`))throw Error('Anonymous shopping list must be read-only');
   for(const dark of [false,true]){
    await evaluate(`if(document.body.classList.contains('dark')!==${dark})document.querySelector('#theme').click()`);
    const shot=await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});await fs.writeFile(path.join(root,'previews',device.name+'-shopping-'+(dark?'dark':'light')+'.png'),Buffer.from(shot.data,'base64'));
   }
   await evaluate(`location.hash='prep'`);await delay(100);
   if(!await evaluate(`!document.querySelector('#prep').hidden&&document.querySelector('#shopping').hidden`))throw Error('Prep route regressed');
-  console.log(device.name+': shopping route, image, category, persistence, progress, dark mode and width passed');
+  console.log(device.name+': shopping route, image, category, anonymous read-only, dark mode and width passed');
  }
  await send('Browser.close');
 }finally{ws?.close();chrome.kill();}
