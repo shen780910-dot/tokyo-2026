@@ -1,5 +1,10 @@
 # 版本紀錄
 
+## v1.36
+
+- 成功透過瀏覽器讀取 Instagram 公開貼文，將衣著收藏補為 HOKA Clifton 11 GTX GLM 女鞋。
+- 補上原始商品圖、Alabaster / Pink Opal 配色、HK1183115-AKP 款號與來源尺寸範圍；日本供貨維持待確認。
+
 ## v1.35
 
 - 待購清單新增「衣著」分類，收錄使用者提供的 Instagram 貼文連結。

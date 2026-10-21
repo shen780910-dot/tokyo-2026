@@ -16,9 +16,10 @@ window.SHOPPING_LIST = [
     items: [
       {
         id: 'instagram-DeUHZBjjUhR',
-        name: 'Instagram 衣著收藏',
-        type: '衣著選購參考',
-        detail: '商品名稱待補，款式請查看原始貼文。',
+        name: 'HOKA Clifton 11 GTX GLM 女鞋',
+        type: '鞋款／防水運動鞋',
+        detail: 'Alabaster / Pink Opal 粉色系；貼文款號 HK1183115-AKP，女款 US 5.5–9，採 GORE-TEX Invisible Fit。來源為 C.P.U. 香港；日本售價、尺寸與供貨待確認。',
+        image: 'assets/shopping/hoka-clifton-11-gtx-glm.jpg',
         url: 'https://www.instagram.com/p/DeUHZBjjUhR/',
         linkLabel: '查看 Instagram 貼文'
       }
