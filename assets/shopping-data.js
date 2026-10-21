@@ -10,5 +10,18 @@ window.SHOPPING_LIST = [
         image: 'assets/shopping/instax-mini-20.jpg'
       }
     ]
+  },
+  {
+    category: '衣著',
+    items: [
+      {
+        id: 'instagram-DeUHZBjjUhR',
+        name: 'Instagram 衣著收藏',
+        type: '衣著選購參考',
+        detail: '商品名稱待補，款式請查看原始貼文。',
+        url: 'https://www.instagram.com/p/DeUHZBjjUhR/',
+        linkLabel: '查看 Instagram 貼文'
+      }
+    ]
   }
 ];
