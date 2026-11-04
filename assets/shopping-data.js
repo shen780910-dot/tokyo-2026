@@ -3,6 +3,13 @@ window.SHOPPING_LIST = [
     category: '3C 用品',
     items: [
       {
+        id: '3coins-photo-printer',
+        name: '3COINS 相印機（フォトプリンター）',
+        type: '手機相片印表機',
+        detail: '米白色款，外觀依提供圖片核對；型號、售價、耗材規格與門市庫存待確認。',
+        image: 'assets/shopping/3coins-photo-printer.png'
+      },
+      {
         id: 'instax-mini-film-20',
         name: 'FUJIFILM instax mini 拍立得底片',
         type: '拍立得底片',
