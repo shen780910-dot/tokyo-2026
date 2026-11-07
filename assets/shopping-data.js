@@ -22,16 +22,16 @@ window.SHOPPING_LIST = [
       },
       {
         "id": "escura-instantsnap-white",
-        "name": "Escura InstantSnap 白色數位玩具相機",
-        "type": "照片辨識：初代SN-25-WH／購買時核對",
-        "detail": "拍立得相框造型、透明光學觀景窗的數位玩具相機，照片存至另購microSD卡，不會直接列印。照片外觀對應初代白色款；勿與InstantSnap.novo SN-26-WH混淆。日本代理商參考價¥7,700，實售價與庫存依店家。 購買通路：第二天可先向BicCamera有樂町店相機區詢問，出發前查該分店庫存／預留；BicCamera及Yodobashi官網有販售，其他分店庫存另查。",
-        "image": "assets/shopping/escura-instantsnap-white.png",
-        "usage": "先依說明書充電並裝入相容microSD卡，透過中央透明觀景窗構圖，按下快門拍攝；影像需匯出查看，中央不是螢幕。",
-        "caution": "購買前確認型號、記憶卡規格與隨附配件。",
-        "sourceUrl": "assets/shopping/escura-instantsnap-white.png",
-        "sourceLabel": "使用者提供的原始參考照片",
-        "url": "https://www.biccamera.com/bc/tenpo/SfrBcToriokiList.jsp?GOODS_NO=13988859",
-        "linkLabel": "BicCamera各分店庫存／預留查詢"
+        "name": "Escura InstantSnap.novo 第二代白色數位玩具相機",
+        "type": "第二代／白色 SN-26-WH",
+        "detail": "橫式透明觀景窗數位玩具相機，配備1.3吋螢幕，可確認構圖及回看照片；支援五種年代濾鏡與35mm底片風相框，重量38g。日本含稅參考價¥10,380（2026/11/08查閱，依現場售價）。購買地點：第二天優先到BicCamera有樂町店相機區詢問，出發前用下方連結查庫存或預留；BicCamera其他分店及Yodobashi亦有販售，分店現貨需另確認。",
+        "image": "assets/shopping/escura-instantsnap-novo-white.jpg",
+        "usage": "以USB-C充電，裝入另購microSD卡（4–64GB、Class 4–10、FAT32格式）。選擇構圖板、濾鏡或相框後拍攝，可在1.3吋螢幕確認照片；以USB-C傳輸或讀卡機匯出影像。",
+        "caution": "數位玩具相機，不會直接印照片。請認明第二代InstantSnap.novo與SN-26-WH，勿買成初代SN-25-WH；記憶卡另購。",
+        "sourceUrl": "https://www.yodobashi.com/product/100000001010230826/",
+        "sourceLabel": "Yodobashi商品與規格",
+        "url": "https://www.biccamera.com/bc/tenpo/SfrBcToriokiList.jsp?GOODS_NO=15623205",
+        "linkLabel": "BicCamera第二代白色款分店庫存／預留"
       }
     ]
   },

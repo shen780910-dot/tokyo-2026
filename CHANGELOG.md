@@ -1,5 +1,8 @@
 # 版本紀錄
 
+## v1.52
+- 待購相機改為第二代Escura InstantSnap.novo白色款SN-26-WH，更新商品圖、使用方法及BicCamera／Yodobashi購買資訊。
+
 ## v1.51
 
 - 待購清單新增Escura InstantSnap白色數位玩具相機，附參考照片、使用方式及BicCamera分店庫存查詢，標注有樂町店詢貨建議。
