@@ -28,5 +28,10 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+      - name: Clear the stalled v1.54 deployment for this recovery commit only
+        if: github.event.head_commit.message == 'One-time recovery of stalled v1.54 Pages deployment' && github.run_attempt == 1
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST repos/shen780910-dot/tokyo-2026/pages/deployments/ee72369a3140640a0769ce296c1b2f6d2740b0c5/cancel
       - uses: actions/deploy-pages@v4
         id: deployment
