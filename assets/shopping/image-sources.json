@@ -1,0 +1,87 @@
+[
+  {
+    "id": "sofina-ip",
+    "image": "assets/shopping/sofina-ip.png",
+    "source": "https://kao-h.assetsadobe3.com/is/image/content/dam/sites/kao/www-kao-kirei-com/jp/ja/official/sofina-ip/v3/index/pc/basecareserum.png?fmt=png-alpha&wid=600"
+  },
+  {
+    "id": "gelee-rich",
+    "image": "assets/shopping/gelee-rich.jpg",
+    "source": "https://www.geleerich.jp/geleerich/common/images/product/lineup_img01.jpg"
+  },
+  {
+    "id": "obagi-c",
+    "image": "assets/shopping/obagi-c.png",
+    "source": "https://www.obagi.co.jp/-/media/obagi/promotion/cserum/img_series_lineup.png"
+  },
+  {
+    "id": "one-by-kose",
+    "image": "assets/shopping/one-by-kose.png",
+    "source": "https://www.koseprofessional.co.jp/resources/images/brand/one_by_kose/serum_shield/image.png"
+  },
+  {
+    "id": "takami-skinpeel",
+    "image": "assets/shopping/takami-skinpeel.png",
+    "source": "https://www.takami-labo.com/assets/img/skinpeel/skinpeel_bottle.png"
+  },
+  {
+    "id": "takami-essence-5ce",
+    "image": "assets/shopping/takami-essence-5ce.png",
+    "source": "https://www.takami-labo.com/assets/img/products/essence_ce/product_main_320px@3x.png"
+  },
+  {
+    "id": "punera-pdrn-e",
+    "image": "assets/shopping/punera-pdrn-e.jpg",
+    "source": "https://prcdn.freetls.fastly.net/release_image/45651/56/45651-56-e42b60ae1789f1be0ed4a96f108397bc-2048x2048.png?auto=webp&bg-color=fff&fit=bounds&format=jpeg&height=800&quality=85&width=800"
+  },
+  {
+    "id": "ozio-white",
+    "image": "assets/shopping/ozio-white.webp",
+    "source": "https://shoplineimg.com/695de52fc28041006ae514ec/6981a4694355aba90af3bc6d/800x.webp?source_format=jpg"
+  },
+  {
+    "id": "ozio-gold",
+    "image": "assets/shopping/ozio-gold.webp",
+    "source": "https://shoplineimg.com/695de52fc28041006ae514ec/6ae34e8f5d07a0367c0e7671/540x.webp?source_format=png"
+  },
+  {
+    "id": "ozio-red-ex",
+    "image": "assets/shopping/ozio-red-ex.webp",
+    "source": "https://shoplineimg.com/695de52fc28041006ae514ec/6ae4059999adc4000c06a106/540x.webp?source_format=png"
+  },
+  {
+    "id": "botanist-oil-01",
+    "image": "assets/shopping/botanist-oil-01.jpg",
+    "source": "https://botanistofficial.com/wp-content/uploads/2026/07/item_01-1-550x550.jpg"
+  },
+  {
+    "id": "botanist-oil-02",
+    "image": "assets/shopping/botanist-oil-02.jpg",
+    "source": "https://botanistofficial.com/wp-content/uploads/2026/07/item_02-1-550x550.jpg"
+  },
+  {
+    "id": "botanist-oil-03",
+    "image": "assets/shopping/botanist-oil-03.jpg",
+    "source": "https://botanistofficial.com/wp-content/uploads/2026/07/item_03-1-550x550.jpg"
+  },
+  {
+    "id": "botanist-milk-01",
+    "image": "assets/shopping/botanist-milk-01.jpg",
+    "source": "https://botanistofficial.com/wp-content/uploads/2026/07/item_04-1-550x550.jpg"
+  },
+  {
+    "id": "botanist-milk-02",
+    "image": "assets/shopping/botanist-milk-02.jpg",
+    "source": "https://botanistofficial.com/wp-content/uploads/2026/07/item_05-1-550x550.jpg"
+  },
+  {
+    "id": "unlabel-kr-control-shampoo",
+    "image": "assets/shopping/unlabel-kr-control-shampoo.png",
+    "source": "https://unlabel.tokyo/_astro/shampoo_kr.Bi5--b0S.png"
+  },
+  {
+    "id": "pokemon-christmas-2026",
+    "image": "assets/shopping/pokemon-christmas-2026.jpg",
+    "source": "https://www.pokemon.co.jp/PostImages/f8881bfb2699f0e66867ccf8a00a666e037427ab.jpg"
+  }
+]

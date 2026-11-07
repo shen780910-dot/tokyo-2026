@@ -84,10 +84,11 @@ window.SHOPPING_LIST = [
         "id": "sofina-ip",
         "name": "SOFINA iP 系列",
         "type": "系列候選／規格待選",
-        "detail": "候選：ベースケア セラム〈土台美容液〉導入液、ゴールデンタイムリペア 深夜浸透クリーム晚霜。兩款用途不同，依需求選款；容量、日本售價與門市庫存待確認。",
+        "detail": "候選：ベースケア セラム〈土台美容液〉導入液、ゴールデンタイムリペア 深夜浸透クリーム晚霜。兩款用途不同，依需求選款；容量、日本售價與門市庫存待確認。 圖片為土台美容液候選款。",
         "sourceUrl": "https://www.threads.com/@cf_hou/post/DXghi4UkuIn",
         "sourceLabel": "原始 Threads 貼文",
-        "caution": "土台美容液與晚霜是不同步驟；先選定購買品項，再依該品包裝用量使用。"
+        "caution": "土台美容液與晚霜是不同步驟；先選定購買品項，再依該品包裝用量使用。",
+        "image": "assets/shopping/sofina-ip.png"
       },
       {
         "id": "gelee-rich",
@@ -97,7 +98,8 @@ window.SHOPPING_LIST = [
         "sourceUrl": "https://www.threads.com/@cf_hou/post/DXghi4UkuIn",
         "sourceLabel": "原始 Threads 貼文",
         "url": "https://www.geleerich.jp/geleerich/product/",
-        "linkLabel": "官方品項資訊"
+        "linkLabel": "官方品項資訊",
+        "image": "assets/shopping/gelee-rich.jpg"
       },
       {
         "id": "obagi-c",
@@ -105,18 +107,20 @@ window.SHOPPING_LIST = [
         "type": "系列候選／規格待選",
         "detail": "Obagi C5／C10／C20／C25 維他命C精華系列候選；濃度、型號與容量待選，現場核對包裝與供貨。",
         "sourceUrl": "https://www.threads.com/@cf_hou/post/DXghi4UkuIn",
-        "sourceLabel": "原始 Threads 貼文"
+        "sourceLabel": "原始 Threads 貼文",
+        "image": "assets/shopping/obagi-c.png"
       },
       {
         "id": "one-by-kose",
         "name": "ONE BY KOSÉ 保濕系列",
         "type": "系列候選／規格待選",
-        "detail": "候選：Serum Veil Deep Repair（セラムヴェール ディープリペア）導入液、Serum Shield（セラム シールド）保濕膏。兩款分別為深藍瓶與藍罐；容量、現售版本、價格與庫存待確認。",
+        "detail": "候選：Serum Veil Deep Repair（セラムヴェール ディープリペア）導入液、Serum Shield（セラム シールド）保濕膏。兩款分別為深藍瓶與藍罐；容量、現售版本、價格與庫存待確認。 圖片為Serum Shield保濕膏候選款。",
         "sourceUrl": "https://www.threads.com/@cf_hou/post/DXghi4UkuIn",
         "sourceLabel": "原始 Threads 貼文",
         "url": "https://www.koseprofessional.co.jp/brand/one_by_kose/",
         "linkLabel": "官方品項資訊",
-        "caution": "導入美容液與Serum Shield保濕膏用途不同；先選定品項，現行版本與包裝需核對。"
+        "caution": "導入美容液與Serum Shield保濕膏用途不同；先選定品項，現行版本與包裝需核對。",
+        "image": "assets/shopping/one-by-kose.png"
       },
       {
         "id": "takami-skinpeel",
@@ -128,7 +132,8 @@ window.SHOPPING_LIST = [
         "url": "https://www.takami-labo.com/skinpeel/",
         "linkLabel": "官方品項資訊",
         "usage": "潔面後、化妝水前塗抹，不沖洗；均勻推開後等待約3分鐘，再接化妝水等保養。",
-        "caution": "避免摩擦，使用量依所購版本官方說明。若有不適，停止使用。"
+        "caution": "避免摩擦，使用量依所購版本官方說明。若有不適，停止使用。",
+        "image": "assets/shopping/takami-skinpeel.png"
       },
       {
         "id": "takami-essence-5ce",
@@ -140,7 +145,8 @@ window.SHOPPING_LIST = [
         "url": "https://www.takami-labo.com/support/faq/essence_ce",
         "linkLabel": "官方品項資訊",
         "usage": "搭配小藍瓶時，先用小藍瓶調理，再接化妝水及5C+E精華；實際用量依所購版本官方說明。",
-        "caution": "貼文寫5C+1，圖片與官方名稱為5C+E；不要與5CE Premium等其他版本混淆。"
+        "caution": "貼文寫5C+1，圖片與官方名稱為5C+E；不要與5CE Premium等其他版本混淆。",
+        "image": "assets/shopping/takami-essence-5ce.png"
       },
       {
         "id": "punera-pdrn-e",
@@ -150,7 +156,8 @@ window.SHOPPING_LIST = [
         "sourceUrl": "https://www.instagram.com/reel/DeMRA7Lhr7W/",
         "sourceLabel": "原始 Instagram 貼文",
         "url": "https://www.oziohk.com/products",
-        "linkLabel": "官方品項資訊"
+        "linkLabel": "官方品項資訊",
+        "image": "assets/shopping/punera-pdrn-e.jpg"
       },
       {
         "id": "ozio-white",
@@ -160,27 +167,30 @@ window.SHOPPING_LIST = [
         "sourceUrl": "https://www.instagram.com/reel/DeMRA7Lhr7W/",
         "sourceLabel": "原始 Instagram 貼文",
         "url": "https://www.ozio.tw/products/ozio-蜂王乳凝露-75g",
-        "linkLabel": "官方品項資訊"
+        "linkLabel": "官方品項資訊",
+        "image": "assets/shopping/ozio-white.webp"
       },
       {
         "id": "ozio-gold",
         "name": "OZIO 蜂王乳完美全效凝露（金瓶）",
         "type": "保濕凝露／容量待核對",
-        "detail": "原Reel推薦的OZIO 蜂王乳完美全效凝露（金瓶）；與其他瓶色分開候選，購買時核對完整品名與容量。貼文提到台灣通路，不代表日本藥妝店一定有售；日本通路、售價及庫存待確認。",
+        "detail": "原Reel推薦的OZIO 蜂王乳完美全效凝露（金瓶）；與其他瓶色分開候選，購買時核對完整品名與容量。貼文提到台灣通路，不代表日本藥妝店一定有售；日本通路、售價及庫存待確認。 圖片為台灣官方活動圖，圖中優惠不適用於日本購買。",
         "sourceUrl": "https://www.instagram.com/reel/DeMRA7Lhr7W/",
         "sourceLabel": "原始 Instagram 貼文",
         "url": "https://www.ozio.tw/",
-        "linkLabel": "官方品項資訊"
+        "linkLabel": "官方品項資訊",
+        "image": "assets/shopping/ozio-gold.webp"
       },
       {
         "id": "ozio-red-ex",
         "name": "OZIO 蜂王乳凝露EX（紅瓶）",
         "type": "保濕凝露／75g",
-        "detail": "原Reel推薦的OZIO 蜂王乳凝露EX（紅瓶）；與其他瓶色分開候選，購買時核對完整品名與容量。貼文提到台灣通路，不代表日本藥妝店一定有售；日本通路、售價及庫存待確認。",
+        "detail": "原Reel推薦的OZIO 蜂王乳凝露EX（紅瓶）；與其他瓶色分開候選，購買時核對完整品名與容量。貼文提到台灣通路，不代表日本藥妝店一定有售；日本通路、售價及庫存待確認。 圖片為台灣官方活動圖，圖中優惠不適用於日本購買。",
         "sourceUrl": "https://www.instagram.com/reel/DeMRA7Lhr7W/",
         "sourceLabel": "原始 Instagram 貼文",
         "url": "https://www.ozio.tw/categories/695de53210b7c052d795adab",
-        "linkLabel": "官方品項資訊"
+        "linkLabel": "官方品項資訊",
+        "image": "assets/shopping/ozio-red-ex.webp"
       },
       {
         "id": "elixir-the-serum-aa",
@@ -208,7 +218,8 @@ window.SHOPPING_LIST = [
         "sourceUrl": "https://sunrisesharing.tw/buy-discount/article/3282",
         "sourceLabel": "原始文章",
         "url": "https://prtimes.jp/main/html/rd/p/000000981.000012002.html",
-        "linkLabel": "官方品項資訊"
+        "linkLabel": "官方品項資訊",
+        "image": "assets/shopping/botanist-oil-01.jpg"
       },
       {
         "id": "botanist-oil-02",
@@ -218,7 +229,8 @@ window.SHOPPING_LIST = [
         "sourceUrl": "https://sunrisesharing.tw/buy-discount/article/3282",
         "sourceLabel": "原始文章",
         "url": "https://prtimes.jp/main/html/rd/p/000000981.000012002.html",
-        "linkLabel": "官方品項資訊"
+        "linkLabel": "官方品項資訊",
+        "image": "assets/shopping/botanist-oil-02.jpg"
       },
       {
         "id": "botanist-oil-03",
@@ -228,7 +240,8 @@ window.SHOPPING_LIST = [
         "sourceUrl": "https://sunrisesharing.tw/buy-discount/article/3282",
         "sourceLabel": "原始文章",
         "url": "https://www.botanistofficial.com/product/item/484/",
-        "linkLabel": "官方品項資訊"
+        "linkLabel": "官方品項資訊",
+        "image": "assets/shopping/botanist-oil-03.jpg"
       },
       {
         "id": "botanist-milk-01",
@@ -238,7 +251,8 @@ window.SHOPPING_LIST = [
         "sourceUrl": "https://sunrisesharing.tw/buy-discount/article/3282",
         "sourceLabel": "原始文章",
         "url": "https://botanistofficial.com/product/item/499/",
-        "linkLabel": "官方品項資訊"
+        "linkLabel": "官方品項資訊",
+        "image": "assets/shopping/botanist-milk-01.jpg"
       },
       {
         "id": "botanist-milk-02",
@@ -248,7 +262,8 @@ window.SHOPPING_LIST = [
         "sourceUrl": "https://sunrisesharing.tw/buy-discount/article/3282",
         "sourceLabel": "原始文章",
         "url": "https://botanistofficial.com/product/item/495/",
-        "linkLabel": "官方品項資訊"
+        "linkLabel": "官方品項資訊",
+        "image": "assets/shopping/botanist-milk-02.jpg"
       },
       {
         "id": "unlabel-kr-control-shampoo",
@@ -258,7 +273,8 @@ window.SHOPPING_LIST = [
         "sourceUrl": "https://www.instagram.com/reel/Dd6chZsxkeN/",
         "sourceLabel": "原始 Instagram 貼文",
         "url": "https://unlabel.tokyo/lab/hair_care/standard_haircare/kr_control_shampoo.html",
-        "linkLabel": "官方品項資訊"
+        "linkLabel": "官方品項資訊",
+        "image": "assets/shopping/unlabel-kr-control-shampoo.png"
       }
     ]
   },
@@ -269,11 +285,12 @@ window.SHOPPING_LIST = [
         "id": "pokemon-christmas-2026",
         "name": "Pokémon Center 2026 聖誕限定公仔（A／B候選）",
         "type": "クリスマスじゅんびチュウ！",
-        "detail": "指定圖片包含 A：皮卡丘＋土王送禮雪橇公仔組；B：聖誕樹造型皮卡丘。先列款式候選，非整套25款全買。官方系列已於2026/10/24於實體店推出；售價、東京分店庫存與購買限制依當日公告。",
+        "detail": "指定圖片包含 A：皮卡丘＋土王送禮雪橇公仔組；B：聖誕樹造型皮卡丘。先列款式候選，非整套25款全買。官方系列已於2026/10/24於實體店推出；售價、東京分店庫存與購買限制依當日公告。 圖片為A款官方參考照。",
         "sourceUrl": "https://www.instagram.com/p/DeqbU3qCWnf/?img_index=2",
         "sourceLabel": "原始 Instagram 貼文（第2張）",
         "url": "https://www.pokemon.co.jp/goods/2026/10/261016_to01.html?pokecen=0",
-        "linkLabel": "官方品項資訊"
+        "linkLabel": "官方品項資訊",
+        "image": "assets/shopping/pokemon-christmas-2026.jpg"
       }
     ]
   }
