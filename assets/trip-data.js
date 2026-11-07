@@ -333,9 +333,24 @@ window.TRIP = {
           "detail": "松屋通り店營業11:30～20:00；有明確品項再短暫停留，時間不足可跳過。"
         },
         {
-          "time": "13:15–14:15｜主要購物點",
+          "time": "13:15–13:45｜男款健身衣褲",
+          "activity": "Nike 銀座｜健身服試穿",
+          "detail": "銀座3-2-15，官方營業11:00～21:00。午餐及SABON後，先到Nike試穿男款Training訓練上衣、彈性短褲或運動長褲，再逛附近MUJI、LOFT。試褲時做深蹲、弓箭步確認活動空間與腰頭；款式、尺寸及庫存現場確認。Nike若超時，縮短MUJI、LOFT，仍以15:30離開銀座為原則。",
+          "links": [
+            {
+              "name": "Nike 銀座｜官方店舖",
+              "url": "https://www.nike.com/retail/s/nike-ginza"
+            },
+            {
+              "name": "Nike 銀座｜導航",
+              "url": "https://www.google.com/maps/dir/?api=1&destination=35.67329852696571,139.76454363245148"
+            }
+          ]
+        },
+        {
+          "time": "13:45–14:25｜主要購物點",
           "activity": "MUJI 銀座",
-          "detail": "無印良品銀座，營業11:00～21:00。與LOFT接續安排；包含步行緩衝，依前面購物進度調整。",
+          "detail": "Nike試穿後步行前往無印良品銀座，營業11:00～21:00。停留約40分鐘，與LOFT接續安排；依Nike試穿進度縮短停留。",
           "links": [
             {
               "name": "無印良品銀座（Notion）",
@@ -344,7 +359,7 @@ window.TRIP = {
           ]
         },
         {
-          "time": "14:15–15:15｜主要購物點",
+          "time": "14:25–15:15｜主要購物點",
           "activity": "銀座 LOFT",
           "detail": "MUJI後逛銀座LOFT，週六營業11:00～21:00。15:15開始結帳，最晚15:30離開銀座往原宿，保留完整試鞋時間。",
           "links": [
@@ -387,7 +402,7 @@ window.TRIP = {
           ]
         }
       ],
-      "note": "銀座先南後北：博品館 → Dover Street Market（彈性）→ 木村家紅豆麵包（預留15分鐘）→ 午餐 → SABON（彈性）→ MUJI → LOFT。15:30離開銀座 → 原宿HOKA → NB。澀谷PARCO、Nintendo與澀谷寶可夢取消；emmi已改到前一天大丸4F。"
+      "note": "銀座先南後北：博品館 → Dover Street Market（彈性）→ 木村家紅豆麵包（預留15分鐘）→ 午餐 → SABON（彈性）→ Nike男款健身衣褲（約30分鐘）→ MUJI → LOFT。15:30離開銀座 → 原宿HOKA → NB。澀谷PARCO、Nintendo與澀谷寶可夢取消；emmi已改到前一天大丸4F。"
     },
     {
       "date": "11.15",
