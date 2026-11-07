@@ -1,5 +1,8 @@
 # 版本紀錄
 
+## v1.53
+- 待購相機改列初代優先，新增初代、第二代novo及Godox C100比較、使用方式與購買連結；後兩款作為備選。
+
 ## v1.52
 - 待購相機改為第二代Escura InstantSnap.novo白色款SN-26-WH，更新商品圖、使用方法及BicCamera／Yodobashi購買資訊。
 

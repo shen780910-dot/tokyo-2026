@@ -22,16 +22,16 @@ window.SHOPPING_LIST = [
       },
       {
         "id": "escura-instantsnap-white",
-        "name": "Escura InstantSnap.novo 第二代白色數位玩具相機",
-        "type": "第二代／白色 SN-26-WH",
-        "detail": "橫式透明觀景窗數位玩具相機，配備1.3吋螢幕，可確認構圖及回看照片；支援五種年代濾鏡與35mm底片風相框，重量38g。日本含稅參考價¥10,380（2026/11/08查閱，依現場售價）。購買地點：第二天優先到BicCamera有樂町店相機區詢問，出發前用下方連結查庫存或預留；BicCamera其他分店及Yodobashi亦有販售，分店現貨需另確認。",
-        "image": "assets/shopping/escura-instantsnap-novo-white.jpg",
-        "usage": "以USB-C充電，裝入另購microSD卡（4–64GB、Class 4–10、FAT32格式）。選擇構圖板、濾鏡或相框後拍攝，可在1.3吋螢幕確認照片；以USB-C傳輸或讀卡機匯出影像。",
-        "caution": "數位玩具相機，不會直接印照片。請認明第二代InstantSnap.novo與SN-26-WH，勿買成初代SN-25-WH；記憶卡另購。",
-        "sourceUrl": "https://www.yodobashi.com/product/100000001010230826/",
-        "sourceLabel": "Yodobashi商品與規格",
-        "url": "https://www.biccamera.com/bc/tenpo/SfrBcToriokiList.jsp?GOODS_NO=15623205",
-        "linkLabel": "BicCamera第二代白色款分店庫存／預留"
+        "name": "Escura InstantSnap 初代白色數位玩具相機",
+        "type": "優先購買／給孩子使用／初代 SN-25-WH",
+        "detail": "目前優先購買初代：28g、直式大片透明觀景窗，操作單純，給孩子透過窗框看景物並按快門探索拍照。沒有回看螢幕，需由大人匯出照片。第二代novo與Godox C100列為備選，三款比較與購買連結見本頁「孩子用透明觀景窗相機」。初代日本含稅參考價¥8,470，依現場售價。第二天可先向BicCamera有樂町店詢貨，分店現貨需確認。",
+        "image": "assets/shopping/escura-instantsnap-white.png",
+        "usage": "由大人先充電並裝入相容microSD卡（4–32GB）。切到一般照片模式，讓孩子透過中央透明窗構圖、按快門拍攝；回家再一起匯出看照片。透明窗與鏡頭有視差，先拍較遠的景物比較容易掌握。",
+        "caution": "數位玩具相機，不會直接印照片；初代無回看螢幕。請認明SN-25-WH，記憶卡另購；未確認兒童專用防摔規格。",
+        "sourceUrl": "?v=1.53#shopping",
+        "sourceLabel": "三款相機比較與購買資訊",
+        "url": "https://www.biccamera.com/bc/tenpo/SfrBcToriokiList.jsp?GOODS_NO=13988859",
+        "linkLabel": "BicCamera初代白色款分店庫存／預留"
       }
     ]
   },
