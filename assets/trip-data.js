@@ -29,7 +29,17 @@ window.TRIP = {
         {
           "time": "交件後｜車程約50～65分鐘",
           "activity": "Access特急直達押上",
-          "detail": "搭經押上・淺草方向的直通列車，出發前確認目的地；不要搭Skyliner或往京成上野的班次。另留候車時間，11/12實際班次待確認。兩位成人車資暫抓約¥2,400；4歲幼兒免票，無指定座位。"
+          "detail": "搭經押上・淺草方向的直通列車，出發前確認目的地；不要搭Skyliner或往京成上野的班次。另留候車時間，11/12實際班次待確認。兩位成人車資暫抓約¥2,400；4歲幼兒免票，無指定座位。 搭車動線：T2抵達層1F完成JALABC交件 → 跟隨「鐵道／Railways」指標搭電梯到B1空港第2ビル站 → 找京成電鐵「成田SKY ACCESS」刷Suica進站 → 依當天看板前往Access特急月台。確認列車經押上、淺草方向；月台以現場公告為準。成人每人各用一張Suica，先確認餘額；Access特急不用另買特急券、不劃位。帶推車沿電梯指標走。",
+          "links": [
+            {
+              "name": "成田T2官方樓層圖｜1F抵達大廳→B1鐵道",
+              "url": "https://www.narita-airport.jp/files/71a02161766199dbb8fa552410d0f20c28675dab8d793c092e4111cae520d1e5"
+            },
+            {
+              "name": "空港第2ビル站｜京成閘口・電梯・月台中文圖",
+              "url": "https://new-www.keisei.co.jp/keisei/tetudou/stationmap/pdf/ch/144.pdf"
+            }
+          ]
         },
         {
           "time": "抵達晴空塔後",
