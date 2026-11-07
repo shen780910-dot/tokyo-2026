@@ -36,3 +36,6 @@
 .shopping-item.shopping-item-text{grid-template-columns:minmax(0,1fr)}.shopping-source{display:block;width:fit-content;max-width:100%;font-size:14px;text-decoration:underline;text-underline-offset:4px;margin:0 0 10px;min-height:44px;line-height:44px}
 
 .family-sync-controls{border-top:1px solid var(--line);padding-top:16px;margin-top:18px;max-width:650px}.family-sync-status{font-size:14px;color:var(--green);margin:0 0 14px}.family-sync-status.has-error{color:var(--ochre)}.family-unlock{display:flex;gap:12px;align-items:end;flex-wrap:wrap}.family-unlock label{display:grid;gap:6px;font-size:13px;flex:1;min-width:180px}.family-unlock input{background:var(--card);color:var(--ink);font:inherit;font-size:16px;border:1px solid var(--line);border-radius:3px;padding:10px 12px;min-height:44px;width:100%}.family-sync-controls button{min-height:44px;padding:8px 18px;border:1px solid var(--line);background:var(--card);border-radius:3px}.family-unlock button{background:var(--blue);color:var(--paper)}.family-sync-controls button:disabled,.shopping-purchased:has(input:disabled){opacity:.65;cursor:default}.family-retry{margin-left:12px}.shopping-item h3{word-break:keep-all;overflow-wrap:normal}
+
+/* Category labels use a complete Chinese font to avoid mixed subset fallback. */
+#shopping .shopping-category>h2{font-family:"Noto Sans TC",sans-serif;font-weight:500}
