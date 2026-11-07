@@ -199,9 +199,23 @@ window.TRIP = {
           ]
         },
         {
-          "time": "中午｜可提前插入",
-          "activity": "東京站周邊午餐",
-          "detail": "以孩子食慾為優先，尚未採買完也可先用餐，午餐後再補逛東京站；不必等全部店家逛完。"
+          "time": "中午｜首選・預留45～60分鐘",
+          "activity": "午餐｜本家あべや（KITTE B1）",
+          "detail": "首選本家あべやKITTE店，吃比內地雞親子丼或極上親子丼。東京站採買後往丸之內南口，到KITTE B1用餐，再上3F逛GOOD DESIGN。備案：奧芝商店 東京車站浪漫號（八重洲地下街），若本家あべや候位過久或孩子已餓，可改吃湯咖哩；午晚餐若都選湯咖哩，可依喜好調整。孩子餐點、蛋熟度與不辣口味現場詢問；兩間擇一。",
+          "links": [
+            {
+              "name": "本家あべや｜原始Notion筆記",
+              "url": "https://app.notion.com/p/3c8400d1c43e814d90a6ecca370b4462"
+            },
+            {
+              "name": "本家あべや｜KITTE官方店舖",
+              "url": "https://marunouchi.jp-kitte.jp/shop/index.jsp?bf=1&fmt=6&shopid=1005"
+            },
+            {
+              "name": "備案：奧芝商店 東京車站浪漫號（Notion）",
+              "url": "https://app.notion.com/p/3c8400d1c43e815d9cb2cd148087c986"
+            }
+          ]
         },
         {
           "time": "午餐後｜預留20～30分鐘",
@@ -274,7 +288,7 @@ window.TRIP = {
           ]
         }
       ],
-      "note": "東京站採買與大丸4F emmi → 午餐 → KITTE → 有樂町BC（Tomica／Plarail）→ GODIVA → 西銀座3COINS → DOMINICA晚餐（Gurgaon備案）。東京站限定款先看、一般款到BC比價；依孩子食慾提前休息。"
+      "note": "東京站採買與大丸4F emmi → 本家あべや午餐（奧芝商店備案）→ KITTE → 有樂町BC（Tomica／Plarail）→ GODIVA → 西銀座3COINS → DOMINICA晚餐（Gurgaon備案）。東京站限定款先看、一般款到BC比價；依孩子食慾提前休息。"
     },
     {
       "date": "11.14",
