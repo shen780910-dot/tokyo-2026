@@ -13,11 +13,24 @@
   const retry=make('button','family-retry','重新同步');retry.type='button';retry.hidden=true;
   controls.append(status,form,logout,retry);document.querySelector('.shopping-status').append(controls);
   document.querySelector('.shopping-status .muted').textContent='所有人都能查看；輸入共用密碼後，家人可一起勾選。';
+  let hidePurchased=false;
+  const filter=make('button','shopping-filter','隱藏已購買');filter.type='button';filter.setAttribute('aria-pressed','false');filter.setAttribute('aria-controls','shopping-categories');
+  document.querySelector('.shopping-status').insertBefore(filter,controls);
+  const empty=make('p','shopping-filter-empty','目前沒有未購買的商品。');empty.hidden=true;root.after(empty);
+  function applyFilter(){
+    let visible=0;
+    for(const {row} of rows.values()){row.hidden=hidePurchased&&row.classList.contains('is-purchased');if(!row.hidden)visible++;}
+    for(const section of root.querySelectorAll('.shopping-category'))section.hidden=![...section.querySelectorAll('.shopping-item')].some(row=>!row.hidden);
+    empty.hidden=!hidePurchased||visible>0;
+    filter.textContent=hidePurchased?'顯示全部商品':'隱藏已購買';filter.setAttribute('aria-pressed',String(hidePurchased));
+  }
+  filter.addEventListener('click',()=>{hidePurchased=!hidePurchased;applyFilter();});
   const rows=new Map();let current={items:{},writingIds:[],unlocked:false,connected:false};let unlocking=false;
   function render(state){
     current=state;let purchased=0;
     for(const [id,{row,input}] of rows){const checked=state.items[id]?.purchased===true;input.checked=checked;row.classList.toggle('is-purchased',checked);input.disabled=!state.unlocked||!state.connected||state.writingIds.includes(id);if(checked)purchased++;}
     document.querySelector('#shopping-progress').textContent=`${purchased} / ${rows.size} 已購買`;
+    applyFilter();
     form.hidden=state.unlocked;logout.hidden=!state.unlocked;retry.hidden=state.connected||state.loading;
     status.classList.toggle('has-error',Boolean(state.error));
     status.textContent=state.error||(state.writingIds.length?'正在儲存購買狀態…':state.loading&&!state.lastSyncedAt?'正在讀取共用清單…':state.unlocked?'已解鎖・家人共用，約每5秒同步':'家庭共用・目前唯讀，解鎖後可勾選');

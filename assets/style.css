@@ -41,3 +41,5 @@
 #shopping .shopping-category>h2{font-family:"Noto Sans TC",sans-serif;font-weight:500}
 
 .shopping-instructions{margin:0 0 16px}.shopping-instructions summary{cursor:pointer;min-height:44px;padding:9px 0;font-size:14px;font-weight:500}.shopping-instructions summary:focus-visible{outline:3px solid var(--ochre);outline-offset:3px}.shopping-instructions[open] summary{margin-bottom:6px}
+
+.shopping-filter{display:block;margin:16px 0;min-height:44px;padding:8px 18px;border:1px solid var(--line);background:var(--card);color:var(--ink)}.shopping-filter[aria-pressed="true"]{background:var(--blue);color:var(--paper)}.shopping-filter-empty{padding:24px 0;color:var(--muted)}
