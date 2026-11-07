@@ -181,6 +181,19 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始 Instagram 貼文",
         "url": "https://www.ozio.tw/categories/695de53210b7c052d795adab",
         "linkLabel": "官方品項資訊"
+      },
+      {
+        "id": "elixir-the-serum-aa",
+        "name": "ELIXIR 怡麗絲爾 THE SERUM aa 精華液",
+        "type": "藥用高機能精華／日本標準款50mL",
+        "detail": "保濕、提升彈潤感，改善乾燥細紋與毛孔明顯的外觀；含傳明酸，幫助預防黑色素生成造成的斑點與雀斑。購買時核對完整瓶身名稱與容量；日本售價與門市庫存待確認。",
+        "image": "assets/shopping/elixir-the-serum-aa.jpg",
+        "usage": "早晚於化妝水後，取按壓2下均勻塗抹全臉，再接乳液或乳霜；白天完成防曬。",
+        "caution": "屬化妝水後使用的精華，非導入液；預防斑點不等同消除既有斑點。",
+        "sourceUrl": "assets/shopping/elixir-the-serum-aa.jpg",
+        "sourceLabel": "使用者提供的原始參考照片",
+        "url": "https://www.shiseido.co.jp/elixir/promotion/the-serum/",
+        "linkLabel": "官方商品與使用說明"
       }
     ]
   },
