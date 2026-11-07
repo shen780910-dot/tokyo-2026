@@ -39,3 +39,5 @@
 
 /* Category labels use a complete Chinese font to avoid mixed subset fallback. */
 #shopping .shopping-category>h2{font-family:"Noto Sans TC",sans-serif;font-weight:500}
+
+.shopping-instructions{margin:0 0 16px}.shopping-instructions summary{cursor:pointer;min-height:44px;padding:9px 0;font-size:14px;font-weight:500}.shopping-instructions summary:focus-visible{outline:3px solid var(--ochre);outline-offset:3px}.shopping-instructions[open] summary{margin-bottom:6px}

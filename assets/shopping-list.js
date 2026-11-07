@@ -30,8 +30,13 @@
       const row=make('article','shopping-item');row.dataset.item=item.id;
       if(item.image){const image=make('img');image.src=item.image;image.alt=item.name+' 商品參考';image.width=180;image.height=180;image.loading='lazy';row.append(image);}else row.classList.add('shopping-item-text');
       const content=make('div');content.append(make('span','shopping-type',item.type),make('h3','',item.name),make('p','',item.detail));
-      if(item.usage){content.append(make('h4','','使用方法'),make('p','shopping-usage',item.usage));}
-      if(item.caution){content.append(make('p','shopping-caution','注意：'+item.caution));}
+      if(item.usage||item.caution){
+        const instructions=make('details','shopping-instructions');
+        instructions.append(make('summary','',item.usage?'使用方法':'注意事項'));
+        if(item.usage)instructions.append(make('p','shopping-usage',item.usage));
+        if(item.caution)instructions.append(make('p','shopping-caution','注意：'+item.caution));
+        content.append(instructions);
+      }
       if(item.sourceUrl&&item.sourceUrl!==item.url){const source=make('a','shopping-source',(item.sourceLabel||'原始來源')+' ↗');source.href=item.sourceUrl;source.target='_blank';source.rel='noopener noreferrer';content.append(source);}
       if(item.url){const link=make('a','shopping-source',(item.sourceUrl===item.url?(item.sourceLabel||'原始來源'):(item.linkLabel||'商品資訊'))+' ↗');link.href=item.url;link.target='_blank';link.rel='noopener noreferrer';content.append(link);}
       const label=make('label','shopping-purchased');const input=make('input');input.type='checkbox';input.disabled=true;
