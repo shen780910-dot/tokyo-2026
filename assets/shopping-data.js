@@ -19,6 +19,19 @@ window.SHOPPING_LIST = [
         "image": "assets/shopping/instax-mini-20.jpg",
         "sourceUrl": "assets/shopping/instax-mini-20.jpg",
         "sourceLabel": "使用者提供的原始參考圖"
+      },
+      {
+        "id": "escura-instantsnap-white",
+        "name": "Escura InstantSnap 白色數位玩具相機",
+        "type": "照片辨識：初代SN-25-WH／購買時核對",
+        "detail": "拍立得相框造型、透明光學觀景窗的數位玩具相機，照片存至另購microSD卡，不會直接列印。照片外觀對應初代白色款；勿與InstantSnap.novo SN-26-WH混淆。日本代理商參考價¥7,700，實售價與庫存依店家。 購買通路：第二天可先向BicCamera有樂町店相機區詢問，出發前查該分店庫存／預留；BicCamera及Yodobashi官網有販售，其他分店庫存另查。",
+        "image": "assets/shopping/escura-instantsnap-white.png",
+        "usage": "先依說明書充電並裝入相容microSD卡，透過中央透明觀景窗構圖，按下快門拍攝；影像需匯出查看，中央不是螢幕。",
+        "caution": "購買前確認型號、記憶卡規格與隨附配件。",
+        "sourceUrl": "assets/shopping/escura-instantsnap-white.png",
+        "sourceLabel": "使用者提供的原始參考照片",
+        "url": "https://www.biccamera.com/bc/tenpo/SfrBcToriokiList.jsp?GOODS_NO=13988859",
+        "linkLabel": "BicCamera各分店庫存／預留查詢"
       }
     ]
   },
