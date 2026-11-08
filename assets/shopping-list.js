@@ -74,7 +74,6 @@
       if(item.positionNote)content.append(make('p','',item.positionNote));
       if(item.positionMapUrl){const officialMap=make('a','shopping-source','已核對的官方櫃位圖 ↗');officialMap.href=item.positionMapUrl;officialMap.target='_blank';officialMap.rel='noopener noreferrer';content.append(officialMap);}
       if(item.routeFloor){const map=make('a','shopping-source','看本層地圖與下一站 ↗');map.href='?floor='+encodeURIComponent(item.routeFloor)+'#station';content.append(map);}
-      if(item.nextStop){const next=make('details','shopping-instructions');next.append(make('summary','','下一家怎麼走'),make('p','',item.nextStop));content.append(next);}
       if(item.usage||item.caution){
         const instructions=make('details','shopping-instructions');
         instructions.append(make('summary','',item.usage?'使用方法':'注意事項'));

@@ -65,3 +65,18 @@
 nav{overflow-x:auto;white-space:nowrap}.station-columns{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:32px;align-items:start}.station-navigation,.station-products{min-width:0}.station-products>h3{margin-top:0}.station-product-grid{display:grid;gap:30px}.station-shop{padding-bottom:26px;border-bottom:1px solid var(--line);scroll-margin-top:20px}.station-shop-number{font-size:14px;font-weight:600;color:var(--ochre);margin:0 0 12px}.station-product img{display:block;width:100%;height:260px;object-fit:contain;background:var(--card)}.station-product h4{font-size:18px;line-height:1.6;margin:14px 0 8px}.station-product-hint,.station-next{font-size:14px;line-height:1.8}.station-image-note,.station-sync-note{font-size:12px;color:var(--muted)}.station-product-links{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px}.station-product-links a,.station-unlock,.station-day-link{text-decoration:underline;text-underline-offset:4px}.station-buy{display:flex;align-items:center;gap:10px;min-height:44px;margin-top:10px}.station-buy input{width:20px;height:20px}.station-buy.is-purchased{color:var(--green)}.station-next{padding:12px 0 0;margin:12px 0 0;border-top:1px solid var(--line)}.station-unlock{display:block;font-size:13px;margin-bottom:24px}.station-product+.station-product{margin-top:26px}.station-floor-tabs{position:sticky;top:0;z-index:10;background:var(--paper);padding:8px 0}.station-directions h4{font-size:15px}.station-directions li{font-size:13px}@media(max-width:800px){.station-columns{grid-template-columns:1fr;gap:28px}.station-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}.station-product img{height:190px}.station-product h4{font-size:16px}.station-floor-tabs{top:0}}@media(max-width:480px){.station-product-grid{grid-template-columns:1fr}.station-product img{height:240px}.station-next{font-size:13px}}
 
 .day-maps>h3{font-family:Lihsianti,sans-serif;font-weight:400;font-size:22px;margin:0 0 16px}.floor-guide img{display:block;width:100%;height:auto}.day-maps figure{margin-top:0}.day-note>li{margin:8px 0}.station-guide .station-guide-canvas{margin:0}.station-navigation .station-map-document{min-height:0}
+
+/* Flight numbers use the regular text face. */
+.page .flight-grid h3{font-family:"Noto Sans TC",sans-serif;font-weight:600;font-variant-numeric:tabular-nums}
+
+/* Pending review: station shopping stays single-column at every width. */
+#station .station-columns{grid-template-columns:minmax(0,1fr)}
+#station .station-product-grid{grid-template-columns:minmax(0,1fr)}
+#station .station-product img{height:auto;max-height:480px;object-fit:contain}
+#station .station-product h4{font-size:22px}
+#station .station-product-hint,#station .station-next{font-size:16px}
+#station .station-shop-number{font-size:16px}
+
+/* Consistent, readable station shopping type scale. */
+#station .station-guide-intro,#station .station-walk-order,#station .station-product-links,#station .station-buy,#station .station-unlock{font-size:16px;line-height:1.8}
+#station .station-image-note,#station .station-sync-note{font-size:14px;line-height:1.8}

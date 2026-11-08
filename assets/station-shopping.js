@@ -19,7 +19,7 @@
         const links=make('div','station-product-links');const used=new Set();for(const [name,url] of [['商品／Notion',item.url],['推薦來源',item.sourceUrl],['圖片來源',item.imageSource]]){if(!url||used.has(url))continue;used.add(url);const a=make('a','',name+' ↗');a.href=url;a.target='_blank';a.rel='noopener noreferrer';links.append(a);}block.append(links);
         const label=make('label','station-buy');const input=make('input');input.type='checkbox';input.dataset.item=item.id;input.disabled=true;input.addEventListener('change',()=>{void window.familyShoppingSync.setPurchased(item.id,input.checked).catch(()=>update());});label.append(input,document.createTextNode('已購買'));block.append(label);shop.append(block);
       }
-      const next=make('p','station-next',products.at(-1).nextStop);shop.append(next);grid.append(shop);
+      grid.append(shop);
     }container.append(grid);update();
   };
   activate();
