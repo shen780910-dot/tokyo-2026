@@ -59,6 +59,8 @@
       const row=make('article','shopping-item');row.dataset.item=item.id;
       if(item.image){const image=make('img');image.src=item.image;image.alt=item.name+' 商品參考';image.width=180;image.height=180;image.loading='lazy';row.append(image);}else row.classList.add('shopping-item-text');
       const content=make('div');content.append(make('span','shopping-type',item.type),make('h3','',item.name),make('p','',item.detail));
+      if(item.routeFloor){const map=make('a','shopping-source','看本層地圖與下一站 ↗');map.href='?floor='+encodeURIComponent(item.routeFloor)+'#day-2';content.append(map);}
+      if(item.nextStop){const next=make('details','shopping-instructions');next.append(make('summary','','下一家怎麼走'),make('p','',item.nextStop));content.append(next);}
       if(item.usage||item.caution){
         const instructions=make('details','shopping-instructions');
         instructions.append(make('summary','',item.usage?'使用方法':'注意事項'));
@@ -78,6 +80,8 @@
     }
     root.append(section);
   }
+  const requestedItem=new URLSearchParams(location.search).get('item');
+  if(requestedItem&&rows.has(requestedItem)){const index=window.SHOPPING_LIST.findIndex(group=>group.items.some(item=>item.id===requestedItem));selectCategory(index);const row=rows.get(requestedItem).row;row.tabIndex=-1;requestAnimationFrame(()=>{row.scrollIntoView({block:'center'});row.focus({preventScroll:true});});}
   form.addEventListener('submit',async event=>{event.preventDefault();if(unlocking)return;unlocking=true;unlock.disabled=true;const value=password.value;password.value='';try{await sync.unlock(value);}catch{}finally{unlocking=false;unlock.disabled=false;}});
   logout.addEventListener('click',()=>{void sync.logout().catch(()=>{});});retry.addEventListener('click',()=>{void sync.refresh();});
   const activate=()=>{if(location.hash==='#shopping')void sync.start();else sync.stop();};
