@@ -94,3 +94,5 @@ nav{overflow-x:auto;white-space:nowrap}.station-columns{display:grid;grid-templa
 #station .station-product img{width:100%;height:auto;max-height:480px;object-fit:contain}
 #station .station-product-copy{min-width:0}#station .station-product-copy h4{margin-top:0}
 @media(max-width:650px){#station .station-product{grid-template-columns:minmax(0,1fr);gap:16px}}
+
+.station-map-navigation{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0 28px;align-items:center}.station-map-navigation button,.station-map-navigation a{min-height:44px;padding:10px 8px;text-align:center;font-family:"Noto Sans TC",sans-serif;font-size:16px;border:1px solid var(--line);background:var(--card)}.station-map-navigation button:disabled{opacity:.4;cursor:default}
