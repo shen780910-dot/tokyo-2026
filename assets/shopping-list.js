@@ -59,6 +59,8 @@
       const row=make('article','shopping-item');row.dataset.item=item.id;
       if(item.image){const image=make('img');image.src=item.image;image.alt=item.name+' 商品參考';image.width=180;image.height=180;image.loading='lazy';row.append(image);}else row.classList.add('shopping-item-text');
       const content=make('div');content.append(make('span','shopping-type',item.type),make('h3','',item.name),make('p','',item.detail));
+      if(item.positionNote)content.append(make('p','',item.positionNote));
+      if(item.positionMapUrl){const officialMap=make('a','shopping-source','已核對的官方櫃位圖 ↗');officialMap.href=item.positionMapUrl;officialMap.target='_blank';officialMap.rel='noopener noreferrer';content.append(officialMap);}
       if(item.routeFloor){const map=make('a','shopping-source','看本層地圖與下一站 ↗');map.href='?floor='+encodeURIComponent(item.routeFloor)+'#day-2';content.append(map);}
       if(item.nextStop){const next=make('details','shopping-instructions');next.append(make('summary','','下一家怎麼走'),make('p','',item.nextStop));content.append(next);}
       if(item.usage||item.caution){

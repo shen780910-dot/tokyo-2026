@@ -325,21 +325,23 @@ window.SHOPPING_LIST = [
       {
         "id": "souvenir-abite",
         "name": "A Bite Coffee 咖啡餅乾",
-        "type": "採買02｜JR B1・地下丸之內改札內",
+        "type": "採買02｜JR B1・地下丸之內改札內／丸之內坂南側",
         "detail": "BAKE集團2026/9/16新開品牌。咖啡夾心餅乾與拿鐵烤巧克力餅乾兩款現場擇一，偏大人口味；加入Ivorish同區候選。",
-        "url": "https://bake-the-online.pro/blogs/bake-inc-story-report/bake-a-bite-coffee_20260916",
+        "url": "https://www.gransta.jp/mall/gransta_tokyo/a_bite_coffee/",
         "linkLabel": "官方商品／購買資訊",
         "caution": "價格、口味、庫存及賞味期限以購買當日包裝與店頭為準；送禮前確認過敏原。",
         "sourceUrl": "https://www.facebook.com/100066994225063/posts/pfbid02gsWES9r7SNjYkP41Lq7PK3kmqxnnicpBLrEhQ29gvHk1nSEq3xowmngENrTvWiQBl/",
         "sourceLabel": "原始推薦來源",
         "routeOrder": 2,
         "routeFloor": "b1",
-        "nextStop": "仍在JR B1改札內，往SQUARE ZERO區找Curly’s；不穿出丸之內地下改札。"
+        "nextStop": "從丸之內坂南側A Bite Coffee，沿改札內丸之內坂通道往東（八重洲／銀之鈴方向），到SQUARE ZERO西側找Curly’s；不出JR改札。",
+        "positionNote": "2026/11/08官方查核：官方HERE定位圖紅色櫃位在丸之內坂南側、地下丸之內改札內區。",
+        "positionMapUrl": "https://www.gransta.jp/gr_cswp/wp-content/uploads/2026/09/B1_marunouchizaka_202609_15.jpg"
       },
       {
         "id": "souvenir-curly",
         "name": "Curly’s Croissant 可頌",
-        "type": "採買03｜JR B1・SQUARE ZERO／改札內",
+        "type": "採買03｜JR B1・SQUARE ZERO西側／改札內",
         "detail": "旅途中現吃或早餐候選，不當作長效返台伴手禮。官方原味外帶參考¥324；圖片禮盒4入¥1,300僅為原始來源紀錄。",
         "url": "https://www.gransta.jp/mall/gransta_tokyo/tokyo_bake_stand/",
         "linkLabel": "官方商品／購買資訊",
@@ -349,7 +351,9 @@ window.SHOPPING_LIST = [
         "image": "assets/shopping/curly-reference.png",
         "routeOrder": 3,
         "routeFloor": "b1",
-        "nextStop": "由SQUARE ZERO區的既有A電扶梯或E電梯上1F，往中央通路找COCORIS；不要上列車月台。"
+        "nextStop": "由SQUARE ZERO區的既有A電扶梯或E電梯上1F，往中央通路找COCORIS；不要上列車月台。",
+        "positionNote": "2026/11/08官方查核：官方HERE定位圖紅色櫃位在SQUARE ZERO西側，靠丸之內坂通道口。",
+        "positionMapUrl": "https://www.gransta.jp/gr_cswp/wp-content/uploads/2020/11/202508_heremap_gransta_B1_CurlysCroissant.jpg"
       },
       {
         "id": "souvenir-cocoris",
@@ -364,12 +368,14 @@ window.SHOPPING_LIST = [
         "image": "assets/shopping/cocoris-reference.png",
         "routeOrder": 4,
         "routeFloor": "1f",
-        "nextStop": "留在JR 1F改札內，往既有第2站Maple Mania的吹拔區，再往八重洲北口／北轉乘口附近找JAGA BOULDE。"
+        "nextStop": "留在JR 1F改札內，往既有第2站Maple Mania的吹拔區，再往八重洲北口／北轉乘口附近找JAGA BOULDE。",
+        "positionNote": "2026/11/08官方查核：官方HERE圖紅色櫃位在1F中央通路北側，靠5・6番線樓梯／電扶梯的北面；介於丸之內中央口與八重洲中央口之間，仍在改札內。",
+        "positionMapUrl": "https://www.gransta.jp/gr_cswp/wp-content/uploads/2020/11/202608_heremap_1F_gransta-tokyo_COCORIS.jpg"
       },
       {
         "id": "souvenir-jaga",
         "name": "JAGA BOULDE 鰹魚昆布洋芋片",
-        "type": "採買05｜JR 1F・改札內／北轉乘口附近",
+        "type": "採買05｜JR 1F・吹拔區／北轉乘口前・改札內",
         "detail": "鹹食候選。厚切洋芋片，鰹魚昆布風味。圖片參考4袋¥1,047，非現價保證。須在出JR改札前購買；改札外Calbee＋不販售，兩店不能混用。",
         "url": "https://www.jaga-boulde.jp/",
         "linkLabel": "官方商品／購買資訊",
@@ -379,12 +385,14 @@ window.SHOPPING_LIST = [
         "image": "assets/shopping/jaga-boulde-reference.png",
         "routeOrder": 5,
         "routeFloor": "1f",
-        "nextStop": "買完從一般JR八重洲北口出站，勿進新幹線北轉乘口；進入大丸1F找PARIS BUTTER SAND，先看分時販售公告。"
+        "nextStop": "買完從一般JR八重洲北口出站，勿進新幹線北轉乘口；進入大丸1F找PARIS BUTTER SAND，先看分時販售公告。",
+        "positionNote": "2026/11/08官方查核：品牌官方確認：八重洲北口改札內、東北／上越／北陸新幹線北轉乘口前；最近一般JR出口為八重洲北口，勿進新幹線轉乘改札。",
+        "positionMapUrl": "https://www.jaga-boulde.jp/"
       },
       {
         "id": "souvenir-paris",
         "name": "PARIS BUTTER SAND 巴黎奶油夾心餅乾",
-        "type": "採買06｜大丸東京1F・改札外",
+        "type": "採買06｜大丸1F・八重洲側／八重洲側電梯旁",
         "detail": "發酵奶油貓舌餅、巧克力與堅果。與PRESS BUTTER SAND不同品牌。官方參考5入¥918、8入¥1,296；製造日起90天不等於買到後剩90天。先確認分時販售公告，避免久候。",
         "url": "https://paris-butter.com/sand/zh-TW",
         "linkLabel": "官方商品／購買資訊",
@@ -393,12 +401,14 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始推薦來源",
         "routeOrder": 6,
         "routeFloor": "daimaru1f",
-        "nextStop": "仍在大丸1F食品區，找La noix；同樓櫃位依官方樓層圖核對。"
+        "nextStop": "依官方1F圖，從PARIS櫃位跨過左側走道到La noix小島櫃；仍在大丸食品區八重洲側，不換樓層。",
+        "positionNote": "2026/11/08官方查核：官方1F圖：食品區下側（八重洲側），在八重洲側電梯右上方，La noix隔走道對面。",
+        "positionMapUrl": "https://www.daimaru.co.jp/tokyo/floor/assets/img/1f_map_20210712.jpg"
       },
       {
         "id": "souvenir-lanoix",
         "name": "La noix 胡桃餅乾",
-        "type": "採買07｜大丸東京1F・改札外",
+        "type": "採買07｜大丸1F・八重洲側／PARIS對面",
         "detail": "胡桃搭配苦焦糖的香脆餅乾；官方參考5枚¥1,080、10枚¥2,160。奶油餅乾買太多時，可與其他堅果款擇一。",
         "url": "https://la-noix.com/",
         "linkLabel": "官方商品／購買資訊",
@@ -407,12 +417,28 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始推薦來源",
         "routeOrder": 7,
         "routeFloor": "daimaru1f",
-        "nextStop": "接著找Sugar Butter Tree；在大丸東京販售，當日櫃位位置依館內指標核對。"
+        "nextStop": "沿La noix前走道往JR側走，經TRIPLE DECKER櫃位，再向中央電扶梯南側的N.Y.C.SAND前進；以官方圖上的店名核對。",
+        "positionNote": "2026/11/08官方查核：官方1F圖：食品區下側、八重洲側電梯上方偏左的小島櫃，與PARIS BUTTER SAND隔走道相對。",
+        "positionMapUrl": "https://www.daimaru.co.jp/tokyo/floor/assets/img/1f_map_20210712.jpg"
+      },
+      {
+        "id": "souvenir-nycsand",
+        "name": "N.Y.C.SAND 焦糖夾心餅乾",
+        "type": "採買08｜大丸東京1F・改札外",
+        "detail": "焦糖、巧克力與餅乾組合。既有地圖第4站；與PARIS、PRESS可先挑一至兩家，不必每家都排隊。",
+        "url": "https://www.daimaru.co.jp/tokyo/",
+        "linkLabel": "官方商品／購買資訊",
+        "caution": "價格、口味、庫存及賞味期限以購買當日包裝與店頭為準；送禮前確認過敏原。",
+        "sourceUrl": "https://www.instagram.com/reel/Da7fo2VJ16I/",
+        "sourceLabel": "原始推薦來源",
+        "routeOrder": 8,
+        "routeFloor": "daimaru1f",
+        "nextStop": "沿中央電扶梯南側的橫向食品通道，往神田側走至外緣Sugar Butter Tree；途中經BEL AMER、Mon Loire等櫃位帶。"
       },
       {
         "id": "souvenir-sugar",
         "name": "Sugar Butter Tree 穀物夾心餅乾",
-        "type": "採買08｜大丸東京店等・分店位置購前核對",
+        "type": "採買09｜大丸1F・神田側外緣／中央電扶梯右方",
         "detail": "分送候選，以原味或現售秋冬款為主。圖片麝香葡萄是季節口味，11月不保證販售；不要將穀物夾心與奶油千層派混作同一商品。",
         "url": "https://www.sugarbuttertree.jp/",
         "linkLabel": "官方商品／購買資訊",
@@ -420,23 +446,11 @@ window.SHOPPING_LIST = [
         "sourceUrl": "https://www.sugarbuttertree.jp/",
         "sourceLabel": "原始推薦來源",
         "image": "assets/shopping/sugar-muscat-reference.png",
-        "routeOrder": 8,
-        "routeFloor": "daimaru1f",
-        "nextStop": "回大丸1F既有第3站TRIPLE DECKER／第4站N.Y.C.SAND區採買，避免為季節款久候。"
-      },
-      {
-        "id": "souvenir-nycsand",
-        "name": "N.Y.C.SAND 焦糖夾心餅乾",
-        "type": "採買09｜大丸東京1F・改札外",
-        "detail": "焦糖、巧克力與餅乾組合。既有地圖第4站；與PARIS、PRESS可先挑一至兩家，不必每家都排隊。",
-        "url": "https://www.daimaru.co.jp/tokyo/",
-        "linkLabel": "官方商品／購買資訊",
-        "caution": "價格、口味、庫存及賞味期限以購買當日包裝與店頭為準；送禮前確認過敏原。",
-        "sourceUrl": "https://www.instagram.com/reel/Da7fo2VJ16I/",
-        "sourceLabel": "原始推薦來源",
         "routeOrder": 9,
         "routeFloor": "daimaru1f",
-        "nextStop": "走既有C電扶梯下大丸B1，找PRESS BUTTER SAND；推車走館內電梯。"
+        "nextStop": "從神田側Sugar Butter Tree往館內中央電扶梯方向回走，下B1找PRESS BUTTER SAND；推車改用館內電梯。",
+        "positionNote": "2026/11/08官方查核：官方1F圖右側（神田側）外緣，BUTTER STATE’s下方、中央電扶梯右側；與N.Y.C.SAND位在同一橫向櫃位帶兩端。",
+        "positionMapUrl": "https://www.daimaru.co.jp/tokyo/floor/assets/img/1f_map_20210712.jpg"
       },
       {
         "id": "souvenir-press",
@@ -511,30 +525,30 @@ window.SHOPPING_LIST = [
       {
         "id": "souvenir-ebby",
         "name": "坂角 LOVE ebby! TOKYO 海苔蝦餅",
-        "type": "備選・位置待確認｜東京限定・本次販售櫃位待核對",
-        "detail": "海苔蝦餅，湖水綠包裝。列為鹹食備選；東京站周邊實際販售櫃位尚未核實，不繪製精確定位點。",
-        "url": "https://www.bankaku.co.jp/shop/default.aspx",
+        "type": "東京站檔期已結束／本次不排固定採買",
+        "detail": "官方公告：東京站1F新幹線北轉乘口前C-1區畫販售期間為2026/9/28～10/18，已結束。11/13東京站採買不列入固定路線；官方另列10/14～11/15海老名服務區下行店，非本次東京站路線。",
+        "url": "https://www.bankaku.co.jp/shop/pages/tokyo_ebby.aspx",
         "linkLabel": "官方商品／購買資訊",
         "caution": "價格、口味、庫存及賞味期限以購買當日包裝與店頭為準；送禮前確認過敏原。",
         "sourceUrl": "https://www.facebook.com/100063920918713/posts/pfbid0ajAJWSuWcX23aeBHP4h3JPXC1JxaLYdHJRRzeD3gJprzQ12X5MKsghHGvUunbK9l/",
         "sourceLabel": "原始推薦來源",
         "routeOrder": null,
         "routeFloor": null,
-        "nextStop": "販售櫃位尚未核實，列為看到再買的備選，不插入固定步行路線。"
+        "nextStop": "東京站檔期已結束，不前往舊C-1櫃位找此商品；有新公告再調整。"
       },
       {
         "id": "souvenir-ikaty",
         "name": "坂角 LOVE ikaty! TOKYO 柴魚花枝餅",
-        "type": "備選・位置待確認｜東京限定・本次販售櫃位待核對",
-        "detail": "花枝搭配柴魚風味，粉紅包裝，與海苔蝦餅分開記錄。東京站周邊實際販售櫃位尚待核實，現場看到再買。",
-        "url": "https://www.bankaku.co.jp/shop/default.aspx",
+        "type": "官方目前無販售店／本次不排固定採買",
+        "detail": "2026/11/08查閱品牌官方商品頁，販售店欄明列「目前沒有販售店，請等待下次販售」。保留商品紀錄，但不列11/13東京站採買路線。",
+        "url": "https://www.bankaku.co.jp/shop/pages/tokyo_ikaty.aspx",
         "linkLabel": "官方商品／購買資訊",
         "caution": "價格、口味、庫存及賞味期限以購買當日包裝與店頭為準；送禮前確認過敏原。",
         "sourceUrl": "https://www.facebook.com/100063920918713/posts/pfbid0ajAJWSuWcX23aeBHP4h3JPXC1JxaLYdHJRRzeD3gJprzQ12X5MKsghHGvUunbK9l/",
         "sourceLabel": "原始推薦來源",
         "routeOrder": null,
         "routeFloor": null,
-        "nextStop": "與海苔蝦餅同品牌，販售櫃位待核對；不為此跨區折返。"
+        "nextStop": "目前無販售店，不為此跨區找店或安排繞路。"
       }
     ]
   }
