@@ -470,7 +470,12 @@ window.SHOPPING_LIST = [
         "quantity": "待選",
         "recipient": "待選",
         "jpName": "アイボリッシュ メゾン",
-        "pendingSummary": "Ivorish MAISON 夾心餅乾／費南雪：數量／送給誰待選"
+        "pendingSummary": "Ivorish MAISON 夾心餅乾／費南雪：數量／送給誰待選",
+        "image": "assets/shopping/station-ivorish.webp",
+        "imageSource": "https://www.gransta.jp/mall/gransta_tokyo/ivorish_maison/",
+        "imageUrl": "https://www.gransta.jp/gr_cswp/wp-content/uploads/2026/08/IM_%E5%85%A8%E5%95%86%E5%93%81_%E4%B8%96%E7%95%8C%E8%A6%B3%E3%82%AB%E3%83%83%E3%83%88_%E7%AE%B1%E5%85%A5%E3%82%8A_1200-800-e1787555761236.jpg",
+        "recommendation": "夾心餅乾／費南雪",
+        "selectionNote": "先看東京站主題禮盒，現場選口味與入數。"
       },
       {
         "id": "souvenir-abite",
@@ -493,7 +498,12 @@ window.SHOPPING_LIST = [
         "quantity": "待選",
         "recipient": "待選",
         "jpName": "ア バイト コーヒー",
-        "pendingSummary": "A Bite Coffee 咖啡餅乾：數量／送給誰待選"
+        "pendingSummary": "A Bite Coffee 咖啡餅乾：數量／送給誰待選",
+        "image": "assets/shopping/station-abite.webp",
+        "imageSource": "https://www.gransta.jp/mall/gransta_tokyo/a_bite_coffee/",
+        "imageUrl": "https://www.gransta.jp/gr_cswp/wp-content/uploads/2026/09/260810_ABC_Tokyostation_app-03.jpg",
+        "recommendation": "咖啡夾心餅乾／拿鐵烤巧克力餅乾",
+        "selectionNote": "偏咖啡香的大人口味；兩款現場擇一。"
       },
       {
         "id": "souvenir-curly",
@@ -517,7 +527,10 @@ window.SHOPPING_LIST = [
         "quantity": "待選",
         "recipient": "待選",
         "jpName": "カーリーズ クロワッサン",
-        "pendingSummary": "Curly’s Croissant 可頌：數量／送給誰待選"
+        "pendingSummary": "Curly’s Croissant 可頌：數量／送給誰待選",
+        "recommendation": "原味可頌",
+        "selectionNote": "當天點心或隔天早餐；不當長效返台伴手禮。",
+        "imageNote": "原始推薦圖；包裝、價格與季節口味以現場為準。"
       },
       {
         "id": "souvenir-cocoris",
@@ -541,7 +554,10 @@ window.SHOPPING_LIST = [
         "quantity": "待選",
         "recipient": "待選",
         "jpName": "ココリス",
-        "pendingSummary": "COCORIS 榛果與覆盆莓夾心餅乾：數量／送給誰待選"
+        "pendingSummary": "COCORIS 榛果與覆盆莓夾心餅乾：數量／送給誰待選",
+        "recommendation": "榛果／覆盆莓夾心餅乾",
+        "selectionNote": "堅果香與果酸兩種經典口味，想分送可看綜合盒。",
+        "imageNote": "原始推薦圖；包裝、價格與季節口味以現場為準。"
       },
       {
         "id": "souvenir-maple",
@@ -561,7 +577,12 @@ window.SHOPPING_LIST = [
         "sourceUrl": "https://www.gransta.jp/mall/gransta_tokyo/themaplemania/",
         "sourceLabel": "官方商品／門市資訊",
         "nextStop": "下一站：06 JAGA BOULDE。沿JR1F吹拔區通道往新幹線北轉乘口前找店；只在轉乘口外採買，不進新幹線改札。",
-        "pendingSummary": "The Maple Mania 楓糖點心：品項／數量／送給誰待選"
+        "pendingSummary": "The Maple Mania 楓糖點心：品項／數量／送給誰待選",
+        "image": "assets/shopping/station-maple.webp",
+        "imageSource": "https://sucreyshopping.jp/themaplemania/cookie",
+        "imageUrl": "https://sucreyshopping.jp/cms/img/usr/feature/maplemania_cookie/lineup.jpg?v2",
+        "recommendation": "メープルバタークッキー｜楓糖奶油餅乾",
+        "selectionNote": "初次優先看經典楓糖奶油夾心；依分送人數選盒裝。"
       },
       {
         "id": "souvenir-jaga",
@@ -585,7 +606,10 @@ window.SHOPPING_LIST = [
         "quantity": "待選",
         "recipient": "待選",
         "jpName": "じゃがボルダ",
-        "pendingSummary": "JAGA BOULDE 鰹魚昆布洋芋片：數量／送給誰待選"
+        "pendingSummary": "JAGA BOULDE 鰹魚昆布洋芋片：數量／送給誰待選",
+        "recommendation": "鰹魚昆布和風洋芋片",
+        "selectionNote": "東京站聯名洋芋片，想買鹹食可優先看這款。",
+        "imageNote": "原始推薦圖；包裝、價格與季節口味以現場為準。"
       },
       {
         "id": "souvenir-paris",
@@ -608,7 +632,12 @@ window.SHOPPING_LIST = [
         "quantity": "待選",
         "recipient": "待選",
         "jpName": "PARIS BUTTER SAND",
-        "pendingSummary": "PARIS BUTTER SAND 巴黎奶油夾心餅乾：數量／送給誰待選"
+        "pendingSummary": "PARIS BUTTER SAND 巴黎奶油夾心餅乾：數量／送給誰待選",
+        "image": "assets/shopping/station-paris.webp",
+        "imageSource": "https://paris-butter.com/sand/zh-TW",
+        "imageUrl": "https://paris-butter.com/images/product-butter-white.jpg",
+        "recommendation": "PARIS BUTTER SAND｜巴黎奶油夾心餅乾",
+        "selectionNote": "先看經典奶油夾心；與PRESS不同品牌，留意分時販售。"
       },
       {
         "id": "souvenir-lanoix",
@@ -631,13 +660,18 @@ window.SHOPPING_LIST = [
         "quantity": "待選",
         "recipient": "待選",
         "jpName": "ラ・ノワ",
-        "pendingSummary": "La noix 胡桃餅乾：數量／送給誰待選"
+        "pendingSummary": "La noix 胡桃餅乾：數量／送給誰待選",
+        "image": "assets/shopping/station-lanoix.webp",
+        "imageSource": "https://la-noix.com/",
+        "imageUrl": "https://la-noix.com/img/item01.webp",
+        "recommendation": "ウォールナットクッキー｜胡桃餅乾",
+        "selectionNote": "胡桃搭配苦焦糖，喜歡堅果香可先看這款。"
       },
       {
         "id": "souvenir-triple",
         "name": "TRIPLE DECKER LONDON 三層夾心餅乾（品項待選）",
         "jpName": "トリプルデッカー ロンドン",
-        "url": "https://www.daimaru.co.jp/tokyo/floor/1f.html",
+        "url": "https://www.tripledecker.site/products",
         "detail": "已決定購買；在大丸1F，La noix往N.Y.C.SAND途中，依現行官方樓層圖找「トリプルデッカー ロンドン」。款式與入數待選。",
         "routeOrder": 9,
         "routeFloor": "daimaru1f",
@@ -651,14 +685,19 @@ window.SHOPPING_LIST = [
         "sourceUrl": "https://www.daimaru.co.jp/tokyo/floor/1f.html",
         "sourceLabel": "官方商品／門市資訊",
         "nextStop": "下一站：10 N.Y.C.SAND。沿大丸1F食品區通道往中央電扶梯南側，找BEL AMER旁的N.Y.C.SAND；以官方店名標示核對。",
-        "pendingSummary": "TRIPLE DECKER LONDON 三層夾心餅乾：品項／數量／送給誰待選"
+        "pendingSummary": "TRIPLE DECKER LONDON 三層夾心餅乾：品項／數量／送給誰待選",
+        "image": "assets/shopping/station-triple.webp",
+        "imageSource": "https://www.tripledecker.site/products",
+        "imageUrl": "https://static.wixstatic.com/media/2f5b9e_05587e0f00434644b02e8a6a15cb0b3b~mv2.jpg",
+        "recommendation": "ミリオネアショートブレッド｜百萬富翁酥餅",
+        "selectionNote": "先看巧克力、焦糖與酥餅層次款；口味與入數現場選。"
       },
       {
         "id": "souvenir-nycsand",
         "name": "N.Y.C.SAND 焦糖夾心餅乾",
         "type": "採買10｜大丸1F",
         "detail": "焦糖、巧克力與餅乾組合。各品牌皆列採買；只買已決定品項，依時間控制候位。",
-        "url": "https://www.daimaru.co.jp/tokyo/",
+        "url": "https://www.nycsand.site/product",
         "linkLabel": "官方商品／購買資訊",
         "caution": "價格、口味、庫存及賞味期限以購買當日包裝與店頭為準；送禮前確認過敏原。",
         "sourceUrl": "https://www.instagram.com/reel/Da7fo2VJ16I/",
@@ -674,7 +713,12 @@ window.SHOPPING_LIST = [
         "jpName": "N.Y.キャラメルサンド",
         "positionNote": "2026/11/08官網現行圖：中央電扶梯南側食品通道，BEL AMER旁。",
         "positionMapUrl": "https://www.daimaru.co.jp/tokyo/floor/1f.html",
-        "pendingSummary": "N.Y.C.SAND 焦糖夾心餅乾：數量／送給誰待選"
+        "pendingSummary": "N.Y.C.SAND 焦糖夾心餅乾：數量／送給誰待選",
+        "image": "assets/shopping/station-nyc.webp",
+        "imageSource": "https://www.nycsand.site/product",
+        "imageUrl": "https://static.wixstatic.com/media/2f5b9e_6a4d94da2a1a4c94b94b8b74c6a80ff5~mv2.jpg",
+        "recommendation": "N.Y.キャラメルサンド｜焦糖夾心餅乾",
+        "selectionNote": "初次優先看經典款：奶油餅乾、牛奶巧克力與流心焦糖。"
       },
       {
         "id": "souvenir-sugar",
@@ -698,7 +742,10 @@ window.SHOPPING_LIST = [
         "quantity": "待選",
         "recipient": "待選",
         "jpName": "シュガーバターサンドの木",
-        "pendingSummary": "Sugar Butter Tree 穀物夾心餅乾：數量／送給誰待選"
+        "pendingSummary": "Sugar Butter Tree 穀物夾心餅乾：數量／送給誰待選",
+        "recommendation": "シュガーバターサンドの木｜穀物奶油夾心",
+        "selectionNote": "以原味或當期秋冬款為主；麝香葡萄僅為季節參考。",
+        "imageNote": "原始推薦圖；包裝、價格與季節口味以現場為準。"
       },
       {
         "id": "souvenir-press",
@@ -719,7 +766,12 @@ window.SHOPPING_LIST = [
         "quantity": "待選",
         "recipient": "待選",
         "jpName": "バターサンド",
-        "pendingSummary": "PRESS BUTTER SAND 奶油焦糖夾心餅乾：數量／送給誰待選"
+        "pendingSummary": "PRESS BUTTER SAND 奶油焦糖夾心餅乾：數量／送給誰待選",
+        "image": "assets/shopping/station-press.webp",
+        "imageSource": "https://buttersand.com/",
+        "imageUrl": "https://buttersand.com/cms/wp-content/uploads/2025/09/PBS_PRODUCTS_02.jpg",
+        "recommendation": "バターサンド｜奶油焦糖夾心餅乾",
+        "selectionNote": "先看原味，季節口味現場確認；與PARIS不同品牌。"
       },
       {
         "id": "souvenir-pista",
@@ -740,14 +792,19 @@ window.SHOPPING_LIST = [
         "quantity": "待選",
         "recipient": "待選",
         "jpName": "ピスタチオサンド",
-        "pendingSummary": "PISTA & TOKYO 開心果夾心餅乾：數量／送給誰待選"
+        "pendingSummary": "PISTA & TOKYO 開心果夾心餅乾：數量／送給誰待選",
+        "image": "assets/shopping/station-pista.webp",
+        "imageSource": "https://www.pistaandtokyo.jp/language/zh-tw/",
+        "imageUrl": "https://www.pistaandtokyo.jp/language/assets/images/products_photo_sandAssort.jpg",
+        "recommendation": "ピスタチオサンド｜開心果夾心餅乾",
+        "selectionNote": "先看開心果／覆盆莓綜合盒；Pistage是另一種甜點。"
       },
       {
         "id": "souvenir-brulee",
         "name": "BRULEE MERIZE 布蕾塔",
         "type": "採買14｜Gift 1F（G9）",
         "detail": "已決定購買。常溫布蕾塔依包裝保存；若選生布蕾，當天吃／不帶回台，並依包裝冷藏。品項與數量待選。",
-        "url": "https://www.tokyoeki-1bangai.co.jp/",
+        "url": "https://www.bruleemerize.jp/",
         "linkLabel": "官方商品／購買資訊",
         "caution": "價格、口味、庫存及賞味期限以購買當日包裝與店頭為準；送禮前確認過敏原。 若改選生布蕾：當天吃／不帶回台，須按包裝冷藏。",
         "sourceUrl": "https://www.instagram.com/reel/DZP-yHmNmNa/",
@@ -761,14 +818,19 @@ window.SHOPPING_LIST = [
         "quantity": "待選",
         "recipient": "待選",
         "jpName": "ブリュレクリームタルト",
-        "pendingSummary": "BRULEE MERIZE 布蕾塔：數量／送給誰待選"
+        "pendingSummary": "BRULEE MERIZE 布蕾塔：數量／送給誰待選",
+        "image": "assets/shopping/station-brulee.webp",
+        "imageSource": "https://www.bruleemerize.jp/",
+        "imageUrl": "https://www.bruleemerize.jp/common/images/top/pht_brulee_cream_tarte.jpg",
+        "recommendation": "ブリュレクリームタルト｜布蕾奶油塔",
+        "selectionNote": "優先看盒裝布蕾塔；生布蕾另屬當天吃的選項。"
       },
       {
         "id": "souvenir-vanilla-show",
         "name": "VANILLABEANS ショーコラ 生巧克力夾心餅",
         "type": "採買15a｜Gift 1F（G8）",
         "detail": "生巧克力夾心餅，依購買款式核對保存溫度與期限；與パリトロ蛋糕分開選購。",
-        "url": "https://www.tokyoeki-1bangai.co.jp/",
+        "url": "https://www.vanillabeans.yokohama/view/item/000000000032?category_page_id=ct2",
         "linkLabel": "官方商品／購買資訊",
         "caution": "價格、口味、庫存及賞味期限以購買當日包裝與店頭為準；送禮前確認過敏原。",
         "sourceUrl": "https://www.instagram.com/reel/DXMELWFE2jR/",
@@ -782,14 +844,19 @@ window.SHOPPING_LIST = [
         "quantity": "待選",
         "recipient": "待選",
         "jpName": "ショーコラ",
-        "pendingSummary": "VANILLABEANS ショーコラ 生巧克力夾心餅：數量／送給誰待選"
+        "pendingSummary": "VANILLABEANS ショーコラ 生巧克力夾心餅：數量／送給誰待選",
+        "image": "assets/shopping/station-vanilla-show.webp",
+        "imageSource": "https://www.vanillabeans.yokohama/view/item/000000000032?category_page_id=ct2",
+        "imageUrl": "https://gigaplus.makeshop.jp/cdcom/new2025/img/nav_chocolat.png",
+        "recommendation": "ショーコラ｜生巧克力夾心餅",
+        "selectionNote": "餅乾夾生巧克力；與15b同店挑選，依包裝核對保存溫度。"
       },
       {
         "id": "souvenir-vanilla-pari",
         "name": "VANILLABEANS パリトロ 巧克力蛋糕",
         "type": "採買15b｜Gift 1F（G8）",
         "detail": "已決定購買，與15a同店採買。冷藏品：當天吃／不帶回台；依包裝保持指定溫度，不放一般常溫置物櫃。",
-        "url": "https://www.tokyoeki-1bangai.co.jp/",
+        "url": "https://www.vanillabeans.yokohama/view/item/000000000032?category_page_id=ct2",
         "linkLabel": "官方商品／購買資訊",
         "caution": "價格、口味、庫存及賞味期限以購買當日包裝與店頭為準；送禮前確認過敏原。",
         "sourceUrl": "https://www.instagram.com/reel/DXMELWFE2jR/",
@@ -803,13 +870,18 @@ window.SHOPPING_LIST = [
         "quantity": "待選",
         "recipient": "當天自吃",
         "jpName": "パリトロ",
-        "pendingSummary": "VANILLABEANS パリトロ 巧克力蛋糕：數量待選"
+        "pendingSummary": "VANILLABEANS パリトロ 巧克力蛋糕：數量待選",
+        "image": "assets/shopping/station-vanilla-pari.webp",
+        "imageSource": "https://www.vanillabeans.yokohama/view/item/000000000032?category_page_id=ct2",
+        "imageUrl": "https://gigaplus.makeshop.jp/cdcom/new2025/img/nav_paristrois.png",
+        "recommendation": "パリトロ｜巧克力蛋糕",
+        "selectionNote": "三層巧克力口感；本次規劃當天吃，不帶回台。"
       },
       {
         "id": "souvenir-butter",
         "name": "Butter Butler 奶油點心（品項待選）",
         "jpName": "バターバトラー",
-        "url": "https://www.tokyoeki-1bangai.co.jp/shop/detail/?cd=000196",
+        "url": "https://sucreyshopping.jp/butterbutler",
         "detail": "已決定購買；費南雪或其他點心品項與數量待選。Gift Palette最後一站，買完依H階梯／電梯指標下B1動漫街。",
         "routeOrder": 16,
         "routeFloor": "gift",
@@ -823,7 +895,12 @@ window.SHOPPING_LIST = [
         "sourceUrl": "https://www.tokyoeki-1bangai.co.jp/shop/detail/?cd=000196",
         "sourceLabel": "官方商品／門市資訊",
         "nextStop": "下一段：動漫街（不編號）。從Butter Butler（G3）往星巴克（G2）旁H階梯／電扶梯下B1；推車依電梯指標。動漫街後沿改札外北通り、南通り前往17 Calbee＋（G47）。",
-        "pendingSummary": "Butter Butler 奶油點心：品項／數量／送給誰待選"
+        "pendingSummary": "Butter Butler 奶油點心：品項／數量／送給誰待選",
+        "image": "assets/shopping/station-butter.webp",
+        "imageSource": "https://sucreyshopping.jp/butterbutler",
+        "imageUrl": "https://sucreyshopping.jp/cms/img/usr/brand/butterbutler/bb_financier(4).jpg",
+        "recommendation": "バターフィナンシェ｜奶油費南雪",
+        "selectionNote": "初次先看經典費南雪；想比較酥脆口感可看奶油薄餅。"
       },
       {
         "id": "souvenir-calbee",
@@ -843,7 +920,12 @@ window.SHOPPING_LIST = [
         "jpName": "カルビープラス",
         "nextStop": "採買17完成後，離開東京站前，把下午買的13～17放進八重洲北口／八重洲地下街附近的改札外置物櫃（第三次寄放），拍下櫃號與位置；冷藏的14生布蕾、15b不放櫃。接著從八重洲地下街步行往有樂町BicCamera，晚餐後與早上兩批一起取回。",
         "sourceLabel": "官方商品／門市資訊",
-        "pendingSummary": "Calbee＋ 東京站限定零食：數量／送給誰待選"
+        "pendingSummary": "Calbee＋ 東京站限定零食：數量／送給誰待選",
+        "image": "assets/shopping/station-calbee.webp",
+        "imageSource": "https://www.calbee.co.jp/newsrelease/221122.php",
+        "imageUrl": "https://www.calbee.co.jp/newsrelease/img/221122_6.jpg",
+        "recommendation": "釜揚げチップス｜鰹魚高湯鹽味洋芋片",
+        "selectionNote": "伴手禮看包裝洋芋片；現吃可選BIGポテりこ馬鈴薯沙拉味。"
       }
     ]
   },

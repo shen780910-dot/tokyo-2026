@@ -20,7 +20,6 @@
   const visitFilters=make('div','shopping-visit-filters');
   function addSelect(labelText,values){const label=make('label','',labelText);const select=make('select');select.setAttribute('aria-label',labelText);const all=make('option','','全部');all.value='';select.append(all);for(const value of values){const option=make('option','',value);option.value=value;select.append(option);}select.addEventListener('change',()=>{selectCategory(-1);});label.append(select);visitFilters.append(label);return select;}
   const items=window.SHOPPING_LIST.filter(g=>g.category!=='已取消／不前往').flatMap(g=>g.items);
-  const dateSelect=addSelect('購買日',[...new Set(items.map(x=>x.purchaseDate))].sort());
   const storeSelect=addSelect('店家',[...new Set(items.map(x=>x.store))].sort());categoryTabs.after(visitFilters);
 
   function selectCategory(index,focus=false){
@@ -33,8 +32,8 @@
   document.querySelector('.shopping-status').insertBefore(filter,controls);
   const empty=make('p','shopping-filter-empty','目前沒有未購買的商品。');empty.hidden=true;root.after(empty);
   function applyFilter(){
-    let visible=0;for(const row of root.querySelectorAll('[data-cancelled]'))row.hidden=Boolean(dateSelect.value||storeSelect.value);
-    for(const {row,item} of rows.values()){row.hidden=(hidePurchased&&row.classList.contains('is-purchased'))||(dateSelect.value&&item.purchaseDate!==dateSelect.value)||(storeSelect.value&&item.store!==storeSelect.value);if(!row.hidden)visible++;}
+    let visible=0;for(const row of root.querySelectorAll('[data-cancelled]'))row.hidden=Boolean(storeSelect.value);
+    for(const {row,item} of rows.values()){row.hidden=(hidePurchased&&row.classList.contains('is-purchased'))||(storeSelect.value&&item.store!==storeSelect.value);if(!row.hidden)visible++;}
     categoryPanels.forEach((section,i)=>{section.hidden=activeCategory===-1?section.dataset.cancelledCategory==='true':i!==activeCategory;});
     const selected=categoryPanels[activeCategory];
     visible=selected?[...selected.querySelectorAll('.shopping-item')].filter(row=>!row.hidden).length:[...rows.values()].filter(({row})=>!row.hidden).length;
@@ -45,7 +44,7 @@
   filter.addEventListener('click',()=>{hidePurchased=!hidePurchased;applyFilter();});
   const rows=new Map();let current={items:{},writingIds:[],unlocked:false,connected:false};let unlocking=false;
   function render(state){
-    current=state;let purchased=0;
+    current=state;window.dispatchEvent(new CustomEvent('shopping-state',{detail:state}));let purchased=0;
     for(const [id,{row,input,expander}] of rows){const checked=state.items[id]?.purchased===true;input.checked=checked;row.classList.toggle('is-purchased',checked);input.disabled=!state.unlocked||!state.connected||state.writingIds.includes(id);expander.hidden=!checked;if(checked)purchased++;}
     for(const section of categoryPanels){const children=[...section.querySelectorAll('.shopping-item')];children.sort((a,b)=>Number(a.classList.contains('is-purchased'))-Number(b.classList.contains('is-purchased'))||Number(a.dataset.order)-Number(b.dataset.order));for(const row of children)section.append(row);}
     document.querySelector('#shopping-progress').textContent=`${purchased} / ${rows.size} 已購買`;
@@ -67,14 +66,14 @@
       const row=make('article','shopping-item');row.dataset.item=item.id;row.dataset.order=group.items.indexOf(item);
       if(item.image){const image=make('img');image.src=item.image;image.alt=item.name+' 商品參考';image.width=180;image.height=180;image.loading='lazy';row.append(image);}else row.classList.add('shopping-item-text');
       const content=make('div','shopping-item-body');content.append(make('span','shopping-type',item.type),make('h3','',item.name),make('p','',item.detail));
-      if(item.decision!=='不買' && item.pendingSummary){content.prepend(make('span','pending-badge','待確認'));const li=make('li');li.append(make('span','pending-badge','待確認'));const a=make('a','',item.pendingSummary);a.title=item.pendingSummary;a.href='?item='+encodeURIComponent(item.id)+'#shopping';li.append(a);document.querySelector('#pending-list').append(li);}
+      if(item.decision!=='不買' && item.pendingSummary){content.prepend(make('span','pending-badge','待確認'));const li=make('li');li.append(make('span','pending-badge','待確認'));const a=make('a','',item.pendingSummary);a.title=item.pendingSummary;a.href='?item='+encodeURIComponent(item.id)+'#shopping';li.append(a);}
       const meta=make('dl','purchase-metadata');for(const [title,value] of [['購買日',item.purchaseDate],['店家',item.store],['買／不買',item.decision],['數量',item.quantity],['送給誰',item.recipient]]){meta.append(make('dt','',title),make('dd','',value||'待選'));}content.append(meta);
       const japanese=make('details','shopping-instructions staff-card');japanese.append(make('summary','','給店員看・日本語'));const card=make('div');card.lang='ja';card.append(make('p','staff-product-name',item.jpName),make('p','','こちらの商品を探しています。数量：'+(item.quantity==='待選'?'相談したいです':item.quantity)));japanese.append(card);content.append(japanese);
       if(item.availabilityUrl){const link=make('a','shopping-source','官方實體通路查核 ↗');link.href=item.availabilityUrl;link.target='_blank';link.rel='noopener noreferrer';content.append(link);}
       const expander=make('button','purchase-expander','展開商品資料');expander.type='button';expander.hidden=true;expander.setAttribute('aria-expanded','false');expander.addEventListener('click',()=>{const expanded=row.classList.toggle('is-expanded');expander.setAttribute('aria-expanded',String(expanded));expander.textContent=expanded?'收合商品資料':'展開商品資料';});content.append(expander);
       if(item.positionNote)content.append(make('p','',item.positionNote));
       if(item.positionMapUrl){const officialMap=make('a','shopping-source','已核對的官方櫃位圖 ↗');officialMap.href=item.positionMapUrl;officialMap.target='_blank';officialMap.rel='noopener noreferrer';content.append(officialMap);}
-      if(item.routeFloor){const map=make('a','shopping-source','看本層地圖與下一站 ↗');map.href='?floor='+encodeURIComponent(item.routeFloor)+'#day-2';content.append(map);}
+      if(item.routeFloor){const map=make('a','shopping-source','看本層地圖與下一站 ↗');map.href='?floor='+encodeURIComponent(item.routeFloor)+'#station';content.append(map);}
       if(item.nextStop){const next=make('details','shopping-instructions');next.append(make('summary','','下一家怎麼走'),make('p','',item.nextStop));content.append(next);}
       if(item.usage||item.caution){
         const instructions=make('details','shopping-instructions');
@@ -99,6 +98,6 @@
   if(requestedItem&&rows.has(requestedItem)){const index=window.SHOPPING_LIST.findIndex(group=>group.items.some(item=>item.id===requestedItem));selectCategory(index);const row=rows.get(requestedItem).row;row.tabIndex=-1;requestAnimationFrame(()=>{row.scrollIntoView({block:'center'});row.focus({preventScroll:true});});}
   form.addEventListener('submit',async event=>{event.preventDefault();if(unlocking)return;unlocking=true;unlock.disabled=true;const value=password.value;password.value='';try{await sync.unlock(value);}catch{}finally{unlocking=false;unlock.disabled=false;}});
   logout.addEventListener('click',()=>{void sync.logout().catch(()=>{});});retry.addEventListener('click',()=>{void sync.refresh();});
-  const activate=()=>{if(location.hash==='#shopping')void sync.start();else sync.stop();};
+  const activate=()=>{if(['#shopping','#station'].includes(location.hash))void sync.start();else sync.stop();};
   window.addEventListener('hashchange',activate);render(current);activate();
 })();
