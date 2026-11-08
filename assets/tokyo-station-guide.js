@@ -27,7 +27,7 @@ window.TOKYO_STATION_GUIDE = [
       6
     ],
     "steps": [],
-    "walk": "04 COCORIS→05 The Maple Mania→06 JAGA BOULDE。10:15寄放第一批，再從一般JR八重洲北口出站進大丸。",
+    "walk": "04 COCORIS→05 The Maple Mania→06 JAGA BOULDE。06買完先由一般JR八重洲北口出站，10:15使用改札外置物櫃寄放第一批，再進大丸。",
     "routes": [],
     "tabLabel": "04–06｜JR 1F"
   },
@@ -59,7 +59,7 @@ window.TOKYO_STATION_GUIDE = [
       12
     ],
     "steps": [],
-    "walk": "12 PRESS→電梯上4F emmi（不編號）→11:45回1F第二次寄放→KITTE 12:00午餐。",
+    "walk": "12 PRESS→電梯上4F emmi（不編號）→11:45回1F改札外置物櫃第二次寄放→KITTE 12:00午餐。",
     "routes": [],
     "tabLabel": "12｜大丸B1"
   },
@@ -72,7 +72,7 @@ window.TOKYO_STATION_GUIDE = [
     "shops": [],
     "steps": [
       "12 PRESS後搭八重洲側電梯上4F找emmi；逛完回1F。",
-      "11:45第二次寄放行李並拍櫃號，再往KITTE 12:00午餐；飯後13:35回Gift接13 PISTA（G32）。"
+      "11:45在改札外置物櫃第二次寄放行李並拍櫃號，再往KITTE 12:00午餐；飯後13:35回Gift接13 PISTA（G32）。"
     ],
     "walk": "依下方指引",
     "routes": [],
@@ -133,7 +133,7 @@ window.TOKYO_STATION_GUIDE = [
     "shops": [],
     "steps": [
       "01→02→03→04→05→06→07→08→09→10→11→12→emmi→午餐→13→14→15→16→動漫街→17 Calbee＋。",
-      "10:15與11:45分兩次寄放置物櫃，拍下櫃號，離站前取回全部物品。",
+      "10:15與11:45分兩次寄放改札外置物櫃，拍下櫃號；晚餐後回東京站取回。",
       "06之後由一般JR八重洲北口出站；Gift、動漫街、Calbee皆在改札外。"
     ],
     "walk": "依下方指引",

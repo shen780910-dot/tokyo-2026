@@ -576,7 +576,7 @@ window.SHOPPING_LIST = [
         "image": "assets/shopping/jaga-boulde-reference.png",
         "routeOrder": 6,
         "routeFloor": "1f",
-        "nextStop": "下一站：07 PARIS BUTTER SAND。10:15先在八重洲北口／大丸附近找置物櫃寄放JR區採買，拍下櫃號；由一般JR八重洲北口出站進大丸1F，往八重洲側電梯旁找PARIS。",
+        "nextStop": "下一站：07 PARIS BUTTER SAND。06買完先由一般JR八重洲北口出站（勿進新幹線轉乘口），出站後使用改札外置物櫃（八重洲北口／大丸附近）寄放JR區採買，拍下櫃號與位置；再進大丸1F往八重洲側電梯旁找PARIS。",
         "positionNote": "2026/11/08官方查核：品牌官方確認：八重洲北口改札內、東北／上越／北陸新幹線北轉乘口前；最近一般JR出口為八重洲北口，勿進新幹線轉乘改札。",
         "positionMapUrl": "https://www.gransta.jp/gr_cswp/wp-content/uploads/2025/04/202608_heremap_1F_gransta-tokyo_jagaboulder.jpg",
         "store": "JAGA BOULDE｜JR 1F・改札內",
@@ -712,7 +712,7 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始推薦來源",
         "routeOrder": 12,
         "routeFloor": "daimarub1",
-        "nextStop": "12買完搭八重洲側電梯上4F逛emmi（不編號）；11:45回1F，在大丸附近／八重洲北口置物櫃第二次寄放並拍櫃號，再往KITTE 12:00午餐。飯後回Gift接13 PISTA（G32）。",
+        "nextStop": "12買完搭八重洲側電梯上4F逛emmi（不編號）；11:45回1F，在大丸附近／八重洲北口的改札外置物櫃第二次寄放，拍下櫃號與位置，再往KITTE 12:00午餐。下午先不取物，晚餐後回東京站取回；飯後採買從Gift 13 PISTA（G32）接續。",
         "store": "PRESS BUTTER SAND｜大丸B1",
         "purchaseDate": "11/13",
         "decision": "買",
@@ -841,7 +841,7 @@ window.SHOPPING_LIST = [
         "quantity": "待選",
         "recipient": "待選",
         "jpName": "カルビープラス",
-        "nextStop": "採買17完成後，從八重洲地下街步行往有樂町BicCamera；取回置物櫃物品，記得檢查所有櫃號。",
+        "nextStop": "採買17完成後，從八重洲地下街步行往有樂町BicCamera。置物櫃物品先不取，晚餐後再回東京站取回。",
         "sourceLabel": "官方商品／門市資訊",
         "pendingSummary": "Calbee＋ 東京站限定零食：數量／送給誰待選"
       }
