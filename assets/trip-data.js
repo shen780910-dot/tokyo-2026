@@ -11,14 +11,14 @@ window.TRIP = {
       "stops": [],
       "schedule": [
         {
-          "time": "06:35–10:35",
+          "time": "台06:35 → 日10:35",
           "activity": "IT200 桃園 → 成田第2航廈",
           "detail": "以下時間依出關及機場交通調整。"
         },
         {
-          "time": "出關後｜12:30前交件",
+          "time": "出關後｜預約12:30交件",
           "activity": "Airporter已預約付款・行李寄送飯店",
-          "detail": "成田第2航廈國際線抵達層1F JALABC櫃檯交件，訂單截止12:30。已付¥5,225（約NT$1,045），訂單領取時間20:00，依實際配送通知取件。飯店代收已確認；行李件數／尺寸級距及訂單地址區名仍須核對，詳見Notion。推車及當日必需品隨身帶。",
+          "detail": "成田第2航廈國際線抵達層1F JALABC櫃檯交件，訂單預約12:30，提醒信要求13:00以前寄放完成，仍以12:30前到櫃檯為目標。已付¥5,225（約NT$1,045）；確認信列托運尺寸行李2件，尚需透過訂單信指定連結上傳行李照片，掛牌填寫訂單編號。領取時間11/12 20:00，依實際配送通知至飯店取件。飯店代收已確認；尺寸級距仍需核對。訂單地址另含KOTO-KU，但飯店官方地址為台東區東上野1-27-11，需向Airporter確認更正區名。推車及當日必需品隨身帶。",
           "links": [
             {
               "name": "機場交通・行李配送（Notion）",
@@ -29,7 +29,7 @@ window.TRIP = {
         {
           "time": "交件後｜車程約50～65分鐘",
           "activity": "Access特急直達押上",
-          "detail": "搭經押上・淺草方向的直通列車，出發前確認目的地；不要搭Skyliner或往京成上野的班次。另留候車時間，11/12實際班次待確認。兩位成人車資暫抓約¥2,400；4歲幼兒免票，無指定座位。 搭車動線：T2抵達層1F完成JALABC交件 → 跟隨「鐵道／Railways」指標搭電梯到B1空港第2ビル站 → 找京成電鐵「成田SKY ACCESS」刷Suica進站 → 依當天看板前往Access特急月台。確認列車經押上、淺草方向；月台以現場公告為準。成人每人各用一張Suica，先確認餘額；Access特急不用另買特急券、不劃位。帶推車沿電梯指標走。",
+          "detail": "搭經押上・淺草方向的直通列車，出發前確認目的地；不要搭Skyliner或往京成上野的班次。另留候車時間，11/12實際班次待確認。京成官網查核：成人IC每人¥1,162，兩人¥2,324；紙票每人¥1,170，兩人¥2,340（2026/11/08查閱）；4歲幼兒免票，無指定座位。 搭車動線：T2抵達層1F完成JALABC交件 → 跟隨「鐵道／Railways」指標搭電梯到B1空港第2ビル站 → 找京成電鐵「成田SKY ACCESS」刷Suica進站 → 依當天看板前往Access特急月台。確認列車經押上、淺草方向；月台以現場公告為準。成人每人各用一張Suica，先確認餘額；Access特急不用另買特急券、不劃位。帶推車沿電梯指標走。",
           "links": [
             {
               "name": "成田T2官方樓層圖｜1F抵達大廳→B1鐵道",
@@ -38,6 +38,10 @@ window.TRIP = {
             {
               "name": "空港第2ビル站｜京成閘口・電梯・月台中文圖",
               "url": "https://new-www.keisei.co.jp/keisei/tetudou/stationmap/pdf/ch/144.pdf"
+            },
+            {
+              "name": "京成官方Access特急運賃",
+              "url": "https://www.keisei.co.jp/keisei/tetudou/skyliner/jp/traffic/express_fares.php"
             }
           ]
         },
@@ -78,7 +82,7 @@ window.TRIP = {
         {
           "time": "晚餐與採買後｜約30～40分鐘",
           "activity": "電車至飯店・入住取行李",
-          "detail": "押上 → 都營淺草線至藏前 → 地面步行轉乘大江戶線 → 新御徒町 → 飯店。推車轉乘多留時間；Airporter訂單領取時間20:00，依實際通知取行李。",
+          "detail": "首選省轉乘：押上搭計程車至飯店／新御徒町，車資先抓約¥1,500～2,000（規劃估算、非報價，依路況及跳表）。電車備案：押上搭淺草線到淺草，轉銀座線到稻荷町，再步行約7～10分鐘至飯店（步行估算）。避免藏前出站走地面轉乘大江戶線。Airporter訂單領取時間20:00，依實際送達通知取行李。",
           "links": [
             {
               "name": "住宿資訊・入住核對（Notion）",
@@ -87,7 +91,7 @@ window.TRIP = {
           ]
         }
       ],
-      "note": "Airporter已預約付款，11/12成田T2抵達層1F JALABC，12:30前交件、20:00領取。配送實付¥5,225＋兩成人Access特急暫估¥2,400，去程約NT$1,525；加回程青鳥NT$5,780，合計約NT$7,305。不含晴空塔至飯店車資；青鳥預訂、行李規格及配送地址區名待核對。 午餐首選敘敘苑，現場候位上限30分鐘；利久牛舌保留為晚餐備選。"
+      "note": "Airporter已預約付款，11/12成田T2 1F JALABC，預約12:30交件（最晚13:00前完成），20:00依通知領取。配送¥5,225＋兩成人Access特急IC¥2,324＝¥7,549；以原預算匯率0.2換算約NT$1,510，加回程青鳥NT$5,780，約NT$7,290。不含押上至飯店交通。待上傳2件行李照片；行李規格及配送地址區名待核對。午餐敘敘苑候位上限30分鐘，利久牛舌晚餐備選。"
     },
     {
       "date": "11.13",
@@ -109,9 +113,9 @@ window.TRIP = {
           ]
         },
         {
-          "time": "上午｜東京站區含emmi預留約4～4.5小時",
-          "activity": "JR改札內｜Ivorish → Maple Mania",
-          "detail": "搭JR抵達後暫時不要出站。先到B1丸之內改札內逛Ivorish MAISON，再回1F吹拔區逛The Maple Mania；買完從1F八重洲北口出JR。候選全部保留，現場可跳過；先別進新幹線轉乘口。",
+          "time": "09:30–10:15｜伴手禮擇店",
+          "activity": "JR改札內｜採買01～05",
+          "detail": "採買01 Ivorish→02 A Bite Coffee→03 Curly’s（JR B1）→上1F買04 COCORIS→05 JAGA BOULDE。Maple Mania暫作路過・不採買；買完05才從一般JR八重洲北口出站，不進新幹線改札。09:30～10:15只逛已決定品項，久候就跳過。",
           "links": [
             {
               "name": "Ivorish MAISON（Notion）",
@@ -124,9 +128,9 @@ window.TRIP = {
           ]
         },
         {
-          "time": "10:00開門後｜大丸",
-          "activity": "大丸東京｜1F兩間 → B1 PRESS",
-          "detail": "八重洲北口出改札後就是大丸旁；循食品區「正面入口」進1F，先逛1F TRIPLE DECKER LONDON、N.Y.C.SAND，再下B1找PRESS BUTTER SAND。候選全部保留，排隊太久可跳過；接著上4F逛emmi，再回1F往Gift Palette。",
+          "time": "10:15–11:00｜候選擇店",
+          "activity": "大丸1F／B1｜採買06～10",
+          "detail": "採買06 PARIS→07 La noix→08 N.Y.C.SAND→09 Sugar Butter Tree（大丸1F）→下B1買10 PRESS。TRIPLE DECKER暫作路過・不採買。這些同類餅乾待選要留幾家，非全部必買；11:00前收尾。",
           "links": [
             {
               "name": "TRIPLE DECKER LONDON（Notion）",
@@ -143,9 +147,9 @@ window.TRIP = {
           ]
         },
         {
-          "time": "大丸採買後｜必逛・預留45～60分鐘",
+          "time": "11:00–11:45｜主要購物點",
           "activity": "emmi｜大丸東京店4F",
-          "detail": "（6）emmi：從大丸B1搭F八重洲側電梯上4F，對照「大丸4F」分頁找原圖「エミ」櫃位。逛完搭電梯回1F，再接（7）Gift Palette。營業10:00～20:00，預留45～60分鐘。",
+          "detail": "10 PRESS之後，搭八重洲側電梯上4F逛emmi（不編採買號）；11:45回1F往KITTE移動，12:00午餐。",
           "links": [
             {
               "name": "emmi 大丸東京｜官方店舖資訊",
@@ -154,9 +158,39 @@ window.TRIP = {
           ]
         },
         {
-          "time": "上午～午餐前｜Gift Palette 1F",
-          "activity": "PISTA・BRULEE MERIZE・VANILLABEANS・Butter Butler",
-          "detail": "都在JR改札外，四間現場選。G32＝PISTA、G9＝BRULEE MERIZE、G8＝VANILLABEANS、G3＝Butter Butler。冷藏甜點優先現吃或確認保冷；若孩子餓了，先吃午餐再繼續採買。",
+          "time": "12:00–13:00｜午餐固定時段",
+          "activity": "午餐｜本家あべや（KITTE B1）",
+          "detail": "首選本家あべやKITTE店，吃比內地雞親子丼或極上親子丼。東京站採買後往丸之內南口，到KITTE B1用餐，再上3F逛GOOD DESIGN。備案：奧芝商店 東京車站浪漫號（八重洲地下街），若本家あべや候位過久或孩子已餓，可改吃湯咖哩；午晚餐若都選湯咖哩，可依喜好調整。孩子餐點、蛋熟度與不辣口味現場詢問；兩間擇一。 11:45往KITTE B1移動，12:00左右坐下用餐；不因採買拖延午餐。",
+          "links": [
+            {
+              "name": "本家あべや｜原始Notion筆記",
+              "url": "https://app.notion.com/p/3c8400d1c43e814d90a6ecca370b4462"
+            },
+            {
+              "name": "本家あべや｜KITTE官方店舖",
+              "url": "https://marunouchi.jp-kitte.jp/shop/index.jsp?bf=1&fmt=6&shopid=1005"
+            },
+            {
+              "name": "備案：奧芝商店 東京車站浪漫號（Notion）",
+              "url": "https://app.notion.com/p/3c8400d1c43e815d9cb2cd148087c986"
+            }
+          ]
+        },
+        {
+          "time": "13:00–13:20｜KITTE 3F",
+          "activity": "GOOD DESIGN STORE TOKYO by NOHARA",
+          "detail": "飯後在KITTE上3F逛設計用品；13:20離開，經站內改札外自由通路往八重洲側。",
+          "links": [
+            {
+              "name": "GOOD DESIGN STORE（Notion）",
+              "url": "https://app.notion.com/p/shen0910/3f8400d1c43e81b2b8b9f00f64485e26"
+            }
+          ]
+        },
+        {
+          "time": "13:35–14:00｜Gift Palette 1F",
+          "activity": "Gift Palette｜採買11～13",
+          "detail": "採買11 PISTA（G32）→12 BRULEE MERIZE（G9）→13 VANILLABEANS（G8，13a／13b同店）。Butter Butler（G3）暫作路過・不採買；接著依H階梯／電梯指標下B1動漫街，14:00逛Tomica／Plarail（C7）。冷藏甜點當天吃／不帶回台。",
           "links": [
             {
               "name": "PISTA & TOKYO（Notion）",
@@ -177,9 +211,9 @@ window.TRIP = {
           ]
         },
         {
-          "time": "午餐前後｜Tomica／Plarail預留45～60分鐘",
+          "time": "14:00–14:45｜飯後Tomica／Plarail",
           "activity": "東京動漫街｜Tomica・JUMP・龍貓・吉伊卡哇",
-          "detail": "Gift Palette旁H下B1，到いちばんプラザ附近。主逛Tomica／Plarail東京站專賣店C7，先看專賣店原創款與現場活動；一般款記下型號與價格，到有樂町BC再比價。JUMP C6、龍貓C12、吉伊卡哇C21列自由候選。寶可夢C34在1F，可跳過；活動及整理券依當日公告。逛完沿北通り接南通り，往（12）Calbee＋。",
+          "detail": "Gift Palette旁H下B1，到いちばんプラザ附近。主逛Tomica／Plarail東京站專賣店（C7），先看專賣店原創款與現場活動；一般款記下型號與價格，到有樂町BC再比價。JUMP（C6）、龍貓（C12）、吉伊卡哇（C21）列自由候選。寶可夢（C34）在1F，可跳過；活動及整理券依當日公告。逛完沿北通り接南通り，往14 Calbee＋（G47）。",
           "links": [
             {
               "name": "東京站・動漫街資料（Notion）",
@@ -188,9 +222,9 @@ window.TRIP = {
           ]
         },
         {
-          "time": "午餐前｜B1",
+          "time": "14:45–15:00｜B1零食區",
           "activity": "東京おかしランド｜Calbee＋等零食",
-          "detail": "接在（11）動漫街之後：沿北通り往銀の鈴／八重洲地下中央口方向，經改札外通路接南通り，前往（12）東京おかしランド的Calbee＋G47；不用重新刷進JR。零食現場自由選，逛完用餐，再找自由通路往丸之內側接KITTE。",
+          "detail": "採買14 Calbee＋（G47）；品項／數量待選。JAGA BOULDE在早上JR1F採買05，不在這裡販售。坂角兩款已移出路線。",
           "links": [
             {
               "name": "Calbee＋（Notion）",
@@ -199,37 +233,7 @@ window.TRIP = {
           ]
         },
         {
-          "time": "中午｜首選・預留45～60分鐘",
-          "activity": "午餐｜本家あべや（KITTE B1）",
-          "detail": "首選本家あべやKITTE店，吃比內地雞親子丼或極上親子丼。東京站採買後往丸之內南口，到KITTE B1用餐，再上3F逛GOOD DESIGN。備案：奧芝商店 東京車站浪漫號（八重洲地下街），若本家あべや候位過久或孩子已餓，可改吃湯咖哩；午晚餐若都選湯咖哩，可依喜好調整。孩子餐點、蛋熟度與不辣口味現場詢問；兩間擇一。",
-          "links": [
-            {
-              "name": "本家あべや｜原始Notion筆記",
-              "url": "https://app.notion.com/p/3c8400d1c43e814d90a6ecca370b4462"
-            },
-            {
-              "name": "本家あべや｜KITTE官方店舖",
-              "url": "https://marunouchi.jp-kitte.jp/shop/index.jsp?bf=1&fmt=6&shopid=1005"
-            },
-            {
-              "name": "備案：奧芝商店 東京車站浪漫號（Notion）",
-              "url": "https://app.notion.com/p/3c8400d1c43e815d9cb2cd148087c986"
-            }
-          ]
-        },
-        {
-          "time": "午餐後｜預留20～30分鐘",
-          "activity": "GOOD DESIGN STORE TOKYO by NOHARA",
-          "detail": "東京站丸之內南口 → KITTE 3F，逛設計生活用品；營業11:00～20:00。逛完步行往有樂町，不需再搭JR。",
-          "links": [
-            {
-              "name": "GOOD DESIGN STORE（Notion）",
-              "url": "https://app.notion.com/p/shen0910/3f8400d1c43e81b2b8b9f00f64485e26"
-            }
-          ]
-        },
-        {
-          "time": "下午｜預留60～90分鐘",
+          "time": "15:20–16:35｜主要玩具採買",
           "activity": "BicCamera 有樂町",
           "detail": "從KITTE步行往有樂町，直上4F玩具區，主買Tomica一般車款、Plarail列車、軌道與套組；比較東京站專賣店記下的型號與價格。特定款先查分店庫存或預留；營業10:00～22:00。",
           "links": [
@@ -240,7 +244,7 @@ window.TRIP = {
           ]
         },
         {
-          "time": "下午｜預留15～20分鐘",
+          "time": "16:40–17:00｜點心休息",
           "activity": "GODIVA Bakery 有樂町本店",
           "detail": "東京交通會館1F，買麵包當點心；營業11:00～20:00，排隊與售完狀況依當日現場。",
           "links": [
@@ -251,7 +255,7 @@ window.TRIP = {
           ]
         },
         {
-          "time": "傍晚｜視採買進度",
+          "time": "17:10–17:40｜視體力調整",
           "activity": "3COINS＋plus 西銀座店",
           "detail": "西銀座百貨2F，營業11:00～20:00；接在有樂町一起逛。博品館、MUJI與LOFT移到隔天，不再當天往銀座南端折返。",
           "links": [
@@ -288,7 +292,7 @@ window.TRIP = {
           ]
         }
       ],
-      "note": "東京站採買與大丸4F emmi → 本家あべや午餐（奧芝商店備案）→ KITTE → 有樂町BC（Tomica／Plarail）→ GODIVA → 西銀座3COINS → DOMINICA晚餐（Gurgaon備案）。東京站限定款先看、一般款到BC比價；依孩子食慾提前休息。"
+      "note": "12:00本家あべや午餐為固定休息點，Tomica／Plarail飯後14:00再逛。早上伴手禮可先寄東京站置物櫃，記下樓層、出口與櫃號並拍照；冷藏甜點不放一般常溫櫃，改最後購買或確認冷藏服務。買不完就跳過候選，不壓縮孩子用餐與休息。 採買順序統一01～14（emmi、動漫街不編號）；奶油餅乾保留家數與送禮數量待選，不要求全部排隊。"
     },
     {
       "date": "11.14",
@@ -304,7 +308,7 @@ window.TRIP = {
           "detail": "步行至御徒町站，搭JR山手線或京濱東北線往新橋；出站後步行到博品館。以11:00開門開始逛銀座。"
         },
         {
-          "time": "11:00–11:45｜主要購物點",
+          "time": "11:00–11:25｜主要購物點",
           "activity": "博品館玩具公園銀座本店",
           "detail": "先從銀座南端逛博品館，再一路往北。營業11:00～20:00；以孩子喜歡的玩具及試玩為主，賽車體驗依當日現場資訊。Tomica／Plarail已在前一天安排兩間，可避免重複採買。",
           "links": [
@@ -315,20 +319,9 @@ window.TRIP = {
           ]
         },
         {
-          "time": "11:45–12:15｜彈性候選",
-          "activity": "Dover Street Market 銀座",
-          "detail": "從博品館往北到銀座小松西館，營業11:00～20:00。時間不足時縮短或跳過，優先保留MUJI、LOFT與下午試鞋。",
-          "links": [
-            {
-              "name": "Dover Street Market（Notion）",
-              "url": "https://app.notion.com/p/shen0910/3f8400d1c43e81449e52d657c6bc5cf5"
-            }
-          ]
-        },
-        {
-          "time": "午餐前｜預留15分鐘",
+          "time": "11:30–11:45｜麵包外帶",
           "activity": "銀座木村家紅豆麵包",
-          "detail": "Dover Street Market 後，沿中央通前往木村屋總本店銀座本店1F買酒種紅豆麵包，再吃午餐；可選櫻花或小倉口味，實際品項依現場。",
+          "detail": "由博品館沿中央通往北，到木村屋總本店1F買麵包，候位久就跳過，11:45優先午餐。",
           "links": [
             {
               "name": "銀座木村家（Notion）",
@@ -337,34 +330,19 @@ window.TRIP = {
           ]
         },
         {
-          "time": "12:30–13:15｜估算",
+          "time": "11:45–12:45｜午餐與坐下休息",
           "activity": "銀座周邊午餐",
-          "detail": "安排坐下用餐與休息；候位太久改找附近可立即入座的餐廳，避免壓縮下午試鞋時間。"
+          "detail": "午餐提前至11:45，另留12:45～13:10休息及移動。若已選定餐廳可事先訂位；目前餐廳與訂位待確認。"
         },
         {
-          "time": "午餐後｜彈性候選",
-          "activity": "SABON 銀座松屋通り店",
-          "detail": "松屋通り店營業11:30～20:00；有明確品項再短暫停留，時間不足可跳過。"
+          "time": "13:15–13:45｜男款健身服",
+          "activity": "Nike 銀座｜試穿",
+          "detail": "午餐與休息後逛Nike銀座（銀座3-2-15），試穿男款Training上衣、彈性短褲與運動長褲；30分鐘內擇買，接MUJI、LOFT。"
         },
         {
-          "time": "13:15–13:45｜男款健身衣褲",
-          "activity": "Nike 銀座｜健身服試穿",
-          "detail": "銀座3-2-15，官方營業11:00～21:00。午餐及SABON後，先到Nike試穿男款Training訓練上衣、彈性短褲或運動長褲，再逛附近MUJI、LOFT。試褲時做深蹲、弓箭步確認活動空間與腰頭；款式、尺寸及庫存現場確認。Nike若超時，縮短MUJI、LOFT，仍以15:30離開銀座為原則。",
-          "links": [
-            {
-              "name": "Nike 銀座｜官方店舖",
-              "url": "https://www.nike.com/retail/s/nike-ginza"
-            },
-            {
-              "name": "Nike 銀座｜導航",
-              "url": "https://www.google.com/maps/dir/?api=1&destination=35.67329852696571,139.76454363245148"
-            }
-          ]
-        },
-        {
-          "time": "13:45–14:25｜主要購物點",
+          "time": "13:45–14:30｜主要購物點",
           "activity": "MUJI 銀座",
-          "detail": "Nike試穿後步行前往無印良品銀座，營業11:00～21:00。停留約40分鐘，與LOFT接續安排；依Nike試穿進度縮短停留。",
+          "detail": "無印良品銀座，營業11:00～21:00。與LOFT接續安排，包含步行緩衝，依前面購物進度調整。",
           "links": [
             {
               "name": "無印良品銀座（Notion）",
@@ -373,7 +351,7 @@ window.TRIP = {
           ]
         },
         {
-          "time": "14:25–15:15｜主要購物點",
+          "time": "14:30–15:15｜主要購物點",
           "activity": "銀座 LOFT",
           "detail": "MUJI後逛銀座LOFT，週六營業11:00～21:00。15:15開始結帳，最晚15:30離開銀座往原宿，保留完整試鞋時間。",
           "links": [
@@ -389,12 +367,23 @@ window.TRIP = {
           "detail": "從銀座站搭銀座線往澀谷方向，在表參道轉千代田線往代代木上原方向，一站到明治神宮前。帶推車依現場電梯指標，移動預留45分鐘。"
         },
         {
-          "time": "16:15–17:15｜主要購物點",
+          "time": "16:15–16:45｜藥妝採買",
+          "activity": "@cosme TOKYO｜原宿",
+          "detail": "神宮前1-14-27，官方通路營業11:00～21:00；挑選已定案保養品與護髮。The Ordinary官方列此店為通路，個別庫存仍待確認；保留孩子休息，未定案品項不逐一尋找。",
+          "links": [
+            {
+              "name": "The Ordinary官方實體店清單",
+              "url": "https://theordinary.jp/store"
+            }
+          ]
+        },
+        {
+          "time": "16:45–17:30｜試鞋",
           "activity": "HOKA 原宿｜試鞋",
           "detail": "明治神宮前站出站後步行到HOKA，營業11:00～20:00。預留試穿、找尺寸與結帳；若候位較久，避免延誤後面的NB。"
         },
         {
-          "time": "17:15–18:30｜主要購物點",
+          "time": "17:30–18:30｜試鞋",
           "activity": "New Balance 原宿｜試鞋",
           "detail": "從HOKA步行前往，官方營業11:00～19:00。預留量腳、試穿與結帳；若HOKA超時，優先確保18:00前到NB。",
           "links": [
@@ -407,7 +396,7 @@ window.TRIP = {
         {
           "time": "18:30後",
           "activity": "原宿晚餐 → 回飯店整理行李",
-          "detail": "用餐後從JR原宿站搭山手線往新宿、池袋方向回御徒町，再步行回飯店。3COINS原宿僅在需要補買且時間足夠時順逛，前一天已安排西銀座店。隔天07:30接送，晚上以休息與整理行李為主。",
+          "detail": "晚餐後由NB原宿（神宮前4-32-16）步行至表參道站，規劃抓約12～18分鐘，帶推車與過街再加緩衝；不將8分鐘當保證。搭銀座線往淺草方向直達稻荷町，再步行約7～10分鐘至飯店（估算）。不搭山手線；隔天07:30青鳥接送，晚上整理行李並在LINE群組確認車號與到達時間。",
           "links": [
             {
               "name": "住宿資訊・入住核對（Notion）",
@@ -416,7 +405,7 @@ window.TRIP = {
           ]
         }
       ],
-      "note": "銀座先南後北：博品館 → Dover Street Market（彈性）→ 木村家紅豆麵包（預留15分鐘）→ 午餐 → SABON（彈性）→ Nike男款健身衣褲（約30分鐘）→ MUJI → LOFT。15:30離開銀座 → 原宿HOKA → NB。澀谷PARCO、Nintendo與澀谷寶可夢取消；emmi已改到前一天大丸4F。"
+      "note": "博品館→木村家→11:45午餐→休息→13:15 Nike→MUJI→LOFT→15:30往原宿，先@cosme再HOKA與NB。Dover Street Market與SABON取消，保留孩子休息。週六銀座中央通12:00～17:00步行者天國，推車較好走；惡劣天候或臨時管制依現場。回程表參道搭銀座線直達稻荷町。"
     },
     {
       "date": "11.15",
@@ -427,9 +416,9 @@ window.TRIP = {
       "stops": [],
       "schedule": [
         {
-          "time": "07:30｜青鳥建議",
-          "activity": "退房・青鳥接送赴成田",
-          "detail": "回程選用青鳥，單車NT$5,780；業者確認東京07:30出發不加夜間費。預訂、付款及集合位置仍待確認。",
+          "time": "07:30｜青鳥已預訂",
+          "activity": "退房・青鳥送機",
+          "detail": "青鳥已預訂付款，單車NT$5,780；07:30於MONday Apart 上野新御徒町飯店門口上車，業者確認不加夜間費。已備兒童增高墊。司機聯絡：接送LINE群組，出發前一晚確認車號與到達時間。",
           "links": [
             {
               "name": "機場交通・行李配送（Notion）",
@@ -439,7 +428,7 @@ window.TRIP = {
         },
         {
           "time": "約08:40～09:00",
-          "activity": "前往成田機場",
+          "activity": "抵達成田機場・報到",
           "detail": "車程按70～90分鐘估算，依路況調整；抵達後辦理11:25起飛的IT201報到與安檢。",
           "links": []
         },
@@ -449,7 +438,7 @@ window.TRIP = {
           "detail": "航廈與行李額度依航空公司最新通知核對"
         }
       ],
-      "note": "前晚整理行李；回程選用青鳥，建議07:30出發，估08:40～09:00抵達成田。訂車、付款、增高墊與集合位置待確認。"
+      "note": "前晚整理行李；青鳥已預訂，07:30於MONday Apart 上野新御徒町飯店門口出發，估08:40～09:00抵達成田。已備增高墊，司機以LINE群組聯絡。"
     }
   ],
   "checklist": [
@@ -471,7 +460,7 @@ window.TRIP = {
     },
     {
       "id": "weather-forecast",
-      "text": "11/5起確認11/12～15天氣預報；出發前1～2天依低溫與降雨調整行李"
+      "text": "依11/8氣象廳預報準備11/12～15衣物；11/11及出發前晚再查降雨與低溫"
     },
     {
       "id": "booked-20261011-0",
@@ -495,11 +484,11 @@ window.TRIP = {
     },
     {
       "id": "booked-20261011-5",
-      "text": "確認11/15青鳥07:30送機：預訂、付款、增高墊及集合位置"
+      "text": "11/14晚上在LINE群組確認青鳥07:30接送、車號、到達時間與集合地點"
     },
     {
       "id": "booked-20261011-6",
-      "text": "確認11/12 Access特急經押上直通班次；Airporter交件截止12:30"
+      "text": "確認11/12 Access特急經押上直通班次；Airporter預約12:30交件，提醒信要求13:00前完成"
     },
     {
       "id": "booked-20261011-7",
@@ -527,19 +516,29 @@ window.TRIP = {
     },
     {
       "id": "shopping-harajuku",
-      "text": "11/14：銀座LOFT、MUJI、博品館；15:30出發原宿HOKA與NB（19:00關門）"
+      "text": "11/14：博品館、MUJI、LOFT；午餐11:45、Nike13:15；15:30往原宿HOKA與NB（19:00關門）"
     },
     {
       "id": "airporter-booking",
-      "text": "保存已付款的Airporter訂單，12:30前至成田T2抵達層1F JALABC交件；確認延誤處理"
+      "text": "Airporter待上傳2件行李照片，掛牌填寫訂單編號；保存已付款訂單，目標12:30前至成田T2 1F JALABC交件"
     },
     {
       "id": "airporter-receipt",
-      "text": "飯店代收已確認；核對Airporter地址區名與20:00取件安排"
+      "text": "飯店代收已確認；請Airporter核對地址區名KOTO-KU與官方Taito-ku不一致，20:00依通知取件"
     },
     {
       "id": "airporter-luggage",
-      "text": "核對訂單行李件數／尺寸級距；兩箱裝滿後各不超過160cm／30kg，推車隨身帶"
+      "text": "訂單信確認托運尺寸行李2件；核對實際尺寸級距與重量，推車隨身帶"
+    }
+  ],
+  "sources": [
+    {
+      "name": "京成官方運賃",
+      "url": "https://www.keisei.co.jp/keisei/tetudou/skyliner/jp/traffic/express_fares.php"
+    },
+    {
+      "name": "銀座官方步行者天國",
+      "url": "https://www.ginza.jp/townguide/pedestrian-zone"
     }
   ]
 };

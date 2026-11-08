@@ -6,10 +6,19 @@ window.SHOPPING_LIST = [
         "id": "3coins-photo-printer",
         "name": "3COINS 相印機（フォトプリンター）",
         "type": "手機相片印表機",
-        "detail": "米白色款，外觀依提供圖片核對；型號、售價、耗材規格與門市庫存待確認。",
+        "detail": "官方品番2616-PRE-KRFP-0，參考含稅¥14,300。專用相紙約90×52mm，印刷區約60×45mm；內附普通相紙20張與墨匣1個。不是instax底片。追加相紙種類與數量待選。",
         "image": "assets/shopping/3coins-photo-printer.png",
         "sourceUrl": "assets/shopping/3coins-photo-printer.png",
-        "sourceLabel": "使用者提供的原始參考圖"
+        "sourceLabel": "使用者提供的原始參考圖",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/13",
+        "store": "3COINS＋plus 西銀座",
+        "jpName": "フォトプリンター 品番2616-PRE-KRFP-0",
+        "url": "https://www.palcloset.jp/shared/pc_pal/event/3coins/2026/photoprinter/",
+        "caution": "官方註明日本國內專用、請勿海外使用；帶回台使用前先向品牌確認，不視為支援台灣使用。需專用相紙及墨匣；更換墨匣官方列為WEB限定。",
+        "usage": "安裝官方指定App，開啟Bluetooth配對，裝入本機專用相紙與墨匣後列印；操作依隨附說明書。"
       },
       {
         "id": "instax-mini-film-20",
@@ -18,7 +27,13 @@ window.SHOPPING_LIST = [
         "detail": "10 張 × 2 包，共 20 張；購買時核對 instax mini 規格與包裝。",
         "image": "assets/shopping/instax-mini-20.jpg",
         "sourceUrl": "assets/shopping/instax-mini-20.jpg",
-        "sourceLabel": "使用者提供的原始參考圖"
+        "sourceLabel": "使用者提供的原始參考圖",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/13",
+        "store": "BicCamera 有樂町",
+        "jpName": "チェキ用フィルム instax mini 20枚"
       },
       {
         "id": "escura-instantsnap-white",
@@ -29,7 +44,13 @@ window.SHOPPING_LIST = [
         "usage": "由大人先充電並裝入相容microSD卡（4–32GB）。切到一般照片模式，讓孩子透過中央透明窗構圖、按快門拍攝；回家再一起匯出看照片。透明窗與鏡頭有視差，先拍較遠的景物比較容易掌握。",
         "caution": "數位玩具相機，不會直接印照片；初代無回看螢幕。請認明SN-25-WH，記憶卡另購；未確認兒童專用防摔規格。",
         "url": "https://www.biccamera.com/bc/tenpo/SfrBcToriokiList.jsp?GOODS_NO=13988859",
-        "linkLabel": "BicCamera初代白色款分店庫存／預留"
+        "linkLabel": "BicCamera初代白色款分店庫存／預留",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/13",
+        "store": "BicCamera 有樂町",
+        "jpName": "ESCURA InstantSnap SN-25-WH ホワイト"
       }
     ]
   },
@@ -40,12 +61,18 @@ window.SHOPPING_LIST = [
         "id": "instagram-DeUHZBjjUhR",
         "name": "HOKA Clifton 11 GTX GLM 女鞋",
         "type": "鞋款／防水運動鞋",
-        "detail": "Alabaster / Pink Opal 粉色系；貼文款號 HK1183115-AKP，女款 US 5.5–9，採 GORE-TEX Invisible Fit。來源為 C.P.U. 香港；日本售價、尺寸與供貨待確認。",
+        "detail": "Alabaster / Pink Opal 粉色系；貼文款號 HK1183115-AKP，女款 US 5.5–9，採 GORE-TEX Invisible Fit。來源為 C.P.U. 香港；日本售價、尺寸與供貨待確認。 穿的人／US或cm尺寸待選。",
         "image": "assets/shopping/hoka-clifton-11-gtx-glm.jpg",
         "url": "https://www.instagram.com/p/DeUHZBjjUhR/",
         "linkLabel": "查看 Instagram 貼文",
         "sourceUrl": "https://www.instagram.com/p/DeUHZBjjUhR/",
-        "sourceLabel": "原始 Instagram 貼文"
+        "sourceLabel": "原始 Instagram 貼文",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/14",
+        "store": "HOKA 原宿",
+        "jpName": "HOKA CLIFTON 11 GTX Alabaster / Pink Opal"
       }
     ]
   },
@@ -56,40 +83,61 @@ window.SHOPPING_LIST = [
         "id": "the-ordinary-glycolic-7",
         "name": "The Ordinary 7% 甘醇酸去角質化妝水",
         "type": "Glycolic Acid 7% Exfoliating Toner",
-        "detail": "去角質、改善粗糙與膚色不均外觀；不是治療粉刺或痘痘的藥品。容量、日本售價與門市庫存待確認；圖片為官方規格示意。",
+        "detail": "去角質、改善粗糙與膚色不均外觀；不是治療粉刺或痘痘的藥品。容量、日本售價與門市庫存待確認；圖片為官方規格示意。 日本品牌官方已列此店為實體通路；個別容量、款式與庫存需向店頭確認。",
         "image": "assets/shopping/the-ordinary-glycolic.png",
         "url": "https://theordinary.com/en-us/glycolic-acid-7-exfoliating-toner-100418.html",
         "usage": "臉／頸：晚間潔面後，以化妝棉或指腹少量塗抹，避開眼周，不沖洗；官方上限每日一次，依耐受程度減少使用。後續接保濕。",
         "caution": "先局部測試；敏感、脫皮或受損皮膚不使用。勿長時間濕敷，也不採用貼文的粉刺濕敷／腋下用法。使用期間及停用後一週注意防曬、衣物遮蔽與減少曝曬。若刺激，沖洗並停用。",
         "sourceUrl": "https://www.threads.com/@cococawala7/post/DfRRzFIkhRc",
         "linkLabel": "官方商品與使用說明",
-        "sourceLabel": "原始 Threads 貼文"
+        "sourceLabel": "原始 Threads 貼文",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/14",
+        "store": "@cosme TOKYO（原宿）",
+        "jpName": "グリコール酸7% エクスフォリエーティングトナー",
+        "availabilityUrl": "https://theordinary.jp/store"
       },
       {
         "id": "the-ordinary-niacinamide-10-zinc-1",
         "name": "The Ordinary 10% 菸鹼醯胺＋1% 鋅精華",
         "type": "Niacinamide 10% + Zinc 1%",
-        "detail": "調理多餘油光、改善毛孔與膚理外觀；不是縮小毛孔或治療痘痘的保證。容量、日本售價與門市庫存待確認；圖片為官方規格示意。",
+        "detail": "調理多餘油光、改善毛孔與膚理外觀；不是縮小毛孔或治療痘痘的保證。容量、日本售價與門市庫存待確認；圖片為官方規格示意。 日本品牌官方已列此店為實體通路；個別容量、款式與庫存需向店頭確認。",
         "image": "assets/shopping/the-ordinary-niacinamide.png",
         "url": "https://theordinary.com/en-us/niacinamide-10-zinc-1-serum-100436.html",
         "usage": "早晚潔面後，取數滴塗於臉部，再接較厚重的乳液或乳霜；初次先局部測試，依耐受程度使用。",
         "caution": "依品牌建議，與維他命 C 產品分開早晚保養時段使用。僅用於完整皮膚；若刺激，沖洗並停用。",
         "sourceUrl": "https://www.threads.com/@cococawala7/post/DfRRzFIkhRc",
         "linkLabel": "官方商品與使用說明",
-        "sourceLabel": "原始 Threads 貼文"
+        "sourceLabel": "原始 Threads 貼文",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/14",
+        "store": "@cosme TOKYO（原宿）",
+        "jpName": "ナイアシンアミド10%＋亜鉛1%",
+        "availabilityUrl": "https://theordinary.jp/store"
       },
       {
         "id": "the-ordinary-hyaluronic-2-b5",
         "name": "The Ordinary 2% 玻尿酸＋B5 保濕精華",
         "type": "Hyaluronic Acid 2% + B5",
-        "detail": "保濕、改善乾燥緊繃；官方現行版本含神經醯胺，購買時核對新舊配方、容量與瓶身名稱。日本售價與門市庫存待確認；圖片為官方現行版示意。",
+        "detail": "保濕、改善乾燥緊繃；官方現行版本含神經醯胺，購買時核對新舊配方、容量與瓶身名稱。日本售價與門市庫存待確認；圖片為官方現行版示意。 日本品牌官方已列此店為實體通路；個別容量、款式與庫存需向店頭確認。",
         "image": "assets/shopping/the-ordinary-hyaluronic.png",
         "url": "https://theordinary.com/en-us/hyaluronic-acid-2-b5-serum-with-ceramides-100637.html",
         "usage": "早晚潔面後，取數滴塗於臉部，再接乳液、乳霜或油類鎖水。不需要按照貼文厚敷十分鐘。",
         "caution": "先局部測試，僅用於完整皮膚；若刺激，沖洗並停用。官方現行配方可與甘醇酸等成分搭配，無須套用貼文「一律避開維他命 C」的說法。",
         "sourceUrl": "https://www.threads.com/@cococawala7/post/DfRRzFIkhRc",
         "linkLabel": "官方商品與使用說明",
-        "sourceLabel": "原始 Threads 貼文"
+        "sourceLabel": "原始 Threads 貼文",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/14",
+        "store": "@cosme TOKYO（原宿）",
+        "jpName": "ヒアルロン酸2%＋B5",
+        "availabilityUrl": "https://theordinary.jp/store"
       },
       {
         "id": "sofina-ip",
@@ -99,7 +147,13 @@ window.SHOPPING_LIST = [
         "sourceUrl": "https://www.threads.com/@cf_hou/post/DXghi4UkuIn",
         "sourceLabel": "原始 Threads 貼文",
         "caution": "土台美容液與晚霜是不同步驟；先選定購買品項，再依該品包裝用量使用。",
-        "image": "assets/shopping/sofina-ip.png"
+        "image": "assets/shopping/sofina-ip.png",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/14",
+        "store": "@cosme TOKYO（原宿）／飯店附近藥妝店",
+        "jpName": "ソフィーナ iP（土台美容液／クリーム 選択予定）"
       },
       {
         "id": "gelee-rich",
@@ -110,7 +164,13 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始 Threads 貼文",
         "url": "https://www.geleerich.jp/geleerich/product/",
         "linkLabel": "官方品項資訊",
-        "image": "assets/shopping/gelee-rich.jpg"
+        "image": "assets/shopping/gelee-rich.jpg",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/14",
+        "store": "@cosme TOKYO（原宿）／飯店附近藥妝店",
+        "jpName": "ジュレリッチ エクストラ ジュレクレンジング"
       },
       {
         "id": "obagi-c",
@@ -119,7 +179,13 @@ window.SHOPPING_LIST = [
         "detail": "Obagi C5／C10／C20／C25 維他命C精華系列候選；濃度、型號與容量待選，現場核對包裝與供貨。",
         "sourceUrl": "https://www.threads.com/@cf_hou/post/DXghi4UkuIn",
         "sourceLabel": "原始 Threads 貼文",
-        "image": "assets/shopping/obagi-c.png"
+        "image": "assets/shopping/obagi-c.png",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/14",
+        "store": "@cosme TOKYO（原宿）／飯店附近藥妝店",
+        "jpName": "オバジC セラム（濃度を相談したいです）"
       },
       {
         "id": "one-by-kose",
@@ -131,7 +197,13 @@ window.SHOPPING_LIST = [
         "url": "https://www.koseprofessional.co.jp/brand/one_by_kose/",
         "linkLabel": "官方品項資訊",
         "caution": "導入美容液與Serum Shield保濕膏用途不同；先選定品項，現行版本與包裝需核對。",
-        "image": "assets/shopping/one-by-kose.png"
+        "image": "assets/shopping/one-by-kose.png",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/14",
+        "store": "@cosme TOKYO（原宿）／飯店附近藥妝店",
+        "jpName": "ONE BY KOSÉ（セラムヴェール／セラムシールド 選択予定）"
       },
       {
         "id": "takami-skinpeel",
@@ -144,7 +216,13 @@ window.SHOPPING_LIST = [
         "linkLabel": "官方品項資訊",
         "usage": "潔面後、化妝水前塗抹，不沖洗；均勻推開後等待約3分鐘，再接化妝水等保養。",
         "caution": "避免摩擦，使用量依所購版本官方說明。若有不適，停止使用。",
-        "image": "assets/shopping/takami-skinpeel.png"
+        "image": "assets/shopping/takami-skinpeel.png",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/14",
+        "store": "@cosme TOKYO（原宿）／飯店附近藥妝店",
+        "jpName": "タカミスキンピール"
       },
       {
         "id": "takami-essence-5ce",
@@ -157,51 +235,30 @@ window.SHOPPING_LIST = [
         "linkLabel": "官方品項資訊",
         "usage": "搭配小藍瓶時，先用小藍瓶調理，再接化妝水及5C+E精華；實際用量依所購版本官方說明。",
         "caution": "貼文寫5C+1，圖片與官方名稱為5C+E；不要與5CE Premium等其他版本混淆。",
-        "image": "assets/shopping/takami-essence-5ce.png"
+        "image": "assets/shopping/takami-essence-5ce.png",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/14",
+        "store": "@cosme TOKYO（原宿）／飯店附近藥妝店",
+        "jpName": "タカミエッセンス5C+E"
       },
       {
         "id": "punera-pdrn-e",
         "name": "PUNERA PDRN 賦活＋E水光精華",
         "type": "精華液／貼文粉色款",
-        "detail": "原Reel推薦的PUNERA精華，與OZIO三款凝露分開記錄。貼文提到台灣康是美通路；日本販售品名、容量、售價及供貨待核對，不直接套用台灣組合優惠。",
+        "detail": "日本官方發表資料確認30mL、含稅參考¥2,750，透過全國美妝生活雜貨店與藥妝通路販售；不是台灣專屬商品。@cosme TOKYO該款現貨尚待門市核對。",
         "sourceUrl": "https://www.instagram.com/reel/DeMRA7Lhr7W/",
         "sourceLabel": "原始 Instagram 貼文",
-        "url": "https://www.oziohk.com/products",
+        "url": "https://prtimes.jp/a/?c=45651&f=d45651-56-e557bc4b400f0ebe61ef6cfbf807ebd2.pdf&r=56",
         "linkLabel": "官方品項資訊",
-        "image": "assets/shopping/punera-pdrn-e.jpg"
-      },
-      {
-        "id": "ozio-white",
-        "name": "OZIO 蜂王乳凝露（白瓶）",
-        "type": "保濕凝露／75g",
-        "detail": "原Reel推薦的OZIO 蜂王乳凝露（白瓶）；與其他瓶色分開候選，購買時核對完整品名與容量。貼文提到台灣通路，不代表日本藥妝店一定有售；日本通路、售價及庫存待確認。",
-        "sourceUrl": "https://www.instagram.com/reel/DeMRA7Lhr7W/",
-        "sourceLabel": "原始 Instagram 貼文",
-        "url": "https://www.ozio.tw/products/ozio-蜂王乳凝露-75g",
-        "linkLabel": "官方品項資訊",
-        "image": "assets/shopping/ozio-white.webp"
-      },
-      {
-        "id": "ozio-gold",
-        "name": "OZIO 蜂王乳完美全效凝露（金瓶）",
-        "type": "保濕凝露／容量待核對",
-        "detail": "原Reel推薦的OZIO 蜂王乳完美全效凝露（金瓶）；與其他瓶色分開候選，購買時核對完整品名與容量。貼文提到台灣通路，不代表日本藥妝店一定有售；日本通路、售價及庫存待確認。 圖片為台灣官方活動圖，圖中優惠不適用於日本購買。",
-        "sourceUrl": "https://www.instagram.com/reel/DeMRA7Lhr7W/",
-        "sourceLabel": "原始 Instagram 貼文",
-        "url": "https://www.ozio.tw/",
-        "linkLabel": "官方品項資訊",
-        "image": "assets/shopping/ozio-gold.webp"
-      },
-      {
-        "id": "ozio-red-ex",
-        "name": "OZIO 蜂王乳凝露EX（紅瓶）",
-        "type": "保濕凝露／75g",
-        "detail": "原Reel推薦的OZIO 蜂王乳凝露EX（紅瓶）；與其他瓶色分開候選，購買時核對完整品名與容量。貼文提到台灣通路，不代表日本藥妝店一定有售；日本通路、售價及庫存待確認。 圖片為台灣官方活動圖，圖中優惠不適用於日本購買。",
-        "sourceUrl": "https://www.instagram.com/reel/DeMRA7Lhr7W/",
-        "sourceLabel": "原始 Instagram 貼文",
-        "url": "https://www.ozio.tw/categories/695de53210b7c052d795adab",
-        "linkLabel": "官方品項資訊",
-        "image": "assets/shopping/ozio-red-ex.webp"
+        "image": "assets/shopping/punera-pdrn-e.jpg",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/14",
+        "store": "@cosme TOKYO（原宿）／飯店附近藥妝店",
+        "jpName": "ピュネラ PDRN＋E グロウセラム 30mL"
       },
       {
         "id": "elixir-the-serum-aa",
@@ -214,7 +271,13 @@ window.SHOPPING_LIST = [
         "sourceUrl": "assets/shopping/elixir-the-serum-aa.jpg",
         "sourceLabel": "使用者提供的原始參考照片",
         "url": "https://www.shiseido.co.jp/elixir/promotion/the-serum/",
-        "linkLabel": "官方商品與使用說明"
+        "linkLabel": "官方商品與使用說明",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/14",
+        "store": "@cosme TOKYO（原宿）／飯店附近藥妝店",
+        "jpName": "エリクシール ザ セラム aa"
       }
     ]
   },
@@ -230,7 +293,13 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始文章",
         "url": "https://prtimes.jp/main/html/rd/p/000000981.000012002.html",
         "linkLabel": "官方品項資訊",
-        "image": "assets/shopping/botanist-oil-01.jpg"
+        "image": "assets/shopping/botanist-oil-01.jpg",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/14",
+        "store": "@cosme TOKYO（原宿）／飯店附近藥妝店",
+        "jpName": "ボタニスト ボタニカルヘアオイル 01"
       },
       {
         "id": "botanist-oil-02",
@@ -241,7 +310,13 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始文章",
         "url": "https://prtimes.jp/main/html/rd/p/000000981.000012002.html",
         "linkLabel": "官方品項資訊",
-        "image": "assets/shopping/botanist-oil-02.jpg"
+        "image": "assets/shopping/botanist-oil-02.jpg",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/14",
+        "store": "@cosme TOKYO（原宿）／飯店附近藥妝店",
+        "jpName": "ボタニスト ボタニカルヘアオイル 02"
       },
       {
         "id": "botanist-oil-03",
@@ -252,7 +327,13 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始文章",
         "url": "https://www.botanistofficial.com/product/item/484/",
         "linkLabel": "官方品項資訊",
-        "image": "assets/shopping/botanist-oil-03.jpg"
+        "image": "assets/shopping/botanist-oil-03.jpg",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/14",
+        "store": "@cosme TOKYO（原宿）／飯店附近藥妝店",
+        "jpName": "ボタニスト ボタニカルヘアオイル 03"
       },
       {
         "id": "botanist-milk-01",
@@ -263,7 +344,13 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始文章",
         "url": "https://botanistofficial.com/product/item/499/",
         "linkLabel": "官方品項資訊",
-        "image": "assets/shopping/botanist-milk-01.jpg"
+        "image": "assets/shopping/botanist-milk-01.jpg",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/14",
+        "store": "@cosme TOKYO（原宿）／飯店附近藥妝店",
+        "jpName": "ボタニスト ボタニカルヘアミルク 01"
       },
       {
         "id": "botanist-milk-02",
@@ -274,7 +361,13 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始文章",
         "url": "https://botanistofficial.com/product/item/495/",
         "linkLabel": "官方品項資訊",
-        "image": "assets/shopping/botanist-milk-02.jpg"
+        "image": "assets/shopping/botanist-milk-02.jpg",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/14",
+        "store": "@cosme TOKYO（原宿）／飯店附近藥妝店",
+        "jpName": "ボタニスト ボタニカルヘアミルク 02"
       },
       {
         "id": "unlabel-kr-control-shampoo",
@@ -285,7 +378,13 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始 Instagram 貼文",
         "url": "https://unlabel.tokyo/lab/hair_care/standard_haircare/kr_control_shampoo.html",
         "linkLabel": "官方品項資訊",
-        "image": "assets/shopping/unlabel-kr-control-shampoo.png"
+        "image": "assets/shopping/unlabel-kr-control-shampoo.png",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/14",
+        "store": "@cosme TOKYO（原宿）／飯店附近藥妝店",
+        "jpName": "アンレーベル ラボ KR コントロール シャンプー"
       }
     ]
   },
@@ -301,7 +400,13 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始 Instagram 貼文（第2張）",
         "url": "https://www.pokemon.co.jp/goods/2026/10/261016_to01.html?pokecen=0",
         "linkLabel": "官方品項資訊",
-        "image": "assets/shopping/pokemon-christmas-2026.jpg"
+        "image": "assets/shopping/pokemon-christmas-2026.jpg",
+        "quantity": "待選",
+        "decision": "待選",
+        "recipient": "待選",
+        "purchaseDate": "11/12",
+        "store": "晴空塔 Pokémon Center 4F",
+        "jpName": "クリスマスじゅんびチュウ！ A／B 選択予定"
       }
     ]
   },
@@ -311,8 +416,8 @@ window.SHOPPING_LIST = [
       {
         "id": "souvenir-ivorish",
         "name": "Ivorish MAISON 夾心餅乾／費南雪",
-        "type": "採買01｜JR B1・地下丸之內改札內",
-        "detail": "東京站主題禮盒候選；夾心餅乾與費南雪現場選款，入數與期限依包裝。既有地圖第1站。",
+        "type": "採買01｜JR B1・改札內",
+        "detail": "東京站主題禮盒候選；夾心餅乾與費南雪現場選款，入數與期限依包裝。",
         "url": "https://www.gransta.jp/mall/gransta_tokyo/ivorish_maison/",
         "linkLabel": "官方商品／購買資訊",
         "caution": "價格、口味、庫存及賞味期限以購買當日包裝與店頭為準；送禮前確認過敏原。",
@@ -320,12 +425,18 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始推薦來源",
         "routeOrder": 1,
         "routeFloor": "b1",
-        "nextStop": "先留在JR B1改札內，依地下丸之內區官方店家圖找A Bite Coffee；兩店精確轉彎以現場指標為準。"
+        "nextStop": "下一站：02 A Bite Coffee。留在JR改札內，沿丸之內坂往SQUARE ZERO方向走。",
+        "store": "Ivorish MAISON｜JR B1・改札內",
+        "purchaseDate": "11/13",
+        "decision": "待選",
+        "quantity": "待選",
+        "recipient": "待選",
+        "jpName": "アイボリッシュ メゾン"
       },
       {
         "id": "souvenir-abite",
         "name": "A Bite Coffee 咖啡餅乾",
-        "type": "採買02｜JR B1・地下丸之內改札內／丸之內坂南側",
+        "type": "採買02｜JR B1・改札內",
         "detail": "BAKE集團2026/9/16新開品牌。咖啡夾心餅乾與拿鐵烤巧克力餅乾兩款現場擇一，偏大人口味；加入Ivorish同區候選。",
         "url": "https://www.gransta.jp/mall/gransta_tokyo/a_bite_coffee/",
         "linkLabel": "官方商品／購買資訊",
@@ -334,14 +445,20 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始推薦來源",
         "routeOrder": 2,
         "routeFloor": "b1",
-        "nextStop": "從丸之內坂南側A Bite Coffee，沿改札內丸之內坂通道往東（八重洲／銀之鈴方向），到SQUARE ZERO西側找Curly’s；不出JR改札。",
+        "nextStop": "下一站：03 Curly’s Croissant。留在JR改札內，沿丸之內坂往SQUARE ZERO方向走。",
         "positionNote": "2026/11/08官方查核：官方HERE定位圖紅色櫃位在丸之內坂南側、地下丸之內改札內區。",
-        "positionMapUrl": "https://www.gransta.jp/gr_cswp/wp-content/uploads/2026/09/B1_marunouchizaka_202609_15.jpg"
+        "positionMapUrl": "https://www.gransta.jp/gr_cswp/wp-content/uploads/2026/09/B1_marunouchizaka_202609_15.jpg",
+        "store": "A Bite Coffee｜JR B1・改札內",
+        "purchaseDate": "11/13",
+        "decision": "待選",
+        "quantity": "待選",
+        "recipient": "待選",
+        "jpName": "ア バイト コーヒー"
       },
       {
         "id": "souvenir-curly",
         "name": "Curly’s Croissant 可頌",
-        "type": "採買03｜JR B1・SQUARE ZERO西側／改札內",
+        "type": "採買03｜JR B1・改札內",
         "detail": "旅途中現吃或早餐候選，不當作長效返台伴手禮。官方原味外帶參考¥324；圖片禮盒4入¥1,300僅為原始來源紀錄。",
         "url": "https://www.gransta.jp/mall/gransta_tokyo/tokyo_bake_stand/",
         "linkLabel": "官方商品／購買資訊",
@@ -351,14 +468,20 @@ window.SHOPPING_LIST = [
         "image": "assets/shopping/curly-reference.png",
         "routeOrder": 3,
         "routeFloor": "b1",
-        "nextStop": "由SQUARE ZERO區的既有A電扶梯或E電梯上1F，往中央通路找COCORIS；不要上列車月台。",
+        "nextStop": "下一站：04 COCORIS。留在JR改札內，沿丸之內坂往SQUARE ZERO方向走。",
         "positionNote": "2026/11/08官方查核：官方HERE定位圖紅色櫃位在SQUARE ZERO西側，靠丸之內坂通道口。",
-        "positionMapUrl": "https://www.gransta.jp/gr_cswp/wp-content/uploads/2020/11/202508_heremap_gransta_B1_CurlysCroissant.jpg"
+        "positionMapUrl": "https://www.gransta.jp/gr_cswp/wp-content/uploads/2020/11/202508_heremap_gransta_B1_CurlysCroissant.jpg",
+        "store": "Curly’s Croissant｜JR B1・改札內",
+        "purchaseDate": "11/13",
+        "decision": "待選",
+        "quantity": "待選",
+        "recipient": "待選",
+        "jpName": "カーリーズ クロワッサン"
       },
       {
         "id": "souvenir-cocoris",
         "name": "COCORIS 榛果與覆盆莓夾心餅乾",
-        "type": "採買04｜JR 1F・中央通路／改札內",
+        "type": "採買04｜JR 1F・改札內",
         "detail": "榛果與覆盆莓兩種夾心風味。圖片參考6入¥1,620、10入¥2,700，價格待店頭核對；適合先買小盒試吃。",
         "url": "https://sucreyshopping.jp/cocoris",
         "linkLabel": "官方商品／購買資訊",
@@ -368,14 +491,20 @@ window.SHOPPING_LIST = [
         "image": "assets/shopping/cocoris-reference.png",
         "routeOrder": 4,
         "routeFloor": "1f",
-        "nextStop": "留在JR 1F改札內，往既有第2站Maple Mania的吹拔區，再往八重洲北口／北轉乘口附近找JAGA BOULDE。",
+        "nextStop": "下一站：05 JAGA BOULDE。仍在JR1F改札內；買完05後才由一般JR八重洲北口出站，勿進新幹線轉乘口。",
         "positionNote": "2026/11/08官方查核：官方HERE圖紅色櫃位在1F中央通路北側，靠5・6番線樓梯／電扶梯的北面；介於丸之內中央口與八重洲中央口之間，仍在改札內。",
-        "positionMapUrl": "https://www.gransta.jp/gr_cswp/wp-content/uploads/2020/11/202608_heremap_1F_gransta-tokyo_COCORIS.jpg"
+        "positionMapUrl": "https://www.gransta.jp/gr_cswp/wp-content/uploads/2020/11/202608_heremap_1F_gransta-tokyo_COCORIS.jpg",
+        "store": "COCORIS｜JR 1F・改札內",
+        "purchaseDate": "11/13",
+        "decision": "待選",
+        "quantity": "待選",
+        "recipient": "待選",
+        "jpName": "ココリス"
       },
       {
         "id": "souvenir-jaga",
         "name": "JAGA BOULDE 鰹魚昆布洋芋片",
-        "type": "採買05｜JR 1F・吹拔區／北轉乘口前・改札內",
+        "type": "採買05｜JR 1F・改札內",
         "detail": "鹹食候選。厚切洋芋片，鰹魚昆布風味。圖片參考4袋¥1,047，非現價保證。須在出JR改札前購買；改札外Calbee＋不販售，兩店不能混用。",
         "url": "https://www.jaga-boulde.jp/",
         "linkLabel": "官方商品／購買資訊",
@@ -385,14 +514,20 @@ window.SHOPPING_LIST = [
         "image": "assets/shopping/jaga-boulde-reference.png",
         "routeOrder": 5,
         "routeFloor": "1f",
-        "nextStop": "買完從一般JR八重洲北口出站，勿進新幹線北轉乘口；進入大丸1F找PARIS BUTTER SAND，先看分時販售公告。",
+        "nextStop": "05買完，由一般JR八重洲北口出站進大丸1F；往八重洲側電梯旁找06 PARIS。勿進新幹線轉乘口。",
         "positionNote": "2026/11/08官方查核：品牌官方確認：八重洲北口改札內、東北／上越／北陸新幹線北轉乘口前；最近一般JR出口為八重洲北口，勿進新幹線轉乘改札。",
-        "positionMapUrl": "https://www.jaga-boulde.jp/"
+        "positionMapUrl": "https://www.gransta.jp/gr_cswp/wp-content/uploads/2025/04/202608_heremap_1F_gransta-tokyo_jagaboulder.jpg",
+        "store": "JAGA BOULDE｜JR 1F・改札內",
+        "purchaseDate": "11/13",
+        "decision": "待選",
+        "quantity": "待選",
+        "recipient": "待選",
+        "jpName": "じゃがボルダ"
       },
       {
         "id": "souvenir-paris",
         "name": "PARIS BUTTER SAND 巴黎奶油夾心餅乾",
-        "type": "採買06｜大丸1F・八重洲側／八重洲側電梯旁",
+        "type": "採買06｜大丸1F",
         "detail": "發酵奶油貓舌餅、巧克力與堅果。與PRESS BUTTER SAND不同品牌。官方參考5入¥918、8入¥1,296；製造日起90天不等於買到後剩90天。先確認分時販售公告，避免久候。",
         "url": "https://paris-butter.com/sand/zh-TW",
         "linkLabel": "官方商品／購買資訊",
@@ -401,14 +536,20 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始推薦來源",
         "routeOrder": 6,
         "routeFloor": "daimaru1f",
-        "nextStop": "依官方1F圖，從PARIS櫃位跨過左側走道到La noix小島櫃；仍在大丸食品區八重洲側，不換樓層。",
+        "nextStop": "下一站：07 La noix。依大丸1F官方櫃位圖沿食品區通道走；不要先下B1。",
         "positionNote": "2026/11/08官方查核：官方1F圖：食品區下側（八重洲側），在八重洲側電梯右上方，La noix隔走道對面。",
-        "positionMapUrl": "https://www.daimaru.co.jp/tokyo/floor/assets/img/1f_map_20210712.jpg"
+        "positionMapUrl": "https://www.daimaru.co.jp/tokyo/floor/assets/img/1f_map_20210712.jpg",
+        "store": "PARIS BUTTER SAND｜大丸1F",
+        "purchaseDate": "11/13",
+        "decision": "待選",
+        "quantity": "待選",
+        "recipient": "待選",
+        "jpName": "パリバターショコラ"
       },
       {
         "id": "souvenir-lanoix",
         "name": "La noix 胡桃餅乾",
-        "type": "採買07｜大丸1F・八重洲側／PARIS對面",
+        "type": "採買07｜大丸1F",
         "detail": "胡桃搭配苦焦糖的香脆餅乾；官方參考5枚¥1,080、10枚¥2,160。奶油餅乾買太多時，可與其他堅果款擇一。",
         "url": "https://la-noix.com/",
         "linkLabel": "官方商品／購買資訊",
@@ -417,15 +558,21 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始推薦來源",
         "routeOrder": 7,
         "routeFloor": "daimaru1f",
-        "nextStop": "沿La noix前走道往JR側走，經TRIPLE DECKER櫃位，再向中央電扶梯南側的N.Y.C.SAND前進；以官方圖上的店名核對。",
+        "nextStop": "下一站：08 N.Y.C.SAND。依大丸1F官方櫃位圖沿食品區通道走；不要先下B1。",
         "positionNote": "2026/11/08官方查核：官方1F圖：食品區下側、八重洲側電梯上方偏左的小島櫃，與PARIS BUTTER SAND隔走道相對。",
-        "positionMapUrl": "https://www.daimaru.co.jp/tokyo/floor/assets/img/1f_map_20210712.jpg"
+        "positionMapUrl": "https://www.daimaru.co.jp/tokyo/floor/assets/img/1f_map_20210712.jpg",
+        "store": "La noix｜大丸1F",
+        "purchaseDate": "11/13",
+        "decision": "待選",
+        "quantity": "待選",
+        "recipient": "待選",
+        "jpName": "ラ・ノワ"
       },
       {
         "id": "souvenir-nycsand",
         "name": "N.Y.C.SAND 焦糖夾心餅乾",
-        "type": "採買08｜大丸東京1F・改札外",
-        "detail": "焦糖、巧克力與餅乾組合。既有地圖第4站；與PARIS、PRESS可先挑一至兩家，不必每家都排隊。",
+        "type": "採買08｜大丸1F",
+        "detail": "焦糖、巧克力與餅乾組合。與PARIS、PRESS可先挑一至兩家，不必每家都排隊。",
         "url": "https://www.daimaru.co.jp/tokyo/",
         "linkLabel": "官方商品／購買資訊",
         "caution": "價格、口味、庫存及賞味期限以購買當日包裝與店頭為準；送禮前確認過敏原。",
@@ -433,12 +580,20 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始推薦來源",
         "routeOrder": 8,
         "routeFloor": "daimaru1f",
-        "nextStop": "沿中央電扶梯南側的橫向食品通道，往神田側走至外緣Sugar Butter Tree；途中經BEL AMER、Mon Loire等櫃位帶。"
+        "nextStop": "下一站：09 Sugar Butter Tree。依大丸1F官方櫃位圖沿食品區通道走；不要先下B1。",
+        "store": "N.Y.C.SAND｜大丸1F",
+        "purchaseDate": "11/13",
+        "decision": "待選",
+        "quantity": "待選",
+        "recipient": "待選",
+        "jpName": "N.Y.キャラメルサンド",
+        "positionNote": "2026/11/08官網現行圖：中央電扶梯南側食品通道，BEL AMER旁。",
+        "positionMapUrl": "https://www.daimaru.co.jp/tokyo/floor/1f.html"
       },
       {
         "id": "souvenir-sugar",
         "name": "Sugar Butter Tree 穀物夾心餅乾",
-        "type": "採買09｜大丸1F・神田側外緣／中央電扶梯右方",
+        "type": "採買09｜大丸1F",
         "detail": "分送候選，以原味或現售秋冬款為主。圖片麝香葡萄是季節口味，11月不保證販售；不要將穀物夾心與奶油千層派混作同一商品。",
         "url": "https://www.sugarbuttertree.jp/",
         "linkLabel": "官方商品／購買資訊",
@@ -448,15 +603,21 @@ window.SHOPPING_LIST = [
         "image": "assets/shopping/sugar-muscat-reference.png",
         "routeOrder": 9,
         "routeFloor": "daimaru1f",
-        "nextStop": "從神田側Sugar Butter Tree往館內中央電扶梯方向回走，下B1找PRESS BUTTER SAND；推車改用館內電梯。",
+        "nextStop": "09買完回館內中央電扶梯，下大丸B1找10 PRESS；推車使用館內電梯。",
         "positionNote": "2026/11/08官方查核：官方1F圖右側（神田側）外緣，BUTTER STATE’s下方、中央電扶梯右側；與N.Y.C.SAND位在同一橫向櫃位帶兩端。",
-        "positionMapUrl": "https://www.daimaru.co.jp/tokyo/floor/assets/img/1f_map_20210712.jpg"
+        "positionMapUrl": "https://www.daimaru.co.jp/tokyo/floor/assets/img/1f_map_20210712.jpg",
+        "store": "Sugar Butter Tree｜大丸1F",
+        "purchaseDate": "11/13",
+        "decision": "待選",
+        "quantity": "待選",
+        "recipient": "待選",
+        "jpName": "シュガーバターサンドの木"
       },
       {
         "id": "souvenir-press",
         "name": "PRESS BUTTER SAND 奶油焦糖夾心餅乾",
-        "type": "採買10｜大丸東京B1・改札外",
-        "detail": "原味為主要候選，貼文開心果季節款不保證11月販售。與PARIS BUTTER SAND不同品牌。既有地圖第5站。",
+        "type": "採買10｜大丸B1",
+        "detail": "原味為主要候選，貼文開心果季節款不保證11月販售。與PARIS BUTTER SAND不同品牌。",
         "url": "https://buttersand.com/",
         "linkLabel": "官方商品／購買資訊",
         "caution": "價格、口味、庫存及賞味期限以購買當日包裝與店頭為準；送禮前確認過敏原。",
@@ -464,13 +625,19 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始推薦來源",
         "routeOrder": 10,
         "routeFloor": "daimarub1",
-        "nextStop": "沿既有路線從F電梯上4F逛emmi，再回1F，離開大丸找改札外Gift Palette G32的PISTA。"
+        "nextStop": "10買完搭八重洲側電梯上4F逛emmi（不編採買號），再回1F。12:00先到KITTE午餐，飯後再回Gift找11 PISTA（G32）。",
+        "store": "PRESS BUTTER SAND｜大丸B1",
+        "purchaseDate": "11/13",
+        "decision": "待選",
+        "quantity": "待選",
+        "recipient": "待選",
+        "jpName": "バターサンド"
       },
       {
         "id": "souvenir-pista",
         "name": "PISTA & TOKYO 開心果夾心餅乾",
-        "type": "採買11｜Gift Palette 1F G32・改札外",
-        "detail": "優先看Pistachio Sand餅乾系列。Pistage為不同的限量甜點，需另確認保存條件，不把兩款混在一起。既有地圖第7站。",
+        "type": "採買11｜Gift 1F（G32）",
+        "detail": "優先看Pistachio Sand餅乾系列。Pistage為不同的限量甜點，需另確認保存條件，不把兩款混在一起。",
         "url": "https://www.pistaandtokyo.jp/language/zh-tw/",
         "linkLabel": "官方商品／購買資訊",
         "caution": "價格、口味、庫存及賞味期限以購買當日包裝與店頭為準；送禮前確認過敏原。",
@@ -478,27 +645,39 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始推薦來源",
         "routeOrder": 11,
         "routeFloor": "gift",
-        "nextStop": "留在Gift Palette 1F，依櫃位圖從G32往G9 BRULEE MERIZE；不用進JR改札。"
+        "nextStop": "下一站：12 BRULEE MERIZE。同層改札外依官方櫃位號找店，不需進JR改札。",
+        "store": "PISTA & TOKYO｜Gift 1F",
+        "purchaseDate": "11/13",
+        "decision": "待選",
+        "quantity": "待選",
+        "recipient": "待選",
+        "jpName": "ピスタチオサンド"
       },
       {
         "id": "souvenir-brulee",
         "name": "BRULEE MERIZE 布蕾塔",
-        "type": "採買12｜Gift Palette 1F G9・改札外",
-        "detail": "以常溫布蕾塔作送禮候選；生布蕾蛋糕另外確認低溫保存，適合現吃時再選。既有地圖第8站。",
+        "type": "採買12｜Gift 1F（G9）",
+        "detail": "以常溫布蕾塔作送禮候選；生布蕾蛋糕另外確認低溫保存，適合現吃時再選。",
         "url": "https://www.tokyoeki-1bangai.co.jp/",
         "linkLabel": "官方商品／購買資訊",
-        "caution": "價格、口味、庫存及賞味期限以購買當日包裝與店頭為準；送禮前確認過敏原。",
+        "caution": "價格、口味、庫存及賞味期限以購買當日包裝與店頭為準；送禮前確認過敏原。 若改選生布蕾：當天吃／不帶回台，須按包裝冷藏。",
         "sourceUrl": "https://www.instagram.com/reel/DZP-yHmNmNa/",
         "sourceLabel": "原始推薦來源",
         "routeOrder": 12,
         "routeFloor": "gift",
-        "nextStop": "同在Gift Palette 1F，從G9往相鄰G8 VANILLABEANS。"
+        "nextStop": "下一站：13 VANILLABEANS。同層改札外依官方櫃位號找店，不需進JR改札。",
+        "store": "BRULEE MERIZE｜Gift 1F",
+        "purchaseDate": "11/13",
+        "decision": "待選",
+        "quantity": "待選",
+        "recipient": "待選",
+        "jpName": "ブリュレクリームタルト"
       },
       {
         "id": "souvenir-vanilla-show",
         "name": "VANILLABEANS ショーコラ 生巧克力夾心餅",
-        "type": "採買13｜Gift Palette 1F G8・改札外",
-        "detail": "生巧克力夾心餅，依購買款式核對保存溫度與期限；與パリトロ蛋糕分開選購。既有地圖第9站。",
+        "type": "採買13a｜Gift 1F（G8）",
+        "detail": "生巧克力夾心餅，依購買款式核對保存溫度與期限；與パリトロ蛋糕分開選購。",
         "url": "https://www.tokyoeki-1bangai.co.jp/",
         "linkLabel": "官方商品／購買資訊",
         "caution": "價格、口味、庫存及賞味期限以購買當日包裝與店頭為準；送禮前確認過敏原。",
@@ -506,13 +685,19 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始推薦來源",
         "routeOrder": 13,
         "routeFloor": "gift",
-        "nextStop": "與パリトロ同店G8，一起挑選結帳，不需移動到另一家店。"
+        "nextStop": "與13a同店結帳；接著依H階梯／電梯指標下B1逛動漫街（Tomica／Plarail C7），再往14 Calbee＋（G47）。",
+        "store": "VANILLABEANS｜Gift 1F",
+        "purchaseDate": "11/13",
+        "decision": "待選",
+        "quantity": "待選",
+        "recipient": "待選",
+        "jpName": "ショーコラ"
       },
       {
         "id": "souvenir-vanilla-pari",
         "name": "VANILLABEANS パリトロ 巧克力蛋糕",
-        "type": "採買13｜Gift Palette 1F G8・改札外",
-        "detail": "巧克力外殼搭配巧克力內餡與蛋糕；同店另一商品，可與ショーコラ選混合禮盒，避免重複採買。保存依包裝。",
+        "type": "採買13b｜Gift 1F（G8）",
+        "detail": "同13a為同店採買。冷藏品：當天吃／不帶回台；依包裝維持指定溫度，沒有冷藏條件就不買。",
         "url": "https://www.tokyoeki-1bangai.co.jp/",
         "linkLabel": "官方商品／購買資訊",
         "caution": "價格、口味、庫存及賞味期限以購買當日包裝與店頭為準；送禮前確認過敏原。",
@@ -520,7 +705,90 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始推薦來源",
         "routeOrder": 13,
         "routeFloor": "gift",
-        "nextStop": "買完可沿既有路線到G3 Butter Butler，再由H階梯／電扶梯下B1動漫街；推車依電梯指標。"
+        "nextStop": "與13a同店結帳；接著依H階梯／電梯指標下B1逛動漫街（Tomica／Plarail C7），再往14 Calbee＋（G47）。",
+        "store": "VANILLABEANS｜Gift 1F",
+        "purchaseDate": "11/13",
+        "decision": "待選",
+        "quantity": "待選",
+        "recipient": "當天自吃",
+        "jpName": "パリトロ"
+      },
+      {
+        "id": "souvenir-calbee",
+        "name": "Calbee＋ 東京站限定零食",
+        "type": "採買14｜零食B1（G47）",
+        "detail": "品項與數量待選；可選現吃BIGポテりこ こだわりポテトサラダ味，或東京站限定釜揚げチップス 日本橋かつおだしと塩味。JAGA BOULDE另在JR改札內購買。",
+        "url": "https://www.calbee.co.jp/calbeestore/",
+        "sourceUrl": "https://www.calbee.co.jp/newsrelease/221122.php",
+        "caution": "現炸品當天吃；伴手禮的品項、數量與賞味期限依包裝核對。",
+        "routeOrder": 14,
+        "routeFloor": "okashi",
+        "store": "Calbee＋｜零食B1",
+        "purchaseDate": "11/13",
+        "decision": "待選",
+        "quantity": "待選",
+        "recipient": "待選",
+        "jpName": "カルビープラス 商品・数量は相談",
+        "nextStop": "依本層導覽前往下一站；未選購可直接跳過。"
+      }
+    ]
+  },
+  {
+    "category": "已取消／不前往",
+    "items": [
+      {
+        "id": "ozio-white",
+        "name": "OZIO 蜂王乳凝露（白瓶）",
+        "type": "保濕凝露／75g",
+        "detail": "本次移除採買：官方實體通路僅證實部分Beauty Opener系列，未證實這款蜂王乳凝露於本次路線門市販售。原始推薦保留供參考。",
+        "sourceUrl": "https://www.instagram.com/reel/DeMRA7Lhr7W/",
+        "sourceLabel": "原始 Instagram 貼文",
+        "url": "https://ozio.jp/guide/shop/index.html",
+        "linkLabel": "官方品項資訊",
+        "image": "assets/shopping/ozio-white.webp",
+        "decision": "不買",
+        "purchaseDate": "不安排",
+        "store": "本次不前往",
+        "quantity": "0",
+        "recipient": "不適用",
+        "routeOrder": null,
+        "routeFloor": null
+      },
+      {
+        "id": "ozio-gold",
+        "name": "OZIO 蜂王乳完美全效凝露（金瓶）",
+        "type": "保濕凝露／容量待核對",
+        "detail": "本次移除採買：官方實體通路僅證實部分Beauty Opener系列，未證實這款蜂王乳凝露於本次路線門市販售。原始推薦保留供參考。",
+        "sourceUrl": "https://www.instagram.com/reel/DeMRA7Lhr7W/",
+        "sourceLabel": "原始 Instagram 貼文",
+        "url": "https://ozio.jp/guide/shop/index.html",
+        "linkLabel": "官方品項資訊",
+        "image": "assets/shopping/ozio-gold.webp",
+        "decision": "不買",
+        "purchaseDate": "不安排",
+        "store": "本次不前往",
+        "quantity": "0",
+        "recipient": "不適用",
+        "routeOrder": null,
+        "routeFloor": null
+      },
+      {
+        "id": "ozio-red-ex",
+        "name": "OZIO 蜂王乳凝露EX（紅瓶）",
+        "type": "保濕凝露／75g",
+        "detail": "本次移除採買：官方實體通路僅證實部分Beauty Opener系列，未證實這款蜂王乳凝露於本次路線門市販售。原始推薦保留供參考。",
+        "sourceUrl": "https://www.instagram.com/reel/DeMRA7Lhr7W/",
+        "sourceLabel": "原始 Instagram 貼文",
+        "url": "https://ozio.jp/guide/shop/index.html",
+        "linkLabel": "官方品項資訊",
+        "image": "assets/shopping/ozio-red-ex.webp",
+        "decision": "不買",
+        "purchaseDate": "不安排",
+        "store": "本次不前往",
+        "quantity": "0",
+        "recipient": "不適用",
+        "routeOrder": null,
+        "routeFloor": null
       },
       {
         "id": "souvenir-ebby",
@@ -534,7 +802,12 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始推薦來源",
         "routeOrder": null,
         "routeFloor": null,
-        "nextStop": "東京站檔期已結束，不前往舊C-1櫃位找此商品；有新公告再調整。"
+        "nextStop": "東京站檔期已結束，不前往舊C-1櫃位找此商品；有新公告再調整。",
+        "decision": "不買",
+        "purchaseDate": "不安排",
+        "store": "本次不前往",
+        "quantity": "0",
+        "recipient": "不適用"
       },
       {
         "id": "souvenir-ikaty",
@@ -548,7 +821,12 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始推薦來源",
         "routeOrder": null,
         "routeFloor": null,
-        "nextStop": "目前無販售店，不為此跨區找店或安排繞路。"
+        "nextStop": "目前無販售店，不為此跨區找店或安排繞路。",
+        "decision": "不買",
+        "purchaseDate": "不安排",
+        "store": "本次不前往",
+        "quantity": "0",
+        "recipient": "不適用"
       }
     ]
   }

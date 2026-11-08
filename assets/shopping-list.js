@@ -13,11 +13,18 @@
   const retry=make('button','family-retry','重新同步');retry.type='button';retry.hidden=true;
   controls.append(status,form,logout,retry);document.querySelector('.shopping-status').append(controls);
   document.querySelector('.shopping-status .muted').textContent='所有人都能查看；輸入共用密碼後，家人可一起勾選。';
-  let hidePurchased=false,activeCategory=0;
+  let hidePurchased=false,activeCategory=-1;
   const categoryTabs=make('div','shopping-category-tabs');categoryTabs.setAttribute('role','tablist');categoryTabs.setAttribute('aria-label','待購商品類別');root.before(categoryTabs);
   const categoryPanels=[],categoryButtons=[];
+  const allTab=make('button','shopping-category-tab','全部');allTab.type='button';allTab.setAttribute('role','tab');allTab.setAttribute('aria-selected','true');allTab.addEventListener('click',()=>selectCategory(-1));categoryTabs.append(allTab);
+  const visitFilters=make('div','shopping-visit-filters');
+  function addSelect(labelText,values){const label=make('label','',labelText);const select=make('select');select.setAttribute('aria-label',labelText);const all=make('option','','全部');all.value='';select.append(all);for(const value of values){const option=make('option','',value);option.value=value;select.append(option);}select.addEventListener('change',()=>{selectCategory(-1);});label.append(select);visitFilters.append(label);return select;}
+  const items=window.SHOPPING_LIST.filter(g=>g.category!=='已取消／不前往').flatMap(g=>g.items);
+  const dateSelect=addSelect('購買日',[...new Set(items.map(x=>x.purchaseDate))].sort());
+  const storeSelect=addSelect('店家',[...new Set(items.map(x=>x.store))].sort());categoryTabs.after(visitFilters);
+
   function selectCategory(index,focus=false){
-    activeCategory=index;
+    activeCategory=index;allTab.setAttribute('aria-selected',String(index===-1));allTab.tabIndex=index===-1?0:-1;
     categoryButtons.forEach((button,i)=>{button.setAttribute('aria-selected',String(i===index));button.tabIndex=i===index?0:-1;});
     applyFilter();
     if(focus)categoryButtons[index].focus();
@@ -26,11 +33,11 @@
   document.querySelector('.shopping-status').insertBefore(filter,controls);
   const empty=make('p','shopping-filter-empty','目前沒有未購買的商品。');empty.hidden=true;root.after(empty);
   function applyFilter(){
-    let visible=0;
-    for(const {row} of rows.values()){row.hidden=hidePurchased&&row.classList.contains('is-purchased');if(!row.hidden)visible++;}
-    categoryPanels.forEach((section,i)=>{section.hidden=i!==activeCategory;});
+    let visible=0;for(const row of root.querySelectorAll('[data-cancelled]'))row.hidden=Boolean(dateSelect.value||storeSelect.value);
+    for(const {row,item} of rows.values()){row.hidden=(hidePurchased&&row.classList.contains('is-purchased'))||(dateSelect.value&&item.purchaseDate!==dateSelect.value)||(storeSelect.value&&item.store!==storeSelect.value);if(!row.hidden)visible++;}
+    categoryPanels.forEach((section,i)=>{section.hidden=activeCategory===-1?section.dataset.cancelledCategory==='true':i!==activeCategory;});
     const selected=categoryPanels[activeCategory];
-    visible=selected?[...selected.querySelectorAll('.shopping-item')].filter(row=>!row.hidden).length:0;
+    visible=selected?[...selected.querySelectorAll('.shopping-item')].filter(row=>!row.hidden).length:[...rows.values()].filter(({row})=>!row.hidden).length;
     empty.textContent=hidePurchased?'此類別目前沒有未購買的商品。':'此類別目前沒有商品。';
     empty.hidden=visible>0;
     filter.textContent=hidePurchased?'顯示全部商品':'隱藏已購買';filter.setAttribute('aria-pressed',String(hidePurchased));
@@ -39,7 +46,8 @@
   const rows=new Map();let current={items:{},writingIds:[],unlocked:false,connected:false};let unlocking=false;
   function render(state){
     current=state;let purchased=0;
-    for(const [id,{row,input}] of rows){const checked=state.items[id]?.purchased===true;input.checked=checked;row.classList.toggle('is-purchased',checked);input.disabled=!state.unlocked||!state.connected||state.writingIds.includes(id);if(checked)purchased++;}
+    for(const [id,{row,input,expander}] of rows){const checked=state.items[id]?.purchased===true;input.checked=checked;row.classList.toggle('is-purchased',checked);input.disabled=!state.unlocked||!state.connected||state.writingIds.includes(id);expander.hidden=!checked;if(checked)purchased++;}
+    for(const section of categoryPanels){const children=[...section.querySelectorAll('.shopping-item')];children.sort((a,b)=>Number(a.classList.contains('is-purchased'))-Number(b.classList.contains('is-purchased'))||Number(a.dataset.order)-Number(b.dataset.order));for(const row of children)section.append(row);}
     document.querySelector('#shopping-progress').textContent=`${purchased} / ${rows.size} 已購買`;
     applyFilter();
     form.hidden=state.unlocked;logout.hidden=!state.unlocked;retry.hidden=state.connected||state.loading;
@@ -49,16 +57,21 @@
   const sync=window.ShoppingSync.create({...window.SHOPPING_SYNC_CONFIG,storage,onState:render});
   window.familyShoppingSync=sync;
   for(const [index,group] of window.SHOPPING_LIST.entries()){
-    const section=make('section','shopping-category');section.id='shopping-category-'+index;section.setAttribute('role','tabpanel');section.setAttribute('aria-labelledby','shopping-category-tab-'+index);section.tabIndex=0;
-    const tab=make('button','shopping-category-tab',group.category+' · '+group.items.length);tab.id='shopping-category-tab-'+index;tab.type='button';tab.setAttribute('role','tab');tab.setAttribute('aria-controls',section.id);tab.setAttribute('aria-selected',String(index===0));tab.tabIndex=index===0?0:-1;
+    const section=make('section','shopping-category');section.id='shopping-category-'+index;if(group.category==='已取消／不前往')section.dataset.cancelledCategory='true';section.setAttribute('role','tabpanel');section.setAttribute('aria-labelledby','shopping-category-tab-'+index);section.tabIndex=0;
+    const tab=make('button','shopping-category-tab',group.category+' · '+group.items.length);tab.id='shopping-category-tab-'+index;tab.type='button';tab.setAttribute('role','tab');tab.setAttribute('aria-controls',section.id);tab.setAttribute('aria-selected',String(index===activeCategory));tab.tabIndex=index===activeCategory?0:-1;
     tab.addEventListener('click',()=>selectCategory(index));
     tab.addEventListener('keydown',event=>{let next=index;if(event.key==='ArrowRight')next=(index+1)%window.SHOPPING_LIST.length;else if(event.key==='ArrowLeft')next=(index-1+window.SHOPPING_LIST.length)%window.SHOPPING_LIST.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=window.SHOPPING_LIST.length-1;else return;event.preventDefault();selectCategory(next,true);});
     categoryTabs.append(tab);categoryButtons.push(tab);categoryPanels.push(section);
     section.append(make('h2','',group.category));
     for(const item of group.items){
-      const row=make('article','shopping-item');row.dataset.item=item.id;
+      const row=make('article','shopping-item');row.dataset.item=item.id;row.dataset.order=group.items.indexOf(item);
       if(item.image){const image=make('img');image.src=item.image;image.alt=item.name+' 商品參考';image.width=180;image.height=180;image.loading='lazy';row.append(image);}else row.classList.add('shopping-item-text');
-      const content=make('div');content.append(make('span','shopping-type',item.type),make('h3','',item.name),make('p','',item.detail));
+      const content=make('div','shopping-item-body');content.append(make('span','shopping-type',item.type),make('h3','',item.name),make('p','',item.detail));
+      if(/待確認|待核對|尚未核實|待選/.test(item.type+' '+item.detail)){content.prepend(make('span','pending-badge','待確認'));const li=make('li');li.append(make('span','pending-badge','待確認'));const a=make('a','',item.name+'：'+item.detail);a.href='?item='+encodeURIComponent(item.id)+'#shopping';li.append(a);document.querySelector('#pending-list').append(li);}
+      const meta=make('dl','purchase-metadata');for(const [title,value] of [['購買日',item.purchaseDate],['店家',item.store],['買／不買',item.decision],['數量',item.quantity],['送給誰',item.recipient]]){meta.append(make('dt','',title),make('dd','',value||'待選'));}content.append(meta);
+      const japanese=make('details','shopping-instructions staff-card');japanese.append(make('summary','','給店員看・日本語'));const card=make('div');card.lang='ja';card.append(make('p','staff-product-name',item.jpName),make('p','','こちらの商品を探しています。数量：'+(item.quantity==='待選'?'相談したいです':item.quantity)));japanese.append(card);content.append(japanese);
+      if(item.availabilityUrl){const link=make('a','shopping-source','官方實體通路查核 ↗');link.href=item.availabilityUrl;link.target='_blank';link.rel='noopener noreferrer';content.append(link);}
+      const expander=make('button','purchase-expander','展開商品資料');expander.type='button';expander.hidden=true;expander.setAttribute('aria-expanded','false');expander.addEventListener('click',()=>{const expanded=row.classList.toggle('is-expanded');expander.setAttribute('aria-expanded',String(expanded));expander.textContent=expanded?'收合商品資料':'展開商品資料';});content.append(expander);
       if(item.positionNote)content.append(make('p','',item.positionNote));
       if(item.positionMapUrl){const officialMap=make('a','shopping-source','已核對的官方櫃位圖 ↗');officialMap.href=item.positionMapUrl;officialMap.target='_blank';officialMap.rel='noopener noreferrer';content.append(officialMap);}
       if(item.routeFloor){const map=make('a','shopping-source','看本層地圖與下一站 ↗');map.href='?floor='+encodeURIComponent(item.routeFloor)+'#day-2';content.append(map);}
@@ -78,7 +91,7 @@
       if(item.url){const link=make('a','shopping-source',(item.sourceUrl===item.url?(item.sourceLabel||'原始來源'):(item.linkLabel||'商品資訊'))+' ↗');link.href=item.url;link.target='_blank';link.rel='noopener noreferrer';content.append(link);}
       const label=make('label','shopping-purchased');const input=make('input');input.type='checkbox';input.disabled=true;
       input.addEventListener('change',()=>{void sync.setPurchased(item.id,input.checked).catch(()=>render(current));});
-      label.append(input,document.createTextNode('已購買'));content.append(label);row.append(content);section.append(row);rows.set(item.id,{row,input});
+      label.append(input,document.createTextNode('已購買'));if(item.decision!=='不買')content.append(label);row.append(content);section.append(row);if(item.decision!=='不買')rows.set(item.id,{row,input,item,expander});else row.dataset.cancelled='true';
     }
     root.append(section);
   }
