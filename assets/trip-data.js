@@ -495,7 +495,7 @@ window.TRIP = {
         {
           "time": "13:10–13:25｜限15分鐘",
           "activity": "SABON 銀座松屋通り店",
-          "detail": "銀座3-7-14；營業11:30～20:00。 只買已決定品項，限15分鐘。 13:25前離店，接Nike。",
+          "detail": "銀座3-7-14；營業11:30～20:00。 只買已決定品項，限15分鐘。 13:25前離店，接SHIRO。",
           "links": [
             {
               "name": "SABON銀座松屋通り店｜官方門市資訊",
@@ -505,22 +505,37 @@ window.TRIP = {
           "points": [
             "銀座3-7-14；營業11:30～20:00。",
             "只買已決定品項，限15分鐘。",
-            "13:25前離店，接Nike。"
+            "13:25前離店，接SHIRO。"
           ]
         },
         {
-          "time": "13:25–13:50｜試穿25分鐘",
+          "time": "13:25–13:45｜含步行",
+          "activity": "SHIRO 銀座本店",
+          "detail": "銀座3-3-12，銀座ビルディング1～2F，11:00～20:00。 從SABON沿松屋通り往並木通り；逛完步行到Nike。",
+          "links": [
+            {
+              "name": "SHIRO 銀座本店｜官方門市資訊",
+              "url": "https://shiro-shiro.jp/ec/ext/shop/ginza/index.html"
+            }
+          ],
+          "points": [
+            "銀座3-3-12，銀座ビルディング1～2F，11:00～20:00。",
+            "從SABON沿松屋通り往並木通り；逛完步行到Nike。"
+          ]
+        },
+        {
+          "time": "13:45–14:10｜試穿25分鐘",
           "activity": "Nike 銀座｜試穿",
-          "detail": "銀座3-2-15；試穿男款Training上衣、彈性短褲與運動長褲。 限25分鐘，13:50離店接MUJI。",
+          "detail": "銀座3-2-15；試穿男款Training上衣、彈性短褲與運動長褲。 限25分鐘，14:10離店接MUJI。",
           "points": [
             "銀座3-2-15；試穿男款Training上衣、彈性短褲與運動長褲。",
-            "限25分鐘，13:50離店接MUJI。"
+            "限25分鐘，14:10離店接MUJI。"
           ]
         },
         {
-          "time": "13:50–14:35",
+          "time": "14:10–14:45",
           "activity": "MUJI 銀座",
-          "detail": "營業11:00～21:00。 購物含步行緩衝，14:35接LOFT。",
+          "detail": "營業11:00～21:00。 購物含步行緩衝，14:45接LOFT。",
           "links": [
             {
               "name": "無印良品銀座（Notion）",
@@ -529,11 +544,11 @@ window.TRIP = {
           ],
           "points": [
             "營業11:00～21:00。",
-            "購物含步行緩衝，14:35接LOFT。"
+            "購物含步行緩衝，14:45接LOFT。"
           ]
         },
         {
-          "time": "14:35–15:20",
+          "time": "14:45–15:20",
           "activity": "銀座 LOFT",
           "detail": "週六營業11:00～21:00。 15:15開始結帳、15:20離店，15:30往原宿。",
           "links": [
@@ -613,7 +628,7 @@ window.TRIP = {
           ]
         }
       ],
-      "note": "博品館→木村家→11:45午餐→休息→SABON→Nike→MUJI→LOFT→15:30往原宿。Dover Street Market取消。原宿依序@cosme、HOKA、NB（19:00關門）；週六銀座中央通12:00～17:00步行者天國，依天候及臨時管制調整；回程從NB步行往表參道，搭銀座線直達稻荷町。",
+      "note": "博品館→木村家→11:45午餐→休息→SABON→SHIRO→Nike→MUJI→LOFT→15:30往原宿。Dover Street Market取消。原宿依序@cosme、HOKA、NB（19:00關門）；週六銀座中央通12:00～17:00步行者天國，依天候及臨時管制調整；回程從NB步行往表參道，搭銀座線直達稻荷町。",
       "notes": [
         "週六12:00～17:00銀座中央通步行者天國，推車較好走。",
         "15:30往原宿；Dover Street Market取消。",
@@ -745,7 +760,7 @@ window.TRIP = {
     },
     {
       "id": "shopping-harajuku",
-      "text": "11/14：博品館、SABON、Nike、MUJI、LOFT；15:30往原宿 @cosme、HOKA、NB"
+      "text": "11/14：博品館、SABON、SHIRO、Nike、MUJI、LOFT；15:30往原宿 @cosme、HOKA、NB"
     },
     {
       "id": "airporter-booking",
