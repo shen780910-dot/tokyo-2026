@@ -85,6 +85,7 @@
         const template=document.querySelector('#camera-comparison-template');
         if(template){const comparison=make('details','shopping-instructions shopping-camera-comparison');comparison.append(make('summary','','三款相機比較與購買資訊'));comparison.append(template.content.cloneNode(true));content.append(comparison);}
       }
+      if(item.notionUrl){const notion=make('a','shopping-source',(item.notionLabel||'Notion')+' ↗');notion.href=item.notionUrl;notion.target='_blank';notion.rel='noopener noreferrer';content.append(notion);}
       if(item.sourceUrl&&item.sourceUrl!==item.url){const source=make('a','shopping-source',(item.sourceLabel||'原始來源')+' ↗');source.href=item.sourceUrl;source.target='_blank';source.rel='noopener noreferrer';content.append(source);}
       if(item.url){const link=make('a','shopping-source',(item.sourceUrl===item.url?(item.sourceLabel||'原始來源'):(item.linkLabel||'商品資訊'))+' ↗');link.href=item.url;link.target='_blank';link.rel='noopener noreferrer';content.append(link);}
       const label=make('label','shopping-purchased');const input=make('input');input.type='checkbox';input.disabled=true;

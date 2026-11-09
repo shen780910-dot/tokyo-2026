@@ -165,8 +165,8 @@ window.TRIP = {
         },
         {
           "time": "09:15–10:15｜JR改札內採買",
-          "activity": "JR改札內｜採買01～06",
-          "detail": "JR B1：01 Ivorish→02 A Bite Coffee→03 Curly’s。 留在JR改札內，搭SQUARE ZERO附近電扶梯上1F；推車用電梯，勿上月台。 JR 1F：04 COCORIS→05 The Maple Mania→06 JAGA BOULDE。 一般JR八重洲北口出站；勿進新幹線轉乘口。 10:15於八重洲北口／大丸附近改札外置物櫃第一次寄放；拍櫃號與位置，再進大丸。",
+          "activity": "JR改札內｜採買01～07",
+          "detail": "JR B1：01 Ivorish→02 A Bite Coffee→03 Curly’s。 留在JR改札內，搭SQUARE ZERO附近電扶梯上1F；推車用電梯，勿上月台。 JR 1F：04 COCORIS→05 東京牛奶起司工坊（京葉街）→06 The Maple Mania→07 JAGA BOULDE。 一般JR八重洲北口出站；勿進新幹線轉乘口。 10:15於八重洲北口／大丸附近改札外置物櫃第一次寄放；拍櫃號與位置，再進大丸。",
           "links": [
             {
               "name": "Ivorish MAISON（Notion）",
@@ -180,15 +180,15 @@ window.TRIP = {
           "points": [
             "JR B1：01 Ivorish→02 A Bite Coffee→03 Curly’s。",
             "留在JR改札內，搭SQUARE ZERO附近電扶梯上1F；推車用電梯，勿上月台。",
-            "JR 1F：04 COCORIS→05 The Maple Mania→06 JAGA BOULDE。",
+            "JR 1F：04 COCORIS→05 東京牛奶起司工坊（京葉街）→06 The Maple Mania→07 JAGA BOULDE。",
             "一般JR八重洲北口出站；勿進新幹線轉乘口。",
             "10:15於八重洲北口／大丸附近改札外置物櫃第一次寄放；拍櫃號與位置，再進大丸。"
           ]
         },
         {
           "time": "10:15–11:00｜伴手禮採買",
-          "activity": "大丸1F／B1｜採買07～12",
-          "detail": "大丸10:00開門；1F：07 PARIS→08 La noix→09 TRIPLE DECKER→10 N.Y.C.SAND→11 Sugar Butter Tree。 下B1買12 PRESS；只買已定案品項，快速結帳。 11:00搭八重洲側電梯上4F逛emmi。",
+          "activity": "大丸1F／B1｜採買08～13",
+          "detail": "大丸10:00開門；1F：08 PARIS→09 La noix→10 TRIPLE DECKER→11 N.Y.C.SAND→12 Sugar Butter Tree。 下B1買13 PRESS；只買已定案品項，快速結帳。 11:00搭八重洲側電梯上4F逛 14 emmi。",
           "links": [
             {
               "name": "TRIPLE DECKER LONDON（Notion）",
@@ -204,15 +204,15 @@ window.TRIP = {
             }
           ],
           "points": [
-            "大丸10:00開門；1F：07 PARIS→08 La noix→09 TRIPLE DECKER→10 N.Y.C.SAND→11 Sugar Butter Tree。",
-            "下B1買12 PRESS；只買已定案品項，快速結帳。",
-            "11:00搭八重洲側電梯上4F逛emmi。"
+            "大丸10:00開門；1F：08 PARIS→09 La noix→10 TRIPLE DECKER→11 N.Y.C.SAND→12 Sugar Butter Tree。",
+            "下B1買13 PRESS；只買已定案品項，快速結帳。",
+            "11:00搭八重洲側電梯上4F逛 14 emmi。"
           ]
         },
         {
           "time": "11:00–11:45｜主要購物點",
-          "activity": "emmi｜大丸東京店4F",
-          "detail": "大丸4F逛emmi至11:45。 回1F，在大丸附近／八重洲北口改札外置物櫃第二次寄放；拍櫃號與位置。 隨即前往KITTE，勿因找置物櫃耽誤12:00午餐。",
+          "activity": "14 emmi｜大丸東京店4F",
+          "detail": "大丸4F逛 14 emmi至11:45。 回1F，在大丸附近／八重洲北口改札外置物櫃第二次寄放；拍櫃號與位置。 隨即前往KITTE，勿因找置物櫃耽誤12:00午餐。",
           "links": [
             {
               "name": "emmi 大丸東京｜官方店舖資訊",
@@ -220,7 +220,7 @@ window.TRIP = {
             }
           ],
           "points": [
-            "大丸4F逛emmi至11:45。",
+            "大丸4F逛 14 emmi至11:45。",
             "回1F，在大丸附近／八重洲北口改札外置物櫃第二次寄放；拍櫃號與位置。",
             "隨即前往KITTE，勿因找置物櫃耽誤12:00午餐。"
           ]
@@ -266,8 +266,8 @@ window.TRIP = {
         },
         {
           "time": "13:35–14:05｜Gift Palette 1F",
-          "activity": "Gift Palette｜採買13～16",
-          "detail": "13 PISTA（G32）→14 BRULEE MERIZE（G9）→15 VANILLABEANS（G8）→16 Butter Butler（G3）。 15a／15b同店；16買完由H階梯下B1，推車走電梯。 14生布蕾、15b冷藏蛋糕當天吃，不帶回台、不放常溫置物櫃。",
+          "activity": "Gift Palette｜採買15～18",
+          "detail": "15 PISTA（G32）→16 BRULEE MERIZE（G9）→17 VANILLABEANS（G8）→18 Butter Butler（G3）。 17a／17b同店；18買完由H階梯下B1，推車走電梯。 15 Pistage、16生布蕾、17b冷藏蛋糕當天吃，不帶回台、不放常溫置物櫃。",
           "links": [
             {
               "name": "PISTA & TOKYO（Notion）",
@@ -287,15 +287,16 @@ window.TRIP = {
             }
           ],
           "points": [
-            "13 PISTA（G32）→14 BRULEE MERIZE（G9）→15 VANILLABEANS（G8）→16 Butter Butler（G3）。",
-            "15a／15b同店；16買完由H階梯下B1，推車走電梯。",
-            "14生布蕾、15b冷藏蛋糕當天吃，不帶回台、不放常溫置物櫃。"
+            "15 PISTA（G32）→16 BRULEE MERIZE（G9）→17 VANILLABEANS（G8）→18 Butter Butler（G3）。",
+            "15 Pistage 開店及 17:30 限量販售，13:35 到店先問庫存。",
+            "17a／17b同店；18買完由H階梯下B1，推車走電梯。",
+            "15 Pistage、16生布蕾、17b冷藏蛋糕當天吃，不帶回台、不放常溫置物櫃。"
           ]
         },
         {
           "time": "14:05–14:45｜Tomica／Plarail",
           "activity": "東京動漫街｜Tomica・JUMP・龍貓・吉伊卡哇",
-          "detail": "H下B1至いちばんプラザ附近；主逛Tomica／Plarail（C7）原創款與活動。 一般款記型號與價格，稍後到BicCamera比價。 JUMP（C6）、龍貓（C12）、吉伊卡哇（C21）依體力選逛；活動／整理券看當日公告。 沿北通り接南通り，前往17 Calbee＋（G47）。",
+          "detail": "H下B1至いちばんプラザ附近；主逛Tomica／Plarail（C7）原創款與活動。 一般款記型號與價格，稍後到BicCamera比價。 JUMP（C6）、龍貓（C12）、吉伊卡哇（C21）依體力選逛；活動／整理券看當日公告。 沿北通道買 19 YOKU MOKU（G50），經 D 階梯旁前往 20 Calbee＋（G47）。",
           "links": [
             {
               "name": "東京站・動漫街資料（Notion）",
@@ -306,13 +307,13 @@ window.TRIP = {
             "H下B1至いちばんプラザ附近；主逛Tomica／Plarail（C7）原創款與活動。",
             "一般款記型號與價格，稍後到BicCamera比價。",
             "JUMP（C6）、龍貓（C12）、吉伊卡哇（C21）依體力選逛；活動／整理券看當日公告。",
-            "沿北通り接南通り，前往17 Calbee＋（G47）。"
+            "沿北通道買 19 YOKU MOKU（G50），經 D 階梯旁前往 20 Calbee＋（G47）。"
           ]
         },
         {
           "time": "14:45–15:05｜採買與第三次寄放",
-          "activity": "17 Calbee＋；第三次寄放改札外置物櫃",
-          "detail": "Calbee＋（G47）採買；約15:00第三次寄放，預留約5分鐘。 使用八重洲北口／八重洲地下街附近改札外置物櫃，寄放下午13～17的採買；拍櫃號與位置。 14生布蕾、15b冷藏蛋糕不放櫃。 從八重洲地下街步行往有樂町，15:20到BicCamera；晚餐後再取回全部三批。",
+          "activity": "20 Calbee＋；第三次寄放改札外置物櫃",
+          "detail": "Calbee＋（G47）採買；約15:00第三次寄放，預留約5分鐘。 使用八重洲北口／八重洲地下街附近改札外置物櫃，寄放下午15～20的採買；拍櫃號與位置。 15 Pistage、16生布蕾、17b冷藏蛋糕不放櫃。 從八重洲地下街步行往有樂町，15:20到BicCamera；晚餐後再取回全部三批。",
           "links": [
             {
               "name": "Calbee＋（Notion）",
@@ -321,8 +322,8 @@ window.TRIP = {
           ],
           "points": [
             "Calbee＋（G47）採買；約15:00第三次寄放，預留約5分鐘。",
-            "使用八重洲北口／八重洲地下街附近改札外置物櫃，寄放下午13～17的採買；拍櫃號與位置。",
-            "14生布蕾、15b冷藏蛋糕不放櫃。",
+            "使用八重洲北口／八重洲地下街附近改札外置物櫃，寄放下午15～20的採買；拍櫃號與位置。",
+            "15 Pistage、16生布蕾、17b冷藏蛋糕不放櫃。",
             "從八重洲地下街步行往有樂町，15:20到BicCamera；晚餐後再取回全部三批。"
           ]
         },
@@ -419,10 +420,10 @@ window.TRIP = {
           ]
         }
       ],
-      "note": "08:45出門，採買01～12與emmi後，12:00本家あべや午餐不變；飯後13～16、動漫街、17 Calbee＋。分三次寄放（10:15、11:45、15:00），均使用八重洲北口／大丸／八重洲地下街附近的改札外置物櫃，每次拍下櫃號與位置；第三次放下午13～17的採買，下午不提伴手禮，晚餐後對照三張照片全部取回，再搭JR回御徒町。置物櫃有無空位依現場，勿為找櫃壓縮12:00午餐。14生布蕾、15b冷藏蛋糕當天吃，不放置物櫃。17家伴手禮要預留箱子空間與回程托運重量。",
+      "note": "08:45出門，採買01～13與14 emmi後，12:00本家あべや午餐不變；飯後15～18、動漫街、19 YOKU MOKU、20 Calbee＋。分三次寄放（10:15、11:45、15:00），均使用八重洲北口／大丸／八重洲地下街附近的改札外置物櫃，每次拍下櫃號與位置；第三次放下午15～20的採買，下午不提伴手禮，晚餐後對照三張照片全部取回，再搭JR回御徒町。置物櫃有無空位依現場，勿為找櫃壓縮12:00午餐。15 Pistage、16生布蕾、17b冷藏蛋糕當天吃，不放置物櫃。19家伴手禮要預留箱子空間與回程托運重量。",
       "notes": [
         "三次寄放都用改札外置物櫃（10:15／11:45／15:00），拍櫃號與位置；晚餐後全部取回。",
-        "置物櫃若滿，勿耽誤12:00午餐；14生布蕾、15b冷藏蛋糕當天吃、不放櫃。"
+        "置物櫃若滿，勿耽誤12:00午餐；15 Pistage、16生布蕾、17b冷藏蛋糕當天吃、不放櫃。"
       ]
     },
     {
@@ -740,7 +741,7 @@ window.TRIP = {
     },
     {
       "id": "shopping-parco",
-      "text": "11/13：大丸東京4F emmi，預留45分鐘（11:00～11:45）"
+      "text": "11/13：14 emmi（大丸東京 4F），預留45分鐘（11:00～11:45）"
     },
     {
       "id": "shopping-harajuku",
@@ -760,7 +761,7 @@ window.TRIP = {
     },
     {
       "id": "return-luggage-space",
-      "text": "確認IT201回程托運額度與重量；17家伴手禮的箱子空間要預留"
+      "text": "確認IT201回程托運額度與重量；19家伴手禮的箱子空間要預留"
     }
   ],
   "sources": [
