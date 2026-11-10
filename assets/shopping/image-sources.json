@@ -83,5 +83,10 @@
     "id": "pokemon-christmas-2026",
     "image": "assets/shopping/pokemon-christmas-2026.jpg",
     "source": "https://www.pokemon.co.jp/PostImages/f8881bfb2699f0e66867ccf8a00a666e037427ab.jpg"
+  },
+  {
+    "id": "shiro-white-tea-edp",
+    "image": "assets/shopping/shiro-white-tea-edp.jpg",
+    "source": "https://shiro-shiro.tw/cdn/shop/files/whitetea_visual_600x_ad26205c-5c1e-4243-a2ee-db81d67244b0_grande.webp?v=1741838043"
   }
 ]

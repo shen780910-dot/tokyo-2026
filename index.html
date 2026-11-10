@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#253852"><meta name="description" content="2026 年 11 月 12 至 15 日，2 大 1 小的東京四天旅行手記。"><title>東京 2026｜四天旅行手記</title><link rel="icon" href="assets/cover.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css?v=1.74"><script defer src="assets/trip-utils.js?v=1.74"></script><script defer src="assets/trip-data.js?v=1.74"></script><script defer src="assets/trip-maps.js?v=1.74"></script><script defer src="assets/tokyo-station-guide.js?v=1.74"></script><script defer src="assets/shopping-data.js?v=1.74"></script><script defer src="assets/souvenir-guide.js?v=1.74"></script><script defer src="assets/station-guide.js?v=1.74"></script><script defer src="assets/app.js?v=1.74"></script><script defer src="assets/shopping-sync-config.js?v=1.74"></script><script defer src="assets/shopping-sync.js?v=1.74"></script><script defer src="assets/shopping-list.js?v=1.74"></script><script defer src="assets/station-shopping.js?v=1.74"></script></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#253852"><meta name="description" content="2026 年 11 月 12 至 15 日，2 大 1 小的東京四天旅行手記。"><title>東京 2026｜四天旅行手記</title><link rel="icon" href="assets/cover.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css?v=1.75&amp;rev=9"><script defer src="assets/trip-utils.js?v=1.75&amp;rev=5"></script><script defer src="assets/trip-data.js?v=1.75&amp;rev=5"></script><script defer src="assets/trip-maps.js?v=1.75"></script><script defer src="assets/tokyo-station-guide.js?v=1.75"></script><script defer src="assets/shopping-data.js?v=1.75&amp;rev=3"></script><script defer src="assets/souvenir-guide.js?v=1.75"></script><script defer src="assets/station-guide.js?v=1.75"></script><script defer src="assets/app.js?v=1.75&amp;rev=5"></script><script defer src="assets/shopping-sync-config.js?v=1.75"></script><script defer src="assets/shopping-sync.js?v=1.75"></script><script defer src="assets/shopping-list.js?v=1.75&amp;rev=6"></script><script defer src="assets/station-shopping.js?v=1.75"></script></head>
 <body>
 <a class="skip" href="#main">跳到主要內容</a>
-<header class="masthead"><a class="brand" href="#overview"><span class="brand-mark">東 / 京</span><span>TOKYO <small>2026 · TRAVEL JOURNAL</small></span></a><div class="header-controls"><a class="site-version" data-site-version href="https://github.com/shen780910-dot/tokyo-2026/releases" target="_blank" rel="noopener noreferrer" aria-label="查看此網站版本的 GitHub 紀錄">v1.74</a><button id="theme" type="button" aria-label="切換深色模式" aria-pressed="false">深色模式</button></div></header>
-<nav aria-label="主要導覽"><a href="#overview" aria-current="page">旅行總覽</a><a href="#itinerary">四天行程</a><a href="#station">東京車站購物</a><a href="#prep">行前清單</a><a href="#shopping">待購清單</a></nav>
+<header class="masthead"><a class="brand" href="#overview"><span class="brand-mark">東 / 京</span><span>TOKYO <small>2026 · TRAVEL JOURNAL</small></span></a><div class="header-controls"><a class="site-version" data-site-version href="https://github.com/shen780910-dot/tokyo-2026/releases" target="_blank" rel="noopener noreferrer" aria-label="查看此網站版本的 GitHub 紀錄">v1.75</a><button id="theme" type="button" aria-label="切換深色模式" aria-pressed="false">深色模式</button></div></header>
+<nav aria-label="主要導覽"><a href="#overview" aria-current="page">旅行總覽</a><a href="#itinerary">四天行程</a><a href="#station">東京車站購物</a><a href="#prep">行前清單</a><a href="#shopping">待購清單</a><a href="#tax-refund">退稅攻略</a></nav>
 <main id="main">
 <section id="overview" class="page" aria-labelledby="overview-title">
 <div class="hero"><div class="hero-copy"><p class="eyebrow">JAPAN · TOKYO · AUTUMN 2026</p><h1 id="overview-title">走進秋天，<br>一起去東京。</h1><p class="intro">從上野的街角到東京的購物散步，<br>四天，留一點空白給旅行。</p><a class="button" href="#itinerary">翻開四天行程 <span aria-hidden="true">↗</span></a></div><figure><img src="assets/cover.svg" alt="晴空塔、東京鐵塔與秋日城市街景的原創插畫" width="1400" height="800"><figcaption>晴空塔、東京鐵塔、街角。東京的秋日風景。</figcaption></figure></div>
@@ -18,6 +18,94 @@
 <section id="station" class="page" aria-labelledby="station-title" hidden><div class="section-heading"><h1 id="station-title">東京車站購物</h1><p>依地圖標號順路選購。選樓層看地圖、認商品，再接下一家。</p></div><div id="station-shopping-guide"></div></section>
 <section id="prep" class="page" aria-labelledby="prep-title" hidden><div class="section-heading"><p class="eyebrow">BEFORE WE GO</p><h1 id="prep-title">準備好，再出發。</h1><p>小事先收好，把注意力留給旅行。</p></div><aside id="november-weather" class="note weather-note"><h2>11/12～15東京預報</h2><p>氣象廳2026/11/08 11:00（日本時間）發布；出發前晚再更新，非實際觀測。</p><div class="table-scroll"><table><thead><tr><th>日期</th><th>天氣</th><th>低／高溫</th><th>降雨機率</th></tr></thead><tbody><tr><td>11/12</td><td>晴時多雲</td><td>8／19°C</td><td>20%</td></tr><tr><td>11/13</td><td>晴時多雲</td><td>10／21°C</td><td>20%</td></tr><tr><td>11/14</td><td>晴時多雲</td><td>10／20°C</td><td>20%</td></tr><tr><td>11/15</td><td>多雲短暫雨</td><td>12／19°C</td><td>50%（信心C）</td></tr></tbody></table></div><p>早晚帶外套，白天可分層穿脫；回程備折傘與推車雨罩。<a href="https://www.jma.go.jp/bosai/forecast/#area_type=offices&amp;area_code=130000" target="_blank" rel="noopener noreferrer">氣象廳東京預報 ↗</a></p></aside><div class="check-panel"><div class="check-heading"><h2>行前清單</h2><span id="progress" aria-live="polite"></span></div><p class="muted">勾選進度儲存在目前瀏覽器，各裝置分開記錄。</p><div id="checklist"></div><button id="reset" class="text-button" type="button">清除勾選進度</button></div><aside class="note"><strong>一位 4 歲孩子的旅行節奏</strong><p>每天安排休息空檔，備妥替換衣物與點心。城市步行與戶外活動依當天天氣及體力調整。</p></aside></section>
 <section id="shopping" class="page" aria-labelledby="shopping-title" hidden><div class="section-heading"><p class="eyebrow">SHOPPING LIST</p><h1 id="shopping-title">東京待購清單</h1><p>依分類收好想買的東西，買到再勾選。</p></div><div class="shopping-status"><span id="shopping-progress" aria-live="polite"></span><p class="muted">所有人都能查看；輸入共用密碼後，家人可一起勾選。</p></div><template id="camera-comparison-template"><section id="camera-comparison" class="camera-comparison-content" aria-labelledby="camera-comparison-title"><h3 id="camera-comparison-title">孩子用透明觀景窗相機</h3><p><strong>目前優先買：Escura InstantSnap 初代。</strong>三款擇一，novo與C100先作備選；重點是讓孩子透過大片透明窗看景物拍照。下列操作適合度依重量、外型與功能判斷，並非兒童實測。</p><div style="overflow-x:auto"><table style="width:100%;min-width:620px;text-align:left;border-collapse:collapse"><caption>三款透明觀景窗數位相機比較</caption><thead><tr><th scope="col">款式</th><th scope="col">初代 InstantSnap</th><th scope="col">InstantSnap.novo 第二代</th><th scope="col">Godox C100</th></tr></thead><tbody><tr><th scope="row">購買順位</th><td><strong>優先購買</strong></td><td>備選</td><td>備選</td></tr><tr><th scope="row">重量／外型</th><td>28g／直式</td><td>38g／橫式</td><td>約65g／橫式</td></tr><tr><th scope="row">透明取景／回看</th><td>大片透明窗；無螢幕</td><td>透明窗；1.3吋螢幕可回看</td><td>透明窗疊加拍攝資訊；無照片回看</td></tr><tr><th scope="row">給孩子玩的特色</th><td>輕巧、功能單純，專心看景物按快門</td><td>可雙手握，拍完一起看成果；五種年代濾鏡</td><td>透明窗有構圖資訊；測光功能對幼童幫助有限</td></tr><tr><th scope="row">記憶卡</th><td>microSD 4–32GB，另購</td><td>microSD 4–64GB、FAT32，另購</td><td>microSD最高128GB，確認套組是否附卡</td></tr><tr><th scope="row">日本含稅參考價</th><td>¥8,470</td><td>¥10,380</td><td>C100KIT套組 ¥10,340</td></tr><tr><th scope="row">哪裡買</th><td>BicCamera：第二天可先向有樂町店詢貨。<br><a href="https://www.biccamera.com/bc/tenpo/SfrBcToriokiList.jsp?GOODS_NO=13988859" target="_blank" rel="noopener noreferrer">分店庫存／預留 ↗</a><br><a href="https://www.yodobashi.com/product/100000001009017455/" target="_blank" rel="noopener noreferrer">Yodobashi商品與規格 ↗</a></td><td>BicCamera、Yodobashi，白色SN-26-WH。<br><a href="https://www.biccamera.com/bc/tenpo/SfrBcToriokiList.jsp?GOODS_NO=15623205" target="_blank" rel="noopener noreferrer">BicCamera分店庫存／預留 ↗</a><br><a href="https://www.yodobashi.com/product/100000001010230826/" target="_blank" rel="noopener noreferrer">Yodobashi商品與規格 ↗</a></td><td>Yodobashi販售C100KIT，分店現貨另查。<br><a href="https://www.yodobashi.com/product/100000001010247105/" target="_blank" rel="noopener noreferrer">Yodobashi購買資訊 ↗</a><br><a href="https://godox.com/product-e/C100.html" target="_blank" rel="noopener noreferrer">Godox官方介紹 ↗</a></td></tr></tbody></table></div><p>售價依2026/11/08查閱網頁，分店庫存與現場售價需再確認。三款都不會直接印照片；透明窗看到的範圍與實際成品可能有落差。</p><details><summary>三款使用方式與孩子操作提醒</summary><p><strong>初代：</strong>大人先充電、裝卡並選一般照片模式，孩子透過透明窗構圖、按快門；之後一起匯出照片。</p><p><strong>novo：</strong>大人先充電、裝卡並設定濾鏡，孩子雙手持機、透過透明窗拍照，再用小螢幕一起看成果。</p><p><strong>C100：</strong>大人先充電、裝卡並設定照片模式與比例，孩子透過透明窗拍攝；之後用相容手機OTG連接或電腦匯出查看。</p><p>先拍較遠的景物，並教孩子避開鏡頭位置握持。記憶卡與可拆配件交由大人保管；這三款未確認兒童專用防摔規格。</p></details></section></template><div id="shopping-categories"></div></section>
+<section id="tax-refund" class="page tax-guide" aria-labelledby="tax-refund-title" hidden>
+  <div class="section-heading">
+    <h1 id="tax-refund-title">退稅攻略</h1>
+    <p>11/12–11/15 東京行｜適用日本 2026/11/01 起的新制</p>
+  </div>
+
+  <aside class="note">
+    <strong>成田 T2｜先做海關確認，再托運</strong>
+    <ol class="tax-steps">
+      <li><strong>結帳</strong>　出示護照、付含稅價。同一人同日同店未稅滿 ¥5,000，收好退稅單；在日本吃掉的食品另結。</li>
+      <li><strong>海關</strong>　90 天內出境。托運前，帶護照和全部退稅商品到 T2 本館 3F 安檢前。綠燈可托運；紅燈先驗貨。</li>
+      <li><strong>領款</strong>　卡退掃收據 QR 設定；領現先看收據指定哪台機器。IT201 11:25 起飛，報到截止約 10:40，以航班通知為準。</li>
+    </ol>
+    <p class="tax-sources"><a href="https://www.mlit.go.jp/kankocho/tax-free/content/001990244.pdf">日本觀光廳 ↗</a> · <a href="https://www.narita-airport.jp/ja/service/exchange/taxrefund/">成田機場 ↗</a> · <a href="https://www.tigerairtw.com/zh-tw/welcome-on-board/boarding">虎航報到 ↗</a></p>
+  </aside>
+
+  <section class="tax-section" aria-labelledby="tax-cash-title">
+    <h2 id="tax-cash-title">成田 T2 現金機</h2>
+    <table class="tax-table">
+      <thead><tr><th scope="col">機台</th><th scope="col">位置</th><th scope="col">領現費用</th></tr></thead>
+      <tbody>
+        <tr>
+          <th scope="row"><a href="https://www.glory.co.jp/selftaxrefund/en/">Self Tax Refund（GLORY）</a><br><a href="https://www.glory.co.jp/company/news/detail/id=3680">羽田參考照 ↗</a></th>
+          <td><a href="https://www.narita-airport.jp/ja/map/?poi=21483127">本館 3F 安檢前 ↗</a><br>06:00–24:00</td>
+          <td>未稅購買額 1.1% 或指定費率，實領向下取到 ¥100。</td>
+        </tr>
+        <tr>
+          <th scope="row"><a href="https://www.cashjapan.com/zh-tw/terms-and-conditions/">Cash Japan</a><br><a href="https://lordcat.net/wp-content/uploads/2026/11/1793947628-3c27abf71db1cb536262cb375770ae75.jpg">關西參考照 ↗</a></th>
+          <td><a href="https://www.narita-airport.jp/ja/map/?poi=21483743">本館 3F 安檢後 ↗</a><br>24 小時</td>
+          <td>指定退款額的 10%，可能有上下限。實領以 ¥50 四捨五入。</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="tax-brief"><strong>哪台較划算？</strong> 同一筆兩台都可領時，GLORY 用 1.1% 計費且向下取整，通常實領較少。未稅 ¥10,000、稅率 10%、店家未扣費時，GLORY 實領 ¥800，Cash Japan 實領 ¥900。指定費率和費用上下限可能影響結果。</p>
+    <p class="tax-brief">兩台都依該筆退稅單判定。用 GLORY 要先向業者登記，再走海關機台。</p>
+  </section>
+
+  <section class="tax-section" aria-labelledby="tax-operators-title">
+    <h2 id="tax-operators-title">退稅公司、登記與 CVV</h2>
+    <table class="tax-table tax-operators">
+      <thead><tr><th scope="col">退稅公司</th><th scope="col">登記／卡退</th><th scope="col">成田領現</th></tr></thead>
+      <tbody>
+        <tr><th scope="row"><a class="tax-provider tax-jj" href="https://j-taxrefund.com/welcome">J-TaxRefund</a></th><td>掃 QR 登記、驗護照。實測需 CVV。</td><td><span class="tax-provider tax-kiosk-glory">GLORY</span> <span class="tax-provider tax-kiosk-cash">Cash Japan</span></td></tr>
+        <tr><th scope="row"><a class="tax-provider tax-planet" href="https://gtf-planet.co.jp/en/faq/customer/">Global Tax Free／Planet</a></th><td>掃 QR 選退款方式。CVV 待確認。</td><td><span class="tax-provider tax-kiosk-glory">GLORY</span></td></tr>
+        <tr><th scope="row"><a class="tax-provider tax-jp" href="https://smartdetax.com/terms/jprefund/">JPrefund</a></th><td>掃 QR 登記並認領收據。實測需 CVV。</td><td><span class="tax-provider tax-kiosk-glory">GLORY</span> <span class="tax-provider tax-kiosk-cash">Cash Japan</span></td></tr>
+        <tr><th scope="row"><a class="tax-provider tax-blue" href="https://www.globalblue.com/en/shoppers/how-to-shop-tax-free/destinations/japan">Global Blue</a></th><td>依店家退稅單登記。實測未要求 CVV。</td><td><span class="tax-provider tax-kiosk-cash">Cash Japan</span></td></tr>
+        <tr><th scope="row"><a class="tax-provider tax-pie" href="https://pievat.com/japan">PIE VAT</a></th><td>依門市使用 App 或網頁。實測需 CVV。</td><td>成田機台未確認。</td></tr>
+      </tbody>
+    </table>
+    <p class="tax-brief">卡退費依店家。領現是否要先認領，掃收據 QR 確認。CVV 是卡片安全碼，實測結果依當次綁卡畫面。</p>
+  </section>
+
+  <section class="tax-section" aria-labelledby="tax-shops-title">
+    <h2 id="tax-shops-title">這趟會逛的店</h2>
+    <table class="tax-table tax-stores">
+      <thead><tr><th scope="col">店家</th><th scope="col">現場怎麼辦</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">11/12<br><a href="https://pro.tokyo-solamachi.jp/shop/483/">Pokémon Center 晴空塔店</a></th><td>店內辦。業者與費用待確認。TOMICA／PLARAIL、LIFE 押上先詢問是否受理。</td></tr>
+        <tr><th scope="row">11/13<br><a href="https://www.daimaru.co.jp/tokyo/service/gaikoku.html">大丸東京、emmi</a></th><td>當天帶護照、商品、收據與付款工具到 <strong>12F</strong>。手續費最高未稅價 <strong>2.3%</strong>。有卡退，官網未列現金。</td></tr>
+        <tr><th scope="row">11/13<br>東京站伴手禮</th><td>GRANSTA 逐店問。<a href="https://www.tokyoeki-1bangai.co.jp/shop/detail/?cd=000222">一番街 1F 櫃檯 ↗</a>可詢問 Gift Palette、動漫街、零食樂園指定店能否合算。</td></tr>
+        <tr><th scope="row">11/13<br>BicCamera 有樂町</th><td><span class="tax-provider tax-jj">J-TaxRefund</span>、卡退 ¥0（<a href="https://livejapan.com/ja/article-a0006089/">報導 ↗</a>；分店依收據）。領現另計。</td></tr>
+        <tr><th scope="row">11/13<br><a href="https://www.nishiginza.co.jp/shopguide/detail/?scd=000069">3COINS 西銀座 2F</a></th><td>可辦免稅。<span class="tax-provider tax-jp">JPrefund</span> 是旅客回報，分店業者與費用待核對。</td></tr>
+        <tr><th scope="row">住宿周邊<br>唐吉訶德、多慶屋</th><td>兩家官方均列<strong>店家費 ¥0</strong>。<a href="https://www.takeya.co.jp/shop/ko/event/takeya/taxrefund/">多慶屋 ↗</a>確認用 <span class="tax-provider tax-jj">J-TaxRefund</span>；<a href="https://ppih.co.jp/news/pdf/news_261005_refund.pdf">唐吉訶德 ↗</a>平台依收據。Summit 另問。</td></tr>
+        <tr><th scope="row">11/14<br><a href="https://www.muji.com/jp/ja/shop/detail/046604">無印良品銀座</a></th><td><strong>4F 免稅櫃檯</strong>。<span class="tax-provider tax-planet">Global Tax Free</span> 是旅客回報，分店業者與費用待核對。</td></tr>
+        <tr><th scope="row">11/14<br><a href="https://www.loft.co.jp/en/tax_free.html">銀座 LOFT</a></th><td>付款前先說要辦免稅。<span class="tax-provider tax-jp">JPrefund</span> 是旅客回報，分店業者與費用待核對。</td></tr>
+        <tr><th scope="row">11/14<br>SHIRO、@cosme</th><td>SHIRO 銀座和表參道可辦；<a href="https://shiro-shiro.jp/item/12906.html">白茶香水 ¥4,180 ↗</a>單瓶未達門檻。<a href="https://www.cosme.net/store/blog/261030/3655/index.html">@cosme ↗</a>掃收據 QR，業者與費用待核對。</td></tr>
+        <tr><th scope="row">11/14<br>博品館、SABON、鞋店</th><td><a href="https://www.hakuhinkan.co.jp/toypark/サービス/免税サービス/">博品館 ↗</a>1F–4F 玩具櫃可辦。SABON、Nike、HOKA、New Balance 付款前詢問。</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <details class="tax-section tax-experiences">
+    <summary>現場日文、機台細節與實測來源</summary>
+    <p lang="ja">免税をお願いします。カードと空港の現金、それぞれ手数料と受取額はいくらですか？ 現金でも事前登録は必要ですか？</p>
+    <p>海關確認 05:30–23:00，也可在指定區連海關 Wi-Fi <code>Customs_WiFi_For_TaxRefund</code>（密碼 <code>jcustoms</code>）用 Visit Japan Web；打算用 GLORY 領現請走海關機台。同一筆退稅記錄少一件，可能整筆無法退。</p>
+    <p class="tax-sources"><a href="https://www.glory.co.jp/files/user/selftaxrefund/pdf/STRterms_CN%28tw%29_20261101.pdf">GLORY 費率條款 ↗</a> · <a href="https://www.cashjapan.com/ja/contact-support/">Cash Japan 合作業者 ↗</a> · <a href="https://www.the-frequent-traveler.com.tw/japan-tax-refund-credit-card-cvc-safety-2026-11/">四家平台綁卡實測 ↗</a></p>
+    <table class="tax-table">
+      <caption>附圖三筆實測，各筆費用依交易而異</caption>
+      <thead><tr><th scope="col">退稅公司</th><th scope="col">稅金 → 實領</th><th scope="col">差額</th></tr></thead>
+      <tbody>
+        <tr><th scope="row"><span class="tax-provider tax-planet">Global Tax Free</span></th><td>¥1,060 → ¥795</td><td>¥265</td></tr>
+        <tr><th scope="row"><span class="tax-provider tax-jj">J-TaxRefund</span></th><td>¥1,323 → ¥1,100</td><td>¥223</td></tr>
+        <tr><th scope="row"><span class="tax-provider tax-jp">JPrefund</span></th><td>¥1,350 → ¥802</td><td>¥548</td></tr>
+      </tbody>
+    </table>
+    <p class="tax-sources"><a href="https://www.threads.com/@bella.obella/post/Dfja8IgFOU3">登記差異 ↗</a> · <a href="https://www.threads.com/@rickiehsieh2024/post/Dfi1Ye9CTrc">關西領現 ↗</a> · <a href="https://www.threads.com/@missdate0928/post/Dfi1xeUGENB">交易狀態 ↗</a> · <a href="https://www.threads.com/@hsinyu.79/post/DfhCx_xH-02">關西 VJW ↗</a> · <a href="https://www.threads.com/@mani_tokyo_go/post/Dfit7E7j2Bm">J-TaxRefund 卡退 ↗</a> · <a href="https://www.threads.com/@hsin.075/post/DfjZxvPAerp">名古屋經驗 ↗</a></p>
+  </details>
+</section>
 <noscript><aside class="note">本次旅行：2026/11/12～11/15，2 大 1 小（4歲），四天三夜。行程：11/12成田寄行李、Access特急直達晴空塔；11/13東京站、emmi與有樂町；11/14銀座與原宿；11/15包車赴成田返台。住宿資訊請查看 Notion：<a href="https://app.notion.com/p/shen0910/a1d400d1c43e8384944e0151ccee1361" target="_blank" rel="noopener noreferrer">住宿資訊・入住核對（Notion） ↗</a>。啟用 JavaScript 可切換分頁與使用行前清單。</aside></noscript>
 </main><footer><span>TOKYO 2026</span><p>在東京街角，一起留下旅行的記憶。</p><small>TOKYO · JAPAN</small></footer>
 </body></html>

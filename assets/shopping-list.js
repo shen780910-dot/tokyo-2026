@@ -4,6 +4,35 @@
   const storage=window.TripUtils.createSafeStorage(nativeStorage);
   const root=document.querySelector('#shopping-categories');
   const make=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text)e.textContent=text;return e;};
+
+  const staffDialog=make('dialog','staff-dialog');
+  staffDialog.setAttribute('aria-labelledby','staff-dialog-title');
+  const staffTitle=make('h2','','給店員看・日本語');
+  staffTitle.id='staff-dialog-title';
+  const staffCloseForm=make('form');
+  staffCloseForm.method='dialog';
+  staffCloseForm.append(make('button','staff-close','關閉'));
+  const staffImage=make('img','staff-image');
+  const staffName=make('p','staff-product-name');
+  staffName.lang='ja';
+  const staffRequest=make('p','','こちらの商品を探しています。');
+  staffRequest.lang='ja';
+  staffDialog.append(staffTitle,staffCloseForm,staffName,staffRequest,staffImage);
+  root.after(staffDialog);
+
+  function showStaffCard(item, imageSrc=item.image){
+    staffName.textContent=item.jpName||item.name;
+    staffName.lang=item.jpName?'ja':'zh-Hant';
+    staffImage.hidden=!imageSrc;
+    if(imageSrc){
+      staffImage.src=imageSrc;
+      staffImage.alt=item.name+' 商品參考';
+    }else{
+      staffImage.removeAttribute('src');
+      staffImage.alt='';
+    }
+    staffDialog.showModal();
+  }
   const controls=make('section','family-sync-controls');controls.setAttribute('aria-label','家庭共用購買狀態');
   const status=make('p','family-sync-status','正在讀取共用清單…');status.id='shopping-sync-status';status.setAttribute('role','status');
   const form=make('form','family-unlock');const field=make('label');field.append(document.createTextNode('共用密碼'));
@@ -44,14 +73,43 @@
   filter.addEventListener('click',()=>{hidePurchased=!hidePurchased;applyFilter();});
   const rows=new Map();let current={items:{},writingIds:[],unlocked:false,connected:false};let unlocking=false;
   function render(state){
-    current=state;window.dispatchEvent(new CustomEvent('shopping-state',{detail:state}));let purchased=0;
-    for(const [id,{row,input,expander}] of rows){const checked=state.items[id]?.purchased===true;input.checked=checked;row.classList.toggle('is-purchased',checked);input.disabled=!state.unlocked||!state.connected||state.writingIds.includes(id);expander.hidden=!checked;if(checked)purchased++;}
-    for(const section of categoryPanels){const children=[...section.querySelectorAll('.shopping-item')];children.sort((a,b)=>Number(a.classList.contains('is-purchased'))-Number(b.classList.contains('is-purchased'))||Number(a.dataset.order)-Number(b.dataset.order));for(const row of children)section.append(row);}
-    document.querySelector('#shopping-progress').textContent=`${purchased} / ${rows.size} 已購買`;
-    applyFilter();
-    form.hidden=state.unlocked;logout.hidden=!state.unlocked;retry.hidden=state.connected||state.loading;
+    current=state;
+    window.dispatchEvent(new CustomEvent('shopping-state',{detail:state}));
+    const changedRows=new Set();
+    let purchased=0;
+    for(const [id,{row,input,expander}] of rows){
+      const checked=state.items[id]?.purchased===true;
+      if(row.classList.contains('is-purchased')!==checked){
+        changedRows.add(row);
+        row.classList.toggle('is-purchased',checked);
+        expander.hidden=!checked;
+      }
+      if(input.checked!==checked)input.checked=checked;
+      const disabled=!state.unlocked||!state.connected||state.writingIds.includes(id);
+      if(input.disabled!==disabled)input.disabled=disabled;
+      if(checked)purchased++;
+    }
+    if(changedRows.size){
+      for(const section of categoryPanels){
+        const children=[...section.querySelectorAll('.shopping-item')];
+        if(!children.some(row=>changedRows.has(row)))continue;
+        children.sort((a,b)=>Number(a.classList.contains('is-purchased'))-Number(b.classList.contains('is-purchased'))||Number(a.dataset.order)-Number(b.dataset.order));
+        let nextRow=null;
+        for(const row of children.reverse()){
+          if(changedRows.has(row)&&row.nextElementSibling!==nextRow)section.insertBefore(row,nextRow);
+          nextRow=row;
+        }
+      }
+      applyFilter();
+    }
+    const progress=document.querySelector('#shopping-progress');
+    const progressText=`${purchased} / ${rows.size} 已購買`;
+    if(progress.textContent!==progressText)progress.textContent=progressText;
+    form.hidden=state.unlocked;logout.hidden=!state.unlocked;
     status.classList.toggle('has-error',Boolean(state.error));
-    status.textContent=state.error||(state.writingIds.length?'正在儲存購買狀態…':state.loading&&!state.lastSyncedAt?'正在讀取共用清單…':state.unlocked?'已解鎖・家人共用，約每5秒同步':'家庭共用・目前唯讀，解鎖後可勾選');
+    retry.hidden=state.connected||(!state.error&&state.loading);
+    const statusText=state.error||(state.writingIds.length?'正在儲存購買狀態…':state.loading&&!state.lastSyncedAt?'正在讀取共用清單…':state.unlocked?'已解鎖・家人共用，約每5秒同步':'家庭共用・目前唯讀，解鎖後可勾選');
+    if(status.textContent!==statusText)status.textContent=statusText;
   }
   const sync=window.ShoppingSync.create({...window.SHOPPING_SYNC_CONFIG,storage,onState:render});
   window.familyShoppingSync=sync;
@@ -64,33 +122,84 @@
     section.append(make('h2','',group.category));
     for(const item of group.items){
       const row=make('article','shopping-item');row.dataset.item=item.id;row.dataset.order=group.items.indexOf(item);
-      if(item.image){const image=make('img');image.src=item.image;image.alt=item.name+' 商品參考';image.width=180;image.height=180;image.loading='lazy';row.append(image);}else row.classList.add('shopping-item-text');
-      const content=make('div','shopping-item-body');content.append(make('span','shopping-type',item.type),make('h3','',item.name),make('p','',item.detail));
-      if(item.decision!=='不買' && item.pendingSummary){content.prepend(make('span','pending-badge','待確認'));const li=make('li');li.append(make('span','pending-badge','待確認'));const a=make('a','',item.pendingSummary);a.title=item.pendingSummary;a.href='?item='+encodeURIComponent(item.id)+'#shopping';li.append(a);}
-      const meta=make('dl','purchase-metadata');for(const [title,value] of [['購買日',item.purchaseDate],['店家',item.store],['買／不買',item.decision],['數量',item.quantity],['送給誰',item.recipient]]){meta.append(make('dt','',title),make('dd','',value||'待選'));}content.append(meta);
-      const japanese=make('details','shopping-instructions staff-card');japanese.append(make('summary','','給店員看・日本語'));const card=make('div');card.lang='ja';card.append(make('p','staff-product-name',item.jpName),make('p','','こちらの商品を探しています。数量：'+(item.quantity==='待選'?'相談したいです':item.quantity)));japanese.append(card);content.append(japanese);
-      if(item.availabilityUrl){const link=make('a','shopping-source','官方實體通路查核 ↗');link.href=item.availabilityUrl;link.target='_blank';link.rel='noopener noreferrer';content.append(link);}
+      const content=make('div','shopping-item-body');
+      const heading=make('h3','',item.name);
+      const thumbnailNotice=make('span','shopping-thumbnail-notice','待補縮圖');
+      thumbnailNotice.hidden=true;
+      function showMissingThumbnail(){
+        row.classList.add('shopping-item-text');
+        thumbnailNotice.hidden=item.decision==='不買';
+        if(item.jpName){
+          const titleButton=make('button','shopping-name-button',item.name);
+          titleButton.type='button';
+          titleButton.setAttribute('aria-haspopup','dialog');
+          titleButton.addEventListener('click',()=>showStaffCard(item,''));
+          heading.replaceChildren(titleButton);
+        }
+      }
+      if(item.image){
+        const photo=make('button','shopping-photo');
+        photo.type='button';
+        photo.setAttribute('aria-label','查看商品大圖和日文品名：'+item.name);
+        photo.setAttribute('aria-haspopup','dialog');
+        const image=make('img');
+        image.src=item.image;
+        image.alt='';
+        image.width=180;
+        image.height=180;
+        image.loading='lazy';
+        photo.append(image);
+        photo.addEventListener('click',()=>showStaffCard(item));
+        image.addEventListener('error',()=>{
+          photo.hidden=true;
+          showMissingThumbnail();
+        },{once:true});
+        row.append(photo);
+      }else showMissingThumbnail();
+      content.append(heading);
+      const meta=make('p','shopping-visit',(item.purchaseDate||'日期待確認')+' · '+(item.store||'店家待確認'));
+      if(item.decision!=='不買' && item.pendingSummary)meta.append(' ',make('span','pending-badge','待確認'));
+      meta.append(' ',thumbnailNotice);
+      content.append(meta);
+      if(item.detail)content.append(make('p','shopping-excerpt',item.detail));
+      const label=make('label','shopping-purchased');const input=make('input');input.type='checkbox';input.disabled=true;
+      input.addEventListener('change',()=>{void sync.setPurchased(item.id,input.checked).catch(()=>render(current));});
+      label.append(input,document.createTextNode('已購買'));if(item.decision!=='不買')content.append(label);
       const expander=make('button','purchase-expander','展開商品資料');expander.type='button';expander.hidden=true;expander.setAttribute('aria-expanded','false');expander.addEventListener('click',()=>{const expanded=row.classList.toggle('is-expanded');expander.setAttribute('aria-expanded',String(expanded));expander.textContent=expanded?'收合商品資料':'展開商品資料';});content.append(expander);
-      if(item.positionNote)content.append(make('p','',item.positionNote));
-      if(item.positionMapUrl){const officialMap=make('a','shopping-source','已核對的官方櫃位圖 ↗');officialMap.href=item.positionMapUrl;officialMap.target='_blank';officialMap.rel='noopener noreferrer';content.append(officialMap);}
-      if(item.routeFloor){const map=make('a','shopping-source','看本層地圖與下一站 ↗');map.href='?floor='+encodeURIComponent(item.routeFloor)+'#station';content.append(map);}
+      const details=make('details','shopping-details');
+      details.append(make('summary','','商品詳情'));
+      const notes=make('div','shopping-detail-body');
+      if(item.type)notes.append(make('p','shopping-type',item.type));
+      if(item.detail)notes.append(make('p','',item.detail));
+      if(item.positionNote)notes.append(make('p','',item.positionNote));
       if(item.usage||item.caution){
-        const instructions=make('details','shopping-instructions');
-        instructions.append(make('summary','',item.usage?'使用方法':'注意事項'));
-        if(item.usage)instructions.append(make('p','shopping-usage',item.usage));
-        if(item.caution)instructions.append(make('p','shopping-caution','注意：'+item.caution));
-        content.append(instructions);
+        notes.append(make('h4','',item.usage?'使用方法':'注意事項'));
+        if(item.usage)notes.append(make('p','shopping-usage',item.usage));
+        if(item.caution)notes.append(make('p','shopping-caution','注意：'+item.caution));
       }
       if(item.id==='escura-instantsnap-white'){
         const template=document.querySelector('#camera-comparison-template');
-        if(template){const comparison=make('details','shopping-instructions shopping-camera-comparison');comparison.append(make('summary','','三款相機比較與購買資訊'));comparison.append(template.content.cloneNode(true));content.append(comparison);}
+        if(template){const comparison=make('details','shopping-instructions shopping-camera-comparison');comparison.append(make('summary','','三款相機比較與購買資訊'));comparison.append(template.content.cloneNode(true));notes.append(comparison);}
       }
-      if(item.notionUrl){const notion=make('a','shopping-source',(item.notionLabel||'Notion')+' ↗');notion.href=item.notionUrl;notion.target='_blank';notion.rel='noopener noreferrer';content.append(notion);}
-      if(item.sourceUrl&&item.sourceUrl!==item.url){const source=make('a','shopping-source',(item.sourceLabel||'原始來源')+' ↗');source.href=item.sourceUrl;source.target='_blank';source.rel='noopener noreferrer';content.append(source);}
-      if(item.url){const link=make('a','shopping-source',(item.sourceUrl===item.url?(item.sourceLabel||'原始來源'):(item.linkLabel||'商品資訊'))+' ↗');link.href=item.url;link.target='_blank';link.rel='noopener noreferrer';content.append(link);}
-      const label=make('label','shopping-purchased');const input=make('input');input.type='checkbox';input.disabled=true;
-      input.addEventListener('change',()=>{void sync.setPurchased(item.id,input.checked).catch(()=>render(current));});
-      label.append(input,document.createTextNode('已購買'));if(item.decision!=='不買')content.append(label);row.append(content);section.append(row);if(item.decision!=='不買')rows.set(item.id,{row,input,item,expander});else row.dataset.cancelled='true';
+      const links=make('div','shopping-detail-links');
+      for(const [url,label] of [
+        [item.availabilityUrl,'官方實體通路查核'],
+        [item.positionMapUrl,'已核對的官方櫃位圖'],
+        [item.notionUrl,item.notionLabel||'Notion'],
+        [item.sourceUrl!==item.url?item.sourceUrl:null,item.sourceLabel||'原始來源'],
+        [item.url,item.sourceUrl===item.url?(item.sourceLabel||'原始來源'):(item.linkLabel||'商品資訊')]
+      ]){
+        if(!url)continue;
+        const link=make('a','shopping-source',label+' ↗');
+        link.href=url;link.target='_blank';link.rel='noopener noreferrer';links.append(link);
+      }
+      if(item.routeFloor){
+        const map=make('a','shopping-source','看本層地圖與下一站 ↗');
+        map.href='?floor='+encodeURIComponent(item.routeFloor)+'#station';links.append(map);
+      }
+      if(links.childElementCount)notes.append(links);
+      if(notes.childElementCount){details.append(notes);content.append(details);}
+      row.append(content);section.append(row);if(item.decision!=='不買')rows.set(item.id,{row,input,item,expander});else row.dataset.cancelled='true';
     }
     root.append(section);
   }
@@ -99,5 +208,5 @@
   form.addEventListener('submit',async event=>{event.preventDefault();if(unlocking)return;unlocking=true;unlock.disabled=true;const value=password.value;password.value='';try{await sync.unlock(value);}catch{}finally{unlocking=false;unlock.disabled=false;}});
   logout.addEventListener('click',()=>{void sync.logout().catch(()=>{});});retry.addEventListener('click',()=>{void sync.refresh();});
   const activate=()=>{if(['#shopping','#station'].includes(location.hash))void sync.start();else sync.stop();};
-  window.addEventListener('hashchange',activate);render(current);activate();
+  window.addEventListener('hashchange',activate);applyFilter();render(current);activate();
 })();
