@@ -71,6 +71,7 @@ window.TOKYO_STATION_GUIDE = [
     "source": "大丸東京 官方4F樓層圖",
     "url": "https://www.daimaru.co.jp/tokyo/floor/4f.html",
     "shops": [14],
+    "lunchRoute": ["14 emmi → 利久：搭大丸 F 八重洲側電梯下 B1。若要先寄放，先停 1F，再下 B1。", "沿一番街到八重洲地下中央口前的「のぞみ広場」。背對 JR 改札往ヤエチカ走，從右側進 GRANSTA 八重洲。圖上的紅色 HERE 就是利久。", "利久 → 15 PISTA：原路回のぞみ広場，沿 B1 往動漫街／大丸走。帶推車可回大丸搭 F 電梯上 1F，再往八重洲北口旁的 Gift Palette 找 G32。", "若飯後先逛 KITTE，回站後直接往 1F 八重洲北口接 15 PISTA。全程走改札外。"],
     "steps": [
       "13 PRESS後搭八重洲側電梯上4F找 14 emmi；逛完回1F。",
       "11:45在改札外置物櫃第二次寄放行李並拍櫃號，下B1往GRANSTA八重洲吃12:00利久午餐；飯後逛KITTE，13:35回Gift接15 PISTA（G32）。"
@@ -91,6 +92,7 @@ window.TOKYO_STATION_GUIDE = [
       17,
       18
     ],
+    "lunchRoute": ["從利久過來：回 B1 のぞみ広場，沿動漫街往大丸，搭 F 電梯上 1F。走到八重洲北口旁的 Gift Palette 找 15 PISTA（G32）。"],
     "steps": [],
     "walk": "15 PISTA（G32）→16 BRULEE（G9）→17 VANILLABEANS（G8，17a／17b同店）→18 Butter Butler（G3），最後買18再下B1動漫街；15 Pistage、16生布蕾、17b當天吃。",
     "routes": [],
