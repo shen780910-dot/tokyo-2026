@@ -805,7 +805,7 @@ window.SHOPPING_LIST = [
         "sourceLabel": "原始推薦來源",
         "routeOrder": 13,
         "routeFloor": "daimarub1",
-        "nextStop": "13買完搭八重洲側電梯上4F逛 14 emmi；11:45回1F，在大丸附近／八重洲北口的改札外置物櫃第二次寄放，拍下櫃號與位置，再往KITTE 12:00午餐。下午先不取物，晚餐後回東京站取回；飯後採買從Gift 15 PISTA（G32）接續。",
+        "nextStop": "13買完搭八重洲側電梯上4F逛 14 emmi；11:45回1F，在大丸附近／八重洲北口的改札外置物櫃第二次寄放，拍下櫃號與位置，再往八重洲B1利久 12:00午餐。下午先不取物，晚餐後回東京站取回；飯後採買從Gift 15 PISTA（G32）接續。",
         "store": "PRESS BUTTER SAND｜大丸B1",
         "purchaseDate": "11/13",
         "decision": "買",

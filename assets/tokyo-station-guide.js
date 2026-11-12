@@ -60,7 +60,7 @@ window.TOKYO_STATION_GUIDE = [
       13
     ],
     "steps": [],
-    "walk": "13 PRESS→電梯上4F 14 emmi→11:45回1F改札外置物櫃第二次寄放→KITTE 12:00午餐。",
+    "walk": "13 PRESS→電梯上4F 14 emmi→11:45回1F改札外置物櫃第二次寄放→八重洲B1利久 12:00午餐。",
     "routes": [],
     "tabLabel": "13｜大丸B1"
   },
