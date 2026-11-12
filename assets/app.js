@@ -18,7 +18,20 @@
     };mapLoaders.push(loadMaps);
 
     const mapLink=item=>{const link=element('a','',item.name+' ↗');link.href=item.url;link.target='_blank';link.rel='noopener noreferrer';return link;};
-    const seenLinks=new Set();const schedule=element('ol','schedule');(day.schedule||[]).forEach(item=>{const row=element('li');row.append(element('span','schedule-time',item.time));const detail=element('div');const title=element('strong');const links=(item.links||[]).filter(link=>{if(window.TripUtils.isNavigationLink(link.url)||seenLinks.has(link.url))return false;seenLinks.add(link.url);return true;});const direct=links.length===1&&links[0].name===item.activity;if(direct)title.append(mapLink(links[0]));else title.textContent=item.activity;detail.append(title);const points=element('ul','schedule-points');(item.points||[item.detail]).filter(Boolean).forEach(point=>points.append(element('li','',point)));detail.append(points);if(/待確認|待核對|尚待|尚需|待上傳/.test(item.detail+' '+item.time))detail.prepend(element('span','pending-badge','待確認'));if(!direct&&links.length){const maps=element('div','map-links');links.forEach(link=>maps.append(mapLink(link)));detail.append(maps);}row.append(detail);schedule.append(row);});const notes=element('ul','day-note');(day.notes||[day.note]).filter(Boolean).forEach(note=>notes.append(element('li','',note)));body.append(maps,schedule,notes);
+    const renderStopFloorMap = ({src, width, height, alt, caption}) => {
+      const figure = element('figure', 'floor-guide');
+      const zoom = mapLink({name: '開啟原圖並放大', url: src});
+      const image = element('img');
+      image.src = src;
+      image.width = width;
+      image.height = height;
+      image.alt = alt;
+      image.loading = 'lazy';
+      zoom.prepend(image);
+      figure.append(element('figcaption', '', caption), zoom);
+      return figure;
+    };
+    const seenLinks=new Set();const schedule=element('ol','schedule');(day.schedule||[]).forEach(item=>{const row=element('li');row.append(element('span','schedule-time',item.time));const detail=element('div');const title=element('strong');const links=(item.links||[]).filter(link=>{if(window.TripUtils.isNavigationLink(link.url)||seenLinks.has(link.url))return false;seenLinks.add(link.url);return true;});const direct=links.length===1&&links[0].name===item.activity;if(direct)title.append(mapLink(links[0]));else title.textContent=item.activity;detail.append(title);const points=element('ul','schedule-points');(item.points||[item.detail]).filter(Boolean).forEach(point=>points.append(element('li','',point)));detail.append(points);if(/待確認|待核對|尚待|尚需|待上傳/.test(item.detail+' '+item.time))detail.prepend(element('span','pending-badge','待確認'));if(!direct&&links.length){const maps=element('div','map-links');links.forEach(link=>maps.append(mapLink(link)));detail.append(maps);}if(item.floorMap)detail.append(renderStopFloorMap(item.floorMap));row.append(detail);schedule.append(row);});const notes=element('ul','day-note');(day.notes||[day.note]).filter(Boolean).forEach(note=>notes.append(element('li','',note)));body.append(maps,schedule,notes);
     card.append(date,body);document.querySelector('#days').append(card);
   });
   const today=element('button','today-button','今天');today.type='button';const todayStatus=element('span','today-status');todayStatus.setAttribute('role','status');const dateBar=element('div','date-bar');dayTabs.before(dateBar);dateBar.append(dayTabs,today,todayStatus);today.addEventListener('click',()=>{const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());const key=parts.slice(5).replace('-','.');let i=trip.days.findIndex(day=>day.date===key);if(i<0){i=parts<'2026-11-12'?0:3;todayStatus.textContent='目前不在旅期，顯示'+trip.days[i].date;}else todayStatus.textContent='顯示今天行程';location.hash='day-'+(i+1);});

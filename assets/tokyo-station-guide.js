@@ -73,7 +73,7 @@ window.TOKYO_STATION_GUIDE = [
     "shops": [14],
     "steps": [
       "13 PRESS後搭八重洲側電梯上4F找 14 emmi；逛完回1F。",
-      "11:45在改札外置物櫃第二次寄放行李並拍櫃號，再往KITTE 12:00午餐；飯後13:35回Gift接15 PISTA（G32）。"
+      "11:45在改札外置物櫃第二次寄放行李並拍櫃號，下B1往GRANSTA八重洲吃12:00利久午餐；飯後逛KITTE，13:35回Gift接15 PISTA（G32）。"
     ],
     "walk": "依下方指引",
     "routes": [],
