@@ -12,6 +12,45 @@
     const tab=element('button','day-tab',day.date);tab.type='button';tab.id=`day-tab-${index+1}`;tab.setAttribute('role','tab');tab.setAttribute('aria-controls',`day-panel-${index+1}`);tab.addEventListener('click',()=>{location.hash=`day-${index+1}`;});tabs.push(tab);dayTabs.append(tab);card.id=`day-panel-${index+1}`;card.setAttribute('role','tabpanel');card.setAttribute('aria-labelledby',tab.id);panels.push(card);
     const maps=element('section','day-maps');const mapSummary=element('h3','','本日地圖與購物攻略');maps.append(mapSummary);
     let mapsLoaded=false;const loadMaps=()=>{if(mapsLoaded)return;mapsLoaded=true;const map=window.TRIP_MAPS[index];const figure=element('figure','day-illustration');const drawing=element('object','map-document');drawing.type='image/svg+xml';drawing.data='assets/'+map.file+'?v=1.76';drawing.setAttribute('aria-label',day.title+'地圖');drawing.style.aspectRatio=window.TRIP_MAPS[index].aspectRatio||'720 / 860';const fullMap=element('a','','開啟完整地圖並放大 ↗');fullMap.href=drawing.data;fullMap.target='_blank';fullMap.rel='noopener noreferrer';drawing.append(fullMap.cloneNode(true));figure.append(drawing,fullMap);maps.append(figure);
+      if (index === 2) {
+        const shops = [
+          {name: 'Nike 原宿', hours: '原宿 Quest 1F・10:00–21:00', x: 236, y: 362, labelX: 45, labelY: 382, query: 'Nike Harajuku Quest'},
+          {name: 'On 貓街店', hours: '神宮前 5-17-27・11:00–20:00', x: 394, y: 692, labelX: 65, labelY: 662, query: 'On Store Tokyo Cat Street'}
+        ];
+        const nearby = element('div', 'map-links');
+        shops.forEach(shop => nearby.append(mapLink({
+          name: shop.name + '｜' + shop.hours,
+          url: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(shop.query)
+        })));
+        maps.append(nearby);
+        drawing.addEventListener('load', () => {
+          const doc = drawing.contentDocument;
+          const harajuku = doc?.documentElement.querySelector('svg[y="860"]');
+          if (!harajuku || harajuku.querySelector('#harajuku-extra-shops')) return;
+          const ns = 'http://www.w3.org/2000/svg';
+          const svg = (tag, attributes, value) => {
+            const node = doc.createElementNS(ns, tag);
+            Object.entries(attributes).forEach(([key, val]) => node.setAttribute(key, val));
+            if (value) node.textContent = value;
+            return node;
+          };
+          const group = svg('g', {id: 'harajuku-extra-shops'});
+          shops.forEach(shop => {
+            const link = svg('a', {
+              href: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(shop.query),
+              target: '_blank', rel: 'noopener noreferrer', 'aria-label': shop.name + '：開啟 Google Maps'
+            });
+            link.append(
+              svg('path', {d: 'M' + shop.x + ' ' + shop.y + 'L' + (shop.labelX + 82) + ' ' + (shop.labelY - 5), fill: 'none', stroke: '#536377'}),
+              svg('circle', {cx: shop.x, cy: shop.y, r: 5, fill: '#a94732', stroke: '#f8f5ee', 'stroke-width': 2}),
+              svg('text', {x: shop.labelX, y: shop.labelY, fill: '#26312e', 'font-family': 'sans-serif', 'font-size': 18, 'font-weight': 600, 'paint-order': 'stroke', stroke: '#f8f5ee', 'stroke-width': 5, 'stroke-linejoin': 'round'}, shop.name)
+            );
+            group.append(link);
+          });
+          harajuku.append(group);
+        });
+      }
+
       if(index===0){const stay=element('figure','day-illustration');const object=element('object','map-document');object.type='image/svg+xml';object.data='assets/day-1-stay-map.svg?v=1.76&rev=2';object.style.aspectRatio='720 / 1170';object.setAttribute('aria-label','押上回飯店與住宿周邊地圖');const full=element('a','','開啟完整住宿地圖並放大 ↗');full.href=object.data;full.target='_blank';full.rel='noopener noreferrer';stay.append(object,full);maps.append(stay);const floors=element('section','floor-guide');floors.append(element('h3','','晴空街樓層圖'));const image=element('img');image.src='assets/skytree-floors.svg?v=1.76&rev=2';image.alt='晴空街樓層圖：敘敘苑在東館30F；備長鰻魚飯（午餐備選）與利久牛舌（晚餐備選）在東館6F、11番地';image.loading='lazy';floors.append(image);maps.append(floors);}
       if(index===1){const guide=element('a','station-day-link','東京車站購物：地圖＋推薦商品 ↗');guide.href='#station';maps.append(guide);}
       if(index===3){const guide=element('a','station-day-link','退稅攻略：成田 T2 海關確認與領款 ↗');guide.href='#tax-refund';maps.append(guide);}
