@@ -13,6 +13,11 @@
     const maps=element('section','day-maps');const mapSummary=element('h3','','本日地圖與購物攻略');maps.append(mapSummary);
     let mapsLoaded=false;const loadMaps=()=>{if(mapsLoaded)return;mapsLoaded=true;const map=window.TRIP_MAPS[index];const figure=element('figure','day-illustration');const drawing=element('object','map-document');drawing.type='image/svg+xml';drawing.data='assets/'+map.file+'?v=1.76';drawing.setAttribute('aria-label',day.title+'地圖');drawing.style.aspectRatio=window.TRIP_MAPS[index].aspectRatio||'720 / 860';const fullMap=element('a','','開啟完整地圖並放大 ↗');fullMap.href=drawing.data;fullMap.target='_blank';fullMap.rel='noopener noreferrer';drawing.append(fullMap.cloneNode(true));figure.append(drawing,fullMap);maps.append(figure);
       if (index === 2) {
+        const shoppingMap = element('a', 'station-day-link', '原宿・表參道・澀谷購物地圖｜UNIQLO、GU、MUJI、TOMICA ↗');
+        shoppingMap.href = 'assets/harajuku-shibuya-shopping.svg?v=1.93';
+        shoppingMap.target = '_blank';
+        shoppingMap.rel = 'noopener noreferrer';
+        maps.prepend(shoppingMap);
         const shops = [
           {name: 'Nike 原宿', hours: '原宿 Quest 1F・10:00–21:00', x: 236, y: 362, labelX: 45, labelY: 382, query: 'Nike Harajuku Quest'},
           {name: 'On 貓街店', hours: '神宮前 5-17-27・11:00–20:00', x: 394, y: 692, labelX: 65, labelY: 662, query: 'On Store Tokyo Cat Street'}
