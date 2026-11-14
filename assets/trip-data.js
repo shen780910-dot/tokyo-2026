@@ -505,42 +505,10 @@ window.TRIP = {
         },
         {
           "time": "12:45–13:10｜親子休息",
-          "activity": "休息與移動至SABON",
-          "detail": "孩子休息、上洗手間，再前往銀座3丁目SABON。 13:10開始採買。",
+          "activity": "休息與上洗手間",
+          "detail": "午餐後讓孩子休息，準備前往 Nike 銀座。",
           "points": [
-            "孩子休息、上洗手間，再前往銀座3丁目SABON。",
-            "13:10開始採買。"
-          ]
-        },
-        {
-          "time": "13:10–13:25｜限15分鐘",
-          "activity": "SABON 銀座松屋通り店",
-          "detail": "銀座3-7-14；營業11:30～20:00。 只買已決定品項，限15分鐘。 13:25前離店，接SHIRO。",
-          "links": [
-            {
-              "name": "SABON銀座松屋通り店｜官方門市資訊",
-              "url": "https://sabon.co.jp/pages/ambassador_holiday2026"
-            }
-          ],
-          "points": [
-            "銀座3-7-14；營業11:30～20:00。",
-            "只買已決定品項，限15分鐘。",
-            "13:25前離店，接SHIRO。"
-          ]
-        },
-        {
-          "time": "13:25–13:45｜含步行",
-          "activity": "SHIRO 銀座本店",
-          "detail": "銀座3-3-12，銀座ビルディング1～2F，11:00～20:00。 從SABON沿松屋通り往並木通り；逛完步行到Nike。",
-          "links": [
-            {
-              "name": "SHIRO 銀座本店｜官方門市資訊",
-              "url": "https://shiro-shiro.jp/ec/ext/shop/ginza/index.html"
-            }
-          ],
-          "points": [
-            "銀座3-3-12，銀座ビルディング1～2F，11:00～20:00。",
-            "從SABON沿松屋通り往並木通り；逛完步行到Nike。"
+            "孩子休息、上洗手間。"
           ]
         },
         {
@@ -648,7 +616,7 @@ window.TRIP = {
           ]
         }
       ],
-      "note": "博品館→木村家→11:45午餐→休息→SABON→SHIRO→Nike→MUJI→LOFT→15:30往原宿。Dover Street Market取消。原宿依序@cosme、HOKA、NB（19:00關門）；週六銀座中央通12:00～17:00步行者天國，依天候及臨時管制調整；回程從NB步行往表參道，搭銀座線直達稻荷町。",
+      "note": "博品館→木村家→11:45午餐→休息→Nike→MUJI→LOFT→15:30往原宿。Dover Street Market取消。原宿依序@cosme、HOKA、NB（19:00關門）；週六銀座中央通12:00～17:00步行者天國，依天候及臨時管制調整；回程從NB步行往表參道，搭銀座線直達稻荷町。",
       "notes": [
         "週六12:00～17:00銀座中央通步行者天國，推車較好走。",
         "15:30往原宿；Dover Street Market取消。",
@@ -780,7 +748,7 @@ window.TRIP = {
     },
     {
       "id": "shopping-harajuku",
-      "text": "11/14：博品館、SABON、SHIRO、Nike、MUJI、LOFT；15:30往原宿 @cosme、HOKA、NB"
+      "text": "11/14：博品館、Nike、MUJI、LOFT；15:30往原宿 @cosme、HOKA、NB"
     },
     {
       "id": "airporter-booking",
